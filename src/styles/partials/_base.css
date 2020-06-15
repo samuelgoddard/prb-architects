@@ -18,7 +18,7 @@ a {
 	height: calc(100vh - 105px);
 
 	@screen md {
-		height: calc(100vh - 125px);
+		height: calc(100vh - 130px);
 	}
 }
 

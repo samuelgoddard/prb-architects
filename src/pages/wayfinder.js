@@ -26,7 +26,7 @@ const GalleryIndexPage = () => {
           enter: { transition: { staggerChildren: 0.1 } }
         }}
       >
-        <div className="flex flex-wrap items-center h-screen-no-header">
+        <div className="flex flex-wrap items-center h-screen-no-header overflow-hidden">
           <nav className="mt-auto mb-auto w-full">
             <ul>
               <motion.li variants={item}>
