@@ -1,0 +1,16 @@
+/* IBM Mono (Sans) */
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('../fonts/FoundersGrotesk-Regular.woff') format('woff'),
+      url('../fonts/FoundersGrotesk-Regular.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('../fonts/Sohne-Buch.woff') format('woff'),
+      url('../fonts/Sohne-Buch.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+}
