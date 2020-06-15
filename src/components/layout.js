@@ -20,6 +20,7 @@ const Layout = ({ children, location }) => {
         ? 'p-4 md:p-6 bg-prbred min-h-screen transition duration-500 ease-in-out'
         : 'p-4 md:p-6 min-h-screen transition duration-500 ease-in-out'
       }>
+        {/* { JSON.stringify(location)} */}
         <Header />
         <div data-scroll-section>
           <div className="z-10 relative">

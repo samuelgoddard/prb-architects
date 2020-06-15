@@ -2,7 +2,7 @@ module.exports = {
   purge: {
     content: ['./src/**/*.js',],
     options: {
-      whitelist: ['is-active'],
+      whitelist: ['is-active', 'bg-prbred'],
     }
   },
   theme: {
