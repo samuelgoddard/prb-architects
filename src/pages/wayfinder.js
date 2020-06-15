@@ -31,7 +31,10 @@ const GalleryIndexPage = () => {
             <ul>
               <motion.li variants={item}>
                 <Link className="text-black text-6xl md:text-7xl font-display leading-none pt-8 md:pt-12 pb-3 md:pb-6 border-b-2 border-black flex flex-wrap items-center hover:text-white" to="/">
-                  <span className="block">Work</span>
+                  <span className="block relative pr-6 md:pr-12">
+                    Work
+                    <span className="absolute top-0 right-0 text-3xl md:text-5xl -mt-2 -mr-1">17</span>
+                  </span>
                   <span className="block ml-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24" viewBox="0 0 97.604 97.604"><g data-name="Group 65" fill="none" stroke="currentColor" strokeWidth="7"><path data-name="Path 1" d="M12.227 31.959h53.418v53.418"/><path data-name="Path 2" d="M65.645 31.959l-63.17 63.17"/></g></svg>
                   </span>
