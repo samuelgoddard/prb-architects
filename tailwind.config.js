@@ -6,6 +6,13 @@ module.exports = {
     }
   },
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1600px"
+    },
     fontSize: {
       '2xs': '.45rem',
       'xs': '.65rem',
@@ -18,8 +25,9 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
-      '7xl': '8rem',
-      '8xl': '11.5rem',
+      '7xl': '6.5rem',
+      '8xl': '8rem',
+      '9xl': '11.5rem',
     },
     extend: {
       fontFamily: {

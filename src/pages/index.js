@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 
 const transition = { duration: 0.35, ease: [0.43, 0.13, 0.23, 0.96] }
 

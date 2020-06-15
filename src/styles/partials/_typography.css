@@ -19,6 +19,10 @@ h2 {
 	@apply text-lg;
 }
 
+button {
+  @apply outline-none border-none appearance-none;
+}
+
 /* Link */
 .link {
   @apply text-black underline transition;

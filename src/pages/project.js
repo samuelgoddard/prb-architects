@@ -9,7 +9,7 @@ const item = {
 	enter: { y: 0, opacity: 1, transition },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.3, ...transition }
+		transition: { transition }
 	}
 }
 
@@ -33,9 +33,9 @@ const ProjectPage = () => {
           </div>
           <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-3 mt-32">
             <div className="flex flex-wrap items-end">
-              <motion.h1 variants={item} className="text-7xl lg:text-8xl leading-negative block md:-mb-8 lg:-mb-10 order-2 lg:order-1 w-full lg:w-auto">Ivy<br/>Farm</motion.h1>
+              <motion.h1 variants={item} className="text-8xl lg:text-9xl leading-negative block md:-mb-8 lg:-mb-10 order-2 lg:order-1 w-full lg:w-auto">Ivy<br/>Farm</motion.h1>
               <div className="ml-auto order-1 lg:order-2">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 md:-mb-10 lg:-mb-8 xl:-mb-10" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" stroke-width="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 md:-mb-10 lg:-mb-8 xl:-mb-10" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
               </div>
             </div>
           </div>
@@ -71,17 +71,17 @@ const ProjectPage = () => {
                 <li className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
                   <span className="block text-xs mr-3">01</span>
                   <span className="block md:text-xl">Project Planning</span>
-                  <span className="block ml-auto"><svg dataName="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path dataName="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path dataName="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
+                  <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
                 </li>
                 <li className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
                   <span className="block text-xs mr-3">02</span>
                   <span className="block md:text-xl">Architectural Design</span>
-                  <span className="block ml-auto"><svg dataName="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path dataName="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path dataName="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
+                  <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
                 </li>
                 <li className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
                   <span className="block text-xs mr-3">03</span>
                   <span className="block md:text-xl">Project Delivery</span>
-                  <span className="block ml-auto"><svg dataName="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path dataName="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path dataName="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
+                  <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
                 </li>
               </ul>
             </motion.div>
