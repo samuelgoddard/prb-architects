@@ -1,45 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from "gatsby"
+import { AnimatePresence } from "framer-motion"
 import Scroll from "./locomotiveScroll"
 
 import Header from "./header"
 import "../styles/main.css"
 
-const duration = 0.35
-
-const variants = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: {
-      duration: duration,
-      delay: duration,
-      when: 'beforeChildren',
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: duration,
-    },
-  },
-}
-
 const Layout = ({ children, location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
       <Scroll callbacks={location} />
@@ -49,18 +16,14 @@ const Layout = ({ children, location }) => {
 
       <div id="scroll-container" className={ location.pathname == '/gallery-index' ? 'p-4 md:p-6 bg-prbred min-h-screen transition duration-500 ease-in-out' : 'p-4 md:p-6 min-h-screen transition duration-500 ease-in-out' }>
         <div data-scroll-section>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          <main>
+          <Header />
+          <AnimatePresence exitBeforeEnter initial={false}>
             {children}
-          </main>
+          </AnimatePresence>
         </div>
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

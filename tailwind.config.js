@@ -7,6 +7,7 @@ module.exports = {
   },
   theme: {
     fontSize: {
+      '2xs': '.45rem',
       'xs': '.65rem',
       'sm': '.875rem',
       'base': '1rem',
@@ -17,6 +18,8 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      '7xl': '8rem',
+      '8xl': '11.5rem',
     },
     extend: {
       fontFamily: {
@@ -24,10 +27,14 @@ module.exports = {
         display: ['Founders Grotesk', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
+        black: '#1D1D1D',
         prbred: '#E3502D'
       },
       maxWidth: {
         '2xs': '16rem'
+      },
+      lineHeight: {
+        'negative': '0.75',
       }
     }
   },

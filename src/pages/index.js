@@ -2,23 +2,15 @@ import React from "react"
 import SEO from "../components/seo"
 import { motion } from 'framer-motion'
 
-const duration = 0.35
+const transition = { duration: 0.35, ease: [0.43, 0.13, 0.23, 0.96] }
 
-const container = {
-  visible: {
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.2,
-      delayChildren: duration,
-    },
-  },
-}
 const item = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-  },
+	initial: { y: 20, opacity: 0 },
+	enter: { y: 0, opacity: 1, transition },
+	exit: {
+		opacity: 0,
+		transition: { transition }
+	}
 }
 
 const IndexPage = () => {
@@ -26,17 +18,19 @@ const IndexPage = () => {
     <>
       <SEO title="Home" />
       <motion.section
-        variants={container}
-        initial="hidden" 
-        animate="visible"
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        variants={{
+          enter: { transition: { staggerChildren: 0.1 } }
+        }}
       >
         <motion.div 
           className="content"
           variants={item}
-          transition="easeInOut"
           className="max-w-2xs"
         >
-          <p>The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
+          <motion.p>The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</motion.p>
         </motion.div>
       </motion.section>
     </>

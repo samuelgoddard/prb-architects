@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
     <nav className="pb-4 md:pb-6 mb-4 md:mb-6 border-b border-black">
       <ul className="flex flex-wrap">
@@ -21,13 +20,5 @@ const Header = ({ siteTitle }) => (
     </nav>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

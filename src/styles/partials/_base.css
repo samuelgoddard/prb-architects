@@ -6,6 +6,14 @@ a {
 	@apply duration-300;
 }
 
+.h-screen-inner {
+	height: calc(75vh);
+
+	@screen md {
+		height: calc(100vh - 125px);		
+	}
+}
+
 html.has-scroll-smooth {
 	overflow: hidden;
 }
@@ -27,7 +35,7 @@ html.has-scroll-dragging {
 	min-height: 100vh;
 }
 
-.c-scrollbar {
+/* .c-scrollbar {
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -50,15 +58,14 @@ html.has-scroll-dragging {
 	position: absolute;
 	top: 0;
 	right: 0;
-	background-color: black;
-	opacity: 0.5;
+	background-color: theme('colors.black');
+	opacity: 1;
 	width: 7px;
-	border-radius: 10px;
-	margin: 2px;
+	margin: 0px;
 	cursor: -webkit-grab;
 	cursor: grab;
 }
 .has-scroll-dragging .c-scrollbar_thumb {
 	cursor: -webkit-grabbing;
 	cursor: grabbing;
-}
+} */
