@@ -20,7 +20,7 @@ class Header extends React.Component {
             </li>
 
             <li className="ml-auto">
-              <Link to="/wayfinder" className="text-lg md:text-xl px-px text-black">Menu</Link>
+              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-black">Menu</Link>
             </li>
           </ul>
         </nav>
