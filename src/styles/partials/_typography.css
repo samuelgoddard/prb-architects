@@ -19,6 +19,15 @@ h2 {
 	@apply text-lg;
 }
 
+.text-screen-display {
+  @apply text-7xl;
+
+  @screen md {
+    font-size: 15vw;
+    margin-bottom: -3.5vw !important;
+  }
+}
+
 button {
   @apply outline-none border-none appearance-none;
 }

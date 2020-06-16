@@ -36,7 +36,7 @@ const GalleryIndexPage = () => {
                     <span className="absolute top-0 right-0 text-3xl md:text-5xl -mt-2 -mr-1">17</span>
                   </span>
                   <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24" viewBox="0 0 97.604 97.604"><g data-name="Group 65" fill="none" stroke="currentColor" strokeWidth="7"><path data-name="Path 1" d="M12.227 31.959h53.418v53.418"/><path data-name="Path 2" d="M65.645 31.959l-63.17 63.17"/></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 transform -rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                   </span>
                 </Link>
               </motion.li>
@@ -52,7 +52,7 @@ const GalleryIndexPage = () => {
                 <Link className="text-black text-6xl md:text-7xl font-display leading-none pt-8 md:pt-12 pb-3 md:pb-6 flex flex-wrap items-center hover:text-white" to="/">
                   <span className="block">Journal</span>
                   <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24" viewBox="0 0 97.604 97.605"><g data-name="Group 66" fill="none" stroke="currentColor" strokeWidth="7"><path data-name="Path 1" d="M65.645 12.228v53.418H12.227"/><path data-name="Path 2" d="M65.645 65.646L2.475 2.476"/></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 transform rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                   </span>
                 </Link>
               </motion.li>
@@ -64,21 +64,21 @@ const GalleryIndexPage = () => {
               <li className="text-xl xl:text-2xl py-3 px-4 hidden lg:block">&copy; 2020</li>
 
               <li className="ml-auto hidden lg:block">
-                <a className="text-xl xl:text-2xl py-3 px-4 block" href="mailto:hello@prbarchitects.com" target="_blank" rel="noopener noreferrer">hello@prbarchitects.com</a>
+                <a className="text-xl xl:text-2xl py-3 px-4 block hover:text-white" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
               </li>
 
               <li className="text-xl xl:text-2xl py-3 px-4 block border-l border-black pr-12 xl:pr-32 2xl:pr-64 hidden lg:block">Architectural Design</li>
 
               <li className="block lg:hidden ml-auto">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block" href="mailto:hello@prbarchitects.com" target="_blank" rel="noopener noreferrer">Email</a>
+                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block hover:text-white" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">Email</a>
               </li>
 
               <li className="lg:border-l lg:border-black">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block" href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block hover:text-white" href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
               </li>
 
               <li className="lg:border-l lg:border-black">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 pr-0 block" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 pr-0 block hover:text-white" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
               </li>
             </ul>
           </motion.div>
