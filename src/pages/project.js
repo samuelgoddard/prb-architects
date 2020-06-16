@@ -33,7 +33,7 @@ const ProjectPage = () => {
             </motion.div>
           </div>
           <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
-            <div className="flex flex-wrap w-full mb-auto px-4 md:px-0">
+            <motion.div variants={item} className="flex flex-wrap w-full mb-auto px-4 md:px-0">
               <div className="md:ml-auto md:text-right">
                 <div className="flex-wrap items-center mb-4 hidden md:flex">
                   <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
@@ -45,7 +45,7 @@ const ProjectPage = () => {
                 <span className="block leading-tight">Residential</span>
                 <span className="block leading-tight">&pound;3.2m</span>
               </div>
-            </div>
+            </motion.div>
 
             <div className="mt-auto w-full px-4 md:px-0">
               <div className="flex flex-wrap items-end">
