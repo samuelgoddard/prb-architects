@@ -22,18 +22,19 @@ class ProjectPage extends React.Component {
     this.timelines = {};
   }
   componentDidMount() {
-    this.timelines["overlayIn"] = gsap.from("#welcome", {
-      autoAlpha: 0,
-      paused: true
-    });
+    // this.timelines["overlayIn"] = gsap.from("#welcome", {
+    //   autoAlpha: 0,
+    //   paused: true
+    // });
     this.timelines["overlayOut"] = gsap.to("#something", {
       autoAlpha: 0,
-      scaleX: 1.2, scaleY: 1.2,
-      paused: true
+      scaleX: 0.9, scaleY: 0.9, rotationX: 25,
+      paused: true,
+      transformOrigin:'50% 50%'
     });
     const scroll = new LocomotiveScroll({
       el: document.querySelector("#scroll-container"),
-      smooth: false
+      smooth: false,
     });
     scroll.on("scroll", () => {
       const timelineEls = document.querySelectorAll("[data-scroll-timeline]");
@@ -43,7 +44,7 @@ class ProjectPage extends React.Component {
         const timeline = this.timelines[timelineKey];
         const duration = timeline.duration();
         if (progress > 0 && progress <= 1) {
-          timeline.seek(progress * (duration + 0.05));
+          timeline.seek(progress * (duration));
         } else {
           if (progress <= 0) {
             this.timelines[timelineKey].seek(0);
@@ -106,8 +107,8 @@ class ProjectPage extends React.Component {
             </div>
           </div>
           <div data-scroll-timeline="overlayOut" />
-          <div data-scroll-timeline="overlayIn" />
-          <div className="bg-black absolute top-0 left-0 right-0 bottom-0 w-full h-screen" id="welcome"></div>
+          {/* <div data-scroll-timeline="overlayIn" />
+          <div className="bg-black absolute top-0 left-0 right-0 bottom-0 w-full h-screen" id="welcome"></div> */}
         </motion.section>
         <div className="z-20 bg-white relative">
           <motion.section
