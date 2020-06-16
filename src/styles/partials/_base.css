@@ -10,7 +10,7 @@ a {
 	height: calc(75vh);
 
 	@screen md {
-		height: calc(100vh - 125px);		
+		height: calc(100vh - 103px);		
 	}
 }
 

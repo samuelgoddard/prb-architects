@@ -2,8 +2,6 @@ import React from "react"
 import SEO from "../components/seo"
 import { motion } from 'framer-motion'
 import { Link } from "gatsby"
-import gsap from "gsap";
-import LocomotiveScroll from "locomotive-scroll"
 
 const transition = { duration: 0.35, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -19,48 +17,6 @@ const item = {
 class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
-    this.timelines = {};
-  }
-  componentDidMount() {
-    // this.timelines["overlayIn"] = gsap.from("#welcome", {
-    //   autoAlpha: 0,
-    //   paused: true
-    // });
-    this.timelines["overlayOut"] = gsap.to("#something", {
-      autoAlpha: 0,
-      scaleX: 0.9, scaleY: 0.9, rotationX: 25,
-      paused: true,
-      transformOrigin:'50% 50%'
-    });
-    const scroll = new LocomotiveScroll({
-      el: document.querySelector("#scroll-container"),
-      smooth: false,
-    });
-    scroll.on("scroll", () => {
-      const timelineEls = document.querySelectorAll("[data-scroll-timeline]");
-      for (let i = 0; i < timelineEls.length; i++) {
-        const progress = this.getProgress(timelineEls[i]);
-        const timelineKey = timelineEls[i].dataset.scrollTimeline;
-        const timeline = this.timelines[timelineKey];
-        const duration = timeline.duration();
-        if (progress > 0 && progress <= 1) {
-          timeline.seek(progress * (duration));
-        } else {
-          if (progress <= 0) {
-            this.timelines[timelineKey].seek(0);
-          } else {
-            this.timelines[timelineKey].seek(duration);
-          }
-        }
-      }
-    });
-  }
-  getProgress(elem) {
-    var distance = elem.getBoundingClientRect();
-    return (
-      (window.innerHeight - distance.bottom - distance.height) /
-      window.innerHeight
-    );
   }
   render() {
     return (
@@ -70,22 +26,19 @@ class ProjectPage extends React.Component {
           initial="initial"
           animate="enter"
           exit="exit"
-          data-scroll-sticky
-          data-scroll
-          data-scroll-target="#gatsby-focus-wrapper"
           variants={{
             enter: { transition: { staggerChildren: 0.1 } }
           }}
         >          
-          <div className="flex flex-wrap md:mb-16 -mx-5 md:-mx-3 -mt-64 md:mt-0" id="something">
-            <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 mb-5 md:mb-0 md:px-3">
-              <motion.div className="w-full h-screen-inner" variants={item}>
+          <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-40 md:mt-0 pb-12" id="something">
+            <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
+              <motion.div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" variants={item} data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                 <img src="https://placedog.net/700/1200" alt="placeholder" className="w-full h-full object-cover" />
               </motion.div>
             </div>
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
               <motion.div variants={item} className="flex flex-wrap w-full mb-auto px-4 md:px-0">
-                <div className="md:ml-auto md:text-right">
+                <div className="md:ml-auto md:text-right mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <div className="flex-wrap items-center mb-4 hidden md:flex">
                     <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
                     <span className="block text-3xl md:text-4xl leading-none">19-034</span>
@@ -100,9 +53,11 @@ class ProjectPage extends React.Component {
 
               <div className="mt-auto w-full px-3 md:px-0">
                 <div className="flex flex-wrap items-end">
-                  <motion.h1 variants={item} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0">Ivy<br/>Farm</motion.h1>
-                  <motion.div variants={item} className="ml-auto order-1 lg:order-2 ">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 md:-mb-10 lg:-mb-8 xl:-mb-10" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                  <div className="w-full lg:w-auto order-2 lg:order-1" data-scroll data-scroll-speed="0.75">
+                    <motion.h1 variants={item} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Ivy<br/>Farm</motion.h1>
+                  </div>
+                  <motion.div variants={item} className="w-auto ml-auto order-1 lg:order-2" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                   </motion.div>
                 </div>
               </div>
@@ -120,9 +75,8 @@ class ProjectPage extends React.Component {
             }}
           >
             <div className="bg-black -mx-4 md:-mx-6 pt-24 pb-6 px-6">
-            <div data-scroll-timeline="overlayOut" />
               <div className="w-full flex flex-wrap md:-mx-4 items-end">
-                <motion.div data-scroll data-scroll-speed="1.5" variants={item} className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 text-white">
+                <motion.div variants={item} className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 text-white">
                   <div className="max-w-xs flex flex-wrap hidden md:flex">
                     <div className="ml-auto flex flex-wrap items-center mb-3">
                       <span className="text-2xs mt-1 mr-1">PRB</span>
@@ -134,7 +88,7 @@ class ProjectPage extends React.Component {
                   </div>
                 </motion.div>
 
-                <motion.div variants={item} className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-white pb-8 md:pb-24" data-scroll data-scroll-speed="0.5">
+                <motion.div variants={item} className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-white pb-8 md:pb-24">
                   <p className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
 
                   <ul className="border-t border-white">
@@ -169,7 +123,7 @@ class ProjectPage extends React.Component {
             }}
           >
             <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-64">
-              <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32" data-scroll data-scroll-speed="1.25">
+              <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32">
                 <figure className="mb-16 md:mb-32 lg:mb-48">
                   <img src="https://placedog.net/1200/700" alt="placeholder" className="w-full mb-2" />
                   <figcaption className="flex md:text-xl px-3 md:px-0">
@@ -182,7 +136,7 @@ class ProjectPage extends React.Component {
                   <p className="lg:text-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
                 </div>
               </div>
-              <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-64" data-scroll data-scroll-speed="2.5">
+              <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-64">
               <figure className="md:pt-32">
                 <img src="https://placedog.net/700/1200" alt="placeholder" className="w-full mb-2" />
                 <figcaption className="flex md:text-xl px-3 md:px-0">
@@ -196,7 +150,7 @@ class ProjectPage extends React.Component {
             <div className="w-full flex flex-wrap">
               <div className="w-full md:w-10/12 ml-auto">
                 <div className="flex flex-wrap md:-mx-8 mb-20 md:mb-24 lg:mb-32">
-                  <div className="w-full md:w-1/2 md:px-8" data-scroll data-scroll-speed="1.5">
+                  <div className="w-full md:w-1/2 md:px-8">
                     <figure>
                       <img src="https://placedog.net/1200/700" alt="placeholder" className="w-full mb-2" />
                       <figcaption className="flex md:text-xl px-3 md:px-0">
@@ -205,7 +159,7 @@ class ProjectPage extends React.Component {
                       </figcaption>
                     </figure>
                   </div>
-                  <div className="w-full md:w-1/2 md:px-8 hidden md:block" data-scroll data-scroll-speed="2.5">
+                  <div className="w-full md:w-1/2 md:px-8 hidden md:block">
                     <figure>
                       <img src="https://placedog.net/1200/700" alt="placeholder" className="w-full mb-2" />
                       <figcaption className="flex md:text-xl px-3 md:px-0">
@@ -216,7 +170,7 @@ class ProjectPage extends React.Component {
                   </div>
                 </div>
                 
-                <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0" data-scroll data-scroll-speed="0.5">
+                <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0">
                   <span className="block font-display text-4xl md:text-5xl lg:text-6xl leading-none mb-4">Looking to work with us on a similar project?</span>
                   <Link to="/" className="block font-display text-2xl underline">Get in touch</Link>
                 </div>
@@ -233,10 +187,10 @@ class ProjectPage extends React.Component {
               enter: { transition: { staggerChildren: 0.1 } }
             }}
           >
-            <div className="w-full flex flex-wrap" data-scroll data-scroll-speed="1.75">
+            <div className="w-full flex flex-wrap">
               <div className="w-full md:w-10/12 ml-auto">
               <div className="flex flex-wrap items-end md:-mx-3">
-                <div className="w-full md:w-auto order-2 md:order-1 md:px-3">
+                <div className="w-full md:w-auto order-2 md:order-1 md:px-3 overflow-hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 lg:w-64 ml-auto md:ml-0 transform rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                 </div>
                 <div className="w-full md:w-8/12 order-1 md:order-2 p-4 md:p-0 md:px-3 mb-8 md:mb-0">
