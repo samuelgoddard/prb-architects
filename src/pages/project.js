@@ -70,12 +70,11 @@ class ProjectPage extends React.Component {
           initial="initial"
           animate="enter"
           exit="exit"
-          className="-mx-4 md:-mx-6 relative"
           variants={{
             enter: { transition: { staggerChildren: 0.1 } }
           }}
         >          
-          <div className="flex flex-wrap md:mb-16 -mt-64 md:mt-0" id="something">
+          <div className="flex flex-wrap md:mb-16 -mx-5 md:-mx-3 -mt-64 md:mt-0" id="something">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 mb-5 md:mb-0 md:px-3">
               <motion.div className="w-full h-screen-inner" variants={item}>
                 <img src="https://placedog.net/700/1200" alt="placeholder" className="w-full h-full object-cover" />
