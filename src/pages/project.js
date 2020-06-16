@@ -30,7 +30,7 @@ class ProjectPage extends React.Component {
             enter: { transition: { staggerChildren: 0.1 } }
           }}
         >          
-          <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-40 md:mt-0 pb-12" id="something">
+          <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-0 pb-12" id="something">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
               <motion.div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" variants={item} data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                 <img src="https://placedog.net/700/1200" alt="placeholder" className="w-full h-full object-cover" />
@@ -56,7 +56,7 @@ class ProjectPage extends React.Component {
                   <div className="w-full lg:w-auto order-2 lg:order-1" data-scroll data-scroll-speed="0.75">
                     <motion.h1 variants={item} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Ivy<br/>Farm</motion.h1>
                   </div>
-                  <motion.div variants={item} className="w-auto ml-auto order-1 lg:order-2" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <motion.div variants={item} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                   </motion.div>
                 </div>
