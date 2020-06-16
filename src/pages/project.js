@@ -70,6 +70,9 @@ class ProjectPage extends React.Component {
           initial="initial"
           animate="enter"
           exit="exit"
+          data-scroll-sticky
+          data-scroll
+          data-scroll-target="#gatsby-focus-wrapper"
           variants={{
             enter: { transition: { staggerChildren: 0.1 } }
           }}
@@ -105,9 +108,6 @@ class ProjectPage extends React.Component {
               </div>
             </div>
           </div>
-          <div data-scroll-timeline="overlayOut" />
-          {/* <div data-scroll-timeline="overlayIn" />
-          <div className="bg-black absolute top-0 left-0 right-0 bottom-0 w-full h-screen" id="welcome"></div> */}
         </motion.section>
         <div className="z-20 bg-white relative">
           <motion.section
@@ -120,6 +120,7 @@ class ProjectPage extends React.Component {
             }}
           >
             <div className="bg-black -mx-4 md:-mx-6 pt-24 pb-6 px-6">
+            <div data-scroll-timeline="overlayOut" />
               <div className="w-full flex flex-wrap md:-mx-4 items-end">
                 <motion.div data-scroll data-scroll-speed="1.5" variants={item} className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 text-white">
                   <div className="max-w-xs flex flex-wrap hidden md:flex">
