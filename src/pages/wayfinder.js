@@ -36,7 +36,7 @@ const GalleryIndexPage = () => {
                     <span className="absolute top-0 right-0 text-3xl md:text-5xl -mt-2 -mr-1">17</span>
                   </span>
                   <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 transform -rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 transform -rotate-45 -mr-1 md:-mr-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                   </span>
                 </Link>
               </motion.li>
@@ -52,7 +52,7 @@ const GalleryIndexPage = () => {
                 <Link className="text-black text-6xl md:text-7xl font-display leading-none pt-8 md:pt-12 pb-3 md:pb-6 flex flex-wrap items-center hover:text-white" to="/">
                   <span className="block">Journal</span>
                   <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 transform rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 transform rotate-45 -mr-1 md:-mr-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                   </span>
                 </Link>
               </motion.li>
