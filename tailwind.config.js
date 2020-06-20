@@ -35,8 +35,8 @@ module.exports = {
         display: ['Founders Grotesk', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        black: '#1D1D1D',
-        prbred: '#E3502D'
+        black: '#000000',
+        prbred: '#F54115'
       },
       maxWidth: {
         '2xs': '16rem'

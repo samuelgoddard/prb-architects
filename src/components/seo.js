@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
 
-  const { site, file } = useStaticQuery(
+  const { site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -15,16 +15,13 @@ function SEO({ description, lang, meta, title }) {
             author
           }
         }
-        file(relativePath: { eq: "gatsby-astronaut.png" }) {
-          publicURL
-        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
 
-  const ogImage = file.publicURL
+  // const ogImage = file.publicURL
 
   return (
     <Helmet

@@ -74,11 +74,11 @@ const GalleryIndexPage = () => {
               </li>
 
               <li className="lg:border-l lg:border-black">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block hover:text-white" href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Twitter</a>
               </li>
 
               <li className="lg:border-l lg:border-black">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 pr-0 block hover:text-white" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 pr-0 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Instagram</a>
               </li>
             </ul>
           </motion.div>

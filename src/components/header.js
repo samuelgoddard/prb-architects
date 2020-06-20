@@ -2,10 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <header>

@@ -13,7 +13,7 @@ const Layout = ({ children, location }) => {
 
       <Link 
         className={ 
-          location.pathname != '/project'
+          location.pathname !== '/project'
           ? 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out'
           : 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100'
         }
@@ -23,7 +23,7 @@ const Layout = ({ children, location }) => {
       </Link>
 
       <div id="scroll-container" className={ 
-        location.pathname == '/gallery-index' || location.pathname == '/wayfinder'
+        location.pathname === '/gallery-index' || location.pathname === '/wayfinder'
         ? 'p-4 md:p-6 bg-prbred min-h-screen transition duration-500 ease-in-out'
         : 'p-4 md:p-6 min-h-screen transition duration-500 ease-in-out'
       }>
