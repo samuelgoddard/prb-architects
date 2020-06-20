@@ -36,7 +36,7 @@ module.exports = {
       },
       colors: {
         black: '#000000',
-        prbred: '#e2481e'
+        prbred: '#dc481e'
       },
       maxWidth: {
         '2xs': '16rem'
