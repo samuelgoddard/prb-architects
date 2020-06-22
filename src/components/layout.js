@@ -51,17 +51,17 @@ const Layout = ({ children, location }) => {
         {children}
       </AnimatePresence> */}
 
-      <AnimatePresence exitBeforeEnter initial={false}>
+      {/* <AnimatePresence exitBeforeEnter initial={false}>
         <motion.main
           key={location.pathname}
           variants={variants}
           initial="initial"
           animate="enter"
           exit="exit"
-        >
+        > */}
           {children}
-        </motion.main>
-      </AnimatePresence>
+        {/* </motion.main>
+      </AnimatePresence> */}
       </SmoothScroll>
     </>
   )
