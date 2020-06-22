@@ -61,6 +61,7 @@ const GalleryIndexPage = () => {
             <div className="mt-auto h-px w-full border-b border-black"></div>
           </motion.header>
         </motion.div>
+        
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-16 md:pt-20">
           <motion.div
             initial="initial"

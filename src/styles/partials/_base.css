@@ -27,6 +27,10 @@ a {
 	}
 }
 
+.image-transform-center {
+	transform-origin: center center;
+}
+
 html.has-scroll-smooth {
 	overflow: hidden;
 }

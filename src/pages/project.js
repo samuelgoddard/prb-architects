@@ -4,23 +4,32 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-
 const header = {
 	initial: { opacity: 1 },
-	enter: { opacity: 1, transition },
+	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
 	exit: {
 		opacity: 1,
-		transition: { duration: 0.5, ...transition }
+		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+	}
+}
+
+const image = {
+	initial: { scale: 1 },
+	enter: { 
+    scale: 1.45,
+    transition: { duration: 2.5, ease: [0.43, 0.13, 0.23, 0.96] }
+  },
+	exit: {
+		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 	}
 }
 
 const fade = {
 	initial: { opacity: 0 },
-	enter: { opacity: 1, transition },
+	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.5, ...transition }
+		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 	}
 }
 
@@ -28,11 +37,10 @@ const ProjectPage = ({ data: { testImage, testImage2 }}) => {
   return (
     <>
       <SEO title="Home" /> 
-      <motion.section
+      <motion.div
         initial="initial"
         animate="enter"
         exit="exit"
-        data-scroll-section
       >
 
         <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-50 flex flex-wrap bg-white" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
@@ -51,13 +59,22 @@ const ProjectPage = ({ data: { testImage, testImage2 }}) => {
           </nav>
           <div className="mt-auto h-px w-full border-b border-black"></div>
         </motion.header>
+      </motion.div>
 
-        <motion.div variants={fade} className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-20">
+      <motion.div
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        variants={fade}
+      >
+        <div className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-20">
           <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8 pb-12" id="something">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-              <motion.div variants={fade} className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
-                <Img fluid={ testImage2.childImageSharp.fluid } className="w-full h-full object-cover"/>
-              </motion.div>
+              <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
+                <motion.div variants={image} className="h-full w-full transform image-transform-center">
+                  <Img fluid={ testImage2.childImageSharp.fluid } className="w-full h-full object-cover"/>
+                </motion.div>
+              </div>
             </div>
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
               <motion.div variants={fade} className="flex flex-wrap w-full mb-auto px-4 md:px-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby" >
@@ -239,8 +256,8 @@ const ProjectPage = ({ data: { testImage, testImage2 }}) => {
               </div>
             </section>
           </div>
-        </motion.div>
-      </motion.section>
+        </div>
+      </motion.div>
     </>
   )
 }
