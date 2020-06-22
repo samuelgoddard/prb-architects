@@ -8,8 +8,9 @@ const item = {
 	initial: { y: 20, opacity: 0 },
 	enter: { y: 0, opacity: 1, transition },
 	exit: {
+    y: 20,
 		opacity: 0,
-		transition: { transition }
+		transition: { duration: 0.5, ...transition }
 	}
 }
 
@@ -22,7 +23,7 @@ const IndexPage = () => {
         animate="enter"
         exit="exit"
         variants={{
-          enter: { transition: { staggerChildren: 0.1 } }
+          exit: { transition: { staggerChildren: 0.1 } }
         }}
       >
         <motion.div 
@@ -30,7 +31,7 @@ const IndexPage = () => {
           variants={item}
           className="max-w-2xs"
         >
-          <motion.p>The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</motion.p>
+          <p>The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
         </motion.div>
       </motion.section>
     </>

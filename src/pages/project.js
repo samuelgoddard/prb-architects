@@ -9,7 +9,11 @@ const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 const item = {
 	initial: { y: 20, opacity: 0 },
 	enter: { y: 0, opacity: 1, transition },
-	exit: { y: 20, opacity: 1, transition },
+	exit: {
+    y: 20,
+		opacity: 0,
+		transition: { duration: 0.5, ...transition }
+	}
 }
 
 const ProjectPage = ({ data: { testImage, testImage2 }}) => {
@@ -21,8 +25,7 @@ const ProjectPage = ({ data: { testImage, testImage2 }}) => {
         animate="enter"
         exit="exit"
         variants={{
-          enter: { transition: { staggerChildren: 0.1 }},
-          exit: { transition: { staggerChildren: 0.1 }}
+          enter: { transition: { staggerChildren: 0.1 }}
         }}
       >
         <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-0 pb-12" id="something">

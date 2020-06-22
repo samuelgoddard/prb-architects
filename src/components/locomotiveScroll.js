@@ -12,7 +12,9 @@ const Scroll = callbacks => {
       el: document.querySelector(scroll.container),
       ...scroll.options,
     })
-    locomotiveScroll.update();
+    setTimeout(()=>{
+      locomotiveScroll.update();
+     }, 500)
 
     // Exposing to the global scope for ease of use.
     window.scroll = locomotiveScroll
