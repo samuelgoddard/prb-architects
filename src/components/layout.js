@@ -11,11 +11,12 @@ const Layout = ({ children, location }) => {
     <>
       <Scroll callbacks={location} />
 
+{ JSON.stringify(location) }
       <Link 
         className={ 
-          location.pathname !== '/project'
-          ? 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out'
-          : 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100'
+          location.pathname === '/project' || location.pathname === '/wayfinder'
+          ? 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100'
+          : 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out'
         }
         to="/"
       >
@@ -31,7 +32,7 @@ const Layout = ({ children, location }) => {
         <Header />
         <div data-scroll-section>
           <div className="z-10 relative">
-            <AnimatePresence exitBeforeEnter initial={false}>
+            <AnimatePresence exitBeforeEnter>
               {children}
             </AnimatePresence>
           </div>

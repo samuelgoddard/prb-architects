@@ -59,27 +59,31 @@ const GalleryIndexPage = () => {
             </ul>
           </nav>
 
-          <motion.div variants={item}className="lg:border-t lg:border-black lg:border-b mt-auto w-10/12 ml-auto">
-            <ul className="flex flex-wrap">
-              <li className="text-xl xl:text-2xl py-3 px-4 hidden lg:block">&copy; 2020</li>
+          <motion.div variants={item}className="w-full md:w-10/12 ml-auto mt-auto">
 
-              <li className="ml-auto hidden lg:block">
-                <a className="text-xl xl:text-2xl py-3 px-4 block hover:text-white" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
+            <Link className="pt-4 pt-4 pb-4 w-24 transition duration-500 ease-in-out block md:hidden" to="/">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-full block" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
+            </Link>
+            
+            <ul className="flex flex-wrap border-t border-black border-b">
+              <li className="md:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block">&copy; 2020</li>
+
+              <li className="ml-auto block border-l border-black">
+                <a className="md:text-lg xl:text-2xl py-2 md:py-3 px-2 block hover:text-white" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
               </li>
 
-              <li className="text-xl xl:text-2xl py-3 px-4 block border-l border-black pr-12 xl:pr-32 2xl:pr-64 hidden lg:block">Architectural Design</li>
+              <li className="md:text-lg xl:text-2xl py-2 md:py-3 px-2 block border-l border-black pr-12 xl:pr-32 2xl:pr-64 hidden lg:block">Architecture + Restoration</li>
 
-              <li className="block lg:hidden ml-auto">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block hover:text-white" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">Email</a>
+              <li className="border-l border-black">
+                <a className="md:text-lg md:text-lg xl:text-2xl py-2 md:py-3 px-2 xl:px-4 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline">tter</span></a>
               </li>
 
-              <li className="lg:border-l lg:border-black">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <li className="border-l border-black">
+                <a className="md:text-lg md:text-lg xl:text-2xl py-2 md:py-3 px-2 xl:px-4 pr-0 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline">gram</span></a>
               </li>
-
-              <li className="lg:border-l lg:border-black">
-                <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 pr-0 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-              </li>
+            </ul>
+            <ul className="flex flex-wrap border-b border-black md:hidden">
+              <li className="md:text-lg py-2 block pr-12 block">Architecture + Restoration</li>
             </ul>
           </motion.div>
         </div>
