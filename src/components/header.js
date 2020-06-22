@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 class Header extends React.Component {
   render() {
     return (
-      <header data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
-        <nav className="pb-4 md:pb-6 mb-4 md:mb-6 border-b border-black relative z-10">
+      <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-20 flex flex-wrap">
+        <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <li>
               <Link className="text-lg md:text-xl pr-px opacity-25" activeClassName="opacity-100 line-through" to="/">Gallery</Link>
@@ -20,6 +20,7 @@ class Header extends React.Component {
             </li>
           </ul>
         </nav>
+        <div className="mt-auto h-px w-full border-b border-black"></div>
       </header>
     )
   }

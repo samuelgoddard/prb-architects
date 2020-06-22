@@ -41,6 +41,9 @@ module.exports = {
       maxWidth: {
         '2xs': '16rem'
       },
+      spacing: {
+        '30': '7rem',
+      },
       lineHeight: {
         'negative': '0.75',
       }
