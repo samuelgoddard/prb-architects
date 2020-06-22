@@ -5,16 +5,6 @@ import { Link } from "gatsby"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
-const item = {
-	initial: { y: 15, opacity: 0 },
-	enter: { y: 0, opacity: 1, transition },
-	exit: {
-    y: 15,
-		opacity: 0,
-		transition: { duration: 0.5, ...transition }
-	}
-}
-
 const fade = {
 	initial: { opacity: 0 },
 	enter: { opacity: 1, transition },
@@ -41,6 +31,7 @@ const IndexPage = () => {
           initial="initial"
           animate="enter"
           exit="exit"
+          data-scroll-section
         >
           <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
@@ -64,7 +55,7 @@ const IndexPage = () => {
           <motion.div variants={fade} className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-20">
             <motion.div 
               className="content"
-              variants={item}
+              variants={fade}
               className="max-w-2xs mt-4 md:mt-6"
             >
               <p>The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
