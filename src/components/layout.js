@@ -23,7 +23,7 @@ const Layout = ({ children, location }) => {
         <Scroll callback={location} />
         
         <div id="scroll-container" data-scroll-container>
-          <div className={location.pathname === "/gallery-index" || location.pathname === "/wayfinder" ? `bg-prbred p-4 md:p-6 transition ease-in-out duration-300 min-h-screen` : `bg-white p-4 md:p-6 transition ease-in-out duration-300 min-h-screen`}>
+          <div className={location.pathname === "/gallery-index" || location.pathname === "/wayfinder" ? `bg-prbred p-4 md:p-6 transition ease-in-out duration-500 min-h-screen` : `bg-white p-4 md:p-6 transition ease-in-out duration-500 min-h-screen`}>
             <Header />
 
             {children}
