@@ -1,40 +1,21 @@
 import React from "react"
 import SEO from "../components/seo"
-import { motion } from 'framer-motion'
 import { Link } from "gatsby"
-
-const transition = { duration: 0.35, ease: [0.43, 0.13, 0.23, 0.96] }
-
-const item = {
-	initial: { y: 20, opacity: 0 },
-	enter: { y: 0, opacity: 1, transition },
-	exit: {
-		opacity: 0,
-		transition: { transition }
-	}
-}
 
 class ProjectPage extends React.Component {
   render() {
     return (
       <>
         <SEO title="Home" /> 
-        <motion.section
-          initial="initial"
-          animate="enter"
-          exit="exit"
-          variants={{
-            enter: { transition: { staggerChildren: 0.1 } }
-          }}
-        >          
+        <section>
           <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-0 pb-12" id="something">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-              <motion.div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" variants={item} data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+              <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                 <img src="https://placedog.net/700/1200" alt="placeholder" className="w-full h-full object-cover" />
-              </motion.div>
+              </div>
             </div>
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
-              <motion.div variants={item} className="flex flex-wrap w-full mb-auto px-4 md:px-0">
+              <div className="flex flex-wrap w-full mb-auto px-4 md:px-0">
                 <div className="md:ml-auto md:text-right mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <div className="flex-wrap items-center mb-4 hidden md:flex">
                     <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
@@ -46,34 +27,26 @@ class ProjectPage extends React.Component {
                   <span className="block leading-tight">Residential</span>
                   <span className="block leading-tight">&pound;3.2m</span>
                 </div>
-              </motion.div>
+              </div>
 
               <div className="mt-auto w-full px-3 md:px-0">
                 <div className="flex flex-wrap items-end">
                   <div className="w-full lg:w-auto order-2 lg:order-1" data-scroll data-scroll-speed="0.75">
-                    <motion.h1 variants={item} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Ivy<br/>Farm</motion.h1>
+                    <h1 className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Ivy<br/>Farm</h1>
                   </div>
-                  <motion.div variants={item} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <div className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
         <div className="z-20 bg-white relative">
-          <motion.section
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="mb-0 md:mb-20 lg:mb-32"
-            variants={{
-              enter: { transition: { staggerChildren: 0.1 } }
-            }}
-          >
+          <section className="mb-0 md:mb-20 lg:mb-32">
             <div className="bg-black -mx-4 md:-mx-6 pt-24 pb-6 px-6">
               <div className="w-full flex flex-wrap md:-mx-4 items-end">
-                <motion.div variants={item} className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 text-white">
+                <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 text-white">
                   <div className="max-w-xs flex flex-wrap hidden md:flex">
                     <div className="ml-auto flex flex-wrap items-center mb-3">
                       <span className="text-2xs mt-1 mr-1">PRB</span>
@@ -83,9 +56,9 @@ class ProjectPage extends React.Component {
                       <img src="https://placedog.net/700/700" alt="placeholder" className="w-full" />
                     </div>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div variants={item} className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-white pb-8 md:pb-24">
+                <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-white pb-8 md:pb-24">
                   <p className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
 
                   <ul className="border-t border-white">
@@ -105,20 +78,12 @@ class ProjectPage extends React.Component {
                       <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span>
                     </li>
                   </ul>
-                </motion.div>
+                </div>
               </div>
             </div>
-          </motion.section>
+          </section>
 
-          <motion.section
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="-mx-4 md:mx-0"
-            variants={{
-              enter: { transition: { staggerChildren: 0.1 } }
-            }}
-          >
+          <section className="-mx-4 md:mx-0">
             <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-64">
               <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32">
                 <figure className="mb-16 md:mb-32 lg:mb-48">
@@ -173,17 +138,9 @@ class ProjectPage extends React.Component {
                 </div>
               </div>
             </div>
-          </motion.section>
+          </section>
           
-          <motion.section
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="-mx-4 md:-mx-6 -mb-4 md:-mb-8 bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8"
-            variants={{
-              enter: { transition: { staggerChildren: 0.1 } }
-            }}
-          >
+          <section className="-mx-4 md:-mx-6 -mb-4 md:-mb-8 bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8">
             <div className="w-full flex flex-wrap">
               <div className="w-full md:w-10/12 ml-auto">
               <div className="flex flex-wrap items-end md:-mx-3">
@@ -212,7 +169,7 @@ class ProjectPage extends React.Component {
               </div>
             </div>
             
-            <motion.div variants={item} className="lg:border-t lg:border-black lg:border-b w-10/12 ml-auto mr-4 md:mr-6 mt-12 md:mt-24 lg:mt-32">
+            <div className="lg:border-t lg:border-black lg:border-b w-10/12 ml-auto mr-4 md:mr-6 mt-12 md:mt-24 lg:mt-32 mb-12">
               <ul className="flex flex-wrap">
                 <li className="text-xl xl:text-2xl py-3 px-4 hidden lg:block">&copy; 2020</li>
 
@@ -234,8 +191,8 @@ class ProjectPage extends React.Component {
                   <a className="text-lg lg:text-xl xl:text-2xl lg:py-3 px-2 xl:px-4 pr-0 block hover:text-white" href="https://example.com" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </li>
               </ul>
-            </motion.div>
-          </motion.section>
+            </div>
+          </section>
         </div>
       </>
     )
