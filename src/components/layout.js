@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { motion, AnimatePresence } from "framer-motion"
-import Scroll from "./locomotiveScroll"
 import SmoothScroll from "./SmoothScroll";
 import Header from "./header"
 import "../styles/main.css"
