@@ -16,8 +16,8 @@ const header = {
 const image = {
 	initial: { scale: 1 },
 	enter: { 
-    scale: 1.45,
-    transition: { duration: 2.5, ease: [0.43, 0.13, 0.23, 0.96] }
+    scale: 1.15,
+    transition: { duration: 2, ease: [0.43, 0.13, 0.23, 0.96] }
   },
 	exit: {
 		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
@@ -33,7 +33,7 @@ const fade = {
 	}
 }
 
-const ProjectPage = ({ data: { testImage, testImage2 }}) => {
+const ProjectPage = ({ data: { testImage, testImage2, heroImage }}) => {
   return (
     <>
       <SEO title="Home" /> 
@@ -72,7 +72,7 @@ const ProjectPage = ({ data: { testImage, testImage2 }}) => {
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
               <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
                 <motion.div variants={image} className="h-full w-full transform image-transform-center">
-                  <Img fluid={ testImage2.childImageSharp.fluid } className="w-full h-full object-cover"/>
+                  <Img fluid={ heroImage.childImageSharp.fluid } className="w-full h-full object-cover"/>
                 </motion.div>
               </div>
             </div>
@@ -266,6 +266,13 @@ export default ProjectPage
 
 export const query = graphql`
   query CareersPageQuery {
+    heroImage: file(relativePath: { eq: "ivy-farm.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     testImage: file(relativePath: { eq: "test.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
