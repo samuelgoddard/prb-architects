@@ -1,7 +1,7 @@
 export const scroll = {
     // Locomotive Scroll
     // https://github.com/locomotivemtl/locomotive-scroll#instance-options
-    container: "#___gatsby",
+    container: "#scroll-container",
     options: {
       smooth: true,
       smoothMobile: false,

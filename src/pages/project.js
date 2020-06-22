@@ -1,21 +1,40 @@
 import React from "react"
 import SEO from "../components/seo"
+import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+
+const transition = { duration: 0.35, ease: [0.43, 0.13, 0.23, 0.96] }
+
+const item = {
+	initial: { y: 20, opacity: 0 },
+	enter: { y: 0, opacity: 1, transition },
+	exit: {
+		opacity: 0,
+		transition: { transition }
+	}
+}
 
 const ProjectPage = ({ data: { testImage, testImage2 }}) => {
   return (
     <>
       <SEO title="Home" /> 
-      <section>
+      <motion.section
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        variants={{
+          enter: { transition: { staggerChildren: 0.1 } }
+        }}
+      >
         <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-0 pb-12" id="something">
           <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-            <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
+            <motion.div variants={item} className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
               <Img fluid={ testImage2.childImageSharp.fluid } className="w-full h-full object-cover"/>
-            </div>
+            </motion.div>
           </div>
           <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
-            <div className="flex flex-wrap w-full mb-auto px-4 md:px-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
+            <motion.div variants={item} className="flex flex-wrap w-full mb-auto px-4 md:px-0" data-scroll data-scroll-sticky data-scroll-target="#___gatsby" >
               <div className="md:ml-auto md:text-right mb-8 md:mb-0" >
                 <div className="flex-wrap items-center mb-4 hidden md:flex">
                   <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
@@ -27,21 +46,21 @@ const ProjectPage = ({ data: { testImage, testImage2 }}) => {
                 <span className="block leading-tight">Residential</span>
                 <span className="block leading-tight">&pound;3.2m</span>
               </div>
-            </div>
+            </motion.div>
 
             <div className="mt-auto w-full px-3 md:px-0">
               <div className="flex flex-wrap items-end">
                 <div className="w-full lg:w-auto order-2 lg:order-1">
-                  <h1 className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Ivy<br/>Farm</h1>
+                  <motion.h1 variants={item} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Ivy<br/>Farm</motion.h1>
                 </div>
-                <div className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <motion.div variants={item} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       <div className="z-20 bg-white relative">
         <section className="mb-0 md:mb-20 lg:mb-32">
           <div className="bg-black -mx-4 md:-mx-6 pt-24 pb-6 px-6">
