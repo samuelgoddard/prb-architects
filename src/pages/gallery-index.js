@@ -6,10 +6,10 @@ import { motion } from 'framer-motion'
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
 const item = {
-	initial: { y: 20, opacity: 0 },
+	initial: { y: 15, opacity: 0 },
 	enter: { y: 0, opacity: 1, transition },
 	exit: {
-    y: 20,
+    y: 15,
 		opacity: 0,
 		transition: { duration: 0.5, ...transition }
 	}
