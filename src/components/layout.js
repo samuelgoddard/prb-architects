@@ -11,7 +11,7 @@ const Layout = ({ children, location }) => {
     <>
       <Scroll callbacks={location} />
 
-{ JSON.stringify(location) }
+{ JSON.stringify(location.pathname) }
       <Link 
         className={ 
           location.pathname === '/project' || location.pathname === '/project/' || location.pathname === '/wayfinder' || location.pathname === '/wayfinder/'
