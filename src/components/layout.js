@@ -7,14 +7,16 @@ import Header from "./header"
 import "../styles/main.css"
 
 const Layout = ({ children, location }) => {
+
+  const locationClean = location.pathname.replace(/\//g, "");
+  // This trims all the "/"'s and returns eg: "wayfinder"
   return (
     <>
       <Scroll callbacks={location} />
 
-{ JSON.stringify(location.pathname) }
       <Link 
         className={ 
-          location.pathname === '/project' || location.pathname === '/project/' || location.pathname === '/wayfinder' || location.pathname === '/wayfinder/'
+          locationClean == "wayfinder"
           ? 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100'
           : 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-20 w-32 md:w-40 transition duration-500 ease-in-out'
         }
