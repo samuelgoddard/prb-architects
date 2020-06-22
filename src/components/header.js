@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 class Header extends React.Component {
   render() {
     return (
-      <header>
+      <header data-scroll data-scroll-sticky data-scroll-target="#___gatsby">
         <nav className="pb-4 md:pb-6 mb-4 md:mb-6 border-b border-black relative z-10">
           <ul className="flex flex-wrap">
             <li>

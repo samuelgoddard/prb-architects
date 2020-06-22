@@ -23,8 +23,9 @@ const Scroll = callbacks => {
     })
 
     return () => {
-      locomotiveScroll.destroy();
-    }
+      if (locomotiveScroll) 
+        locomotiveScroll.destroy()
+      }
   }, [callbacks])
 
   return null

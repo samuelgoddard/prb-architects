@@ -1,15 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	overscroll-behavior: none;
 }
-
-.viewport {
-	margin: 0 0 0 0;
-	width: 100vw !important;;
-	overflow: hidden !important;
-	position: fixed !important;
-} 
 
 a {
 	@apply transition duration-300;
