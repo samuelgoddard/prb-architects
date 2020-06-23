@@ -41,30 +41,30 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
       
       <Scroll callback={location} />
       
-      <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+      <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/studio">Studio</Link>
+              <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/studio">Studio</Link>
             </motion.li>
-            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Expertise</Link>
+              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Expertise</Link>
             </motion.li>
-            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Team</Link>
+              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Team</Link>
             </motion.li>
-            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Services</Link>
+              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Services</Link>
             </motion.li>
-            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Contact</Link>
+              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Contact</Link>
             </motion.li>
             <li className="ml-auto">
-              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-white transition ease-in-out duration-500">Menu</Link>
+              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500">Menu</Link>
             </li>
           </ul>
         </nav>
@@ -77,9 +77,9 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
         exit="exit"
         variants={fade}
       >
-        <motion.div variants={fade} className="h-16 md:h-20 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#scroll-container"></motion.div>
+        <motion.div variants={fade} className="h-16 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#scroll-container"></motion.div>
 
-        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 min-h-screen pt-16 md:pt-20 text-white min-h-screen">
+        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 min-h-screen pt-16 md:pt-22 text-white min-h-screen">
           <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
             <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
               <div className="w-full px-3 md:px-0 mt-12">

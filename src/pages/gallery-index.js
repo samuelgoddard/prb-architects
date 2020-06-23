@@ -44,19 +44,19 @@ const GalleryIndexPage = (location) => {
           animate="enter"
           exit="exit"
         >
-          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-20 flex flex-wrap">
+          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <motion.li variants={fade}>
-                  <Link className="text-lg md:text-xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Gallery</Link>
+                  <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Gallery</Link>
                 </motion.li>
-                <motion.li variants={fade} className="text-xl px-1 opacity-25">/</motion.li>
+                <motion.li variants={fade} className="text-xl md:text-2xl px-1 opacity-25">/</motion.li>
                 <motion.li variants={fade}>
-                  <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/gallery-index">Index</Link>
+                  <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/gallery-index">Index</Link>
                 </motion.li>
 
                 <li className="ml-auto">
-                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-black">Menu</Link>
+                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black">Menu</Link>
                 </li>
               </ul>
             </nav>
@@ -64,7 +64,7 @@ const GalleryIndexPage = (location) => {
           </motion.header>
         </motion.div>
 
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-16 md:pt-20">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-16 md:pt-22">
           <motion.div
             initial="initial"
             animate="enter"
@@ -84,7 +84,10 @@ const GalleryIndexPage = (location) => {
                     variants={item}
                   >
                     <Link to="/project" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
-                      <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">PRB001</span>
+                      <span className="flex flex-wrap mr-6 md:mr-8 text-xs md:text-sm leading-none items-center">
+                        <span className="block text-2xs pt-px mr-1">PRB</span>
+                        <span className="block leading-none">19—021</span>
+                      </span>
                       <span className="block text-lg md:text-3xl font-display leading-none mt-2">Keyworth</span>
                       <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                     </Link>
@@ -104,9 +107,12 @@ const GalleryIndexPage = (location) => {
                   
                   >
                     <Link to="/project" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
-                      <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">PRB001</span>
+                      <span className="flex flex-wrap mr-6 md:mr-8 text-xs md:text-sm leading-none items-center">
+                        <span className="block text-2xs pt-px mr-1">PRB</span>
+                        <span className="block leading-none">19—021</span>
+                      </span>
                       <span className="block text-lg md:text-3xl font-display leading-none mt-2">Keyworth</span>
-                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="17.938" height="17.937" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                     </Link>
                   </motion.li>
                 )
@@ -124,9 +130,12 @@ const GalleryIndexPage = (location) => {
                   
                   >
                     <Link to="/project" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
-                      <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">PRB001</span>
+                      <span className="flex flex-wrap mr-6 md:mr-8 text-xs md:text-sm leading-none items-center">
+                        <span className="block text-2xs pt-px mr-1">PRB</span>
+                        <span className="block leading-none">19—021</span>
+                      </span>
                       <span className="block text-lg md:text-3xl font-display leading-none mt-2">Keyworth</span>
-                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="17.938" height="17.937" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                     </Link>
                   </motion.li>
                 )

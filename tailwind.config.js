@@ -24,7 +24,7 @@ module.exports = {
       '3xl': '1.875rem',
       '4xl': '2.25rem',
       '5xl': '3rem',
-      '6xl': '4rem',
+      '6xl': '3.4375rem',
       '7xl': '6.5rem',
       '8xl': '8rem',
       '9xl': '11.5rem',
@@ -43,6 +43,7 @@ module.exports = {
         '2xs': '16rem'
       },
       spacing: {
+        '22': '5.25rem',
         '30': '7rem',
         '128': '24rem'
       },

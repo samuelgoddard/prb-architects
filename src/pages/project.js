@@ -47,17 +47,17 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
         exit="exit"
       >
 
-        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
           <nav className="relative z-10 w-full">
             <ul className="flex flex-wrap">
               <motion.li variants={fade} className="block">
-                <Link className="text-lg md:text-xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center" to="/">
+                <Link className="text-lg md:text-2xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center" to="/">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
                   <span className="block ml-3">Ivy Farm</span>
                 </Link>
               </motion.li>
               <li className="ml-auto">
-                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-black">Menu</Link>
+                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black">Menu</Link>
               </li>
             </ul>
           </nav>
@@ -71,7 +71,7 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
         exit="exit"
         variants={fade}
       >
-        <div className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-20">
+        <div className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-22">
           <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8 pb-12" id="something">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
               <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
@@ -125,7 +125,7 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                   </div>
 
                   <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-white pb-8 md:pb-24">
-                    <p className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                    <p className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16 leading-snug">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
 
                     <ul className="border-t border-white">
                       <li className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
@@ -156,12 +156,12 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                     <Img fluid={ testImage.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
                     <figcaption className="flex md:text-xl px-3 md:px-0">
                       <span className="block">Exterior</span>
-                      <span className="block ml-auto">(1-5)</span>
+                      <span className="block ml-auto">(1—5)</span>
                     </figcaption>
                   </figure>
 
                   <div className="max-w-md ml-auto md:mr-32 lg:mr-40 p-4 md:p-0">
-                    <p className="lg:text-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                    <p className="lg:text-lg leading-snug">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
                   </div>
                 </div>
                 <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-64">
@@ -169,7 +169,7 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                   <Img fluid={ testImage2.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
                   <figcaption className="flex md:text-xl px-3 md:px-0">
                     <span className="block">Interior</span>
-                    <span className="block ml-auto">(2-5)</span>
+                    <span className="block ml-auto">(2—5)</span>
                   </figcaption>
                 </figure>
                 </div>
@@ -183,7 +183,7 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                         <Img fluid={ testImage.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
                         <figcaption className="flex md:text-xl px-3 md:px-0">
                           <span className="block">Location</span>
-                          <span className="block ml-auto">(3-5)</span>
+                          <span className="block ml-auto">(3—5)</span>
                         </figcaption>
                       </figure>
                     </div>
@@ -192,14 +192,14 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                         <Img fluid={ testImage.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
                         <figcaption className="flex md:text-xl px-3 md:px-0">
                           <span className="block">Exterior</span>
-                          <span className="block ml-auto">(4-5)</span>
+                          <span className="block ml-auto">(4—5)</span>
                         </figcaption>
                       </figure>
                     </div>
                   </div>
                   
                   <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0">
-                    <span className="block font-display text-4xl md:text-5xl lg:text-6xl leading-none mb-4">Looking to work with us on a similar project?</span>
+                    <span className="block font-display text-4xl md:text-6xl leading-none mb-4">Looking to work with us on a similar project?</span>
                     <Link to="/" className="block font-display text-2xl underline">Get in touch</Link>
                   </div>
                 </div>
