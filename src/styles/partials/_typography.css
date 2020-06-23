@@ -77,3 +77,11 @@ button {
 .text-orient-down {
   writing-mode: vertical-rl;
 }
+
+.content-indented {
+  > p {
+    &:before {
+      content: "\a0\a0\a0\a0\a0\a0\a0\a0\a0"
+    }
+  }
+}

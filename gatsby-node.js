@@ -1,20 +1,20 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const createWork = require(`./gatsby/createWork`)
+
+exports.createPages = async ({ actions, graphql }) => {
+  await createWork({ actions, graphql })  
+}
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-    if (stage === "build-html" || stage === "develop-html") {
-      actions.setWebpackConfig({
-        module: {
-          rules: [
-            {
-              test: /locomotive-scroll/,
-              use: loaders.null(),
-            },
-          ],
-        },
-      })
-    }
+  if (stage === "build-html" || stage === "develop-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /locomotive-scroll/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
   }
+}

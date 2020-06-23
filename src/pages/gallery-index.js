@@ -34,7 +34,7 @@ const header = {
 	}
 }
 
-const GalleryIndexPage = (location) => {
+const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
   return (
     <>
     <Scroll callback={location} />
@@ -69,79 +69,42 @@ const GalleryIndexPage = (location) => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="w-full md:w-10/12 ml-auto mt-4 md:mt-8"
+            className="w-full md:w-10/12 ml-auto mt-8 md:mt-16"
             variants={{
               enter: { transition: { staggerChildren: 0.1 } }
             }}
           >
-          <nav className="pb-12 pt-12">
-            <motion.span variants={fade} className="block uppercase pb-4">Residential</motion.span>
-            <ul>
-              {[...Array(6)].map((e, i) => {
-                return (
-                  <motion.li
-                    key={i}
-                    variants={item}
-                  >
-                    <Link to="/project" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
-                      <span className="flex flex-wrap mr-6 md:mr-8 text-xs md:text-sm leading-none items-center">
-                        <span className="block text-2xs pt-px mr-1">PRB</span>
-                        <span className="block leading-none">19—021</span>
-                      </span>
-                      <span className="block text-lg md:text-3xl font-display leading-none mt-2">Keyworth</span>
-                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
-                    </Link>
-                  </motion.li>
-                )
-              })}
-            </ul>
-          </nav>
-          <nav className="pb-12">
-            <motion.span variants={item} className="block uppercase pb-4">Commercial</motion.span>
-            <ul>
-              {[...Array(2)].map((e, i) => {
-                return (
-                  <motion.li
-                    key={i}
-                    variants={item}
-                  
-                  >
-                    <Link to="/project" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
-                      <span className="flex flex-wrap mr-6 md:mr-8 text-xs md:text-sm leading-none items-center">
-                        <span className="block text-2xs pt-px mr-1">PRB</span>
-                        <span className="block leading-none">19—021</span>
-                      </span>
-                      <span className="block text-lg md:text-3xl font-display leading-none mt-2">Keyworth</span>
-                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
-                    </Link>
-                  </motion.li>
-                )
-              })}
-            </ul>
-          </nav>
-          <nav className="pb-32">
-            <motion.span variants={item} className="block uppercase pb-4">Restorations</motion.span>
-            <ul>
-              {[...Array(3)].map((e, i) => {
-                return (
-                  <motion.li
-                    key={i}
-                    variants={item}
-                  
-                  >
-                    <Link to="/project" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
-                      <span className="flex flex-wrap mr-6 md:mr-8 text-xs md:text-sm leading-none items-center">
-                        <span className="block text-2xs pt-px mr-1">PRB</span>
-                        <span className="block leading-none">19—021</span>
-                      </span>
-                      <span className="block text-lg md:text-3xl font-display leading-none mt-2">Keyworth</span>
-                      <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
-                    </Link>
-                  </motion.li>
-                )
-              })}
-            </ul>
-          </nav>
+          {workCategories.edges.map(({ node }, i) => {
+            const parentCat = node.slug;
+            const length = workCategories.edges.length - 1;
+
+            return (
+              <nav className={ i == length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
+                <motion.span variants={fade} className="block uppercase pb-4">{ node.title }</motion.span>
+                <div>
+                  {work.edges.map(({ node }, i) => {
+                    return (
+                      <div key={i}>
+                        {/* Query the child to the parent cat... */}
+                        { node.category.slug == parentCat && (
+                          <motion.div variants={item}>
+                            <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white">
+                              <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
+                                <span className="block text-2xs pt-px mr-1">PRB</span>
+                                <span className="block leading-none">{ node.projectCode }</span>
+                              </span>
+                              <span className="block text-lg md:text-3xl font-display leading-none mt-2">{ node.title }</span>
+                              <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                            </Link>
+                          </motion.div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </nav>
+            )
+          })}
         </motion.div>
       </motion.div>
     </>
@@ -149,3 +112,31 @@ const GalleryIndexPage = (location) => {
 }
 
 export default GalleryIndexPage
+
+export const query = graphql`
+  query WorkIndexPageQuery {
+    workCategories: allDatoCmsWorkCategory {
+      edges {
+        node {
+          id
+          title
+          slug
+        }
+      }
+    }
+    work: allDatoCmsWork {
+      edges {
+        node {
+          id
+          title
+          slug
+          projectCode
+          category {
+            slug
+            title
+          }
+        }
+      }
+    }
+  }
+`

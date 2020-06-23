@@ -3,6 +3,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
+import Moment from "react-moment"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -34,11 +35,11 @@ const header = {
 	}
 }
 
-const JournalPage = (location) => {
+const JournalPage = ({ data: { entries }, location }) => {
   return (
     <>
     <Scroll callback={location} />
-      <SEO title="Home" />
+      <SEO title="Journal" />
         <motion.div
           initial="initial"
           animate="enter"
@@ -84,63 +85,21 @@ const JournalPage = (location) => {
           >
           <nav className="pb-12 md:pb-24 pt-12 md:pt-16">
             <ul>
-              <motion.li variants={item}>
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">New rural Passivhaus newly completed in Devon.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">How dwellings can respect the natural environment.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">Sandwell House shortlisted for RIBA award.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">PRB welcome David Smitt to the team.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">Progress on our Norfolk restoration project.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">New rural Passivhaus newly completed in Devon.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-
-                <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                  <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">17.8.2020</span>
-                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">The importance of restoration.</span>
-                  <span className="block ml-auto">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                  </span>
-                </Link>
-              </motion.li>
+              {entries.edges.map(({ node }, i) => {
+                return (
+                  <motion.li variants={item} key={i}>
+                    <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
+                      <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">
+                        <Moment format="DD.MM.Y">{ node.date }</Moment>
+                      </span>
+                      <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">{ node.title }</span>
+                      <span className="block ml-auto pl-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
+                      </span>
+                    </Link>
+                  </motion.li>
+                )
+              })}
             </ul>
           </nav>
         </motion.div>
@@ -194,3 +153,17 @@ const JournalPage = (location) => {
 }
 
 export default JournalPage
+
+export const query = graphql`
+  query JournalQuery {
+    entries: allDatoCmsJournal {
+      edges {
+        node {
+          title
+          date
+          slug
+        }
+      }
+    }
+  }
+`
