@@ -41,42 +41,35 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
       
       <Scroll callback={location} />
       
-      <motion.div
-        initial="initial"
-        animate="enter"
-        exit="exit"
-      >
-
-        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-          <nav className="relative z-10 w-full">
-            <ul className="flex flex-wrap">
-              <motion.li variants={fade}>
-                <Link className="text-lg md:text-xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/studio">Studio</Link>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
-              <motion.li variants={fade}>
-                <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Expertise</Link>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
-              <motion.li variants={fade}>
-                <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Team</Link>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
-              <motion.li variants={fade}>
-                <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Services</Link>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
-              <motion.li variants={fade}>
-                <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Contact</Link>
-              </motion.li>
-              <li className="ml-auto">
-                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-white transition ease-in-out duration-500">Menu</Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="mt-auto h-px w-full border-b border-white transition ease-in-out duration-500"></div>
-        </motion.header>
-      </motion.div>
+      <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+        <nav className="relative z-10 w-full">
+          <ul className="flex flex-wrap">
+            <motion.li variants={fade}>
+              <Link className="text-lg md:text-xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/studio">Studio</Link>
+            </motion.li>
+            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade}>
+              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Expertise</Link>
+            </motion.li>
+            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade}>
+              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Team</Link>
+            </motion.li>
+            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade}>
+              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Services</Link>
+            </motion.li>
+            <motion.li variants={fade} className="text-xl px-2 opacity-25">/</motion.li>
+            <motion.li variants={fade}>
+              <Link className="text-lg md:text-xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Contact</Link>
+            </motion.li>
+            <li className="ml-auto">
+              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-white transition ease-in-out duration-500">Menu</Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="mt-auto h-px w-full border-b border-white transition ease-in-out duration-500"></div>
+      </motion.header>
 
       <motion.div
         initial="initial"
@@ -85,15 +78,16 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
         variants={fade}
       >
         <motion.div variants={fade} className="h-16 md:h-20 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#scroll-container"></motion.div>
+
         <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 min-h-screen pt-16 md:pt-20 text-white min-h-screen">
           <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
             <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
               <div className="w-full px-3 md:px-0 mt-12">
                 <div className="flex flex-wrap h-full">
                   <div className="w-full mb-auto">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2">Our<br/>Studio</motion.h1>
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Our<br/>Studio</motion.h1>
                   </div>
-                  <div className="mt-auto">
+                  <div className="mt-auto"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-2 md:mb-0">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 mt-24 md:mt-0" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                     </motion.div>

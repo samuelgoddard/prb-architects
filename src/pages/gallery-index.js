@@ -60,7 +60,7 @@ const GalleryIndexPage = (location) => {
                 </li>
               </ul>
             </nav>
-            <div className="mt-auto h-px w-full border-b border-black"></div>
+            <div className="mt-auto h-px w-full bg-black"></div>
           </motion.header>
         </motion.div>
 
