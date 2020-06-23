@@ -31,7 +31,7 @@ const IndexPage = ({ data: { testImage, testImage2 }, location }) => {
   return (
     <>
     <Scroll callback={location} />
-      <SEO title="Home" />
+      <SEO title="Gallery" />
         <motion.section
           initial="initial"
           animate="enter"

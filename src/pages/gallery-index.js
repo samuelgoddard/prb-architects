@@ -38,7 +38,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
   return (
     <>
     <Scroll callback={location} />
-      <SEO title="Home" />
+      <SEO title="Index" />
         <motion.div
           initial="initial"
           animate="enter"
