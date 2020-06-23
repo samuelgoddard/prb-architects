@@ -48,6 +48,7 @@ module.exports = {
       },
       lineHeight: {
         'negative': '0.75',
+        'slightnegative': '0.9',
         'extratight': '1.1',
       }
     }

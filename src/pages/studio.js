@@ -92,7 +92,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 mt-24 md:mt-0" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                     </motion.div>
                     <motion.div variants={fade} className="w-full lg:w-2/3 mb-10 mt-auto">
-                      <p className="text-lg">The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build. If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
+                      <p className="text-lg leading-snug">The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build. If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
                     </motion.div>
                   </div>
                 </div>
@@ -102,7 +102,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
               <div className="flex flex-wrap h-full">
                 <div className="mt-auto w-full">
                   <motion.div variants={fade}>
-                    <div className="hidden md:block md:ml-auto md:text-right w-64 mb-6" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <div className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                       <p>We’re Architects and Building Conservation specialists who are known for delivering projects with an authentic sense of place. We’re an RIBA Chartered Practice based in the Midlands.</p>
                     </div>
                   </motion.div>
@@ -128,7 +128,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
             </div>
             
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-8 md:pb-24">
-              <p className="leading-none w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our combined experience has seen us work with a diverse mix of commercial and private clients, residential developers, housing associations and local authorities, schools, and in the retail, care and health sectors.</p>
+              <p className="leading-slightnegative w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our combined experience has seen us work with a diverse mix of commercial and private clients, residential developers, housing associations and local authorities, schools, and in the retail, care and health sectors.</p>
             </div>
           </div>
 
@@ -137,20 +137,107 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
               <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Expertise</span>
               <div className="w-full flex flex-wrap md:-mx-8">
                 <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-4 pb-2 font-display">Architectural Design</span>
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Architectural Design</span>
+                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
                 </div>
                 <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-4 pb-2 font-display">Restoration Projects</span>
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Restoration Projects</span>
+                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
                 </div>
                 <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-4 pb-2 font-display">Residential Schemes</span>
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Residential Schemes</span>
+                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
                 </div>
                 <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-4 pb-2 font-display">Commercial Spaces</span>
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Commercial Spaces</span>
+                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-offblack relative z-20 text-white -xm-4 md:-mx-8 pb-8">
+          <div className="w-full flex flex-wrap">
+            <div className="w-full md:w-1/3 lg:w-3/12">
+              <div className="px-4 md:px-12 md:ml-3 mb-12 md:mb-0 mt-6 md:mt-12">
+                <span className="block uppercase mb-4 md:mb-6 xl:mb-8 pt-12">Team</span>
+                <p className="leading-snug md:max-w-2xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
+              </div>
+            </div>
+
+            <div className="w-full md:w-2/3 lg:w-8/12 ml-auto">
+              <div className="flex flex-wrap justify-end">
+                <div className="w-1/2 md:w-1/3 pb-6">
+                  <div className="w-full bg-black h-128 mb-1"></div>
+                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
+                  <span className="text-sm">Director</span>
+                </div>
+                <div className="w-1/2 md:w-1/3 pb-6">
+                  <div className="w-full bg-black h-128 mb-1"></div>
+                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
+                  <span className="text-sm">Director</span>
+                </div>
+                <div className="w-1/2 md:w-1/3 pb-6">
+                  <div className="w-full bg-black h-128 mb-1"></div>
+                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
+                  <span className="text-sm">Director</span>
+                </div>
+                <div className="w-1/2 md:w-1/3 pb-6">
+                  <div className="w-full bg-black h-128 mb-1"></div>
+                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
+                  <span className="text-sm">Director</span>
+                </div>
+                <div className="w-1/2 md:w-1/3 pb-6">
+                  <div className="w-full bg-black h-128 mb-1"></div>
+                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
+                  <span className="text-sm">Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24">
+          <div className="w-full flex flex-wrap md:-mx-4 items-end">
+            <div className="w-full md:w-4/12 md:px-4 hidden lg:block">
+              <div className="w-1/2">
+                <Img fluid={ heroImage.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-8/12 ml-auto md:px-4 pb-12 md:pb-24 xl:pb-32">
+              <div className="overflow-hidden">
+                <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Services</span>
+                <div className="w-full flex flex-wrap md:-mx-8">
+                  <ul className="w-full md:w-1/2 md:px-8">
+                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
+                      <span className="block text-xs mr-2">01</span>
+                      <span className="block">Technical Advice</span>
+                    </li>
+                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
+                      <span className="block text-xs mr-2">02</span>
+                      <span className="block">Project Management</span>
+                    </li>
+                    <li className="border-t md:border-b border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
+                      <span className="block text-xs mr-2">03</span>
+                      <span className="block">Planning Process</span>
+                    </li>
+                  </ul>
+                  <ul className="w-full md:w-1/2 md:px-8">
+                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
+                      <span className="block text-xs mr-2">04</span>
+                      <span className="block">Masterplanning</span>
+                    </li>
+                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
+                      <span className="block text-xs mr-2">05</span>
+                      <span className="block">Visualisation + Concepting</span>
+                    </li>
+                    <li className="border-t border-b border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
+                      <span className="block text-xs mr-2">06</span>
+                      <span className="block">Feasability Studies</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

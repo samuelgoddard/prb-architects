@@ -85,7 +85,7 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                 <div className="md:ml-auto md:text-right mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <div className="flex-wrap items-center mb-4 hidden md:flex">
                     <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                    <span className="block text-3xl md:text-4xl leading-none">19-034</span>
+                    <span className="block text-3xl md:text-4xl leading-none">19—034</span>
                   </div>
                   <span className="block md:hidden leading-tight text-sm uppercase mb-3">Info</span>
                   <span className="block leading-tight">Nottingham</span>
@@ -95,12 +95,12 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                 </div>
               </motion.div>
 
-              <div className="mt-auto w-full px-3 md:px-0">
+              <div className="mt-auto w-full px-3 md:px-0 relative">
                 <div className="flex flex-wrap items-end">
                   <div className="w-full lg:w-auto order-2 lg:order-1">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Ivy<br/>Farm</motion.h1>
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Ivy<br/>Park</motion.h1>
                   </div>
-                    <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                   </motion.div>
                 </div>
