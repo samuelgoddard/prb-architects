@@ -27,6 +27,18 @@ h2 {
   }
 }
 
+.text-screen-studio-blurb {
+  @apply text-3xl;
+
+  @screen md {
+    font-size: 3.85vw;
+  }
+
+  @screen md {
+    font-size: 3.55vw;
+  }
+}
+
 button {
   @apply outline-none border-none appearance-none;
 }

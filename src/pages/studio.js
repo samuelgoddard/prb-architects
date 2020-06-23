@@ -128,7 +128,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
             </div>
             
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-8 md:pb-24">
-              <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-extratight w-10/12 md:w-11/12 lg:w-3/4 font-display">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our combined experience has seen us work with a diverse mix of commercial and private clients, residential developers, housing associations and local authorities, schools, and in the retail, care and health sectors.</p>
+              <p className="leading-none w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our combined experience has seen us work with a diverse mix of commercial and private clients, residential developers, housing associations and local authorities, schools, and in the retail, care and health sectors.</p>
             </div>
           </div>
 
