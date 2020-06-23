@@ -36,6 +36,7 @@ module.exports = {
       },
       colors: {
         black: '#000000',
+        offblack: '#1D1D1D',
         prbred: '#dc481e'
       },
       maxWidth: {
@@ -43,9 +44,11 @@ module.exports = {
       },
       spacing: {
         '30': '7rem',
+        '128': '24rem'
       },
       lineHeight: {
         'negative': '0.75',
+        'extratight': '1.1',
       }
     }
   },

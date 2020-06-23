@@ -11,12 +11,14 @@ a {
 	@apply duration-300;
 }
 
+@responsive {
 .h-screen-inner {
 	height: calc(75vh);
 
 	@screen md {
 		height: calc(100vh - 103px);		
 	}
+}
 }
 
 .h-screen-no-header {
@@ -86,3 +88,25 @@ html.has-scroll-dragging {
 	cursor: -webkit-grabbing;
 	cursor: grabbing;
 } */
+
+.marquee {
+	width: 9999px !important;
+	overflow-x: scroll;
+}
+
+.marquee-image {
+	height: 40vh;
+	-moz-user-select: none;
+}
+
+.studio-image {
+	height: 60vh;
+}
+
+.marquee-image-horizontal {
+	max-width: 720px;
+}
+
+.marquee-image-vertical {
+	max-width: 420px;
+}

@@ -57,3 +57,7 @@ button {
     @apply pt-6 block;
   }
 }
+
+.text-orient-down {
+  writing-mode: vertical-rl;
+}
