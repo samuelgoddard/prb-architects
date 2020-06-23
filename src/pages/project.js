@@ -3,6 +3,7 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+import Scroll from "../components/locomotiveScroll"
 
 const header = {
 	initial: { opacity: 1 },
@@ -33,10 +34,13 @@ const fade = {
 	}
 }
 
-const ProjectPage = ({ data: { testImage, testImage2, heroImage }}) => {
+const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) => {
   return (
     <>
       <SEO title="Home" /> 
+      
+      <Scroll callback={location} />
+      
       <motion.div
         initial="initial"
         animate="enter"

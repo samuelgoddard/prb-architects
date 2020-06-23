@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { AnimatePresence } from "framer-motion"
 import Header from "./header"
-import Scroll from "./locomotiveScroll"
 import "../styles/main.css"
 
 function Layout({ children, location, location: { pathname } }) {
@@ -27,7 +26,7 @@ function Layout({ children, location, location: { pathname } }) {
         }
       ></div> */}
       
-        <Scroll callback={location} />
+        
         
         <div id="scroll-container" data-scroll-container>
           <AnimatePresence exitBeforeEnter initial={false}>

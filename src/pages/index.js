@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
+import Scroll from "../components/locomotiveScroll"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -23,9 +24,10 @@ const header = {
 	}
 }
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   return (
     <>
+    <Scroll callback={location} />
       <SEO title="Home" />
         <motion.section
           initial="initial"

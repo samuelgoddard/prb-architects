@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { motion } from 'framer-motion'
+import Scroll from "../components/locomotiveScroll"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -33,9 +34,10 @@ const header = {
 	}
 }
 
-const GalleryIndexPage = () => {
+const GalleryIndexPage = (location) => {
   return (
     <>
+    <Scroll callback={location} />
       <SEO title="Home" />
         <motion.div
           initial="initial"
@@ -61,7 +63,7 @@ const GalleryIndexPage = () => {
             <div className="mt-auto h-px w-full border-b border-black"></div>
           </motion.header>
         </motion.div>
-        
+
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-16 md:pt-20">
           <motion.div
             initial="initial"

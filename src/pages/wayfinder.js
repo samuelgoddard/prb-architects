@@ -2,6 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { motion } from 'framer-motion'
+import Scroll from "../components/locomotiveScroll"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -33,11 +34,12 @@ const fade = {
 	}
 }
 
-const GalleryIndexPage = () => {
+const GalleryIndexPage = ({ location }) => {
   return (
     <>
       <SEO title="Home" />
 
+      <Scroll callback={location} />
       <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-20 flex flex-wrap">
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
