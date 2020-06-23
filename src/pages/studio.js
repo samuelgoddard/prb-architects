@@ -5,6 +5,8 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Scroll from "../components/locomotiveScroll"
 
+const windowGlobal = typeof window !== 'undefined' && window
+
 const header = {
 	initial: { opacity: 1 },
 	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
@@ -45,23 +47,23 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/studio">Studio</Link>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none">Studio</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Expertise</Link>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Expertise</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Team</Link>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Team</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Services</Link>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Services</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/">Contact</Link>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Contact</button>
             </motion.li>
             <li className="ml-auto">
               <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500">Menu</Link>
@@ -77,9 +79,9 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
         exit="exit"
         variants={fade}
       >
-        <motion.div variants={fade} className="h-16 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#scroll-container"></motion.div>
+        <motion.div variants={fade} className="h-16 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></motion.div>
 
-        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 min-h-screen pt-16 md:pt-22 text-white min-h-screen">
+        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 min-h-screen pt-16 md:pt-22 text-white min-h-screen" id="studio">
           <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
             <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
               <div className="w-full px-3 md:px-0 mt-12">
@@ -87,7 +89,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
                   <div className="w-full mb-auto">
                     <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Our<br/>Studio</motion.h1>
                   </div>
-                  <div className="mt-auto"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <div className="mt-auto" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-2 md:mb-0">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 mt-24 md:mt-0" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                     </motion.div>
@@ -117,10 +119,11 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
           </div>
         </div>
 
+        
         <div className="bg-white p-4 md:p-6 relative z-20">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 absolute bottom-0 right-0 mr-4 md:mr-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
 
-          <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16 mb-12 md:mb-16 xl:mb-20">
+          <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 hidden md:block">
               <div className="w-full">
                 <Img fluid={ testImage2.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
@@ -131,9 +134,10 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
               <p className="leading-slightnegative w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our combined experience has seen us work with a diverse mix of commercial and private clients, residential developers, housing associations and local authorities, schools, and in the retail, care and health sectors.</p>
             </div>
           </div>
+        </div>
 
-          <div className="md:mx-auto md:w-10/12 max-w-screen-xl mb-20">
-            <div className="overflow-hidden">
+        <div className="md:mx-auto md:w-full pb-20 pt-12 md:pt-16 xl:pt-20 bg-white relative z-20" id="expertise">
+            <div className="overflow-hidden md:w-9/12 max-w-screen-xl mx-auto px-4 md:px-8">
               <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Expertise</span>
               <div className="w-full flex flex-wrap md:-mx-8">
                 <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
@@ -155,9 +159,8 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-offblack relative z-20 text-white -xm-4 md:-mx-8 pb-8">
+        <div className="bg-offblack relative z-20 text-white -xm-4 md:-mx-8 pb-8" id="team">
           <div className="w-full flex flex-wrap">
             <div className="w-full md:w-1/3 lg:w-3/12">
               <div className="px-4 md:px-12 md:ml-3 mb-12 md:mb-0 mt-6 md:mt-12">
@@ -198,7 +201,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
           </div>
         </div>
 
-        <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24">
+        <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24" id="services">
           <div className="w-full flex flex-wrap md:-mx-4 items-end">
             <div className="w-full md:w-4/12 md:px-4 hidden lg:block">
               <div className="w-1/2">
@@ -245,7 +248,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
         </div>
       </motion.div>
 
-      <section className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8 relative z-20">
+      <section className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8 relative z-20" id="contact">
         <div className="w-full flex flex-wrap">
           <div className="w-full md:w-10/12 ml-auto">
             <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">

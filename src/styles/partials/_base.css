@@ -3,8 +3,18 @@ body {
 	padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 a {
 	@apply transition duration-300;
+}
+
+button {
+	border: none !important;
+	outline: none !important;
+	-webkit-appearance: none;
 }
 
 [class*='transition'] {

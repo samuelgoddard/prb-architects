@@ -5,6 +5,13 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Scroll from "../components/locomotiveScroll"
 
+import { navigate } from "@reach/router";
+
+
+const goBack = () => {
+  navigate(-1);
+}
+
 const header = {
 	initial: { opacity: 1 },
 	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
@@ -51,10 +58,10 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
           <nav className="relative z-10 w-full">
             <ul className="flex flex-wrap">
               <motion.li variants={fade} className="block">
-                <Link className="text-lg md:text-2xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center" to="/">
+                <button className="text-lg md:text-2xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center" onClick={goBack}>
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
                   <span className="block ml-3">Ivy Farm</span>
-                </Link>
+                </button>
               </motion.li>
               <li className="ml-auto">
                 <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black">Menu</Link>
