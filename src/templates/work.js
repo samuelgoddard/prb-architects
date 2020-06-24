@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Scroll from "../components/locomotiveScroll"
-// import Collapsible from "../components/collapsible"
+import Collapsible from "../components/collapsible"
 import { navigate } from "@reach/router";
 
 
@@ -141,19 +141,19 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                     <div className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16 leading-snug content-indented" dangerouslySetInnerHTML={{ __html: work.introText }}></div>
 
                     <div className="border-t border-white">
-                    {/* <Collapsible heading={block.heading} index={ `0${ i + 1}`}>
-                      <div className="tet-white block" dangerouslySetInnerHTML={{ __html: block.content }}></div>
-                    </Collapsible> */}
                       {
                         work.introServices.map((block, i) => (
                           <div key={block.id}>
                             {
                               block.model.apiKey === 'service' &&
-                              <div className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
-                                <span className="block text-xs mr-3">{ `0${ i + 1}`}</span>
-                                <span className="block md:text-xl">{ block.heading }</span>
-                                {/* <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span> */}
-                              </div>
+                              <Collapsible heading={block.heading} index={ `0${ i + 1}`}>
+                                <div className="tet-white block" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                              </Collapsible>
+                              // <div className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
+                              //   <span className="block text-xs mr-3">{ `0${ i + 1}`}</span>
+                              //   <span className="block md:text-xl">{ block.heading }</span>
+                              //   {/* <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span> */}
+                              // </div>
                             }
                           </div>
                         ))

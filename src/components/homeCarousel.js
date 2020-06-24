@@ -1,39 +1,48 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React, { Component } from 'react'
+import EmblaCarouselReact from 'embla-carousel-react'
+import { motion } from "framer-motion"
 
-export default class SimpleSlider extends Component {
+const transition = { duration: 20, ease: [0.43, 0.13, 0.23, 0.96] }
+
+const scroll = {
+	initial: { y: 0 },
+	enter: { y: -2000, transition },
+	exit: {
+		y: 0,
+		transition: { duration: 0.5, ...transition }
+	}
+}
+
+class EmblaCarouselComponent extends Component {
+  componentDidMount() {
+    // this.embla.on('select', () => {
+    //   console.log(
+    //     `Current index is ${this.embla.selectedScrollSnap()}`,
+    //   )
+    // })
+  }
+
   render() {
-    const settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1
-    };
     return (
-      <div className="w-full">
-        <h2> Single Item</h2>
-        <Slider {...settings}>
-          <div className="bg-red-500">
-            <h3>1</h3>
+      <>
+        <EmblaCarouselReact
+          emblaRef={c => (this.embla = c)}
+          options={{ loop: false }}
+        >
+          <div className="flex home-banner">
+            <div style={{ flex: '0 0 100%' }} className="h-64 bg-red-700">Slide 1</div>
+            <div style={{ flex: '0 0 100%' }} className="h-64 bg-red-700">Slide 2</div>
+            <div style={{ flex: '0 0 100%' }} className="h-64 bg-red-700">Slide 3</div>
+            <div style={{ flex: '0 0 100%' }} className="h-64 bg-red-700">Slide 4</div>
+            <div style={{ flex: '0 0 100%' }} className="h-64 bg-red-700">Slide 6</div>
+            <div style={{ flex: '0 0 100%' }} className="h-64 bg-red-700">Slide 7</div>
           </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
-      </div>
-    );
+        </EmblaCarouselReact>
+        <button onClick={() => this.embla.scrollPrev()}>Prev</button>
+        <button onClick={() => this.embla.scrollNext()}>Next</button>
+      </>
+    )
   }
 }
+
+export default EmblaCarouselComponent

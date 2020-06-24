@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Sam Goddard <hello@samgoddard.co.uk>",
   "dependencies": {
+    "embla-carousel-react": "^2.0.3",
     "framer-motion": "^1.8.4",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.40",
@@ -26,7 +27,8 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "react-moment": "^0.9.7",
-    "resize-observer-polyfill": "^1.5.1"
+    "resize-observer-polyfill": "^1.5.1",
+    "tiny-slider-react": "^0.4.0"
   },
   "devDependencies": {
     "gatsby-plugin-remove-trailing-slashes": "^2.3.5",
