@@ -21,15 +21,13 @@ function SEO({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
 
-  // const ogImage = file.publicURL
-
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | PRB Architects`}
       meta={[
         {
           name: `description`,
@@ -47,15 +45,6 @@ function SEO({ description, lang, meta, title }) {
           property: `og:type`,
           content: `website`,
         },
-        // OG Image is the image intended for Google to display in SERPs. 
-        // {
-        //   property: `og:image`,
-        //   content: ogImage,
-        // },
-        // {
-        //   property: `image`,
-        //   content: ogImage,
-        // },
         {
           name: `twitter:card`,
           content: `summary`,

@@ -120,3 +120,21 @@ html.has-scroll-dragging {
 .marquee-image-vertical {
 	max-width: 420px;
 }
+
+.Collapse {
+	background: none;
+	/* border: 2px solid black; */
+	/* padding: 20px 10px; */
+	cursor: pointer;
+	/* margin-bottom: 40px; */
+  }
+  .Collapse_Content {
+	min-height: 0;
+	height: 0;
+  
+	overflow: hidden;
+  }
+  .Collapse_Content > div {
+	/* padding-top: 20px; */
+	text-align: left;
+  }
