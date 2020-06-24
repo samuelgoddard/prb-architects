@@ -4,8 +4,9 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Scroll from "../components/locomotiveScroll"
-import Collapsible from "../components/collapsible"
+// import Collapsible from "../components/collapsible"
 import { navigate } from "@reach/router";
+
 
 const goBack = () => {
   navigate(-1);
@@ -53,7 +54,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
         exit="exit"
       >
 
-        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-50 flex flex-wrap bg-white" data-scroll data-scroll  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
           <nav className="relative z-10 w-full">
             <ul className="flex flex-wrap">
               <motion.li variants={fade} className="block">
@@ -80,7 +81,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
         <div className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-22">
           <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8 pb-12" id="something">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-              <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0"   data-scroll data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+              <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                 <motion.div variants={image} className="h-full w-full transform image-transform-center">
                   <Img fluid={ work.featuredImage.fluid } className="w-full h-full object-cover"/>
                 </motion.div>
@@ -88,7 +89,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
             </div>
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
               <motion.div variants={fade} className="flex flex-wrap w-full mb-auto px-4 md:px-0">
-                <div className="md:ml-auto md:text-right mb-8 md:mb-0" data-scroll  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                <div className="md:ml-auto md:text-right mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <div className="flex-wrap items-center mb-4 hidden md:flex">
                     <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
                     <span className="block text-3xl md:text-4xl leading-none">{ work.projectCode }</span>
@@ -110,9 +111,9 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
               <div className="mt-auto w-full px-3 md:px-0 relative">
                 <div className="flex flex-wrap items-end">
                   <div className="w-full lg:w-auto order-2 lg:order-1">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2 pr-24 md:pr-40"  data-scroll data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2 pr-24 md:pr-40" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
                   </div>
-                    <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                   </motion.div>
                 </div>
@@ -140,14 +141,19 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                     <div className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16 leading-snug content-indented" dangerouslySetInnerHTML={{ __html: work.introText }}></div>
 
                     <div className="border-t border-white">
+                    {/* <Collapsible heading={block.heading} index={ `0${ i + 1}`}>
+                      <div className="tet-white block" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                    </Collapsible> */}
                       {
                         work.introServices.map((block, i) => (
                           <div key={block.id}>
                             {
                               block.model.apiKey === 'service' &&
-                              <Collapsible heading={block.heading} index={ `0${ i + 1}`}>
-                                <div className="tet-white block" dangerouslySetInnerHTML={{ __html: block.content }}></div>
-                              </Collapsible>
+                              <div className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
+                                <span className="block text-xs mr-3">{ `0${ i + 1}`}</span>
+                                <span className="block md:text-xl">{ block.heading }</span>
+                                {/* <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span> */}
+                              </div>
                             }
                           </div>
                         ))

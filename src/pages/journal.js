@@ -1,9 +1,11 @@
 import React from "react"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
+import Collapsible from "../components/collapsible"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -84,23 +86,27 @@ const JournalPage = ({ data: { entries }, location }) => {
             }}
           >
           <nav className="pb-12 md:pb-24 pt-12 md:pt-16">
-            <ul>
+            <div>
               {entries.edges.map(({ node }, i) => {
                 return (
-                  <motion.li variants={item} key={i}>
-                    <Link to="/journal" className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:line-through">
-                      <span className="block mr-6 md:mr-8 text-xs md:text-sm leading-none">
-                        <Moment format="DD.MM.Y">{ node.date }</Moment>
-                      </span>
-                      <span className="block text-lg md:text-3xl font-display leading-none mt-2 flex-1">{ node.title }</span>
-                      <span className="block ml-auto pl-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 transform -rotate-90" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                      </span>
-                    </Link>
-                  </motion.li>
+                  // <motion.div variants={item} key={i}>
+                    <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i}>
+                      <div className={ node.gallery.length > 0 ? `block mb-6` : `block mb-0`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
+
+                        <div className="flex flex-wrap -mx-3 overflow-hidden">
+                          {node.gallery.map(({ fixed }, i) => {
+                            return(
+                              <div className="w-auto px-3 mb-5" key={i}>
+                                <Img fixed={ fixed } className="w-full object-cover "/>
+                              </div>
+                            )
+                          })}
+                        </div>
+                    </Collapsible>
+                  // </motion.div>
                 )
               })}
-            </ul>
+            </div>
           </nav>
         </motion.div>
       </motion.div>
@@ -161,6 +167,12 @@ export const query = graphql`
         node {
           title
           date
+          content
+          gallery {
+            fixed(height: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFixed
+            }    
+          }
           slug
         }
       }

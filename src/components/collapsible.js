@@ -20,8 +20,8 @@ const collapsible = node => {
     // .call(() => setTimeout(updateScroll(), 650))
     .fromTo(
       node,
-      { height: 0, willChange: "height" },
-      { height: "auto", clearProps: "willChange" }
+      { height: 0, opacity: 0, willChange: "height" },
+      { height: "auto", opacity: 1, clearProps: "willChange" }
     )
     .call(() => setTimeout(updateScroll(), 650))
     .pause()
@@ -32,7 +32,7 @@ const collapsible = node => {
   return { open, close }
 }
 
-const Collapsible = ({ children, heading, index }) => {
+const Collapsible = ({ children, heading, index, textLarge }) => {
 
   const [state, setState] = useState({
     initial: false,
@@ -71,20 +71,20 @@ const Collapsible = ({ children, heading, index }) => {
   }, [state])
 
   return (
-    <button className="Collapse" onClick={() => handleClick()}>
-      <div className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
-        <span className="block text-xs mr-3">{ index }</span>
-        <span className="block text-lg md:text-xl">{ heading }</span>
+    <button className="Collapse w-full" onClick={() => handleClick()}>
+      <div className="flex flex-wrap items-center border-b border-current w-full py-2 md:py-5">
+        <span className="block text-xs mr-3 w-full md:w-auto text-left">{ index }</span>
+        <span className={textLarge ? `block flex-1 text-xl md:text-2xl text-left` : `block flex-1 text-lg md:text-xl text-left`}>{ heading }</span>
         <span className="block ml-auto pl-4 transform origin-center rotate-0" ref={el => (icon = el)}>
           <svg xmlns="http://www.w3.org/2000/svg" className={state.clicked ? `w-4 md:w-6 transform rotate-90 transition duration-500 ease-in-out` : `transition duration-500 ease-in-out w-4 md:w-6 transform -rotate-90`} viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
         </span>
 
-        {children && (
-          <div className="Collapse_Content" ref={el => (body = el)}>
-            <div className="pt-3 md:pt-5 pb-2 md:pb-1 pr-12 md:pr-24">{children}</div>
-          </div>
-        )}
       </div>
+      {children && (
+        <div className="Collapse_Content border-b border-current opacity-0" ref={el => (body = el)}>
+          <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24">{children}</div>
+        </div>
+      )}
     </button>
   )
 }
