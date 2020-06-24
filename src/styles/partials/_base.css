@@ -105,8 +105,8 @@ html.has-scroll-dragging {
 }
 
 .marquee-image {
-	height: 40vh;
 	-moz-user-select: none;
+	max-height: 400px;
 }
 
 .studio-image {
@@ -115,6 +115,7 @@ html.has-scroll-dragging {
 
 .marquee-image-horizontal {
 	max-width: 720px;
+	max-height: 420px;
 }
 
 .marquee-image-vertical {

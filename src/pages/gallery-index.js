@@ -52,7 +52,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
                 </motion.li>
                 <motion.li variants={fade} className="text-xl md:text-2xl px-1 opacity-25">/</motion.li>
                 <motion.li variants={fade}>
-                  <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/gallery-index">Index</Link>
+                  <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100 line-through" to="/gallery-index">Index</Link>
                 </motion.li>
 
                 <li className="ml-auto">
