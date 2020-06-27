@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import Flickity from "flickity";
+const windowGlobal = typeof window !== 'undefined' && window
 
 class HomeCarousel extends Component {
   componentDidMount() {
     // Play with this value to change the speed
-    let tickerSpeed = 3;
+    let tickerSpeed = 0.85;
 
     let flickity = null;
     let isPaused = false;
@@ -20,7 +21,7 @@ class HomeCarousel extends Component {
         flickity.updateSelectedSlide();
         flickity.settle(flickity.x);
       }
-      window.requestAnimationFrame(update);
+      windowGlobal.requestAnimationFrame(update);
     };
 
     const pause = () => {
@@ -30,7 +31,7 @@ class HomeCarousel extends Component {
     const play = () => {
       if (isPaused) {
         isPaused = false;
-        window.requestAnimationFrame(update);
+        windowGlobal.requestAnimationFrame(update);
       }
     };
 
