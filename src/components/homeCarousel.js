@@ -1,61 +1,77 @@
 import React, { Component } from 'react'
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import Flickity from "flickity";
-const windowGlobal = typeof window !== 'undefined' && window
+// import Flickity from "flickity";
+import { isBrowser } from "react-device-detect"
+
+if (typeof window !== 'undefined') {
+  const Flickity = require('flickity');
+}
 
 class HomeCarousel extends Component {
+  state = { Flickity: null };
+
+  constructor(props) {
+    super(props);
+    if (typeof window !== 'undefined') {
+      const Flickity = require('flickity');
+      this.state.Flickity = Flickity;
+    }
+  }
+
   componentDidMount() {
-    // Play with this value to change the speed
-    let tickerSpeed = 0.85;
+    if (typeof window !== 'undefined') {
+      // Play with this value to change the speed
+      let tickerSpeed = 0.85;
 
-    let flickity = null;
-    let isPaused = false;
-    const slideshowEl = document.querySelector('.js-slideshow');
+      let flickity = null;
+      let isPaused = false;
+      const slideshowEl = document.querySelector('.js-slideshow');
 
-    const update = () => {
-      if (isPaused) return;
-      if (flickity.slides) {
-        flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-        flickity.selectedIndex = flickity.dragEndRestingSelect();
-        flickity.updateSelectedSlide();
-        flickity.settle(flickity.x);
-      }
-      windowGlobal.requestAnimationFrame(update);
-    };
+      const update = () => {
+        if (isPaused) return;
+        if (flickity.slides) {
+          flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+          flickity.selectedIndex = flickity.dragEndRestingSelect();
+          flickity.updateSelectedSlide();
+          flickity.settle(flickity.x);
+        }
+        window.requestAnimationFrame(update);
+      };
 
-    const pause = () => {
-      isPaused = true;
-    };
+      const pause = () => {
+        isPaused = true;
+      };
 
-    const play = () => {
-      if (isPaused) {
-        isPaused = false;
-        windowGlobal.requestAnimationFrame(update);
-      }
-    };
+      const play = () => {
+        if (isPaused) {
+          isPaused = false;
+          window.requestAnimationFrame(update);
+        }
+      };
 
-    flickity = new Flickity(slideshowEl, {
-      autoPlay: false,
-      prevNextButtons: false,
-      pageDots: false,
-      draggable: true,
-      wrapAround: true,
-      freeScroll: true,
-      friction: 0.25
-    });
-    flickity.x = 0;
+      flickity = new this.state.Flickity(slideshowEl, {
+        autoPlay: false,
+        prevNextButtons: false,
+        pageDots: false,
+        draggable: true,
+        wrapAround: true,
+        freeScroll: true,
+        friction: 0.25
+      });
+      flickity.x = 0;
 
-    slideshowEl.addEventListener('mouseenter', pause, false);
-    slideshowEl.addEventListener('focusin', pause, false);
-    slideshowEl.addEventListener('mouseleave', play, false);
-    slideshowEl.addEventListener('focusout', play, false);
+      slideshowEl.addEventListener('mouseenter', pause, false);
+      slideshowEl.addEventListener('focusin', pause, false);
+      slideshowEl.addEventListener('mouseleave', play, false);
+      slideshowEl.addEventListener('focusout', play, false);
 
-    flickity.on('dragStart', () => {
-      isPaused = true;
-    });
+      flickity.on('dragStart', () => {
+        isPaused = true;
+      });
 
-    update();
+      update();
+    }
   }
   
   render() {
