@@ -32,7 +32,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
   return (
     <>
     <Scroll callback={location} />
-      <SEO title="Home" />
+      <SEO title="Gallery" />
         <motion.section
           initial="initial"
           animate="enter"
@@ -79,7 +79,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
               <nav className="relative z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 md:p-6">
                 <div className="flex flex-wrap justify-end">
                   <motion.div variants={fade}>
-                    <Link className="text-lg md:text-2xl leading-extratight pr-px opacity-25 transition ease-in-out duration-500 opacity-100 line-through" to="/gallery-index">All</Link>
+                    <Link className="text-lg md:text-2xl leading-extratight pr-px opacity-25 transition ease-in-out duration-500" to="/">All</Link>
                   </motion.div>
                   <motion.div variants={fade} className="text-xl md:text-2xl leading-extratight px-1">
                     <span className="opacity-25 block">/</span>
@@ -91,8 +91,14 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
 
                     return (
                       <div key={i} className="flex">
+                        {/* slug: { `/gallery/${node.slug}` }
+                        name: { location.pathname } */}
                         <motion.div variants={fade}>
-                          <Link className="text-lg md:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500" to={`gallery/${node.slug}`}>{ node.title }</Link>
+
+                          <Link
+                            className={location.pathname === `/gallery/${node.slug}` ? `text-lg md:text-2xl leading-extratight px-px opacity-100 line-through transition ease-in-out duration-500` : `text-lg md:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500`} to={`/gallery/${node.slug}`}>
+                                { node.title }
+                            </Link>
                         </motion.div>
                         
                         { i !== length && (
@@ -115,7 +121,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
 export default IndexPage
 
 export const query = graphql`
-  query IndexPageQuery {
+  query GalleryPageQuery($slug: String!) {
     workCategories: allDatoCmsWorkCategory {
       edges {
         node {
@@ -125,7 +131,7 @@ export const query = graphql`
         }
       }
     }
-    work: allDatoCmsWork {
+    work: allDatoCmsWork(filter: {category: {slug: {eq: $slug}}}) {
       edges {
         node {
           id
