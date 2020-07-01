@@ -136,10 +136,9 @@ export const query = graphql`
         node {
           id
           featuredImage {
-            fluid(
-              maxWidth: 1200
-              imgixParams: {h: "900", w: "1200", fit: "crop", crop: "faces, edges"}) {
-              ...GatsbyDatoCmsFluid
+            url
+            fixed(imgixParams: { h: "350", fm: "png" }) {
+              ...GatsbyDatoCmsFixed
             }
           }
           title

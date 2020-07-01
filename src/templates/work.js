@@ -108,15 +108,15 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                 </div>
               </motion.div>
 
-              <div className="mt-auto w-full px-3 md:px-0 relative">
+              <div className=" w-full px-3 md:px-0 relative">
                 <div className="flex flex-wrap items-end">
-                  <div className="w-full lg:w-auto order-2 lg:order-1">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2 pr-24 md:pr-40" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
+                  <div className="w-full lg:w-9/12 mx-auto order-2 lg:order-1">
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 bg-prbred text-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
                   </div>
-                    <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                  </motion.div>
                 </div>
+                <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                </motion.div>
               </div>
             </div>
           </div>

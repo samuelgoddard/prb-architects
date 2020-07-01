@@ -23,11 +23,11 @@ h2 {
   @apply text-7xl;
 
   @screen md {
-    font-size: 10vw;
+    font-size: 7.5vw;
   }
 
   @screen xl {
-    font-size: 14vw;
+    font-size: 8.5vw;
   }
 }
 
