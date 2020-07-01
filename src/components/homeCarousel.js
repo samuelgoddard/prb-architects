@@ -88,9 +88,9 @@ class HomeCarousel extends Component {
                 <figure className="h-full">
                   <div className="flex flex-wrap relative h-full">
                     <div className="flex-1 mr-6 h-full">
-                      {/* <Img fixed={node.featuredImage.fixed} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
+                      {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                       <div className="overflow-hidden mb-1 pb-0">
-                        <Img fixed={node.featuredImage.fixed} className="h-full block carousel-img w-auto slide__img pb-0 -mb-2" />
+                        <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
                       </div>
                       <figcaption className="flex md:text-xl md:px-0 items-center">  
                         <span className="block">{ node.title }</span>
@@ -118,9 +118,9 @@ class HomeCarousel extends Component {
                     <figure className="h-full">
                       <div className="flex flex-wrap relative h-full">
                         <div className="flex-1 mr-6 h-full">
-                          {/* <Img fixed={node.featuredImage.fixed} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
+                          {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                           <div className="overflow-hidden mb-1 pb-0">
-                            <Img fixed={node.featuredImage.fixed} className="h-full block carousel-img w-auto slide__img pb-0 -mb-2" />
+                            <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
                           </div>
                           <figcaption className="flex md:text-xl md:px-0 items-center">  
                             <span className="block">{ node.title }</span>

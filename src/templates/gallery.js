@@ -59,13 +59,13 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
           </motion.header>
 
           <div className="w-full">
-            <motion.div variants={fade} className=" min-h-screen pt-16 md:pt-22 flex flex-wrap flex-grow-0">
+          <motion.div variants={fade} className=" min-h-screen pt-16 md:pt-22 flex flex-wrap flex-grow-0">
               <motion.div 
                 className="content"
                 variants={fade}
-                className="mt-4 md:mt-6 w-auto h-24 md:h-40 xl:h-48 p-4 md:p-6"
+                className="mt-4 md:mt-6 w-auto h-32 md:h-40 xl:h-40 p-4 md:p-6"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 xl:w-48" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
               </motion.div>
 
               <motion.div 
@@ -78,7 +78,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                 </div>
               </motion.div>
 
-              <nav className="relative z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 md:p-6">
+              <nav className="relative z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 md:p-6 pt-12 md:pt-24">
                 <div className="flex flex-wrap justify-end">
                   <motion.div variants={fade}>
                     <Link className="text-lg md:text-2xl leading-extratight pr-px opacity-25 transition ease-in-out duration-500" to="/">All</Link>
@@ -137,10 +137,16 @@ export const query = graphql`
       edges {
         node {
           id
-          featuredImage {
+          featuredImageSmall: teaserImage {
             url
-            fixed(imgixParams: { h: "350", fm: "png" }) {
-              ...GatsbyDatoCmsFixed
+            fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          featuredImageBig: teaserImage {
+            url
+            fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
           title

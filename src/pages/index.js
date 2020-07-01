@@ -131,10 +131,16 @@ export const query = graphql`
       edges {
         node {
           id
-          featuredImage {
+          featuredImageSmall: teaserImage {
             url
-            fixed(imgixParams: { h: "350", fm: "png" }) {
-              ...GatsbyDatoCmsFixed
+            fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          featuredImageBig: teaserImage {
+            url
+            fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
           title
