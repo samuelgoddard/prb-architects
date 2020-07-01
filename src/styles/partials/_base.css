@@ -128,15 +128,17 @@ html.has-scroll-dragging {
 .slide {
 	align-items: center;
   	justify-content: center;
-	width: 120vw;
+	width: 94vw;
 	margin-right: 4vw;
 	height: auto;
+	padding-left: 20px;
 	/* height: 90vh; */
 
 	@screen md {
 		/* height: 50vw; */
 		width: 42vw;
-		margin-right: 5vw;
+		margin-right: 4vw;
+		padding-left: 30px;
 	}
 
 	@screen lg {
@@ -145,8 +147,7 @@ html.has-scroll-dragging {
 	
 	@screen xl {
 		width: 41vw;
-		margin-right: 6vw;
-		padding-left: 30px;
+		margin-right: 5vw;
 	}
 
 	@screen 2xl {
@@ -154,9 +155,9 @@ html.has-scroll-dragging {
 	}
 
 	.slide__img {
-		transition: all ease 750ms;
+		/* transition: transform ease 750ms; */
 		height: auto;
-		transform: scale(1.1);
+		/* transform: scale(1.1); */
 	}
 
 	.slide__link {

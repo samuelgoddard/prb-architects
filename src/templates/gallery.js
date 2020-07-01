@@ -78,7 +78,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                 </div>
               </motion.div>
 
-              <nav className="relative z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 md:p-6 pt-12 md:pt-24">
+              <nav className="relative z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 md:p-6 pt-12 md:pt-20">
                 <div className="flex flex-wrap justify-end">
                   <motion.div variants={fade}>
                     <Link className="text-lg md:text-2xl leading-extratight pr-px opacity-25 transition ease-in-out duration-500" to="/">All</Link>

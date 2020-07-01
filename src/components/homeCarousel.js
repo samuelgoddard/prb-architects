@@ -23,64 +23,31 @@ class HomeCarousel extends Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
       // Play with this value to change the speed
-      let tickerSpeed = 0.8;
+      let tickerSpeed = 2;
 
       let flickity = null;
-      let isPaused = false;
       const slideshowEl = document.querySelector('.js-slideshow');
 
-      // const update = () => {
-      //   if (isPaused) return;
-      //   if (flickity.slides) {
-      //     flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-      //     flickity.selectedIndex = flickity.dragEndRestingSelect();
-      //     flickity.updateSelectedSlide();
-      //     flickity.settle(flickity.x);
-      //   }
-      //   window.requestAnimationFrame(update);
-      // };
-
-      const updateNon = () => {
-        // window.requestAnimationFrame(update);
-      };
-
-      const pause = () => {
-        isPaused = true;
-      };
-
-      const play = () => {
-        if (isPaused) {
-          isPaused = false;
-          // window.requestAnimationFrame(update);
+      const update = () => {
+        if (flickity.slides) {
+          // flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+          // flickity.integratePhysics();
+          // flickity.selectedIndex = flickity.dragEndRestingSelect();
+          flickity.updateSelectedSlide();
+          flickity.settle(flickity.x);
         }
-      };
-
-      // const loop = () => {
-      //   flickity.x--;
-      //   flickity.integratePhysics();
-      //   flickity.settle(flickity.x);
-      //   window.requestAnimationFrame(loop);
-      // }
-
-      const loop = () => {
-        flickity.x = (flickity.x - 1) % flickity.slideableWidth;
-
-        flickity.selectedIndex = flickity.dragEndRestingSelect();
-        flickity.updateSelectedSlide();
-        flickity.settle(flickity.x);
-        flickity.integratePhysics();
-        window.requestAnimationFrame(loop);
+        window.requestAnimationFrame(update);
       };
       
       flickity = new this.state.Flickity(slideshowEl, {
         autoPlay: false,
-        prevNextButtons: false,
+        prevNextButtons: true,
         pageDots: false,
         draggable: true,
         wrapAround: true,
         freeScroll: true,
-        contain: false,
-        freeScrollFriction: 0.05
+        freeScrollFriction: 0.085,
+        cellAlign: 'left'
       });
       flickity.x = 0;
 
@@ -93,7 +60,7 @@ class HomeCarousel extends Component {
       //   isPaused = true;
       // });
 
-      loop();
+      // update();
     }
   }
 
@@ -107,7 +74,7 @@ class HomeCarousel extends Component {
               <Link to={`/work/${ node.slug }`} className="block h-full slide__link">
                 <figure className="h-full">
                   <div className="flex flex-wrap relative h-full">
-                    <div className="flex-1 mr-6 h-full">
+                    <div className="w-full mr-6 h-full">
                       {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                       <div className="overflow-hidden mb-1 pb-0">
                         <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
@@ -137,7 +104,7 @@ class HomeCarousel extends Component {
                   <Link to={`/work/${ node.slug }`} className="block h-full slide__link">
                     <figure className="h-full">
                       <div className="flex flex-wrap relative h-full">
-                        <div className="flex-1 mr-6 h-full">
+                        <div className="w-full mr-6 h-full">
                           {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                           <div className="overflow-hidden mb-1 pb-0">
                             <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
