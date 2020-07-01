@@ -29,15 +29,19 @@ class HomeCarousel extends Component {
       let isPaused = false;
       const slideshowEl = document.querySelector('.js-slideshow');
 
-      const update = () => {
-        if (isPaused) return;
-        if (flickity.slides) {
-          flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-          flickity.selectedIndex = flickity.dragEndRestingSelect();
-          flickity.updateSelectedSlide();
-          flickity.settle(flickity.x);
-        }
-        window.requestAnimationFrame(update);
+      // const update = () => {
+      //   if (isPaused) return;
+      //   if (flickity.slides) {
+      //     flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      //     flickity.selectedIndex = flickity.dragEndRestingSelect();
+      //     flickity.updateSelectedSlide();
+      //     flickity.settle(flickity.x);
+      //   }
+      //   window.requestAnimationFrame(update);
+      // };
+
+      const updateNon = () => {
+        // window.requestAnimationFrame(update);
       };
 
       const pause = () => {
@@ -47,8 +51,25 @@ class HomeCarousel extends Component {
       const play = () => {
         if (isPaused) {
           isPaused = false;
-          window.requestAnimationFrame(update);
+          // window.requestAnimationFrame(update);
         }
+      };
+
+      // const loop = () => {
+      //   flickity.x--;
+      //   flickity.integratePhysics();
+      //   flickity.settle(flickity.x);
+      //   window.requestAnimationFrame(loop);
+      // }
+
+      const loop = () => {
+        flickity.x = (flickity.x - 1) % flickity.slideableWidth;
+
+        flickity.selectedIndex = flickity.dragEndRestingSelect();
+        flickity.updateSelectedSlide();
+        flickity.settle(flickity.x);
+        flickity.integratePhysics();
+        window.requestAnimationFrame(loop);
       };
       
       flickity = new this.state.Flickity(slideshowEl, {
@@ -58,22 +79,21 @@ class HomeCarousel extends Component {
         draggable: true,
         wrapAround: true,
         freeScroll: true,
-        contain: true,
-        freeScrollFriction: 0.075
+        contain: false,
+        freeScrollFriction: 0.05
       });
       flickity.x = 0;
 
-      slideshowEl.addEventListener('mouseenter', pause, false);
-      slideshowEl.addEventListener('focusin', pause, false);
-      slideshowEl.addEventListener('mouseleave', play, false);
-      slideshowEl.addEventListener('focusout', play, false);
+      // slideshowEl.addEventListener('mouseenter', play, false);
+      // slideshowEl.addEventListener('focusin', play, false);
+      // slideshowEl.addEventListener('mouseleave', play, false);
+      // slideshowEl.addEventListener('focusout', play, false);
 
-      flickity.on('dragStart', () => {
-        isPaused = true;
-      });
+      // flickity.on('dragStart', () => {
+      //   isPaused = true;
+      // });
 
-      setTimeout(function(){ update(); }, 250);
-      
+      loop();
     }
   }
 

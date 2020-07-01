@@ -146,6 +146,7 @@ html.has-scroll-dragging {
 	@screen xl {
 		width: 41vw;
 		margin-right: 6vw;
+		padding-left: 30px;
 	}
 
 	@screen 2xl {
@@ -155,13 +156,14 @@ html.has-scroll-dragging {
 	.slide__img {
 		transition: all ease 750ms;
 		height: auto;
+		transform: scale(1.1);
 	}
 
 	.slide__link {
 		@screen md {
 			&:hover {
 				.slide__img {
-					transform: scale(1.1);
+					transform: scale(1);
 				}
 			}
 		}
