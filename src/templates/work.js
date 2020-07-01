@@ -111,7 +111,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
               <div className=" w-full px-3 md:px-0 relative">
                 <div className="flex flex-wrap items-end">
                   <div className="w-full lg:w-9/12 mx-auto order-2 lg:order-1">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 bg-prbred text-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
                   </div>
                 </div>
                 <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
