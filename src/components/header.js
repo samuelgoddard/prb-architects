@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 class Header extends React.Component {
   render() {
     return (
-      <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-20 flex flex-wrap">
+      <header className="p-0 pb-0 md:p-0 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-20 z-20 flex flex-wrap">
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <li>

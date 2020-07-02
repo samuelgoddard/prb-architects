@@ -20,7 +20,7 @@ h2 {
 }
 
 .text-screen-display {
-  @apply text-7xl;
+  @apply text-5xl;
 
   @screen md {
     font-size: 7.5vw;

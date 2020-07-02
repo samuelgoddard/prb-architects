@@ -79,42 +79,68 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
         variants={fade}
       >
         <div className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-22">
-          <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8 pb-12" id="something">
+          <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-              <div className="w-full h-screen-inner relative overflow-hidden mb-3 md:mb-0"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+              <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                 <motion.div variants={image} className="h-full w-full transform image-transform-center">
                   <Img fluid={ work.featuredImage.fluid } className="w-full h-full object-cover"/>
                 </motion.div>
               </div>
             </div>
-            <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap md:px-3">
-              <motion.div variants={fade} className="flex flex-wrap w-full mb-auto px-4 md:px-0">
-                <div className="md:ml-auto md:text-right mb-8 md:mb-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                  <div className="flex-wrap items-center mb-4 hidden md:flex">
-                    <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                    <span className="block text-3xl md:text-4xl leading-none">{ work.projectCode }</span>
+            <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap mx-0 relative bg-white z-10">
+              
+              <div className="flex-wrap items-center ml-3 hidden md:flex absolute top-0 md:top-auto bottom-auto md:bottom-0 left-0 md:mb-8" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
+                <span className="block text-2xl md:text-4xl leading-none">{ work.projectCode }</span>
+              </div>
+
+              <div className="flex-wrap items-center flex md:hidden absolute top-0 md:top-auto bottom-auto md:bottom-0 left-0 md:mb-8 ml-3 mt-3">
+                <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
+                <span className="block text-2xl md:text-4xl leading-none">{ work.projectCode }</span>
+              </div>
+              <motion.div variants={fade} className="flex flex-wrap w-full mb-auto mx-4 md:mx-0">
+                <div className="w-full md:text-right mb-8 md:mb-0 block md:hidden">
+                  <div className="flex flex-wrap w-full px-3 border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative mb-2 md:mb-0">
+                    { work.metaLocation && (
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ work.metaLocation }</span>
+                    )}
+                    { work.metaSize && (
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ work.metaSize }</span>
+                    )}
+                    <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ work.category.title }</span>
+                    { work.metaCost && (
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-right">{ work.metaCost }</span>
+                    )}
                   </div>
-                  <span className="block md:hidden leading-tight text-sm uppercase mb-3">Info</span>
-                  { work.metaLocation && (
-                    <span className="block leading-tight">{ work.metaLocation }</span>
-                  )}
-                  { work.metaSize && (
-                    <span className="hidden md:block leading-tight">{ work.metaSize }</span>
-                  )}
-                  <span className="block leading-tight">{ work.category.title }</span>
-                  { work.metaCost && (
-                    <span className="block leading-tight">{ work.metaCost }</span>
-                  )}
+                </div>
+                
+                <div className="w-full md:text-right mb-8 md:mb-0 hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <div className="flex flex-wrap w-full border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative">
+                    { work.metaLocation && (
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ work.metaLocation }</span>
+                    )}
+                    { work.metaSize && (
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ work.metaSize }</span>
+                    )}
+                    <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ work.category.title }</span>
+                    { work.metaCost && (
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-right">{ work.metaCost }</span>
+                    )}
+                  </div>
                 </div>
               </motion.div>
 
-              <div className=" w-full px-3 md:px-0 relative">
+              <div className="w-full px-3 md:px-0">
                 <div className="flex flex-wrap items-end">
-                  <div className="w-full lg:w-9/12 mx-auto order-2 lg:order-1">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
+                  <div className="w-10/12 lg:w-9/12 mx-auto order-2 lg:order-1">
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative hidden md:block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-32 pb-40 md:py-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ work.title }</motion.h1>
+                    <motion.h1 variants={fade} className="text-screen-display leading-negative order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-32 pb-40 md:py-0 block md:hidden" >{ work.title }</motion.h1>
                   </div>
                 </div>
-                <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-8 md:mb-0 md:absolute bottom-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mr-0 md:mr-3 hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                </motion.div>
+                <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mt-3 mr-3 md:mr-3 block md:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                 </motion.div>
               </div>
@@ -126,7 +152,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
               <div className="bg-offblack -mx-4 md:-mx-6 pt-24 pb-6 px-6">
                 <div className="w-full flex flex-wrap md:-mx-4 items-end">
                   <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 text-white">
-                    <div className="max-w-xs flex flex-wrap hidden md:flex">
+                    <div className="max-w-xs flex-wrap hidden md:flex">
                       <div className="ml-auto flex flex-wrap items-center mb-3">
                         <span className="text-2xs mt-1 mr-1">PRB</span>
                         <span className="block">{ work.projectCode }</span>
