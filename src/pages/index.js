@@ -47,11 +47,11 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                 </motion.li>
                 <motion.li variants={fade} className="text-xl md:text-2xl px-1 opacity-25">/</motion.li>
                 <motion.li variants={fade}>
-                  <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100" to="/gallery-index">Index</Link>
+                  <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500 hover:line-through focus:line-through" activeClassName="opacity-100" to="/gallery-index">Index</Link>
                 </motion.li>
 
                 <li className="ml-auto">
-                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black">Menu</Link>
+                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
                 </li>
               </ul>
             </nav>
@@ -94,7 +94,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                     return (
                       <div key={i} className="flex">
                         <motion.div variants={fade}>
-                          <Link className="text-lg md:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500" to={`gallery/${node.slug}`}>{ node.title }</Link>
+                          <Link className="text-lg md:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500 hover:line-through focus:line-through" to={`gallery/${node.slug}`}>{ node.title }</Link>
                         </motion.div>
                         
                         { i !== length && (

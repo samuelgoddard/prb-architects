@@ -47,26 +47,26 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <motion.li variants={fade}>
-              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none">Studio</button>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Studio</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Expertise</button>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Expertise</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Team</button>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Team</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Services</button>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Services</button>
             </motion.li>
             <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
             <motion.li variants={fade}>
-              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none">Contact</button>
+              <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Contact</button>
             </motion.li>
             <li className="ml-auto">
-              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500">Menu</Link>
+              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Menu</Link>
             </li>
           </ul>
         </nav>

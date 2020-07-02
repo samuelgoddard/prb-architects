@@ -81,7 +81,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
               <nav className="relative z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 md:p-6 pt-12 md:pt-20">
                 <div className="flex flex-wrap justify-end">
                   <motion.div variants={fade}>
-                    <Link className="text-lg md:text-2xl leading-extratight pr-px opacity-25 transition ease-in-out duration-500" to="/">All</Link>
+                    <Link className="text-lg md:text-2xl leading-extratight pr-px opacity-25 hover:line-through focus:line-through" to="/">All</Link>
                   </motion.div>
                   <motion.div variants={fade} className="text-xl md:text-2xl leading-extratight px-1">
                     <span className="opacity-25 block">/</span>
@@ -98,7 +98,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                         <motion.div variants={fade}>
 
                           <Link
-                            className={location.pathname === `/gallery/${node.slug}` ? `text-lg md:text-2xl leading-extratight px-px opacity-100 line-through transition ease-in-out duration-500` : `text-lg md:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500`} to={`/gallery/${node.slug}`}>
+                            className={location.pathname === `/gallery/${node.slug}` ? `text-lg md:text-2xl leading-extratight px-px opacity-100 line-through hover:line-through focus:line-through` : `text-lg md:text-2xl leading-extratight px-px opacity-25 hover:line-through focus:line-through`} to={`/gallery/${node.slug}`}>
                                 { node.title }
                             </Link>
                         </motion.div>

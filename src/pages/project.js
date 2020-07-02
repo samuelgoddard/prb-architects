@@ -64,7 +64,7 @@ const ProjectPage = ({ data: { testImage, testImage2, heroImage }, location}) =>
                 </button>
               </motion.li>
               <li className="ml-auto">
-                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black">Menu</Link>
+                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
               </li>
             </ul>
           </nav>

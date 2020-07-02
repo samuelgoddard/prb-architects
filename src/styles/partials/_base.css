@@ -8,10 +8,6 @@ html {
 	scroll-behavior: smooth;
 }
 
-a {
-	@apply transition duration-300;
-}
-
 button {
 	border: none !important;
 	outline: none !important;
