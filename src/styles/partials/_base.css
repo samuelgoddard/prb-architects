@@ -191,6 +191,11 @@ html.has-scroll-dragging {
 	}
 }
 
+.gallery-index-hidden-image {
+	width: 12vw;
+	max-width: 350px;
+}
+
 .flickity-slider {
 	@apply flex flex-wrap items-center;
 }

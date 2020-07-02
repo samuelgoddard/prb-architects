@@ -56,6 +56,7 @@ module.exports = {
   },
   variants: {
     textDecoration: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   corePlugins: {
     container: false

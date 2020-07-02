@@ -1,8 +1,9 @@
-import React from "react"
-import SEO from "../components/seo"
-import { Link } from "gatsby"
-import { motion } from 'framer-motion'
-import Scroll from "../components/locomotiveScroll"
+import React from "react";
+import SEO from "../components/seo";
+import { Link } from "gatsby";
+import { motion } from "framer-motion";
+import Img from "gatsby-image";
+import Scroll from "../components/locomotiveScroll";
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -69,42 +70,58 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="w-full md:w-10/12 ml-auto mt-8 md:mt-16"
+            className="flex flex-wrap"
             variants={{
               enter: { transition: { staggerChildren: 0.1 } }
             }}
           >
-          {workCategories.edges.map(({ node }, i) => {
-            const parentCat = node.slug;
-            const length = workCategories.edges.length - 1;
+            <div className="w-full md:w-2/12 relative">
+              {/* {work.edges.map(({ node }, i) => {
+                return (
+                  <div key={i} className="absolute top-0 left-0 w-10/12">
+                    <Img fluid={ node.featuredImage.fluid } className="w-full" />
+                  </div>
+                )
+              })} */}
+            </div>
+            <div className="w-full md:w-10/12 ml-auto mt-8 md:mt-16">
+            {workCategories.edges.map(({ node }, i) => {
+              const parentCat = node.slug;
+              const length = workCategories.edges.length - 1;
 
-            return (
-              <nav className={ i == length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
-                <motion.span variants={fade} className="block uppercase pb-4">{ node.title }</motion.span>
-                <div>
-                  {work.edges.map(({ node }, i) => {
-                    return (
-                      <div key={i}>
-                        {/* Query the child to the parent cat... */}
-                        { node.category.slug == parentCat && (
-                          <motion.div variants={item}>
-                            <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white group">
-                              <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
-                                <span className="block text-2xs pt-px mr-1">PRB</span>
-                                <span className="block leading-none">{ node.projectCode }</span>
-                              </span>
-                              <span className="block text-lg md:text-3xl font-display leading-none mt-2 group-hover:line-through">{ node.title }</span>
-                              <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
-                            </Link>
-                          </motion.div>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-              </nav>
-            )
-          })}
+              return (
+                <nav className={ i == length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
+                  <motion.span variants={fade} className="block uppercase pb-4">{ node.title }</motion.span>
+                  <div>
+                    {work.edges.map(({ node }, i) => {
+                      return (
+                        <div key={i}>
+                          {/* Query the child to the parent cat... */}
+                          { node.category.slug == parentCat && (
+                            <motion.div variants={item} className="relative">
+                              <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white group relative">
+                                <div className="fixed top-0 left-0 ml-6 mt-64" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                                  <div className="gallery-index-hidden-image hidden xl:block opacity-0 group-hover:opacity-75 transition ease-in-out duration-500">
+                                    <Img fluid={ node.indexSupportingImage.fluid } className="w-full" />
+                                  </div>
+                                </div>
+                                <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
+                                  <span className="block text-2xs pt-px mr-1">PRB</span>
+                                  <span className="block leading-none">{ node.projectCode }</span>
+                                </span>
+                                <span className="block text-lg md:text-3xl font-display leading-none mt-2 group-hover:line-through">{ node.title }</span>
+                                <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                              </Link>
+                            </motion.div>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                </nav>
+              )
+            })}
+          </div>
         </motion.div>
       </motion.div>
     </>
@@ -129,6 +146,12 @@ export const query = graphql`
         node {
           id
           title
+          indexSupportingImage {
+            fluid(
+              imgixParams: {h: "720", w: "450", fit: "crop", crop: "faces, edges" }) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
           slug
           projectCode
           category {
