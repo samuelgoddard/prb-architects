@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	
 	@screen lg {
-		overflow-x: hidden; /* Hide scrollbars */
+		overflow: hidden; /* Hide scrollbars */
 	}
 }
 
