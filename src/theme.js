@@ -4,7 +4,7 @@ export const scroll = {
     container: "#scroll-container",
     options: {
       smooth: true,
-      smoothMobile: true,
+      smoothMobile: false,
       getDirection: true,
       touchMultiplier: 0,
       lerp: 0.1,

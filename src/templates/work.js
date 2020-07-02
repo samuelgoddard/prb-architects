@@ -78,10 +78,16 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
         exit="exit"
         variants={fade}
       >
-        <div className="bg-white p-4 md:p-6 min-h-screen pt-16 md:pt-22">
+        <div className="bg-white pl-4 pr-4 md:p-6 min-h-screen md:pt-22 p-screen-inner">
           <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-              <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+              <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                <motion.div variants={image} className="h-full w-full transform image-transform-center">
+                  <Img fluid={ work.featuredImage.fluid } className="w-full h-full object-cover"/>
+                </motion.div>
+              </div>
+
+              <div className="w-full h-screen-inner overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
                 <motion.div variants={image} className="h-full w-full transform image-transform-center">
                   <Img fluid={ work.featuredImage.fluid } className="w-full h-full object-cover"/>
                 </motion.div>
@@ -98,6 +104,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                 <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
                 <span className="block text-2xl md:text-4xl leading-none">{ work.projectCode }</span>
               </div>
+              
               <motion.div variants={fade} className="flex flex-wrap w-full mb-auto mx-4 md:mx-0">
                 <div className="w-full md:text-right mb-8 md:mb-0 block md:hidden">
                   <div className="flex flex-wrap w-full px-3 border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative mb-2 md:mb-0">
@@ -114,7 +121,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                   </div>
                 </div>
                 
-                <div className="w-full md:text-right mb-8 md:mb-0 hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                <div className="w-full md:text-right mb-8 md:mb-0 hidden md:block mr-3" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <div className="flex flex-wrap w-full border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative">
                     { work.metaLocation && (
                       <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ work.metaLocation }</span>
@@ -190,7 +197,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
               </div>
             </section>
 
-            <section className="-mx-4 md:mx-0">
+            <section className="-mx-4 md:mx-0 bg-white">
               <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-64">
                 <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32">
                   <figure className="mb-16 md:mb-32 lg:mb-48">
@@ -331,8 +338,7 @@ export const query = graphql`
       }
       featuredImage {
         fluid(
-          maxWidth: 1200
-          imgixParams: {h: "1500", w: "1000", fit: "crop", crop: "faces, edges"}) {
+          imgixParams: {h: "1500", w: "1000", fit: "crop", crop: "faces, edges", dpi: 2 }) {
           ...GatsbyDatoCmsFluid
         }
       }

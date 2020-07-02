@@ -31,6 +31,10 @@ button {
 }
 }
 
+.p-screen-inner {
+	padding-top: calc(75vh);
+}
+
 .h-screen-no-header {
 	height: calc(100vh - 105px);
 
