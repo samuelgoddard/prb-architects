@@ -5,8 +5,10 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Scroll from "../components/locomotiveScroll"
 import Collapsible from "../components/collapsible"
+import WorkCarousel from "../components/workCarousel"
+import WorkCarouselDesktop from "../components/workCarouselDesktop"
 import { navigate } from "@reach/router";
-
+import { BrowserView, MobileView } from "react-device-detect";
 
 const goBack = () => {
   navigate(-1);
@@ -198,9 +200,12 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
             </section>
 
             <section className="-mx-4 md:mx-0 bg-white">
+              <div className="block md:hidden mb-5">
+                <WorkCarousel slides={ work.galleryCarousel } />
+              </div>
               <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-64">
                 <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32">
-                  <figure className="mb-16 md:mb-32 lg:mb-48">
+                  <figure className="mb-16 md:mb-32 lg:mb-48 hidden md:block">
                     <Img fluid={ work.gallery[0].fluid } className="w-full max-w-full object-cover"/>
                     <figcaption className="flex md:text-xl px-3 md:px-0">
                       <span className="block">Exterior</span>
@@ -212,7 +217,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                     <div className="lg:text-lg leading-snug content-indented" dangerouslySetInnerHTML={{ __html: work.bodyText }}></div>
                   </div>
                 </div>
-                <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-64">
+                <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-64 hidden md:block">
                 <figure className="md:pt-32">
                   <Img fluid={ work.gallery[1].fluid } className="w-full max-w-full object-cover"/>
                   <figcaption className="flex md:text-xl px-3 md:px-0">
@@ -225,11 +230,14 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
 
               <div className="w-full flex flex-wrap">
                 <div className="w-full md:w-10/12 ml-auto">
-                  <div className="flex flex-wrap md:-mx-8 mb-20 md:mb-24 lg:mb-32">
+                  <div className="hidden md:block mb-20 md:mb-24 lg:mb-32">
+                    <WorkCarouselDesktop slides={ work.galleryDesktop } />
+                  </div>
+                  <div className="flex flex-wrap md:-mx-8 mb-20 md:mb-24 lg:mb-32 md:hidden">
                     <div className="w-full md:w-1/2 md:px-8">
                       <figure>
                         <Img fluid={ work.gallery[2].fluid } className="w-full max-w-full object-cover"/>
-                        <figcaption className="flex md:text-xl px-3 md:px-0">
+                        <figcaption className="md:text-xl px-3 md:px-0 hidden md:flex">
                           <span className="block">Location</span>
                           <span className="block ml-auto">(3—5)</span>
                         </figcaption>
@@ -358,8 +366,23 @@ export const query = graphql`
         }
       }
       gallery {
+        title
         fluid(
           imgixParams: {fit: "crop", crop: "faces, edges"}) {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+      galleryCarousel: gallery {
+        title
+        fluid(
+          imgixParams: {w: "900", h: "1200", fit: "crop", crop: "faces, edges"}) {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+      galleryDesktop: gallery {
+        title
+        fluid(
+          imgixParams: {w: "1600", h: "900", fit: "crop", crop: "faces, edges"}) {
           ...GatsbyDatoCmsFluid
         }
       }

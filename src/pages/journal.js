@@ -51,7 +51,7 @@ const JournalPage = ({ data: { entries }, location }) => {
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <motion.li variants={fade}>
-                  <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:line-through focus:line-through" activeClassName="opacity-100 line-through" to="/journal">Journal</Link>
+                  <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100 line-through" to="/journal">Journal</Link>
                 </motion.li>
 
                 <li className="ml-auto">

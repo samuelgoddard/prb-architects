@@ -3,9 +3,6 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Scroll from "../components/locomotiveScroll"
-// const Marquee3k = require('marquee3000');
-
-// import Img from "gatsby-image"
 import HomeCarousel from "../components/homeCarousel"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }

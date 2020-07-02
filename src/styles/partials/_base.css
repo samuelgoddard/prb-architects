@@ -1,7 +1,10 @@
 body {
 	margin: 0;
 	padding: 0;
-	overflow: hidden; /* Hide scrollbars */
+	
+	@screen lg {
+		overflow-x: hidden; /* Hide scrollbars */
+	}
 }
 
 html {
@@ -132,14 +135,13 @@ html.has-scroll-dragging {
 	width: 94vw;
 	margin-right: 4vw;
 	height: auto;
-	padding-left: 20px;
 	/* height: 90vh; */
 
 	@screen md {
 		/* height: 50vw; */
 		width: 42vw;
 		margin-right: 4vw;
-		padding-left: 30px;
+		/* padding-left: 30px; */
 	}
 
 	@screen lg {
@@ -172,6 +174,32 @@ html.has-scroll-dragging {
 	}
 }
 
+  
+.slide--work {
+	width: 65vw;
+	margin-right: 2px;
+	height: auto;
+	padding-left: 0;
+
+	@screen md {
+		width: 50vw;
+		margin-right: 5vw;
+		padding-left: 0;
+	}
+	
+	@screen xl {
+		width: 60vw;
+		margin-right: 6vw;
+		padding-left: 0;
+	}
+
+	@screen 2xl {
+		width: 60vw;
+		margin-right: 6vw;
+		padding-left: 0;
+	}
+}
+
 .slider {
 	animation: fadeIn 0.66s ease-out 0.45s forwards;
 }
@@ -200,4 +228,4 @@ html.has-scroll-dragging {
 	@apply flex flex-wrap items-center;
 }
 
-.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}
+.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-button{display: none !important;}

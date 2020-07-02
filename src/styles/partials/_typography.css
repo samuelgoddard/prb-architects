@@ -31,6 +31,18 @@ h2 {
   }
 }
 
+.text-screen-display--large {
+  @apply text-7xl;
+
+  @screen md {
+    font-size: 12.5vw;
+  }
+
+  @screen xl {
+    font-size: 13.5vw;
+  }
+}
+
 .text-screen-studio-blurb {
   @apply text-3xl;
 
@@ -42,6 +54,7 @@ h2 {
     font-size: 3.55vw;
   }
 }
+
 
 button {
   @apply outline-none border-none appearance-none;

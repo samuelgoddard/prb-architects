@@ -36,7 +36,7 @@ const fade = {
 	}
 }
 
-const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => {
+const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location}) => {
   return (
     <>
       <SEO title="Studio" /> 
@@ -49,20 +49,20 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
             <motion.li variants={fade}>
               <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Studio</button>
             </motion.li>
-            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
-            <motion.li variants={fade}>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
+            <motion.li className="hidden lg:block" variants={fade}>
               <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Expertise</button>
             </motion.li>
-            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
-            <motion.li variants={fade}>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
+            <motion.li className="hidden lg:block" variants={fade}>
               <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Team</button>
             </motion.li>
-            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
-            <motion.li variants={fade}>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
+            <motion.li className="hidden lg:block" variants={fade}>
               <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Services</button>
             </motion.li>
-            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25">/</motion.li>
-            <motion.li variants={fade}>
+            <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
+            <motion.li className="hidden lg:block" variants={fade}>
               <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Contact</button>
             </motion.li>
             <li className="ml-auto">
@@ -81,13 +81,13 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
       >
         <motion.div variants={fade} className="h-16 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></motion.div>
 
-        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 min-h-screen pt-16 md:pt-22 text-white min-h-screen" id="studio">
+        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-16 md:pt-22 text-white min-h-screen" id="studio">
           <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
             <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
               <div className="w-full px-3 md:px-0 mt-12">
                 <div className="flex flex-wrap h-full">
                   <div className="w-full mb-auto">
-                    <motion.h1 variants={fade} className="text-screen-display leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Our<br/>Studio</motion.h1>
+                    <motion.h1 variants={fade} className="text-screen-display--large leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Our<br/>Studio</motion.h1>
                   </div>
                   <div className="mt-auto" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-2 md:mb-0">
@@ -102,13 +102,13 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
             </div>
             <div className="w-full md:w-1/2 md:px-3">
               <div className="flex flex-wrap h-full">
-                <div className="mt-auto w-full">
+                <div className="mt-auto w-full"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <motion.div variants={fade}>
-                    <div className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <div className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug">
                       <p>We’re Architects and Building Conservation specialists who are known for delivering projects with an authentic sense of place. We’re an RIBA Chartered Practice based in the Midlands.</p>
                     </div>
                   </motion.div>
-                  <div className="w-full relative overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <div className="w-full relative overflow-hidden">
                     <motion.div variants={image} className="w-full transform image-transform-center relative overflow-hidden">
                       <Img fluid={ heroImage.childImageSharp.fluid } className="w-full object-cover mb-0 studio-image"/>
                     </motion.div>
@@ -171,31 +171,15 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage }, location}) => 
 
             <div className="w-full md:w-2/3 lg:w-8/12 ml-auto">
               <div className="flex flex-wrap justify-end">
-                <div className="w-1/2 md:w-1/3 pb-6">
-                  <div className="w-full bg-black h-128 mb-1"></div>
-                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
-                  <span className="text-sm">Director</span>
-                </div>
-                <div className="w-1/2 md:w-1/3 pb-6">
-                  <div className="w-full bg-black h-128 mb-1"></div>
-                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
-                  <span className="text-sm">Director</span>
-                </div>
-                <div className="w-1/2 md:w-1/3 pb-6">
-                  <div className="w-full bg-black h-128 mb-1"></div>
-                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
-                  <span className="text-sm">Director</span>
-                </div>
-                <div className="w-1/2 md:w-1/3 pb-6">
-                  <div className="w-full bg-black h-128 mb-1"></div>
-                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
-                  <span className="text-sm">Director</span>
-                </div>
-                <div className="w-1/2 md:w-1/3 pb-6">
-                  <div className="w-full bg-black h-128 mb-1"></div>
-                  <span className="text-lg md:text-xl block mb-0 pb-0">Joe Player</span>
-                  <span className="text-sm">Director</span>
-                </div>
+                {team.edges.map(({ node }, i) => {
+                  return (
+                    <div className="w-1/2 md:w-1/3 pb-6" key={i}>
+                      <Img fluid={ node.image.fluid } className="w-full object-cover mb-1"/>
+                      <span className="text-lg md:text-xl block mb-0 pb-0">{ node.name }</span>
+                      <span className="text-sm">{ node.jobTitle }</span>
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -299,6 +283,20 @@ export default StudioPage
 
 export const query = graphql`
   query StudioPageQuery {
+    team: allDatoCmsTeam {
+      edges {
+        node {
+          name
+          jobTitle
+          image {
+            fluid(
+              imgixParams: {h: "1600", w: "1000", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+        }
+      }
+    }
     heroImage: file(relativePath: { eq: "ivy-farm.png" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from "gatsby";
 import { motion } from "framer-motion";
 import Img from "gatsby-image";
-// import Flickity from "flickity";
 import { isBrowser } from "react-device-detect"
 
 if (typeof window !== 'undefined') {
@@ -10,20 +9,20 @@ if (typeof window !== 'undefined') {
 }
 
 class HomeCarousel extends Component {
-  state = { Flickity: null };
+  state = { FlickityDesktop: null };
 
   constructor(props) {
     super(props);
     if (typeof window !== 'undefined') {
-      const Flickity = require('flickity');
-      this.state.Flickity = Flickity;
+      const FlickityDesktop = require('flickity');
+      this.state.FlickityDesktop = FlickityDesktop;
     }
   }
 
   componentDidMount() {
     if (typeof window !== 'undefined') {
       let flickity = null;
-      const slideshowEl = document.querySelector('.js-slideshow');
+      const slideshowEl = document.querySelector('.js-slideshow-desktop');
 
       const update = () => {
         if (flickity.slides) {
@@ -33,7 +32,7 @@ class HomeCarousel extends Component {
         window.requestAnimationFrame(update);
       };
       
-      flickity = new this.state.Flickity(slideshowEl, {
+      flickity = new this.state.FlickityDesktop(slideshowEl, {
         autoPlay: false,
         prevNextButtons: true,
         pageDots: false,
@@ -49,7 +48,7 @@ class HomeCarousel extends Component {
 
   render() {
     return (
-      <div className="slideshow js-slideshow">
+      <div className="js-slideshow-desktop">
         {this.props.slides.map(({ fluid, title }, i) => {
           const length = this.props.slides.length;
           return (
@@ -65,7 +64,7 @@ class HomeCarousel extends Component {
                         { title && (
                           <span className="block">{ title }</span>
                         )}
-                        <span className="block ml-auto text-sm">({i}—{ length })</span>
+                        <span className="block ml-auto">({i + 1}—{ length })</span>
                       </figcaption>
                     </div>
                   </div>
