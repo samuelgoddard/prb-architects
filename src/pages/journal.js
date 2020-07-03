@@ -70,10 +70,10 @@ const JournalPage = ({ data: { entries }, location }) => {
             variants={fade}
             className="mt-4 flex flex-wrap"
           >
-            <div className="w-auto">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+            <div className="w-full md:w-auto order-2 md:order-1 mt-6 mb-24 md:mb-0 md:mt-0 text-right md:text-left">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 transform rotate-90" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
             </div>
-            <div className="flex-1 text-right text-6xl md:text-8xl xl:text-9xl leading-negative">Journal</div>
+            <span className="w-full md:flex-1 text-right text-7xl md:text-8xl xl:text-9xl leading-negative m-0 p-0 block order-1 md:order-2">Journal</span>
           </motion.div>
 
           <motion.div

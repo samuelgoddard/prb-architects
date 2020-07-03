@@ -79,7 +79,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
         exit="exit"
         variants={fade}
       >
-        <div className="bg-white pl-4 pr-4 md:p-6 min-h-screen md:pt-22 p-screen-inner">
+        <div className="bg-white pl-4 pr-4 md:p-6 min-h-screen-image md:pt-22 p-screen-inner">
           <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
               <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
@@ -88,7 +88,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
                 </motion.div>
               </div>
 
-              <div className="w-full h-screen-inner overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
+              <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
                 <motion.div variants={image} className="h-full w-full transform image-transform-center">
                   <Img fluid={ work.featuredImage.fluid } className="w-full h-full object-cover"/>
                 </motion.div>

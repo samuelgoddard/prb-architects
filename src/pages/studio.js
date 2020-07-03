@@ -130,14 +130,14 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
               </div>
             </div>
             
-            <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-8 md:pb-24">
-              <div className="leading-slightnegative w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3 content-indented" dangerouslySetInnerHTML={{ __html: studio.introText }}></div>
+            <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-32 md:pb-24">
+              <div className="leading-slightnegative w-10/12 md:w-8/12 lg:w-7/12 xl:w-7/12 font-display text-screen-studio-blurb xl:pt-3 content-indented" dangerouslySetInnerHTML={{ __html: studio.introText }}></div>
             </div>
           </div>
         </div>
 
         <div className="md:mx-auto md:w-full pb-20 pt-12 md:pt-16 xl:pt-20 bg-white relative z-20" id="expertise">
-            <div className="overflow-hidden md:w-9/12 max-w-screen-xl mx-auto px-4 md:px-8">
+            <div className="overflow-hidden w-full md:w-10/12 max-w-screen-xl mx-auto px-4 md:px-8">
               <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Expertise</span>
               <div className="w-full flex flex-wrap md:-mx-8">
                 {
@@ -147,7 +147,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
                         block.model.apiKey === 'service' &&
                           <>
                             <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">{ block.heading }</span>
-                            <div className="leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                            <div className="leading-tight content-indented xl:w-11/12" dangerouslySetInnerHTML={{ __html: block.content }}></div>
                           </>
                       }
                     </div>

@@ -31,8 +31,12 @@ button {
 }
 }
 
+.h-screen-inner-image {
+	padding-top: calc(100vh - 100px);
+}
+
 .p-screen-inner {
-	padding-top: calc(75vh);
+	padding-top: calc(100vh - 100px);
 }
 
 .h-screen-no-header {
@@ -127,13 +131,18 @@ html.has-scroll-dragging {
 
 
 .slideshow {
+	margin-left: -150px;
+
+	@screen md {
+		margin-left: 0px;
+	}
 }
   
 .slide {
 	align-items: center;
   	justify-content: center;
-	width: 91vw;
-	margin-right: 8vw;
+	width: 85vw;
+	margin-right: 4vw;
 	height: auto;
 
 	@screen md {
