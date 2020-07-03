@@ -159,19 +159,24 @@ html.has-scroll-dragging {
 	.slide__img {
 		/* transition: transform ease 750ms; */
 		height: 100vh;
-		max-height: 59vh;
+		max-height: calc(70vh - 115px);;
 		/* transform: scale(1.1); */
 
 		@media screen and (device-aspect-ratio: 40/71) {
-			max-height: 45vh;
+			max-height: calc(58vh - 115px);
 		}
 
 		@media screen and (device-aspect-ratio: 375/667) {
-			max-height: 52vh;
+			max-height: calc(62vh - 115px);
 		}
 
 		@media screen and (device-aspect-ratio: 16/9) {
-			max-height: 59vh;
+			max-height: calc(70vh - 115px);
+		}
+
+		@media screen and (device-aspect-ratio: 3/4) {
+			height: 100vh !important;
+			max-height: calc(55vh - 115px) !important;
 		}
 
 
