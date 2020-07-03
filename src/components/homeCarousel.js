@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Img from "gatsby-image";
 // import Flickity from "flickity";
 import { isBrowser } from "react-device-detect"
+import wheel from "wheel"
+import normalizeWheel from "normalize-wheel"
 
 if (typeof window !== 'undefined') {
   const Flickity = require('flickity');
@@ -29,12 +31,20 @@ class HomeCarousel extends Component {
       const slideshowEl = document.querySelector('.js-slideshow');
 
       const update = () => {
+
         if (flickity.slides) {
           // flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
           // flickity.integratePhysics();
           // flickity.selectedIndex = flickity.dragEndRestingSelect();
           flickity.updateSelectedSlide();
           flickity.settle(flickity.x);
+          
+          // wheel.addWheelListener(flickity.element, event => {
+          //   const wheelNormalized = normalizeWheel(event);
+          //   const direction = wheelNormalized.spinX * 100;
+          //   direction > 0 ? range.increase(direction) : range.decrease(direction);
+          //   flickity.startAnimation();
+          // })
         }
         window.requestAnimationFrame(update);
       };
@@ -50,6 +60,13 @@ class HomeCarousel extends Component {
         cellAlign: 'left'
       });
       flickity.x = 0;
+
+      wheel.addWheelListener(slideshowEl, event => {
+        const wheelNormalized = normalizeWheel(event);
+        flickity.applyForce(-wheelNormalized.pixelY / 25);
+        flickity.startAnimation();
+        flickity.dragEnd();
+    });
 
       // slideshowEl.addEventListener('mouseenter', play, false);
       // slideshowEl.addEventListener('focusin', play, false);
