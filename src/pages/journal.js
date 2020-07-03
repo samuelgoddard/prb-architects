@@ -47,7 +47,7 @@ const JournalPage = ({ data: { entries }, location }) => {
           animate="enter"
           exit="exit"
         >
-          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-20 flex flex-wrap">
+          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <motion.li variants={fade}>
@@ -63,7 +63,7 @@ const JournalPage = ({ data: { entries }, location }) => {
           </motion.header>
         </motion.div>
 
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-16 md:pt-22">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
 
           <motion.div 
             className="content"

@@ -40,7 +40,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
           exit="exit"
           data-scroll-section
         >
-          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-20 flex flex-wrap">
+          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <motion.li variants={fade}>
@@ -61,7 +61,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
 
           <div className="w-full">
             <Div100vh>
-              <motion.div variants={fade} className="h-full pt-16 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
+              <motion.div variants={fade} className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
                 <motion.div 
                   className="content"
                   variants={fade}
@@ -75,15 +75,15 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                   variants={fade}
                   className="w-full"
                 >
-                  <div className="slider opacity-0 mt-6 md:mt-0">
+                  <div className="slider opacity-0 mt-10 md:mt-0">
                     <HomeCarousel slides={work.edges} />
                   </div>
                 </motion.div>
 
-                <nav className="z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 pb-6 md:p-6 md:pt-10 absolute bottom-0 right-0 md:relative">
+                <nav className="z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 pb-4 md:p-6 md:pt-10 absolute bottom-0 right-0 md:relative">
                     <div className="md:flex md:flex-wrap justify-end leading-none md:leading-extratight mb-px">
                       <motion.div variants={fade}>
-                        <Link className="text-base md:text-lg lg:text-2xl leading-extratight pr-px transition ease-in-out duration-500 opacity-25" to="/">All</Link>
+                        <Link className="text-base md:text-lg lg:text-2xl leading-extratight pr-px transition ease-in-out duration-500 opacity-25 block pb-1" to="/">All</Link>
                       </motion.div>
                       <motion.div variants={fade} className="text-base md:text-lg lg:text-2xl leading-extratight px-1 hidden md:block">
                         <span className="opacity-25 ">/</span>
@@ -97,13 +97,14 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                           <div key={i} className="md:flex leading-none md:leading-extratight mb-px">
                             <motion.div variants={fade}>
                               <Link
-                                className={location.pathname === `/gallery/${node.slug}` ? `text-base md:text-lg lg:text-2xl leading-extratight px-px opacity-100 line-through transition ease-in-out duration-500` : `text-base md:text-lg lg:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500`} to={`/gallery/${node.slug}`}>
+                                className={
+                                  location.pathname === `/gallery/${node.slug}` ? `text-base md:text-lg lg:text-2xl leading-extratight px-px opacity-100 line-through transition ease-in-out duration-500 block pb-1` : `text-base md:text-lg lg:text-2xl leading-extratight px-px opacity-25 transition ease-in-out duration-500 block pb-1`} to={`/gallery/${node.slug}`}>
                                   { node.title }
                               </Link>
                             </motion.div>
                             
                             { i !== length && (
-                              <motion.div variants={fade} className="text-sm md:text-lg lg:text-2xl leading-extratight px-1 hidden md:block">
+                              <motion.div variants={fade} className="text-base md:text-lg lg:text-2xl leading-extratight px-1 hidden md:block">
                                 <span className="opacity-25">/</span>
                               </motion.div>
                             )}

@@ -125,13 +125,11 @@ html.has-scroll-dragging {
 	overflow: hidden;
   }
   .Collapse_Content > div {
-	/* padding-top: 20px; */
 	text-align: left;
   }
 
-
 .slideshow {
-	margin-left: -150px;
+	margin-left: -63px;
 
 	@screen md {
 		margin-left: 0px;
@@ -141,8 +139,8 @@ html.has-scroll-dragging {
 .slide {
 	align-items: center;
   	justify-content: center;
-	width: 85vw;
-	margin-right: 4vw;
+	width: 75vw;
+	margin-right: 8vw;
 	height: auto;
 
 	@screen md {
@@ -167,19 +165,19 @@ html.has-scroll-dragging {
 	.slide__img {
 		/* transition: transform ease 750ms; */
 		height: 100vh;
-		max-height: calc(70vh - 115px);;
+		max-height: calc(68vh - 115px);;
 		/* transform: scale(1.1); */
 
 		@media screen and (device-aspect-ratio: 40/71) {
-			max-height: calc(58vh - 115px);
+			max-height: calc(57vh - 115px);
 		}
 
 		@media screen and (device-aspect-ratio: 375/667) {
-			max-height: calc(62vh - 115px);
+			max-height: calc(66vh - 115px);
 		}
 
 		@media screen and (device-aspect-ratio: 16/9) {
-			max-height: calc(70vh - 115px);
+			max-height: calc(64vh - 115px);
 		}
 
 		@media screen and (device-aspect-ratio: 3/4) {

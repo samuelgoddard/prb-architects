@@ -10,8 +10,8 @@ function Layout({ children, location, location: { pathname } }) {
       <Link 
         className={ 
           pathname === "/project" || pathname === "/wayfinder" || pathname === "/studio" ||pathname.includes("work")
-          ? 'fixed bottom-0 left-0 block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-30 w-32 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100'
-          : 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-30 w-32 md:w-40 transition duration-500 ease-in-out'
+          ? 'fixed bottom-0 left-0 block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-30 w-24 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100'
+          : 'block fixed bottom-0 left-0 p-4 md:p-6 md:pb-3 z-30 w-28 md:w-40 transition duration-500 ease-in-out'
         }
         to="/"
       >

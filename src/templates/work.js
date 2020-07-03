@@ -55,7 +55,7 @@ const WorkTemplate = ({ data: { work, relatedWork }, location}) => {
         exit="exit"
       >
 
-        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
           <nav className="relative z-10 w-full">
             <ul className="flex flex-wrap">
               <motion.li variants={fade} className="block">

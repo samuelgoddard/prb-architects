@@ -43,7 +43,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
       
       <Scroll callback={location} />
       
-      <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-16 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+      <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <motion.li variants={fade}>
@@ -79,9 +79,9 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
         exit="exit"
         variants={fade}
       >
-        <motion.div variants={fade} className="h-16 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></motion.div>
+        <motion.div variants={fade} className="h-14 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></motion.div>
 
-        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-16 md:pt-22 text-white min-h-screen" id="studio">
+        <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen" id="studio">
           <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
             <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
               <div className="w-full px-3 md:px-0 mt-12">

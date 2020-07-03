@@ -43,6 +43,7 @@ module.exports = {
         '2xs': '16rem'
       },
       spacing: {
+        '14': '3.55rem',
         '22': '5.25rem',
         '28': '6.65rem',
         '30': '7rem',
