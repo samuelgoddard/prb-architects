@@ -9,7 +9,7 @@ if (typeof window !== 'undefined') {
   const Flickity = require('flickity');
 }
 
-class HomeCarousel extends Component {
+class WorkCarousel extends Component {
   state = { Flickity: null };
 
   constructor(props) {
@@ -79,4 +79,4 @@ class HomeCarousel extends Component {
   }
 }
 
-export default HomeCarousel
+export default WorkCarousel

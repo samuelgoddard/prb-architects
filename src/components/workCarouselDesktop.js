@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   const Flickity = require('flickity');
 }
 
-class HomeCarousel extends Component {
+class WorkCarouselDesktop extends Component {
   state = { FlickityDesktop: null };
 
   constructor(props) {
@@ -50,7 +50,7 @@ class HomeCarousel extends Component {
     return (
       <div className="js-slideshow-desktop">
         {this.props.slides.map(({ fluid, title }, i) => {
-          const length = this.props.slides.length;
+          const length = this.props.realLength;
           return (
             <div className="slide slide--work" key={i}>
               <div className="block h-full">
@@ -78,4 +78,4 @@ class HomeCarousel extends Component {
   }
 }
 
-export default HomeCarousel
+export default WorkCarouselDesktop
