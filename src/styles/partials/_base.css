@@ -132,10 +132,9 @@ html.has-scroll-dragging {
 .slide {
 	align-items: center;
   	justify-content: center;
-	width: 94vw;
+	width: 92vw;
 	margin-right: 4vw;
 	height: auto;
-	/* height: 90vh; */
 
 	@screen md {
 		/* height: 50vw; */
@@ -159,8 +158,27 @@ html.has-scroll-dragging {
 
 	.slide__img {
 		/* transition: transform ease 750ms; */
-		height: auto;
+		height: 100vh;
+		max-height: 59vh;
 		/* transform: scale(1.1); */
+
+		@media screen and (device-aspect-ratio: 40/71) {
+			max-height: 45vh;
+		}
+
+		@media screen and (device-aspect-ratio: 375/667) {
+			max-height: 52vh;
+		}
+
+		@media screen and (device-aspect-ratio: 16/9) {
+			max-height: 59vh;
+		}
+
+
+		@screen md {
+			height: 100%;
+			max-height: none;
+		}
 	}
 
 	.slide__link {

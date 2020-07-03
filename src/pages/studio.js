@@ -36,7 +36,7 @@ const fade = {
 	}
 }
 
-const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location}) => {
+const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, location}) => {
   return (
     <>
       <SEO title="Studio" /> 
@@ -94,7 +94,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 mt-24 md:mt-0" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                     </motion.div>
                     <motion.div variants={fade} className="w-full lg:w-2/3 mb-10 mt-auto">
-                      <p className="text-lg leading-snug">The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build. If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
+                      <div className="text-lg leading-snug w-full block" dangerouslySetInnerHTML={{ __html: studio.heroText }}></div>
                     </motion.div>
                   </div>
                 </div>
@@ -105,12 +105,12 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
                 <div className="mt-auto w-full"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <motion.div variants={fade}>
                     <div className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug">
-                      <p>We’re Architects and Building Conservation specialists who are known for delivering projects with an authentic sense of place. We’re an RIBA Chartered Practice based in the Midlands.</p>
+                      <div dangerouslySetInnerHTML={{ __html: studio.heroSupportingText }}></div>
                     </div>
                   </motion.div>
                   <div className="w-full relative overflow-hidden">
                     <motion.div variants={image} className="w-full transform image-transform-center relative overflow-hidden">
-                      <Img fluid={ heroImage.childImageSharp.fluid } className="w-full object-cover mb-0 studio-image"/>
+                      <Img fluid={ studio.heroImage.fluid } className="w-full object-cover mb-0 studio-image"/>
                     </motion.div>
                   </div>
                 </div>
@@ -126,12 +126,12 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
           <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 hidden md:block">
               <div className="w-full">
-                <Img fluid={ testImage2.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
+                <Img fluid={ studio.introImage.fluid } className="w-full max-w-full object-cover"/>
               </div>
             </div>
             
             <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-8 md:pb-24">
-              <p className="leading-slightnegative w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our combined experience has seen us work with a diverse mix of commercial and private clients, residential developers, housing associations and local authorities, schools, and in the retail, care and health sectors.</p>
+              <div className="leading-slightnegative w-10/12 md:w-9/12 lg:w-8/12 font-display text-screen-studio-blurb xl:pt-3 content-indented" dangerouslySetInnerHTML={{ __html: studio.introText }}></div>
             </div>
           </div>
         </div>
@@ -140,22 +140,19 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
             <div className="overflow-hidden md:w-9/12 max-w-screen-xl mx-auto px-4 md:px-8">
               <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Expertise</span>
               <div className="w-full flex flex-wrap md:-mx-8">
-                <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Architectural Design</span>
-                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
-                </div>
-                <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Restoration Projects</span>
-                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
-                </div>
-                <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Residential Schemes</span>
-                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
-                </div>
-                <div className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
-                  <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">Commercial Spaces</span>
-                  <p className="leading-tight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Conservation Accreditations enable us to manage complex repairs, alterations and specialist grant aided works. It also means we are adept at finding new uses for old buildings.</p>
-                </div>
+                {
+                  studio.expertise.map((block, i) => (
+                    <div key={block.id} className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
+                      {
+                        block.model.apiKey === 'service' &&
+                          <>
+                            <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">{ block.heading }</span>
+                            <div className="leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                          </>
+                      }
+                    </div>
+                  ))
+                }
               </div>
             </div>
           </div>
@@ -165,7 +162,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
             <div className="w-full md:w-1/3 lg:w-3/12">
               <div className="px-4 md:px-12 md:ml-3 mb-12 md:mb-0 mt-6 md:mt-12">
                 <span className="block uppercase mb-4 md:mb-6 xl:mb-8 pt-12">Team</span>
-                <p className="leading-snug md:max-w-2xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</p>
+                <div className="leading-snug md:max-w-2xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</div>
               </div>
             </div>
 
@@ -189,7 +186,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
           <div className="w-full flex flex-wrap md:-mx-4 items-end">
             <div className="w-full md:w-4/12 md:px-4 hidden lg:block">
               <div className="w-1/2">
-                <Img fluid={ heroImage.childImageSharp.fluid } className="w-full max-w-full object-cover"/>
+                <Img fluid={ studio.servicesSupportingImage.fluid } className="w-full max-w-full object-cover"/>
               </div>
             </div>
 
@@ -197,34 +194,19 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team }, location
               <div className="overflow-hidden">
                 <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Services</span>
                 <div className="w-full flex flex-wrap md:-mx-8">
-                  <ul className="w-full md:w-1/2 md:px-8">
-                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
-                      <span className="block text-xs mr-2">01</span>
-                      <span className="block">Technical Advice</span>
-                    </li>
-                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
-                      <span className="block text-xs mr-2">02</span>
-                      <span className="block">Project Management</span>
-                    </li>
-                    <li className="border-t md:border-b border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
-                      <span className="block text-xs mr-2">03</span>
-                      <span className="block">Planning Process</span>
-                    </li>
-                  </ul>
-                  <ul className="w-full md:w-1/2 md:px-8">
-                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
-                      <span className="block text-xs mr-2">04</span>
-                      <span className="block">Masterplanning</span>
-                    </li>
-                    <li className="border-t border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
-                      <span className="block text-xs mr-2">05</span>
-                      <span className="block">Visualisation + Concepting</span>
-                    </li>
-                    <li className="border-t border-b border-black text-lg md:text-xl py-4 flex flex-wrap items-center">
-                      <span className="block text-xs mr-2">06</span>
-                      <span className="block">Feasability Studies</span>
-                    </li>
-                  </ul>
+                  {
+                    studio.services.map((block, i) => (
+                      <div key={block.id} className="text-lg md:text-xl w-full md:w-1/2 md:px-8">
+                        {
+                          block.model.apiKey === 'service_heading' &&
+                            <div className="flex flex-wrap items-center border-b border-black py-4">
+                              <span className="block text-xs mr-2">0{i + 1}</span>
+                              <span className="block">{ block.text }</span>
+                            </div>
+                        }
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
@@ -297,24 +279,43 @@ export const query = graphql`
         }
       }
     }
-    heroImage: file(relativePath: { eq: "ivy-farm.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
+
+    studio: datoCmsStudio {
+      title
+      heroText
+      heroSupportingText
+      heroImage {
+        fluid(
+          imgixParams: {h: "1200", w: "1200", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+          ...GatsbyDatoCmsFluid
         }
       }
-    }
-    testImage: file(relativePath: { eq: "test.jpeg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
+      introText
+      introImage {
+        fluid(
+          imgixParams: {h: "1200", w: "1200", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+          ...GatsbyDatoCmsFluid
         }
       }
-    }
-    testImage2: file(relativePath: { eq: "about.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 900) {
-          ...GatsbyImageSharpFluid
+      expertise {
+        ... on DatoCmsService {
+          id
+          model { apiKey }
+          heading
+          content
+        }
+      }
+      services {
+        ... on DatoCmsServiceHeading {
+          id
+          model { apiKey }
+          text
+        }
+      }
+      servicesSupportingImage {
+        fluid(
+          imgixParams: {h: "1200", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+          ...GatsbyDatoCmsFluid
         }
       }
     }

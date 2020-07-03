@@ -8,7 +8,6 @@ import Collapsible from "../components/collapsible"
 import WorkCarousel from "../components/workCarousel"
 import WorkCarouselDesktop from "../components/workCarouselDesktop"
 import { navigate } from "@reach/router";
-import { BrowserView, MobileView } from "react-device-detect";
 
 const goBack = () => {
   navigate(-1);

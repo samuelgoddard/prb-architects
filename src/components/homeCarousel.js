@@ -94,7 +94,8 @@ class HomeCarousel extends Component {
                     <div className="w-full mr-6 h-full">
                       {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                       <div className="overflow-hidden mb-1 pb-0">
-                        <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
+                        <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
+                        <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
                       </div>
                       <figcaption className="flex md:text-xl md:px-0 items-center">  
                         <span className="block">{ node.title }</span>
