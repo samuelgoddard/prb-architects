@@ -57,9 +57,9 @@ class HomeCarousel extends Component {
         wrapAround: true,
         freeScroll: true,
         freeScrollFriction: 0.085,
-        cellAlign: 'left'
+        cellAlign: 'center'
       });
-      flickity.x = 0;
+      // flickity.x = 0;
 
       wheel.addWheelListener(slideshowEl, event => {
         const wheelNormalized = normalizeWheel(event);
@@ -90,7 +90,7 @@ class HomeCarousel extends Component {
             <div className="slide" key={i}>
               <Link to={`/work/${ node.slug }`} className="block h-full slide__link">
                 <figure className="h-full">
-                  <div className="flex flex-wrap relative h-full">
+                  <div className="flex flex-wrap relative h-full xl:pb-6">
                     <div className="flex-1 h-full">
                       {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                       <div className="overflow-hidden mb-1 pb-0">
@@ -121,7 +121,7 @@ class HomeCarousel extends Component {
                 <div className="slide" key={i}>
                   <Link to={`/work/${ node.slug }`} className="block h-full slide__link">
                     <figure className="h-full">
-                      <div className="flex flex-wrap relative h-full">
+                      <div className="flex flex-wrap relative h-full xl:pb-6">
                         <div className="w-full mr-6 h-full">
                           {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                           <div className="overflow-hidden mb-1 pb-0">

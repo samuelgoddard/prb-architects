@@ -132,14 +132,14 @@ html.has-scroll-dragging {
 .slide {
 	align-items: center;
   	justify-content: center;
-	width: 92vw;
-	margin-right: 4vw;
+	width: 91vw;
+	margin-right: 8vw;
 	height: auto;
 
 	@screen md {
 		/* height: 50vw; */
 		width: 42vw;
-		margin-right: 4vw;
+		margin-right: 5vw;
 		/* padding-left: 30px; */
 	}
 
@@ -149,7 +149,6 @@ html.has-scroll-dragging {
 	
 	@screen xl {
 		width: 41vw;
-		margin-right: 5vw;
 	}
 
 	@screen 2xl {

@@ -58,7 +58,7 @@ const GalleryIndexPage = ({ data: { work }, location }) => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="flex flex-wrap items-center h-screen-no-header overflow-hidden mt-6"
+            className="flex flex-wrap items-center h-full overflow-hidden pt-5"
             variants={{
               enter: { transition: { staggerChildren: 0.1 } }
             }}

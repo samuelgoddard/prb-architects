@@ -75,12 +75,12 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                   variants={fade}
                   className="w-full"
                 >
-                  <div className="slider opacity-0 mt-6 md:mb-0">
+                  <div className="slider opacity-0 mt-6 md:mt-0">
                     <HomeCarousel slides={work.edges} />
                   </div>
                 </motion.div>
 
-                <nav className="z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 pb-6 md:p-6 md:pt-20 absolute bottom-0 right-0 md:relative">
+                <nav className="z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 pb-6 md:p-6 md:pt-10 absolute bottom-0 right-0 md:relative">
                     <div className="md:flex md:flex-wrap justify-end leading-none md:leading-extratight mb-px">
                       <motion.div variants={fade}>
                         <Link className="text-base md:text-lg lg:text-2xl leading-extratight pr-px transition ease-in-out duration-500 opacity-25" to="/">All</Link>
