@@ -169,7 +169,9 @@ html.has-scroll-dragging {
 	.slide__img {
 		/* transition: transform ease 750ms; */
 		height: 100vh;
-		max-height: calc(68vh - 115px);;
+		max-height: calc(68vh - 115px);
+		transition: transform ease-in-out 750ms;
+		transform: scale(1.08);
 		/* transform: scale(1.1); */
 
 		@media screen and (device-aspect-ratio: 40/71) {
@@ -200,7 +202,7 @@ html.has-scroll-dragging {
 		@screen md {
 			&:hover {
 				.slide__img {
-					transform: scale(1);
+					transform: scale(1.005);
 				}
 			}
 		}
@@ -252,9 +254,26 @@ html.has-scroll-dragging {
 	}
 }
 
+.studio-arrow {
+	width: 120px;
+
+	@screen md {
+		width: 17vw;
+	}
+	@screen lg {
+		width: 11vw;
+	}
+}
+
 .gallery-index-hidden-image {
 	width: 12vw;
 	max-width: 350px;
+}
+
+.flickity-viewport {
+	@screen md {
+		@apply h-full !important;
+	}
 }
 
 .flickity-slider {

@@ -43,6 +43,17 @@ h2 {
   }
 }
 
+.wayfinder-item {
+  @apply text-6xl; 
+
+  @screen md {
+    font-size: 12vw;
+  }
+  @screen lg {
+    font-size: 8vw;
+  }
+}
+
 .text-screen-studio-blurb {
   @apply text-3xl;
 
@@ -72,6 +83,23 @@ button {
     @apply text-red-700;
   }
 }
+
+::selection { 
+  background-color: rgba(219, 72, 30, .99);
+  color: rgba(29, 29, 29, .99);
+ }
+
+ .invert-select::selection { 
+  background-color: rgba(29, 29, 29, .99);
+  color: rgba(219, 72, 30, .99);
+ }
+
+ img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+ }
 
 /* Content */
 .content {

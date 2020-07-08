@@ -36,6 +36,17 @@ const image = {
 	}
 }
 
+const heroImage = {
+	initial: { scale: 1.4 },
+	enter: { 
+    scale: 1.25,
+    transition: { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] }
+  },
+	exit: {
+		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+	}
+}
+
 const fade = {
 	initial: { opacity: 0 },
 	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
@@ -58,6 +69,12 @@ class WorkTemplate extends React.Component {
       ...scroll.options,
     })
     locomotiveScroll.update();
+
+    window.scroll = locomotiveScroll
+
+    locomotiveScroll.on("scroll", func => {
+      document.documentElement.setAttribute("data-direction", func.direction)
+    })
 
     this.timelines["fast-spin"] = gsap.to(".hero-image-transform", {
       startAt: {
@@ -94,15 +111,17 @@ class WorkTemplate extends React.Component {
     );
   }
 
+  componentWillUnmount() {
+    window.scroll.destroy();
+  }
+
   render () {
     const workCarouselDesktopItems = this.props.data.datoCmsWork.galleryDesktop.splice(2, this.props.data.datoCmsWork.galleryDesktop.length);
 
     return (
       <>
         <SEO title={ this.props.data.datoCmsWork.title } /> 
-        
-        <Scroll callback={this.props.data.location} />
-        
+                
         <motion.div
           initial="initial"
           animate="enter"
@@ -137,7 +156,7 @@ class WorkTemplate extends React.Component {
             <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
               <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
                 <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 hidden md:block">
-                  <motion.div variants={image} className="h-full w-full transform image-transform-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                  <motion.div variants={heroImage} className="h-full w-full transform image-transform-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <div className="h-full w-full transform image-transform-center overflow-hidden">
                       <div className="h-full hero-image-transform">
                         <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover"/>
@@ -147,7 +166,7 @@ class WorkTemplate extends React.Component {
                 </div>
 
                 <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
-                  <motion.div variants={image} className="h-full w-full transform image-transform-center">
+                  <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                     <div className="h-full hero-image-transform">
                       <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
                     </div>
@@ -350,7 +369,7 @@ class WorkTemplate extends React.Component {
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 lg:w-64 ml-auto md:ml-0 transform rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                     </div>
                     <div className="w-full md:w-8/12 order-1 md:order-2 p-4 md:p-0 md:px-3 mb-8 md:mb-0">
-                      <span className="block leading-tight text-sm uppercase mb-3">More { this.props.data.datoCmsWork.category.title } projects</span>
+                      <span className="block leading-tight text-sm uppercase mb-3 invert-select">More { this.props.data.datoCmsWork.category.title } projects</span>
 
                       {this.props.data.relatedWork.edges.map(({ node }, i) => {
                         return (
@@ -358,10 +377,10 @@ class WorkTemplate extends React.Component {
                             { node.slug !== this.props.data.datoCmsWork.slug &&(
                               <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white group">
                                 <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
-                                  <span className="block text-2xs pt-px mr-1">PRB</span>
-                                  <span className="block leading-none">{ node.projectCode }</span>
+                                  <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
+                                  <span className="block leading-none invert-select">{ node.projectCode }</span>
                                 </span>
-                                <span className="block text-lg md:text-3xl font-display leading-none mt-2 group-hover:line-through">{ node.title }</span>
+                                <span className="block text-lg md:text-3xl font-display leading-none mt-2 group-hover:line-through invert-select">{ node.title }</span>
                                 <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                               </Link>
                             )}
@@ -379,24 +398,24 @@ class WorkTemplate extends React.Component {
                   </div>
 
                   <ul className="flex flex-wrap border-t border-black border-b">
-                    <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block">&copy; 2020</li>
+                    <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
 
                     <li className="ml-auto block border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
+                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through invert-select" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
                     </li>
 
-                    <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block">Architecture + Conservation</li>
+                    <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
 
                     <li className="border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through" href="https://twitter.com/prbarchitects" target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline">tter</span></a>
+                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through invert-select" href="https://twitter.com/prbarchitects" target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
                     </li>
 
                     <li className="border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through hover:line-through" href="https://www.instagram.com/prbarchitects/" target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline">gram</span></a>
+                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through hover:line-through invert-select" href="https://www.instagram.com/prbarchitects/" target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
                     </li>
                   </ul>
                   <ul className="flex flex-wrap border-b border-black md:hidden">
-                    <li className="md:text-lg py-2 block pr-12 block">Architecture + Conservation</li>
+                    <li className="md:text-lg py-2 block pr-12 invert-select">Architecture + Conservation</li>
                   </ul>
                 </motion.div>
                 
@@ -428,14 +447,14 @@ export const query = graphql`
       featuredImage {
         fluid(
           imgixParams: {h: "1500", w: "1000", fit: "crop", crop: "faces, edges", dpi: 2 }) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
       supportingImage {
         fluid(
           maxWidth: 1200
           imgixParams: {h: "1200", w: "1200", fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
       introServices {
@@ -450,21 +469,21 @@ export const query = graphql`
         title
         fluid(
           imgixParams: {fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
       galleryCarousel: gallery {
         title
         fluid(
           imgixParams: {w: "900", h: "1200", fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
       galleryDesktop: gallery {
         title
         fluid(
           imgixParams: {w: "1600", h: "900", fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
       slug

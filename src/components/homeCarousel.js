@@ -84,11 +84,11 @@ class HomeCarousel extends Component {
   
   render() {
     return (
-      <div className="slideshow js-slideshow">
+      <div className="slideshow js-slideshow md:fixed md:top-0 md:left-0 md:right-0 md:bottom-0 md:w-full md:h-full md:pt-16 lg:pt-20 xl:pt-32">
         {this.props.slides.map(({ node }, i) => {
           return (
             <div className="slide" key={i}>
-              <Link to={`/work/${ node.slug }`} className="block h-full slide__link">
+              <Link to={`/work/${ node.slug }`} className="block h-full slide__link group">
                 <figure className="h-full">
                   <div className="flex flex-wrap relative h-full xl:pb-6">
                     <div className="flex-1 h-full">

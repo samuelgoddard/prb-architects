@@ -71,7 +71,7 @@ const JournalPage = ({ data: { entries }, location }) => {
             className="mt-4 flex flex-wrap"
           >
             <div className="w-full md:w-auto order-2 md:order-1 mt-6 mb-24 md:mb-0 md:mt-0 text-right md:text-left">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 transform rotate-90" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
             </div>
             <span className="w-full md:flex-1 text-right text-7xl md:text-8xl xl:text-9xl leading-negative m-0 p-0 block order-1 md:order-2">Journal</span>
           </motion.div>
@@ -94,10 +94,10 @@ const JournalPage = ({ data: { entries }, location }) => {
                       <div className={ node.gallery.length > 0 ? `block mb-6` : `block mb-0`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
                         <div className="flex flex-wrap -mx-3 overflow-hidden">
-                          {node.gallery.map(({ fixed }, i) => {
+                          {node.gallery.map(({ fluid }, i) => {
                             return(
-                              <div className="w-auto px-3 mb-5" key={i}>
-                                <Img fixed={ fixed } className="w-full object-cover "/>
+                              <div className="w-3/12 px-3 mb-5" key={i}>
+                                <Img fluid={ fluid } className="w-full object-cover"/>
                               </div>
                             )
                           })}
@@ -116,8 +116,8 @@ const JournalPage = ({ data: { entries }, location }) => {
           <div className="w-full md:w-10/12 ml-auto">
             <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
               <div className="w-full">
-                <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-extratight md:px-6 mb-6">Looking for an architectual<br/>team for your project?</span>
-                <a href="https://example.com" rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white">Get in touch</a>
+                <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-extratight invert-select md:px-6 mb-6">Looking for an architectual<br/>team for your project?</span>
+                <a href="https://example.com" rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</a>
               </div>
               <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 ml-auto transform rotate-90 absolute bottom-0 right-0 m-4 md:m-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
@@ -132,24 +132,24 @@ const JournalPage = ({ data: { entries }, location }) => {
           </div>
 
           <ul className="flex flex-wrap border-t border-black border-b">
-            <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block">&copy; 2020</li>
+            <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
 
             <li className="ml-auto block border-l border-black">
-              <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
+              <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through invert-select" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
             </li>
 
-            <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block">Architecture + Conservation</li>
+            <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
 
             <li className="border-l border-black">
-              <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through" href="https://twitter.com/prbarchitects" target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline">tter</span></a>
+              <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white invert-select focus:text-white hover:line-through" href="https://twitter.com/prbarchitects" target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
             </li>
 
             <li className="border-l border-black">
-              <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through hover:line-through" href="https://www.instagram.com/prbarchitects/" target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline">gram</span></a>
+              <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through invert-select" href="https://www.instagram.com/prbarchitects/" target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
             </li>
           </ul>
           <ul className="flex flex-wrap border-b border-black md:hidden">
-            <li className="md:text-lg py-2 block pr-12 block">Architecture + Conservation</li>
+            <li className="md:text-lg py-2 block pr-12 block invert-select">Architecture + Conservation</li>
           </ul>
         </motion.div>
         
@@ -162,15 +162,15 @@ export default JournalPage
 
 export const query = graphql`
   query JournalQuery {
-    entries: allDatoCmsJournal {
+    entries: allDatoCmsJournal(sort: {fields: date, order: DESC}) {
       edges {
         node {
           title
           date
           content
           gallery {
-            fixed(height: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsFixed
+            fluid(imgixParams: {h: "900", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+              ...GatsbyDatoCmsFluid_tracedSVG
             }    
           }
           slug
