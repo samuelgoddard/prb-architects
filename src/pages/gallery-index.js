@@ -151,7 +151,7 @@ export const query = graphql`
           indexSupportingImage {
             fluid(
               imgixParams: {h: "720", w: "450", fit: "crop", crop: "faces, edges" }) {
-                ...GatsbyDatoCmsFluid_tracedSVG
+                ...GatsbyDatoCmsFluid
             }
           }
           slug

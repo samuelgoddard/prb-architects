@@ -170,7 +170,7 @@ export const query = graphql`
           content
           gallery {
             fluid(imgixParams: {h: "900", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }    
           }
           slug

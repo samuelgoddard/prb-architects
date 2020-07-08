@@ -446,14 +446,14 @@ export const query = graphql`
       featuredImage {
         fluid(
           imgixParams: {h: "1500", w: "1000", fit: "crop", crop: "faces, edges", dpi: 2 }) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       supportingImage {
         fluid(
           maxWidth: 1200
           imgixParams: {h: "1200", w: "1200", fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       introServices {
@@ -468,21 +468,21 @@ export const query = graphql`
         title
         fluid(
           imgixParams: {fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       galleryCarousel: gallery {
         title
         fluid(
           imgixParams: {w: "900", h: "1200", fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       galleryDesktop: gallery {
         title
         fluid(
           imgixParams: {w: "1600", h: "900", fit: "crop", crop: "faces, edges"}) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       slug
