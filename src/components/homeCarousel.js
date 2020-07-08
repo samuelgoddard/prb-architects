@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 import { isBrowser } from "react-device-detect"
 import wheel from "wheel"
 import normalizeWheel from "normalize-wheel"
+import ReactPlayer from 'react-player'
 
 if (typeof window !== 'undefined') {
   const Flickity = require('flickity');
@@ -66,7 +67,7 @@ class HomeCarousel extends Component {
         flickity.applyForce(-wheelNormalized.pixelY / 15);
         flickity.startAnimation();
         flickity.dragEnd();
-    });
+      });
 
       // slideshowEl.addEventListener('mouseenter', play, false);
       // slideshowEl.addEventListener('focusin', play, false);
@@ -93,9 +94,17 @@ class HomeCarousel extends Component {
                   <div className="flex flex-wrap relative h-full xl:pb-6">
                     <div className="flex-1 h-full">
                       {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
-                      <div className="overflow-hidden mb-1 pb-0">
-                        <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
-                        <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
+                      <div className="overflow-hidden mb-1 pb-0 h-full">
+                        { node.teaserVideo ? (
+                          <div className="h-full carousel-img w-auto slide__img pb-0 -mb-2">
+                            <ReactPlayer url={ node.teaserVideo.url } playing loop muted width='100%' height='100%' />
+                          </div>
+                        ) : (
+                          <>
+                            <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
+                            <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
+                          </>
+                        )}
                       </div>
                       <figcaption className="flex text-lg md:text-xl md:px-0 items-center">  
                         <span className="block">{ node.title }</span>

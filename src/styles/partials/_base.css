@@ -148,7 +148,7 @@ html.has-scroll-dragging {
 	height: auto;
 
 	@screen md {
-		/* height: 50vw; */
+		height: 400px;
 		width: 42vw;
 		margin-right: 5vw;
 		/* padding-left: 30px; */
@@ -269,11 +269,16 @@ html.has-scroll-dragging {
 	width: 12vw;
 	max-width: 350px;
 }
-
-.flickity-viewport {
-	@screen md {
-		@apply h-full !important;
+.home-slider {
+	.flickity-viewport {
+		@screen md {
+			@apply h-full !important;
+		}
 	}
+}
+
+video {
+	object-fit: cover;
 }
 
 .flickity-slider {

@@ -72,7 +72,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                   variants={fade}
                   className="w-full"
                 >
-                  <div className="slider opacity-0 mt-10 md:mt-0">
+                  <div className="slider home-slider opacity-0 mt-10 md:mt-0">
                     <HomeCarousel slides={work.edges} />
                   </div>
                 </motion.div>
@@ -131,6 +131,9 @@ export const query = graphql`
       edges {
         node {
           id
+          teaserVideo {
+            url
+          }
           featuredImageSmall: teaserImage {
             url
             fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {

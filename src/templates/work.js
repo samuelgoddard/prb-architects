@@ -37,9 +37,9 @@ const image = {
 }
 
 const heroImage = {
-	initial: { scale: 1.4 },
+	initial: { scale: 1 },
 	enter: { 
-    scale: 1.25,
+    scale: 1,
     transition: { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] }
   },
 	exit: {
@@ -78,9 +78,9 @@ class WorkTemplate extends React.Component {
 
     this.timelines["fast-spin"] = gsap.to(".hero-image-transform", {
       startAt: {
-        scale: 1.25,
+        scale: 1,
       },
-      scale: 1,
+      scale: 1.25,
       paused: true
     });
 
@@ -289,7 +289,7 @@ class WorkTemplate extends React.Component {
                 <div className="block md:hidden mb-5">
                   <WorkCarousel slides={ this.props.data.datoCmsWork.galleryCarousel } />
                 </div>
-                <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-64">
+                <div className="w-full flex flex-wrap mb-12 md:mb-24 lg:mb-32">
                   <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32">
                     <figure className="mb-16 md:mb-32 lg:mb-48 hidden md:block">
                       <div className="overflow-hidden block">
@@ -329,7 +329,6 @@ class WorkTemplate extends React.Component {
                 <div className="w-full flex flex-wrap">
                   <div className="w-full md:w-10/12 ml-auto">
                     <div className="hidden md:block mb-20 md:mb-24 lg:mb-32">
-
                       <WorkCarouselDesktop slides={ workCarouselDesktopItems } realLength={ this.props.data.datoCmsWork.gallery.length } />
                     </div>
                     <div className="flex flex-wrap md:-mx-8 mb-20 md:mb-24 lg:mb-32 md:hidden">

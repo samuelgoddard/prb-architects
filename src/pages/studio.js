@@ -126,7 +126,15 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
           <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16">
             <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 hidden md:block">
               <div className="w-full">
-                <Img fluid={ studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                  <div className="w-full relative overflow-hidden" data-scroll>
+                    <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
+                      <div className="image-reveal-scroll">
+                        <Img fluid={ studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             
@@ -171,7 +179,16 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
                 {team.edges.map(({ node }, i) => {
                   return (
                     <div className="w-1/2 md:w-1/3 pb-6" key={i}>
-                      <Img fluid={ node.image.fluid } className="w-full object-cover mb-1"/>
+                      <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                        <div className="w-full relative overflow-hidden" data-scroll>
+                          <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
+                            <div className="image-reveal-scroll">
+                              <Img fluid={ node.image.fluid } className="w-full object-cover mb-1"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
                       <span className="text-lg md:text-xl block mb-0 pb-0">{ node.name }</span>
                       <span className="text-sm">{ node.jobTitle }</span>
                     </div>
@@ -186,7 +203,15 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
           <div className="w-full flex flex-wrap md:-mx-4 items-end">
             <div className="w-full md:w-4/12 md:px-4 hidden lg:block">
               <div className="w-1/2">
-                <Img fluid={ studio.servicesSupportingImage.fluid } className="w-full max-w-full object-cover"/>
+                <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                  <div className="w-full relative overflow-hidden" data-scroll>
+                    <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
+                      <div className="image-reveal-scroll">
+                        <Img fluid={ studio.servicesSupportingImage.fluid } className="w-full max-w-full object-cover"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

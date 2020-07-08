@@ -44,6 +44,7 @@ class WorkCarousel extends Component {
         cellAlign: 'left'
       });
       flickity.x = 0;
+
     }
   }
 

@@ -57,8 +57,14 @@ class WorkCarouselDesktop extends Component {
                 <figure className="h-full">
                   <div className="flex flex-wrap relative h-full">
                     <div className="w-full h-full">
-                      <div className="overflow-hidden mb-1 pb-0">
-                        <Img fluid={fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
+                      <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                        <div className="w-full relative overflow-hidden" data-scroll>
+                          <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
+                            <div className="image-reveal-scroll">
+                              <Img fluid={fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <figcaption className="flex md:text-xl md:px-0 items-center p-3">
                         { title && (
