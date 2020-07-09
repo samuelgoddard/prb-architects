@@ -3,35 +3,24 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import Scroll from "../components/locomotiveScroll"
+// import Scroll from "../components/locomotiveScroll"
 import Collapsible from "../components/collapsible"
 import gsap from "gsap";
 import WorkCarousel from "../components/workCarousel"
 import WorkCarouselDesktop from "../components/workCarouselDesktop"
-import { navigate } from "@reach/router";
+// import { navigate } from "@reach/router";
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
-const goBack = () => {
-  navigate(-1);
-}
+// const goBack = () => {
+//   navigate(-1);
+// }
 
 const header = {
 	initial: { opacity: 1 },
 	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
 	exit: {
 		opacity: 1,
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-	}
-}
-
-const image = {
-	initial: { scale: 1 },
-	enter: { 
-    scale: 1,
-    transition: { duration: 2, ease: [0.43, 0.13, 0.23, 0.96] }
-  },
-	exit: {
 		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 	}
 }
@@ -132,10 +121,10 @@ class WorkTemplate extends React.Component {
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <motion.li variants={fade} className="block">
-                  <button className="text-lg md:text-2xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center hover:line-through focus:line-through" onClick={goBack}>
+                  <Link className="text-lg md:text-2xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center hover:line-through focus:line-through" to="/">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
                     <span className="block ml-3">{ this.props.data.datoCmsWork.title }</span>
-                  </button>
+                  </Link>
                 </motion.li>
                 <li className="ml-auto">
                   <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>

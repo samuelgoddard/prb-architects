@@ -29,7 +29,7 @@ const header = {
 const IndexPage = ({ data: { work, workCategories }, location }) => {
   return (
     <>
-    <Scroll callback={location} />
+      <Scroll callback={location} />
       <SEO title="Home" />
         <motion.section
           initial="initial"

@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Scroll from "../components/locomotiveScroll"
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const windowGlobal = typeof window !== 'undefined' && window
 
@@ -37,6 +38,37 @@ const fade = {
 }
 
 const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, location}) => {
+
+  useEffect(() => {
+    const members = document.querySelectorAll('.team-member');
+    if(Object.keys(members).length > 0) {
+      function memberHover(member) {
+        members.forEach(member => {
+          member.classList.remove('opacity-100');
+          member.classList.add('opacity-25');
+          member.classList.add('team-member--deactive');
+        });
+        member.target.classList.remove('team-member--deactive');
+        member.target.classList.add('team-member--active');
+        member.target.classList.add('opacity-100');
+      };
+      function memberReset(member) {
+        members.forEach(member => {
+          member.classList.remove('opacity-25');
+          member.classList.remove('team-member--active');
+          member.classList.remove('team-member--deactive');
+          member.classList.add('opacity-100');
+        });
+      }
+      members.forEach(member => {
+        member.addEventListener('mouseenter', memberHover);
+      });
+      members.forEach(member => {
+        member.addEventListener('mouseleave', memberReset);
+      });
+    }
+  });
+
   return (
     <>
       <SEO title="Studio" /> 
@@ -164,26 +196,34 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
               </div>
             </div>
           </div>
-
+        
+        <Tabs>
         <div className="bg-offblack relative z-20 text-white -xm-4 md:-mx-8 pb-8" id="team">
           <div className="w-full flex flex-wrap">
             <div className="w-full md:w-1/3 lg:w-3/12">
               <div className="px-4 md:px-12 md:ml-3 mb-12 md:mb-0 mt-6 md:mt-12">
-                <span className="block uppercase mb-4 md:mb-6 xl:mb-8 pt-12">Team</span>
-                <div className="leading-snug md:max-w-2xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The built environment relies on change, and we exist to make progress. This means that we are realistic, and driven to build.  If you’re looking to extend, adapt, refurbish, or to create something new, we can help you.</div>
+                {team.edges.map(({ node }, i) => {
+                  return (
+                    <TabPanel key={i}>
+                      <span className="block uppercase mb-4 md:mb-6 xl:mb-8 pt-12">{ node.name }</span>
+                      <div className="leading-snug md:max-w-2xs content-indented" dangerouslySetInnerHTML={{ __html: node.profileText }}></div>
+                    </TabPanel>
+                  )
+                })}
               </div>
             </div>
 
             <div className="w-full md:w-2/3 lg:w-8/12 ml-auto">
-              <div className="flex flex-wrap justify-end">
+              <TabList className="flex flex-wrap justify-end">
                 {team.edges.map(({ node }, i) => {
                   return (
-                    <div className="w-1/2 md:w-1/3 pb-6" key={i}>
-                      <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                    <Tab className="w-1/2 md:w-1/3 pb-6 cursor-pointer" key={i}>
+                      <div className="overflow-hidden mb-1 pb-0 w-full relative team-member transition duration-500 ease-in-out" data-scroll data-scroll-speed="0">
                         <div className="w-full relative overflow-hidden" data-scroll>
-                          <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
-                            <div className="image-reveal-scroll">
-                              <Img fluid={ node.image.fluid } className="w-full object-cover mb-1"/>
+                          <div data-scroll data-scroll-speed="0.3" className="overflow-hidden -m-6">
+                            <div className="image-reveal-scroll relative">
+                              <Img fluid={ node.image.fluid } className="w-full object-cover mb-1 relative z-20 team-member__image"/>
+                              <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
                             </div>
                           </div>
                         </div>
@@ -191,13 +231,14 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
                       
                       <span className="text-lg md:text-xl block mb-0 pb-0">{ node.name }</span>
                       <span className="text-sm">{ node.jobTitle }</span>
-                    </div>
+                    </Tab>
                   )
                 })}
-              </div>
+              </TabList>
             </div>
           </div>
         </div>
+        </Tabs>
 
         <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24" id="services">
           <div className="w-full flex flex-wrap md:-mx-4 items-end">
@@ -245,7 +286,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
             <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
               <div className="w-full">
                 <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-extratight md:px-6 mb-6 invert-select">Looking for an architectual<br/>team for your project?</span>
-                <a href="https://example.com" rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</a>
+                <Link to="/" rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</Link>
               </div>
               <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 ml-auto transform rotate-90 absolute bottom-0 right-0 m-4 md:m-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
@@ -295,9 +336,10 @@ export const query = graphql`
         node {
           name
           jobTitle
+          profileText
           image {
             fluid(
-              imgixParams: {h: "1600", w: "1000", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+              imgixParams: {h: "1100", w: "800", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
               ...GatsbyDatoCmsFluid
             }
           }

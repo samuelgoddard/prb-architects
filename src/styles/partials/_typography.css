@@ -119,6 +119,46 @@ button {
   writing-mode: vertical-rl;
 }
 
+.strike {
+  position: relative;
+
+  .strike__inner {
+    position: relative;
+    display: block;
+  
+    &:after {
+      content: ' ';
+      position: absolute;
+      top: calc(50% - 15px);
+      left: 0;
+      width: 0;
+      height: 5px;
+      background: currentColor;
+    }
+  }
+
+  &:focus, &:hover {
+    .strike__inner {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.strike__inner--white {
+  &:after {
+    @apply bg-white !important;
+  }
+}
+
+.strike__inner--small {
+  &:after {
+    top: 37% !important;
+    height: 2px !important;
+  }
+}
+
 .content-indented {
   > p {
     &:before {

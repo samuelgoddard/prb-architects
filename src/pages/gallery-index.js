@@ -100,12 +100,12 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
                           { node.category.slug == parentCat && (
                             <div className="relative group">
                               <motion.div variants={item}>
-                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white relative invert-select">
+                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white relative invert-select strike">
                                   <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
                                     <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
                                     <span className="block leading-none invert-select">{ node.projectCode }</span>
                                   </span>
-                                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 group-hover:line-through invert-select">{ node.title }</span>
+                                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 strike__inner strike__inner--small invert-select">{ node.title }</span>
                                   <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                                 </Link>
                               </motion.div>

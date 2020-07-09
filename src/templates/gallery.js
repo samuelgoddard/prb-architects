@@ -29,7 +29,7 @@ const header = {
 	}
 }
 
-const IndexPage = ({ data: { work, workCategories }, location }) => {
+const IndexGalleryPage = ({ data: { work, workCategories }, location }) => {
   return (
     <>
     <Scroll callback={location} />
@@ -121,7 +121,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
   )
 }
 
-export default IndexPage
+export default IndexGalleryPage
 
 export const query = graphql`
   query GalleryPageQuery($slug: String!) {
