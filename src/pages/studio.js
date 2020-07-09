@@ -201,7 +201,7 @@ const StudioPage = ({ data: { testImage, testImage2, heroImage, team, studio }, 
         <div className="bg-offblack relative z-20 text-white -xm-4 md:-mx-8 pb-8" id="team">
           <div className="w-full flex flex-wrap">
             <div className="w-full md:w-1/3 lg:w-3/12">
-              <div className="px-4 md:px-12 md:ml-3 mb-12 md:mb-0 mt-6 md:mt-12">
+              <div className="px-4 md:px-12 md:ml-3 pb-12 md:pb-24 pt-12 md:pt-24 xl:pt-24" data-scroll-sticky data-scroll data-scroll-target="#team">
                 {team.edges.map(({ node }, i) => {
                   return (
                     <TabPanel key={i}>
