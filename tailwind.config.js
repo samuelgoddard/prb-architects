@@ -11,7 +11,8 @@ module.exports = {
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1600px"
+      "2xl": "1600px",
+      "3xl": "1920px"
     },
     fontSize: {
       '2xs': '.45rem',

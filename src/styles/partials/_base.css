@@ -166,6 +166,10 @@ html.has-scroll-dragging {
 		width: 42vw;
 	}
 
+	@screen 3xl {
+		height: 600px;
+	}
+
 	.slide__img {
 		/* transition: transform ease 750ms; */
 		height: 100vh;
