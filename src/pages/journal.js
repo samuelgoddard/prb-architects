@@ -40,8 +40,8 @@ const header = {
 const JournalPage = ({ data: { entries }, location }) => {
   return (
     <>
-    <Scroll callback={location} />
       <SEO title="Journal" />
+        <Scroll callback={location} />
         <motion.div
           initial="initial"
           animate="enter"
@@ -93,15 +93,15 @@ const JournalPage = ({ data: { entries }, location }) => {
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i}>
                       <div className={ node.gallery.length > 0 ? `block mb-6` : `block mb-0`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
-                        <div className="flex flex-wrap -mx-3 overflow-hidden">
-                          {node.gallery.map(({ fluid }, i) => {
-                            return(
-                              <div className="w-3/12 px-3 mb-5" key={i}>
-                                <Img fluid={ fluid } className="w-full object-cover"/>
-                              </div>
-                            )
-                          })}
-                        </div>
+                      <div className="flex flex-wrap -mx-3 overflow-hidden">
+                        {node.gallery.map(({ fluid }, i) => {
+                          return(
+                            <div className="w-3/12 px-3 mb-5" key={i}>
+                              <Img fluid={ fluid } className="w-full object-cover"/>
+                            </div>
+                          )
+                        })}
+                      </div>
                     </Collapsible>
                   // </motion.div>
                 )
