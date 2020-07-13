@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
-import { Power3, gsap } from "gsap/all"
+import { Power2, gsap } from "gsap/all"
 import { isBrowser } from "react-device-detect"
 
 //! This method is essential to keep the scroll height up to date.
@@ -8,20 +8,20 @@ const updateScroll = () => isBrowser && window.scroll.update()
 const collapsible = node => {
   const tl = gsap.timeline({
     defaults: {
-      duration: 0.65,
-      ease: Power3.easeInOut,
+      duration: 0.35,
+      ease: Power2.easeInOut,
     },
   })
 
   //! We call this method after every change that impacts the page height.
   const animation = tl
-    .call(() => setTimeout(function() { updateScroll(); }, 650))
+    .call(() => setTimeout(function() { updateScroll(); }, 350))
     .fromTo(
       node,
       { height: 0, opacity: 0, willChange: "height" },
       { height: "auto", opacity: 1, clearProps: "willChange" }
     )
-    .call(() => setTimeout(function() { updateScroll(); }, 650))
+    .call(() => setTimeout(function() { updateScroll(); }, 350))
     .pause()
 
   let open = () => animation.play()
@@ -40,7 +40,6 @@ const Collapsible = ({ children, heading, index, textLarge }) => {
   let body = useRef(null)
 
   const handleClick = () => {
-    setTimeout(updateScroll(), 650)
     if (state.initial === false) {
       setState({
         initial: null,

@@ -4,6 +4,11 @@ import { Link } from "gatsby"
 import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Div100vh from "react-div-100vh";
+import { navigate } from "@reach/router";
+
+const goBack = () => {
+  navigate(-1);
+}
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
 
@@ -44,7 +49,7 @@ const WayfinderPage = ({ data: { work }, location }) => {
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <li className="ml-auto">
-              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black invert-select">Menu</Link>
+              <button className="text-lg md:text-2xl px-px text-black invert-select line-through" onClick={() => goBack() }>Menu</button>
             </li>
           </ul>
         </nav>
