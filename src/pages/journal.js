@@ -70,7 +70,7 @@ const JournalPage = ({ data: { entries }, location }) => {
             variants={fade}
             className="mt-4 flex flex-wrap"
           >
-            <div className="w-full md:w-auto order-2 md:order-1 mt-6 mb-24 md:mb-0 md:mt-0 text-right md:text-left">
+            <div className="w-full md:w-auto order-2 md:order-1 mt-32 mb-0 md:mb-0 md:mt-0 text-right md:text-left">
               {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg> */}
               <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
             </div>
@@ -81,12 +81,12 @@ const JournalPage = ({ data: { entries }, location }) => {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="w-full md:w-10/12 ml-auto mt-4 md:mt-8"
+            className="w-full md:w-10/12 ml-auto mt-0 md:mt-8"
             variants={{
               enter: { transition: { staggerChildren: 0.1 } }
             }}
           >
-          <nav className="pb-12 md:pb-24 pt-12 md:pt-16">
+          <nav className="pb-12 md:pb-24 pt-0 md:pt-16">
             <div>
               {entries.edges.map(({ node }, i) => {
                 return (
