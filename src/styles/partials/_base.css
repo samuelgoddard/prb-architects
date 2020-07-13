@@ -261,13 +261,13 @@ html.has-scroll-dragging {
 }
 
 .studio-arrow {
-	width: 120px;
+	width: 110px;
 
 	@screen md {
 		width: 17vw;
 	}
 	@screen lg {
-		width: 11vw;
+		width: 13vw;
 	}
 }
 

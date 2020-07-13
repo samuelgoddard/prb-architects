@@ -71,7 +71,8 @@ const JournalPage = ({ data: { entries }, location }) => {
             className="mt-4 flex flex-wrap"
           >
             <div className="w-full md:w-auto order-2 md:order-1 mt-6 mb-24 md:mb-0 md:mt-0 text-right md:text-left">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+              {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg> */}
+              <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
             </div>
             <span className="w-full md:flex-1 text-right text-screen-display--large leading-negative m-0 p-0 block order-1 md:order-2">Journal</span>
           </motion.div>
@@ -96,7 +97,7 @@ const JournalPage = ({ data: { entries }, location }) => {
                       <div className="flex flex-wrap -mx-3 overflow-hidden">
                         {node.gallery.map(({ fluid }, i) => {
                           return(
-                            <div className="w-3/12 px-3 mb-5" key={i}>
+                            <div className="w-9/12 md:w-3/12 px-3 mb-5" key={i}>
                               <Img fluid={ fluid } className="w-full object-cover"/>
                             </div>
                           )
