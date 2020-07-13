@@ -125,15 +125,17 @@ button {
   .strike__inner {
     position: relative;
     display: block;
-  
-    &:after {
-      content: ' ';
-      position: absolute;
-      top: calc(50% - 15px);
-      left: 0;
-      width: 0;
-      height: 5px;
-      background: currentColor;
+    
+    @screen md {
+      &:after {
+        content: ' ';
+        position: absolute;
+        top: calc(50% - 15px);
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: currentColor;
+      }
     }
   }
 
