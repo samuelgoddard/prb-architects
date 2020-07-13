@@ -138,6 +138,9 @@ export const query = graphql`
       edges {
         node {
           id
+          teaserVideo {
+            url
+          }
           featuredImageSmall: teaserImage {
             url
             fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
