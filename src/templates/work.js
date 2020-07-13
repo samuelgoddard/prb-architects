@@ -101,6 +101,7 @@ class WorkTemplate extends React.Component {
   }
 
   componentWillUnmount() {
+    window.scroll.update();
     window.scroll.destroy();
   }
 
@@ -166,19 +167,39 @@ class WorkTemplate extends React.Component {
               </div>
               <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 flex flex-wrap mx-0 relative bg-white z-10">
               
-                <div className="flex-wrap items-center ml-3 hidden md:flex absolute top-0 md:top-auto bottom-auto md:bottom-0 left-0 md:mb-8" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                {/* <div className="flex-wrap items-center ml-3 hidden md:flex absolute top-0 md:top-0 bottom-auto md:bottom-auto left-0 md:mb-8" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                   <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
                   <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
-                </div>
-
-                <div className="flex-wrap items-center flex md:hidden absolute top-0 md:top-auto bottom-auto md:bottom-0 left-0 md:mb-8 ml-3 mt-3">
-                  <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                  <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
-                </div>
+                </div> */}
                 
-                <motion.div variants={fade} className="flex flex-wrap w-full mb-auto mx-4 md:mx-0">
-                  <div className="w-full md:text-right mb-8 md:mb-0 block md:hidden">
-                    <div className="flex flex-wrap w-full px-3 border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative mb-2 md:mb-0">
+                <div className="w-full px-3 md:px-0">
+                  <div className="flex flex-wrap md:h-full items-center">
+                    <div className="w-10/12 lg:w-9/12 mx-auto mt-12 md:-mt-12 mb-40 md:mb-0">
+                      <motion.h1 variants={fade} className="text-screen-display leading-negative hidden md:block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-32 pb-40 md:py-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ this.props.data.datoCmsWork.title }</motion.h1>
+                      <motion.h1 variants={fade} className="text-screen-display leading-negative lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-24 md:py-0 block md:hidden" >{ this.props.data.datoCmsWork.title }</motion.h1>
+
+                      <div className="flex-wrap items-center justify-center hidden md:flex ml-3 mt-3" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                        <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
+                        <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                      </div>
+                      <div className="flex-wrap items-center justify-center flex ml-3 mt-3 md:hidden">
+                        <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
+                        <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-0 left-0 mr-0 hidden md:block ml-1" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2 transform rotate -rotate-90" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                  </motion.div>
+                  <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mt-3 mr-3 md:mr-3 block md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                  </motion.div>
+                  
+
+                  <motion.div variants={fade} className="flex flex-wrap w-full md:mx-0 mt-auto md:absolute bottom-0 left-0 right-0 md:mb-6">
+                  <div className="w-full md:text-right mb-4 md:mb-0 block md:hidden">
+                    <div className="flex flex-wrap w-full px-3 pt-1 pb-2 md:py-0 border-t border-b border-black md:relative">
                       { this.props.data.datoCmsWork.metaLocation && (
                         <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ this.props.data.datoCmsWork.metaLocation }</span>
                       )}
@@ -208,19 +229,6 @@ class WorkTemplate extends React.Component {
                   </div>
                 </motion.div>
 
-                <div className="w-full px-3 md:px-0">
-                  <div className="flex flex-wrap items-end">
-                    <div className="w-10/12 lg:w-9/12 mx-auto order-2 lg:order-1">
-                      <motion.h1 variants={fade} className="text-screen-display leading-negative hidden md:block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-32 pb-40 md:py-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ this.props.data.datoCmsWork.title }</motion.h1>
-                      <motion.h1 variants={fade} className="text-screen-display leading-negative order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-32 pb-40 md:py-0 block md:hidden" >{ this.props.data.datoCmsWork.title }</motion.h1>
-                    </div>
-                  </div>
-                  <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mr-0 md:mr-3 hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                  </motion.div>
-                  <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mt-3 mr-3 md:mr-3 block md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                  </motion.div>
                 </div>
               </div>
             </div>

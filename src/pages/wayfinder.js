@@ -35,11 +35,10 @@ const fade = {
 	}
 }
 
-const GalleryIndexPage = ({ data: { work }, location }) => {
+const WayfinderPage = ({ data: { work }, location }) => {
   return (
     <>
       <SEO title="Wayfinder" />
-
       <Scroll callback={location} />
       <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
         <nav className="relative z-10 w-full">
@@ -130,7 +129,7 @@ const GalleryIndexPage = ({ data: { work }, location }) => {
   )
 }
 
-export default GalleryIndexPage
+export default WayfinderPage
 
 export const query = graphql`
   query WayfinderQuery {

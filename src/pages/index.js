@@ -29,13 +29,12 @@ const header = {
 const IndexPage = ({ data: { work, workCategories }, location }) => {
   return (
     <>
-      <Scroll callback={location} />
       <SEO title="Home" />
+      <Scroll callback={location} />
         <motion.section
           initial="initial"
           animate="enter"
           exit="exit"
-          data-scroll-section
         >
           <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
