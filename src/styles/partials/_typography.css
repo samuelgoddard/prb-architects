@@ -35,7 +35,7 @@ h2 {
   @apply text-7xl;
 
   @screen md {
-    font-size: 12.5vw;
+    font-size: 13vw;
   }
 
   @screen xl {
