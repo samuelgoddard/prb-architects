@@ -50,10 +50,6 @@ const JournalPage = ({ data: { entries }, location }) => {
           <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
-                <motion.li variants={fade}>
-                  <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500" activeClassName="opacity-100 line-through" to="/journal">Journal</Link>
-                </motion.li>
-
                 <li className="ml-auto">
                   <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
                 </li>
@@ -118,7 +114,7 @@ const JournalPage = ({ data: { entries }, location }) => {
             <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
               <div className="w-full">
                 <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-extratight invert-select md:px-6 mb-6">Looking for an architectual<br/>team for your project?</span>
-                <a href="https://example.com" rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</a>
+                <a href="mailto:hello@prb-a.com" rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</a>
               </div>
               <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 ml-auto transform rotate-90 absolute bottom-0 right-0 m-4 md:m-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>

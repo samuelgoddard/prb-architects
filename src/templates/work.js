@@ -264,14 +264,12 @@ class WorkTemplate extends React.Component {
                             <div key={block.id}>
                               {
                                 block.model.apiKey === 'service' &&
-                                <Collapsible heading={block.heading} index={ `0${ i + 1}`}>
-                                  <div className="tet-white block" dangerouslySetInnerHTML={{ __html: block.content }}></div>
-                                </Collapsible>
-                                // <div className="flex flex-wrap items-center border-b border-white py-2 md:py-5">
-                                //   <span className="block text-xs mr-3">{ `0${ i + 1}`}</span>
-                                //   <span className="block md:text-xl">{ block.heading }</span>
-                                //   {/* <span className="block ml-auto"><svg data-name="Group 118" xmlns="http://www.w3.org/2000/svg" width="17.104" height="17.104" viewBox="0 0 17.104 17.104"><path data-name="Line 29" fill="none" stroke="currentColor" d="M8.552 0v17.104"/><path data-name="Line 30" fill="none" stroke="currentColor" d="M17.104 8.552H0"/></svg></span> */}
-                                // </div>
+                                <div className="w-full">
+                                  <div className="flex flex-wrap items-start border-b border-current w-full py-3 md:py-6 xl:py-8">
+                                    <span className="block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0">0{ i + 1 }</span>
+                                    <span className={`block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ block.heading }</span>
+                                  </div>
+                                </div>
                               }
                             </div>
                           ))
@@ -351,7 +349,7 @@ class WorkTemplate extends React.Component {
                     
                     <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0">
                       <span className="block font-display text-4xl md:text-6xl leading-none mb-4">Looking to work with us on a similar project?</span>
-                      <Link to="/" className="block font-display text-2xl underline">Get in touch</Link>
+                      <a href="mailto:hello@prb-a.com" rel="noopener noreferrer" target="_blank" className="block font-display text-2xl underline hover:text-prbred focus:text-prbred">Get in touch</a>
                     </div>
                   </div>
                 </div>

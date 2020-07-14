@@ -49,7 +49,7 @@ const WayfinderPage = ({ data: { work }, location }) => {
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <li className="ml-auto">
-              <button className="text-lg md:text-2xl px-px text-black invert-select line-through" onClick={() => goBack() }>Menu</button>
+              <button className="text-lg md:text-2xl px-px text-black invert-select line-through" onClick={() => goBack() }>Close</button>
             </li>
           </ul>
         </nav>
