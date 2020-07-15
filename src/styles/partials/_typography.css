@@ -55,14 +55,16 @@ h2 {
 }
 
 .text-screen-studio-blurb {
-  @apply text-3xl;
+  p {
+    @apply text-3xl;
 
-  @screen md {
-    font-size: 3.85vw;
-  }
+    @screen md {
+      font-size: 3.45vw;
+    }
 
-  @screen md {
-    font-size: 3.55vw;
+    @screen md {
+      font-size: 3.25vw;
+    }
   }
 }
 

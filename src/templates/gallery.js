@@ -1,12 +1,9 @@
-import React, { useRef } from "react"
+import React from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Scroll from "../components/locomotiveScroll"
 import Div100vh from "react-div-100vh";
-// const Marquee3k = require('marquee3000');
-
-// import Img from "gatsby-image"
 import HomeCarousel from "../components/homeCarousel"
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
@@ -29,7 +26,19 @@ const header = {
 	}
 }
 
+function shuffleArray(array) {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 const IndexGalleryPage = ({ data: { work, workCategories }, location }) => {
+  const shuffledPosts = shuffleArray(work.edges);
   return (
     <>
     <Scroll callback={location} />
@@ -76,7 +85,7 @@ const IndexGalleryPage = ({ data: { work, workCategories }, location }) => {
                   className="w-full"
                 >
                   <div className="slider home-slider opacity-0 mt-10 md:mt-0">
-                    <HomeCarousel slides={work.edges} />
+                    <HomeCarousel slides={shuffledPosts} />
                   </div>
                 </motion.div>
 

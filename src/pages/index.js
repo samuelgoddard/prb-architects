@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
@@ -26,7 +26,19 @@ const header = {
 	}
 }
 
+function shuffleArray(array) {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 const IndexPage = ({ data: { work, workCategories }, location }) => {
+  const shuffledPosts = shuffleArray(work.edges);
   return (
     <>
       <SEO title="Home" />
@@ -72,7 +84,7 @@ const IndexPage = ({ data: { work, workCategories }, location }) => {
                   className="w-full"
                 >
                   <div className="slider home-slider opacity-0 mt-10 md:mt-0">
-                    <HomeCarousel slides={work.edges} />
+                    <HomeCarousel slides={shuffledPosts} />
                   </div>
                 </motion.div>
 

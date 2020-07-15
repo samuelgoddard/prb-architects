@@ -3,18 +3,13 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-// import Scroll from "../components/locomotiveScroll"
-import Collapsible from "../components/collapsible"
+// import Collapsible from "../components/collapsible"
 import gsap from "gsap";
 import WorkCarousel from "../components/workCarousel"
 import WorkCarouselDesktop from "../components/workCarouselDesktop"
-// import { navigate } from "@reach/router";
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
-// const goBack = () => {
-//   navigate(-1);
-// }
 
 const header = {
 	initial: { opacity: 1 },
@@ -349,7 +344,7 @@ class WorkTemplate extends React.Component {
                     
                     <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0">
                       <span className="block font-display text-4xl md:text-6xl leading-none mb-4">Looking to work with us on a similar project?</span>
-                      <a href="mailto:hello@prb-a.com" rel="noopener noreferrer" target="_blank" className="block font-display text-2xl underline hover:text-prbred focus:text-prbred">Get in touch</a>
+                      <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="block font-display text-2xl underline hover:text-prbred focus:text-prbred">Get in touch</a>
                     </div>
                   </div>
                 </div>
@@ -395,17 +390,17 @@ class WorkTemplate extends React.Component {
                     <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
 
                     <li className="ml-auto block border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through invert-select" href="mailto:hello@prb-a.com" target="_blank" rel="noopener noreferrer">hello@prb-a.com</a>
+                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ this.props.data.studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">{ this.props.data.studio.studioEmailAddress }</a>
                     </li>
 
-                    <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
+                    <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
 
-                    <li className="border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through hover:line-through invert-select" href="https://twitter.com/prbarchitects" target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
+                    <li className="border-l border-black invert-select">
+                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
                     </li>
 
-                    <li className="border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through hover:line-through invert-select" href="https://www.instagram.com/prbarchitects/" target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
+                    <li className="border-l border-black invert-select">
+                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
                     </li>
                   </ul>
                   <ul className="flex flex-wrap border-b border-black md:hidden">
@@ -482,7 +477,13 @@ export const query = graphql`
       }
       slug
     }
-
+    studio: datoCmsStudio {
+      studioTwitterUrl
+      studioInstagramUrl
+      studioLinkedinUrl
+      studioEmailAddress
+      heroSupportingText
+    }
     relatedWork: allDatoCmsWork(filter: {category: {slug: {eq: $cat}}}) {
       edges {
         node {

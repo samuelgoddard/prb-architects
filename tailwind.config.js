@@ -40,6 +40,9 @@ module.exports = {
         offblack: '#1D1D1D',
         prbred: '#dc481e'
       },
+      height: {
+        'half': '50%'
+      },
       maxWidth: {
         '2xs': '16rem'
       },
