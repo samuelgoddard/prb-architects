@@ -75,6 +75,7 @@ function Layout({ children, location, location: { pathname } }) {
               PRB
             </motion.span>
             
+            {/* This is the text comment */}
             <motion.span
               initial={{ opacity: 0 }}
               animate={{
@@ -84,6 +85,7 @@ function Layout({ children, location, location: { pathname } }) {
               transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-mid-line text-left relative opacity-0"
             >
+              {/* This is the mask */}
               <motion.span
                 animate={{
                   width: ["100%", "0%", "100%"]
