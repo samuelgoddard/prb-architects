@@ -32,31 +32,35 @@ function Layout({ children, location, location: { pathname } }) {
           }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 5 }}
           className="relative bg-white overflow-hidden h-full">
-          <div className="flex flex-wrap items-center h-full">
+          <div className="flex flex-wrap items-center h-full w-full relative">
 
-            <motion.span
-              animate={{ 
-                opacity: [0, 1, 0],
-                x: ["25%", "0%", "25%", ]
-              }}
-              transition={{ duration: 4.5, ease: "easeInOut", delay: 0.2 }}
-              className="inline-block mt-8 ml-8 absolute top-0 left-0 w-5/12"
-            >
+          <div className="mt-8 ml-8 absolute top-0 left-0 w-5/12 overflow-hidden">
               <motion.span
-                animate={{
-                  width: ["100%", "0%", "100%"]
+                animate={{ 
+                  // opacity: [1, 1, 1],
+                  x: ["-25%", "0%", "-25%"]
                 }}
-                transition={{ duration: 4.5, ease: "easeInOut", delay: 0.2 }}
-                className="absolute top-0 right-0 bottom-0 w-full h-full bg-white"
-              ></motion.span>
-              <span className="h-px w-full bg-black block"></span>
-            </motion.span>
+                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                className="block text-lg text-left pt-1 pb-1"
+              >
+                <motion.span
+                  animate={{
+                    width: ["100%", "0%", "100%"]
+                  }}
+                  transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                  className="absolute top-0 right-0 bottom-0 w-full h-full bg-white"
+                ></motion.span>
+                <span className="border-t border-b border-black py-3 px-3 block">
+                  Player Roberts Bell
+                </span>
+              </motion.span>
+            </div>
 
             <motion.span
               initial={{ opacity: 0 }}
               animate={{
                 opacity: [1, 1, 1],
-                x: ["-25%", "5%", "-25%"]
+                x: ["-25%", "13%", "-25%"]
               }}
               transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-top-line text-right relative ml-auto opacity-0"
@@ -75,7 +79,7 @@ function Layout({ children, location, location: { pathname } }) {
               initial={{ opacity: 0 }}
               animate={{
                 opacity: [1, 1, 1],
-                x: ["25%", "-4%", "25%"]
+                x: ["25%", "-10%", "25%"]
               }}
               transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-mid-line text-left relative opacity-0"
@@ -89,32 +93,34 @@ function Layout({ children, location, location: { pathname } }) {
               ></motion.span>
               ARCHIT
             </motion.span>
-            
-            <motion.span
-              animate={{ 
-                // opacity: [1, 1, 1],
-                x: ["25%", "0%", "25%"]
-              }}
-              transition={{ duration: 4.5, ease: "easeInOut", delay: 0.2 }}
-              className="inline-block text-lg text-right mb-8 mr-8 absolute bottom-0 right-0 w-4/12 pt-1 pb-1"
-            >
+
+            <div className="mb-8 mr-8 absolute bottom-0 right-0 w-5/12 overflow-hidden">
               <motion.span
-                animate={{
-                  width: ["100%", "0%", "100%"]
+                animate={{ 
+                  // opacity: [1, 1, 1],
+                  x: ["25%", "0%", "25%"]
                 }}
-                transition={{ duration: 4.5, ease: "easeInOut", delay: 0.2 }}
-                className="absolute top-0 right-0 bottom-0 w-full h-full bg-white"
-              ></motion.span>
-              <span className="border-t border-b border-black py-3 px-2 block">
-                Architectural Design + Conservation
-              </span>
-            </motion.span>
+                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                className="block text-lg text-right pt-1 pb-1"
+              >
+                <motion.span
+                  animate={{
+                    width: ["100%", "0%", "100%"]
+                  }}
+                  transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                  className="absolute top-0 left-0 bottom-0 w-full h-full bg-white"
+                ></motion.span>
+                <span className="border-t border-b border-black py-3 px-3 block">
+                  Architectural Design + Conservation
+                </span>
+              </motion.span>
+            </div>
             
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ 
                 opacity: [1, 1, 1],
-                x: ["-25%", "-5%", "-25%"]
+                x: ["-25%", "-10%", "-25%"]
               }}
               transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-text__bottom-line text-left relative opacity-0"
