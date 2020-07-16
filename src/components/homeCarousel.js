@@ -135,7 +135,7 @@ class HomeCarousel extends Component {
                           {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                           <div className="overflow-hidden mb-1 pb-0 h-full">
                             { node.teaserVideo ? (
-                              <div className="h-full carousel-img w-auto slide__img pb-0 -mb-2">
+                              <div className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block">
                                 <ReactPlayer url={ node.teaserVideo.url } playing loop muted width='100%' height='100%' />
                               </div>
                             ) : (

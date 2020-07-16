@@ -38,8 +38,11 @@ const header = {
 const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
   return (
     <>
-    <Scroll callback={location} />
-      <SEO title="Index" />
+      <Scroll callback={location} />
+      <SEO
+        titleOverride={`Gallery Index`}
+        pathnameOverride={location.pathname}
+      />
         <motion.div
           initial="initial"
           animate="enter"

@@ -30,7 +30,10 @@ const header = {
 const JournalPage = ({ data: { entries, studio }, location }) => {
   return (
     <>
-      <SEO title="Journal" />
+      <SEO
+        titleOverride={`Journal`}
+        pathnameOverride={location.pathname}
+      />
         <Scroll callback={location} />
         <motion.div
           initial="initial"

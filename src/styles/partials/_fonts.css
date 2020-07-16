@@ -8,6 +8,15 @@
 }
 
 @font-face {
+  font-family: 'Founders Grotesk';
+  src: url('../fonts/FoundersGrotesk-Light.woff') format('woff'),
+      url('../fonts/FoundersGrotesk-Light.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
   font-family: 'Sohne';
   src: url('../fonts/Sohne-Buch.woff') format('woff'),
       url('../fonts/Sohne-Buch.woff2') format('woff2');

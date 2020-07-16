@@ -37,12 +37,17 @@ function shuffleArray(array) {
   return array;
 }
 
-const IndexGalleryPage = ({ data: { work, workCategories }, location }) => {
+const IndexGalleryPage = ({ data: { home, work, workCategories }, location }) => {
   const shuffledPosts = shuffleArray(work.edges);
   return (
     <>
-    <Scroll callback={location} />
-      <SEO title="Gallery" />
+      <SEO
+        titleOverride={home.metaTags && home.metaTags.title ? home.metaTags.title : null }
+        descriptionOverride={home.metaTags && home.metaTags.description ? home.metaTags.description : null }
+        pathnameOverride={location.pathname}
+        imageOverride={home.metaTags && home.metaTags.image ? home.metaTags.image.url : null }
+      />
+      <Scroll callback={location} />
         <motion.section
           initial="initial"
           animate="enter"
@@ -98,7 +103,6 @@ const IndexGalleryPage = ({ data: { work, workCategories }, location }) => {
                         <span className="opacity-25 ">/</span>
                       </motion.div>
 
-
                       {workCategories.edges.map(({ node }, i) => {
                         const length = workCategories.edges.length - 1;
 
@@ -134,6 +138,17 @@ export default IndexGalleryPage
 
 export const query = graphql`
   query GalleryPageQuery($slug: String!) {
+    home: datoCmsHome {
+      title
+      metaTags {
+        title
+        description
+        twitterCard
+        image {
+          url
+        }
+      }
+    }
     workCategories: allDatoCmsWorkCategory {
       edges {
         node {

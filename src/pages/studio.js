@@ -131,7 +131,12 @@ class StudioPage extends React.Component {
   render() {
     return (
       <>
-        <SEO title="Studio" /> 
+        <SEO
+          titleOverride={this.props.data.studio.metaTags && this.props.data.studio.metaTags.title ? this.props.data.studio.metaTags.title : null }
+          descriptionOverride={this.props.data.studio.metaTags && this.props.data.studio.metaTags.description ? this.props.data.studio.metaTags.description : null }
+          pathnameOverride={this.props.location.pathname}
+          imageOverride={this.props.data.studio.metaTags && this.props.data.studio.metaTags.image ? this.props.data.studio.metaTags.image.url : null }
+        />
         
         <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
           <nav className="relative z-10 w-full">
@@ -442,6 +447,14 @@ export const query = graphql`
 
     studio: datoCmsStudio {
       title
+      metaTags {
+        title
+        description
+        twitterCard
+        image {
+          url
+        }
+      }
       heroText
       studioTwitterUrl
       studioInstagramUrl

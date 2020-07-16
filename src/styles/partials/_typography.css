@@ -43,6 +43,10 @@ h2 {
   }
 }
 
+.intro-text {
+  font-size: 53vh;
+}
+
 .wayfinder-item {
   @apply text-6xl; 
 

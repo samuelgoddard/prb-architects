@@ -43,8 +43,15 @@ const fade = {
 const WayfinderPage = ({ data: { work, studio }, location }) => {
   return (
     <>
-      <SEO title="Wayfinder" />
+      <SEO
+        titleOverride={"Wayfinder"}
+        descriptionOverride={null}
+        pathnameOverride={location.pathname}
+        imageOverride={null }
+      />
+
       <Scroll callback={location} />
+
       <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
@@ -70,7 +77,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
             <nav className="mt-auto mb-auto w-full">
               <ul>
                 <motion.li variants={item}>
-                  <Link className="text-black wayfinder-item font-display leading-none pt-8 md:pt-12 pb-3 md:pb-6 border-b-2 border-black flex flex-wrap items-center hover:text-white strike" to="/">
+                  <Link className="text-black wayfinder-item font-display leading-none pt-8 md:pt-12 pb-3 md:pb-6 border-b-2 border-black flex flex-wrap items-center hover:text-white strike" to="/" state={{ prevPath: location.pathname }}>
                     <span className="block relative pr-6 md:pr-12">
                       <span className="leading-none block invert-select strike__inner strike__inner--white">Work</span>
                       <span className="absolute top-0 right-0 text-3xl md:text-5xl -mt-2 -ml-2">{ work.edges.length }</span>

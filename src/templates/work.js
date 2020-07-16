@@ -105,14 +105,18 @@ class WorkTemplate extends React.Component {
 
     return (
       <>
-        <SEO title={ this.props.data.datoCmsWork.title } /> 
-                
+        <SEO
+          titleOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.title ? this.props.data.datoCmsWork.metaTags.title : this.props.data.datoCmsWork.title }
+          descriptionOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.description ? this.props.data.datoCmsWork.metaTags.description : null }
+          pathnameOverride={this.props.location.pathname}
+          imageOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.image ? this.props.data.datoCmsWork.metaTags.image.url : null }
+        />
+
         <motion.div
           initial="initial"
           animate="enter"
           exit="exit"
         >
-
           <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
@@ -423,6 +427,14 @@ export const query = graphql`
   query WorkQuery($slug: String!, $cat: String!) {
     datoCmsWork(slug: { eq: $slug }) {
       title
+      metaTags {
+        title
+        description
+        twitterCard
+        image {
+          url
+        }
+      }
       projectCode
       metaLocation
       metaSize
