@@ -44,7 +44,16 @@ h2 {
 }
 
 .intro-text {
-  font-size: 53vh;
+  font-size: 30vh;
+  @screen md {
+    font-size: 35vh;
+  }
+  @screen lg {
+    font-size: 42vh;
+  }
+  @screen xl {
+    font-size: 53vh;
+  }
 }
 
 .wayfinder-item {
