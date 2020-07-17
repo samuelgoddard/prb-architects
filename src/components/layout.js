@@ -22,7 +22,7 @@ function Layout({ children, location, location: { pathname } }) {
         animate={{
           height: 0
         }}
-        transition={{ duration: 0.5, delay: 5.5 }}
+        transition={{ duration: 0.5, delay: 7.6 }}
         className="h-full w-full bg-transparent fixed top-0 left-0 right-0 z-50"
       >
         <motion.div
@@ -30,7 +30,7 @@ function Layout({ children, location, location: { pathname } }) {
           animate={{
             opacity: 0
           }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 5 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 7.1 }}
           className="relative bg-white overflow-hidden h-full">
           <div className="flex flex-wrap items-center h-full w-full relative">
 
@@ -40,14 +40,14 @@ function Layout({ children, location, location: { pathname } }) {
                   // opacity: [1, 1, 1],
                   x: ["-25%", "0%", "-25%"]
                 }}
-                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
                 className="block text-lg text-left pt-1 pb-1"
               >
                 <motion.span
                   animate={{
                     width: ["100%", "0%", "100%"]
                   }}
-                  transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                  transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
                   className="absolute top-0 right-0 bottom-0 w-full h-full bg-white"
                 ></motion.span>
                 <span className="border-t border-b border-black py-3 px-3 block">
@@ -62,14 +62,14 @@ function Layout({ children, location, location: { pathname } }) {
                 opacity: [1, 1, 1],
                 x: ["-25%", "13%", "-25%"]
               }}
-              transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
+              transition={{ duration: 6, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-top-line text-right relative ml-auto opacity-0"
             >
               <motion.span
                 animate={{
                   width: ["100%", "0%", "100%"]
                 }}
-                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
+                transition={{ duration: 6, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
                 className="absolute top-0 right-0 bottom-0 w-full h-full bg-white -mt-16 2xl:-mt-20"
               ></motion.span>
               PRB
@@ -82,7 +82,7 @@ function Layout({ children, location, location: { pathname } }) {
                 opacity: [1, 1, 1],
                 x: ["25%", "-10%", "25%"]
               }}
-              transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
+              transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-mid-line text-left relative opacity-0"
             >
               {/* This is the mask */}
@@ -90,7 +90,7 @@ function Layout({ children, location, location: { pathname } }) {
                 animate={{
                   width: ["100%", "0%", "100%"]
                 }}
-                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
+                transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
                 className="absolute top-0 left-0 bottom-0 w-full h-full bg-white -mt-16 2xl:-mt-20"
               ></motion.span>
               ARCHIT
@@ -102,14 +102,14 @@ function Layout({ children, location, location: { pathname } }) {
                   // opacity: [1, 1, 1],
                   x: ["25%", "0%", "25%"]
                 }}
-                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
                 className="block text-lg text-right pt-1 pb-1"
               >
                 <motion.span
                   animate={{
                     width: ["100%", "0%", "100%"]
                   }}
-                  transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
+                  transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
                   className="absolute top-0 left-0 bottom-0 w-full h-full bg-white"
                 ></motion.span>
                 <span className="border-t border-b border-black py-3 px-3 block">
@@ -124,14 +124,14 @@ function Layout({ children, location, location: { pathname } }) {
                 opacity: [1, 1, 1],
                 x: ["-25%", "-10%", "-25%"]
               }}
-              transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
+              transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
               className="inline-block font-display font-light leading-negative intro-text intro-text__bottom-line text-left relative opacity-0"
             >
               <motion.span
                 animate={{
                   width: ["100%", "0%", "100%"]
                 }}
-                transition={{ duration: 4.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
+                transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
                 className="absolute top-0 right-0 bottom-0 w-full h-full bg-white -mt-16 2xl:-mt-20"
               ></motion.span>
               CTS
