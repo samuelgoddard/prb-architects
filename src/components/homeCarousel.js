@@ -8,6 +8,34 @@ import wheel from "wheel"
 import normalizeWheel from "normalize-wheel"
 import ReactPlayer from 'react-player'
 
+const heroImage = {
+	initial: { scale: 1 },
+	enter: { 
+    scale: 1.1,
+    transition: { duration: 3.25, ease: [0.25, 1, 0.5, 1] }
+  },
+	exit: {
+    scale: 1.065,
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+	}
+}
+
+const reveal = {
+	initial: { y: "125%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const unreveal = {
+	initial: { y: "0%" },
+	enter: { 
+    y: "100%",
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
 if (typeof window !== 'undefined') {
   const Flickity = require('flickity');
 }
@@ -58,7 +86,7 @@ class HomeCarousel extends Component {
         wrapAround: true,
         freeScroll: true,
         freeScrollFriction: 0.085,
-        cellAlign: 'center'
+        cellAlign: 'left'
       });
       // flickity.x = 0;
 
@@ -85,7 +113,12 @@ class HomeCarousel extends Component {
   
   render() {
     return (
-      <div className="slideshow js-slideshow md:fixed md:top-0 md:left-0 md:right-0 md:bottom-0 md:w-full md:h-full md:pt-16 lg:pt-20 xl:pt-32">
+      <motion.div
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        className="slideshow js-slideshow md:fixed md:top-0 md:left-0 md:right-0 md:bottom-0 md:w-full md:h-full md:pt-16 lg:pt-20 xl:pt-32"
+      >
         {this.props.slides.map(({ node }, i) => {
           return (
             <div className="slide" key={i}>
@@ -94,27 +127,31 @@ class HomeCarousel extends Component {
                   <div className="flex flex-wrap relative h-full xl:pb-6">
                     <div className="flex-1 h-full">
                       {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
-                      <div className="overflow-hidden mb-1 pb-0 h-full">
-                        { node.teaserVideo ? (
+                      <div className="overflow-hidden mb-1 pb-0 h-full relative">
+                        {/* { node.teaserVideo ? (
                           <div className="h-full carousel-img w-auto slide__img pb-0 -mb-2">
                             <ReactPlayer url={ node.teaserVideo.url } playing loop muted width='100%' height='100%' />
                           </div>
-                        ) : (
-                          <>
+                        ) : ( */}
+                          {/* <motion.div variants={unreveal} className="h-full w-full bg-prbred absolute top-0 left-0 right-0 bottom-0 z-10">
+                          </motion.div> */}
+                          <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                             <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
                             <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
-                          </>
-                        )}
+                          </motion.div>
+                        {/* )} */}
                       </div>
-                      <figcaption className="flex text-lg md:text-xl md:px-0 items-center">  
+                      <figcaption className="flex text-lg md:text-xl md:px-0 items-center overflow-hidden">
                         <span className="block">{ node.title }</span>
                         <span className="block ml-auto text-sm">{ node.category.title }</span>
                       </figcaption>
                     </div>
                     <div className="w-auto h-full ml-px md:ml-1">
-                      <span className="flex flex-wrap text-sm md:text-base leading-none items-center text-orient-down pl-2">
+                      <span className="text-sm md:text-base leading-none text-orient-down pl-2 overflow-hidden">
+                        <div className="flex flex-wrap items-center">
                         <span className="block text-2xs mr-px mb-1">PRB</span>
                         <span className="block leading-none">{ node.projectCode }</span>
+                        </div>
                       </span>
                     </div>
                   </div>
@@ -134,16 +171,20 @@ class HomeCarousel extends Component {
                         <div className="flex-1 h-full">
                           {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                           <div className="overflow-hidden mb-1 pb-0 h-full">
-                            { node.teaserVideo ? (
+                            {/* { node.teaserVideo ? (
                               <div className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block">
                                 <ReactPlayer url={ node.teaserVideo.url } playing loop muted width='100%' height='100%' />
                               </div>
-                            ) : (
-                              <>
-                                <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
-                                <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
-                              </>
-                            )}
+                            ) : ( */}
+                              <div className="overflow-hidden relative">
+                                {/* <motion.div variants={unreveal} className="h-full w-full bg-prbred absolute top-0 left-0 right-0 bottom-0 z-10">
+                                </motion.div> */}
+                                <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
+                                  <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
+                                  <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
+                                </motion.div>
+                              </div>
+                            {/* )} */}
                           </div>
                           <figcaption className="flex text-lg md:text-xl md:px-0 items-center">  
                             <span className="block">{ node.title }</span>
@@ -151,9 +192,11 @@ class HomeCarousel extends Component {
                           </figcaption>
                         </div>
                         <div className="w-auto h-full ml-px md:ml-1">
-                          <span className="flex flex-wrap text-sm md:text-base leading-none items-center text-orient-down pl-2">
+                          <span className="text-sm md:text-base leading-none text-orient-down pl-2 overflow-hidden">
+                            <div className="flex flex-wrap items-center">
                             <span className="block text-2xs mr-px mb-1">PRB</span>
                             <span className="block leading-none">{ node.projectCode }</span>
+                            </div>
                           </span>
                         </div>
                       </div>
@@ -164,7 +207,7 @@ class HomeCarousel extends Component {
             })}
           </>
         )}
-      </div>
+      </motion.div>
     )
   }
 }

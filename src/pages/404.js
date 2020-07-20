@@ -5,23 +5,15 @@ import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Div100vh from "react-div-100vh";
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-
-const header = {
-	initial: { opacity: 1 },
-	enter: { opacity: 1, transition },
-	exit: {
-		opacity: 1,
-		transition: { duration: 0.5, ...transition }
-	}
-}
-
 const fade = {
 	initial: { opacity: 0 },
-	enter: { opacity: 1, transition },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.5, ...transition }
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
 }
 
@@ -37,7 +29,7 @@ const NotFoundPage = ({ data: { studio }, location }) => {
 
       <Scroll callback={location} />
 
-      <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
+      <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <li className="ml-auto">
@@ -46,7 +38,7 @@ const NotFoundPage = ({ data: { studio }, location }) => {
           </ul>
         </nav>
         <div className="mt-auto h-px w-full border-b border-black"></div>
-      </motion.header>
+      </header>
 
       <Div100vh>
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 h-full pt-14 md:pt-22">

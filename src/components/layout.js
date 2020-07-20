@@ -18,7 +18,10 @@ function Layout({ children, location, location: { pathname } }) {
         <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
       </Link>
     
-      <motion.div
+      {/* <motion.div
+        initial="initial"
+        animate="enter"
+        exit="exit"
         animate={{
           height: 0
         }}
@@ -30,138 +33,53 @@ function Layout({ children, location, location: { pathname } }) {
           animate={{
             opacity: 0
           }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 7.1 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 100 }}
           className="relative bg-white overflow-hidden h-full">
           <div className="flex flex-wrap items-center h-full w-full relative">
 
             <div className="mt-5 md:mt-8 ml-5 md:ml-8 absolute top-0 left-0 w-full md:w-5/12 overflow-hidden">
-              <motion.span
-                animate={{ 
-                  // opacity: [1, 1, 1],
-                  x: ["-25%", "0%", "-25%"]
-                }}
-                transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
-                className="block text-lg text-left pt-1 pb-1"
-              >
-                <motion.span
-                  animate={{
-                    width: ["100%", "0%", "100%"]
-                  }}
-                  transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
-                  className="absolute top-0 right-0 bottom-0 w-full h-full bg-white"
-                ></motion.span>
+              <span className="block text-lg text-left pt-1 pb-1">
                 <span className="border-t border-b border-black py-3 px-3 block">
                   Player Roberts Bell
                 </span>
-              </motion.span>
+              </span>
             </div>
 
             <div className="my-auto">
               <div className="flex flex-wrap items-center h-full w-full relative flex-grow-0">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: [1, 1, 1],
-                    x: ["-75%", "-50%", "-75%"]
-                  }}
-                  transition={{ duration: 6, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
-                  className="inline-block lg:hidden font-display font-light leading-negative intro-text intro-top-line text-right relative ml-auto opacity-0 mt-16 md:mt-24"
-                >
+                <span className="inline-block font-display font-light leading-negative intro-text intro-top-line md:text-right md:ml-auto mt-20 xl:mt-0 overflow-hidden relative">
                   <motion.span
+                  className="block"
+                    initial={{ y: "200%" }}
                     animate={{
-                      width: ["100%", "0%", "100%"]
+                      y: "0%"
                     }}
-                    transition={{ duration: 6, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
-                    className="absolute top-0 right-0 bottom-0 w-full h-full bg-white -mt-10 md:-mt-16 lg:-mt-20 2xl:-mt-20"
-                  ></motion.span>
-                  PRB
-                </motion.span>
-
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: [1, 1, 1],
-                    x: ["-25%", "13%", "-25%"]
-                  }}
-                  transition={{ duration: 6, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
-                  className="hidden lg:inline-block font-display font-light leading-negative intro-text intro-top-line text-right relative ml-auto opacity-0 mt-20 xl:mt-0"
-                >
-                  <motion.span
-                    animate={{
-                      width: ["100%", "0%", "100%"]
-                    }}
-                    transition={{ duration: 6, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
-                    className="absolute top-0 right-0 bottom-0 w-full h-full bg-white -mt-10 md:-mt-16 lg:-mt-20 2xl:-mt-20"
-                  ></motion.span>
-                  PRB
-                </motion.span>
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                  >
+                    PRB
+                  </motion.span>
+                </span>
                 
-                {/* This is the text comment */}
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: [1, 1, 1],
-                    x: ["25%", "-10%", "25%"]
-                  }}
-                  transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
-                  className="inline-block font-display font-light leading-negative intro-text intro-mid-line text-left relative opacity-0"
-                >
-                  {/* This is the mask */}
-                  <motion.span
-                    animate={{
-                      width: ["100%", "0%", "100%"]
-                    }}
-                    transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
-                    className="absolute top-0 left-0 bottom-0 w-full h-full bg-white -mt-10 md:-mt-16 lg:-mt-20 2xl:-mt-20"
-                  ></motion.span>
-                  ARCHIT
-                </motion.span>
+                <span className="inline-block font-display font-light leading-negative intro-text intro-mid-line text-left relative -ml-8 md:-ml-16">
+                  ARCHITE
+                </span>
                 
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ 
-                    opacity: [1, 1, 1],
-                    x: ["-30%", "-15%", "-30%"]
-                  }}
-                  transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.65 }}
-                  className="inline-block font-display font-light leading-negative intro-text intro-text__bottom-line text-left relative opacity-0"
-                >
-                  <motion.span
-                    animate={{
-                      width: ["100%", "0%", "100%"]
-                    }}
-                    transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.6 }}
-                    className="absolute top-0 right-0 bottom-0 w-full h-full bg-white -mt-10 md:-mt-16 lg:-mt-20 2xl:-mt-20"
-                  ></motion.span>
+                <span className="inline-block font-display font-light leading-negative intro-text intro-text__bottom-line text-left relative -ml-16">
                   CTS
-                </motion.span>
+                </span>
               </div>
             </div>
             
             <div className="mb-5 md:mb-8 mr-5 md:mr-8 absolute bottom-0 right-0 w-full md:w-5/12 overflow-hidden">
-              <motion.span
-                animate={{ 
-                  // opacity: [1, 1, 1],
-                  x: ["25%", "0%", "25%"]
-                }}
-                transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
-                className="block text-lg text-right pt-1 pb-1"
-              >
-                <motion.span
-                  animate={{
-                    width: ["100%", "0%", "100%"]
-                  }}
-                  transition={{ duration: 6.5, ease: [0.645, 0.135, 0.250, 0.880], delay: 0.2 }}
-                  className="absolute top-0 left-0 bottom-0 w-full h-full bg-white"
-                ></motion.span>
+              <span className="block text-lg text-right pt-1 pb-1">
                 <span className="border-t border-b border-black py-3 px-3 block">
                   Architectural Design + Conservation
                 </span>
-              </motion.span>
+              </span>
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </motion.div> */}
         
       <div id="scroll-container" data-scroll-container>
         <AnimatePresence exitBeforeEnter initial={false}>

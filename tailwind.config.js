@@ -2,7 +2,7 @@ module.exports = {
   purge: {
     content: ['./src/**/*.js',],
     options: {
-      whitelist: ['is-active', 'bg-prbred', 'has-scroll-smooth'],
+      whitelist: ['is-active', 'bg-prbred', 'has-scroll-smooth', 'baseline'],
     }
   },
   theme: {
@@ -48,13 +48,14 @@ module.exports = {
       },
       spacing: {
         '14': '3.55rem',
+        '18': '4.45rem',
         '22': '5.25rem',
         '28': '6.65rem',
         '30': '7rem',
         '128': '24rem'
       },
       lineHeight: {
-        'negative': '0.75',
+        'negative': '0.7',
         'slightnegative': '0.9',
         'extratight': '1.1',
       }

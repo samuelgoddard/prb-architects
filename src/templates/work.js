@@ -10,34 +10,67 @@ import WorkCarouselDesktop from "../components/workCarouselDesktop"
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
-
-const header = {
-	initial: { opacity: 1 },
-	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
-	exit: {
-		opacity: 1,
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-	}
-}
-
 const heroImage = {
 	initial: { scale: 1 },
 	enter: { 
-    scale: 1,
-    transition: { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] }
+    scale: 1.1,
+    transition: { duration: 3.25, ease: [0.25, 1, 0.5, 1] }
   },
 	exit: {
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+    scale: 1.065,
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
 }
 
 const fade = {
 	initial: { opacity: 0 },
-	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
+}
+
+const revealInOut = {
+	initial: { y: "100%", opacity: 0 },
+	enter: { 
+    y: "0%",
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
+  exit: { 
+    y: "100%",
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const revealArrow = {
+	initial: { y: "-100%", x: "-100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const revealArrowRight = {
+	initial: { y: "-100%", x: "100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const reveal = {
+	initial: { y: "100%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
 }
 
 class WorkTemplate extends React.Component {
@@ -64,7 +97,7 @@ class WorkTemplate extends React.Component {
       startAt: {
         scale: 1,
       },
-      scale: 1.25,
+      scale: 0.95,
       paused: true
     });
 
@@ -102,6 +135,9 @@ class WorkTemplate extends React.Component {
 
   render () {
     const workCarouselDesktopItems = this.props.data.datoCmsWork.galleryDesktop.splice(2, this.props.data.datoCmsWork.galleryDesktop.length);
+    // const splitTitle = Splitting({ target: this.props.data.datoCmsWork.title, by: 'words' });
+    const splitTitle = this.props.data.datoCmsWork.title.match(/\b(\w+)/g);
+    // const splitTitle = tokenizer.sentences(this.props.data.datoCmsWork.title, options);
 
     return (
       <>
@@ -112,28 +148,31 @@ class WorkTemplate extends React.Component {
           imageOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.image ? this.props.data.datoCmsWork.metaTags.image.url : null }
         />
 
-        <motion.div
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-            <nav className="relative z-10 w-full">
-              <ul className="flex flex-wrap">
-                <motion.li variants={fade} className="block">
-                  <Link className="text-lg md:text-2xl pr-px transition ease-in-out duration-500 flex flex-wrap items-center hover:line-through focus:line-through" to="/">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
-                    <span className="block ml-3">{ this.props.data.datoCmsWork.title }</span>
-                  </Link>
-                </motion.li>
-                <li className="ml-auto">
-                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
-                </li>
-              </ul>
-            </nav>
-            <div className="mt-auto h-px w-full bg-black"></div>
-          </motion.header>
-        </motion.div>
+        <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap bg-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <motion.nav
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className="relative z-10 w-full"
+          >
+            <ul className="flex flex-wrap">
+              <li className="block relative overflow-hidden">
+                <Link className="text-lg md:text-2xl pr-px hover:line-through focus:line-through block relative overflow-hidden" to="/">
+                  <motion.div variants={revealInOut}>
+                    <div className="flex flex-wrap items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
+                      <span className="block ml-3">{ this.props.data.datoCmsWork.title }</span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </li>
+              <li className="ml-auto">
+                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
+              </li>
+            </ul>
+          </motion.nav>
+          <div className="mt-auto h-px w-full bg-black"></div>
+        </header>
 
         <motion.div
           initial="initial"
@@ -144,7 +183,16 @@ class WorkTemplate extends React.Component {
           <div className="bg-white pl-4 pr-4 md:p-6 min-h-screen-image md:pt-22 p-screen-inner">
             <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
               <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
-                <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 hidden md:block">
+
+              <div className="w-full relative overflow-hidden h-screen-inner hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
+                  <div className="h-full hero-image-transform">
+                    <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
+                  </div>
+                </motion.div>
+              </div>
+
+                {/* <div className="w-full h-screen-inner relative overflow-hidden md:mb-0 hidden md:block">
                   <motion.div variants={heroImage} className="h-full w-full transform image-transform-center" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <div className="h-full w-full transform image-transform-center overflow-hidden">
                       <div className="h-full hero-image-transform">
@@ -152,7 +200,7 @@ class WorkTemplate extends React.Component {
                       </div>
                     </div>
                   </motion.div>
-                </div>
+                </div> */}
 
                 <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
                   <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
@@ -170,30 +218,79 @@ class WorkTemplate extends React.Component {
                   <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
                   <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
                 </div> */}
-                
                 <div className="w-full px-3 md:px-0">
-                  <div className="flex flex-wrap md:h-full items-center">
-                    <div className="w-10/12 lg:w-9/12 mx-auto mt-12 md:-mt-12 mb-40 md:mb-0">
-                      <motion.h1 variants={fade} className="text-screen-display leading-negative hidden md:block order-2 lg:order-1 lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-32 pb-40 md:py-0" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">{ this.props.data.datoCmsWork.title }</motion.h1>
-                      <motion.h1 variants={fade} className="text-screen-display leading-negative lg:w-auto mb-0 md:mb-2 lg:-mb-2 text-center pt-24 md:py-0 block md:hidden" >{ this.props.data.datoCmsWork.title }</motion.h1>
+                  <motion.div
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    className="flex flex-wrap md:h-full items-center"
+                    variants={{
+                      enter: { transition: { staggerChildren: 0.15, delayChildren: 0.25 } }
+                    }}
+                  >
+                    <div className="w-10/12 lg:w-9/12 mx-auto mt-12 md:-mt-12 mb-24 md:mb-0">
+                      <div className="pt-5" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                        <span className="hidden md:block order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden -mt-10">
+                          {/* <motion.div
+                            initial="initial"
+                            animate="enter"
+                            exit="exit"
+                            variants={{
+                              enter: { transition: { staggerChildren: 0.25 } }
+                            }}
+                          > */}
+                          {
+                            splitTitle.map((text, i) => (
+                              <div variants={reveal} key={i} className="relative overflow-hidden">
+                                <span className={i === 0 ? `block mt-0 relative z-20 bg-white` : `md:-mt-6 xl:-mt-4 relative z-0 block bg-white`} key={i}>
+                                <motion.div variants={reveal} className="pt-12" key={i}>{ text }</motion.div></span>
+                              </div>
+                            ))
+                          }
+                          {/* </motion.div> */}
+                        </span>
+                      </div>
 
-                      <div className="flex-wrap items-center justify-center hidden md:flex ml-3 mt-3" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                        <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                        <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                      <div className="pt-5">
+                        <span className="block md:hidden order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden mt-8">
+                          {
+                            splitTitle.map((text, i) => (
+                              <div variants={reveal} key={i} className="relative overflow-hidden">
+                                <span className={i === 0 ? `block mt-0 relative z-20` : `md:-mt-6 xl:-mt-4 relative z-0 block`} key={i}>
+                                <motion.div variants={reveal} className="pt-0" key={i}>{ text }</motion.div></span>
+                              </div>
+                            ))
+                          }
+                        </span>
+                      </div>
+
+                      <div className="hidden md:block md:ml-3 mt-3 overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                        <motion.div variants={reveal}>
+                          <div className="flex flex-wrap items-center justify-center ">
+                            <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
+                            <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                          </div>
+                        </motion.div>
                       </div>
                       <div className="flex-wrap items-center justify-center flex ml-3 mt-3 md:hidden">
                         <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
                         <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
                       </div>
                     </div>
+                  </motion.div>
+
+                  <div className="w-auto mb-8 md:mb-0 absolute top-0 md:top-0 left-0 mr-0 hidden md:block ml-1 overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <div className="relative overflow-hidden">
+                      <motion.div variants={revealArrow}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-5 xl:-mb-8 mr-5 xl:-mr-8 transform rotate -rotate-90" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                      </motion.div>
+                    </div>
                   </div>
-                  
-                  <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-0 left-0 mr-0 hidden md:block ml-1" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2 transform rotate -rotate-90" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                  </motion.div>
-                  <motion.div variants={fade} className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mt-3 mr-3 md:mr-3 block md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-2" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
-                  </motion.div>
+                  <div className="w-auto mb-8 md:mb-0 absolute top-0 md:top-auto md:bottom-0 right-0 mt-3 mr-3 md:mr-3 block md:hidden overflow-hidden">
+                    <motion.div variants={revealArrowRight}>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-5" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                    </motion.div>
+                  </div>
                   
 
                   <motion.div variants={fade} className="flex flex-wrap w-full md:mx-0 mt-auto md:absolute bottom-0 left-0 right-0 md:mb-6">
@@ -213,18 +310,27 @@ class WorkTemplate extends React.Component {
                   </div>
                   
                   <div className="w-full md:text-right mb-8 md:mb-0 hidden md:block mr-3" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                    <div className="flex flex-wrap w-full border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative">
+                    <motion.div
+                      initial="initial"
+                      animate="enter"
+                      exit="exit"
+                      className="flex flex-wrap w-full border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative overflow-hidden"
+                      variants={{
+                        enter: { transition: { staggerChildren: 0.25 } }
+                      }}
+                    >
                       { this.props.data.datoCmsWork.metaLocation && (
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left">{ this.props.data.datoCmsWork.metaLocation }</span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaLocation }</motion.div>
+                        </span>
                       )}
                       { this.props.data.datoCmsWork.metaSize && (
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center">{ this.props.data.datoCmsWork.metaSize }</span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaSize }</motion.div></span>
                       )}
-                      <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center">{ this.props.data.datoCmsWork.category.title }</span>
+                      <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category.title }</motion.div></span>
                       { this.props.data.datoCmsWork.metaCost && (
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto ml-auto text-right">{ this.props.data.datoCmsWork.metaCost }</span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto ml-auto text-right relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaCost }</motion.div></span>
                       )}
-                    </div>
+                    </motion.div>
                   </div>
                 </motion.div>
 
@@ -281,7 +387,7 @@ class WorkTemplate extends React.Component {
 
               <section className="-mx-4 md:mx-0 bg-white">
                 <div className="block md:hidden mb-5">
-                  <WorkCarousel slides={ this.props.data.datoCmsWork.galleryCarousel } />
+                  {/* <WorkCarousel slides={ this.props.data.datoCmsWork.galleryCarousel } /> */}
                 </div>
                 <div className="w-full flex flex-wrap mb-12 md:mb-24 lg:mb-32">
                   <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32">
@@ -323,7 +429,7 @@ class WorkTemplate extends React.Component {
                 <div className="w-full flex flex-wrap">
                   <div className="w-full md:w-10/12 ml-auto">
                     <div className="hidden md:block mb-20 md:mb-24 lg:mb-32">
-                      <WorkCarouselDesktop slides={ workCarouselDesktopItems } realLength={ this.props.data.datoCmsWork.gallery.length } />
+                      {/* <WorkCarouselDesktop slides={ workCarouselDesktopItems } realLength={ this.props.data.datoCmsWork.gallery.length } /> */}
                     </div>
                     <div className="flex flex-wrap md:-mx-8 mb-20 md:mb-24 lg:mb-32 md:hidden">
                       <div className="w-full md:w-1/2 md:px-8">

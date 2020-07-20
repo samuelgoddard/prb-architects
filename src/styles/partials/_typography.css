@@ -21,38 +21,48 @@ h2 {
 
 .text-screen-display {
   @apply text-5xl;
+  line-height: 1;
 
   @screen md {
     font-size: 7.5vw;
+    line-height: 4.7vw;
   }
 
   @screen xl {
     font-size: 8.5vw;
+    line-height: 5.2vw;
   }
 }
 
 .text-screen-display--large {
   @apply text-7xl;
+  line-height: 0.75;
 
   @screen md {
-    font-size: 13vw;
+    font-size: 12vw;
+    line-height: 5.2vw !important;
   }
 
   @screen xl {
-    font-size: 13.5vw;
+    font-size: 12.5vw;
+    line-height: 5.5vw !important;
   }
 }
 
 .intro-text {
   font-size: 30vh;
+  line-height: 100% !important;
   @screen md {
     font-size: 35vh;
+    line-height: 100% !important;
   }
   @screen lg {
     font-size: 42vh;
+    line-height: 100% !important;
   }
   @screen xl {
     font-size: 53vh;
+    line-height: 100% !important;
   }
 }
 
@@ -61,9 +71,11 @@ h2 {
 
   @screen md {
     font-size: 12vw;
+    line-height: 7.2vw;
   }
   @screen lg {
-    font-size: 8vw;
+    font-size: 7.5vw;
+    line-height: 4.7vw;
   }
 }
 

@@ -32,6 +32,9 @@
     "react-player": "^2.5.0",
     "react-tabs": "^3.1.1",
     "resize-observer-polyfill": "^1.5.1",
+    "sbd": "^1.0.18",
+    "splitting": "^1.0.6",
+    "tailwind-baseline": "0.0.3",
     "wheel": "^1.0.0"
   },
   "devDependencies": {

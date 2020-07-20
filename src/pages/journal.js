@@ -7,24 +7,42 @@ import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
 import Collapsible from "../components/collapsible"
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-
 const fade = {
 	initial: { opacity: 0 },
-	enter: { opacity: 1, transition },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.5, ...transition }
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
 }
 
-const header = {
-	initial: { opacity: 1 },
-	enter: { opacity: 1, transition },
-	exit: {
-		opacity: 1,
-		transition: { duration: 0.5, ...transition }
-	}
+const revealArrowRight = {
+	initial: { y: "-100%", x: "100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const revealArrow = {
+	initial: { y: "-100%", x: "-100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const reveal = {
+	initial: { y: "185%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
 }
 
 const JournalPage = ({ data: { entries, studio }, location }) => {
@@ -35,51 +53,64 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
         pathnameOverride={location.pathname}
       />
         <Scroll callback={location} />
-        <motion.div
-          initial="initial"
-          animate="enter"
-          exit="exit"
-        >
-          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
-            <nav className="relative z-10 w-full">
-              <ul className="flex flex-wrap">
-                <li className="ml-auto">
-                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
-                </li>
-              </ul>
-            </nav>
-            <div className="mt-auto h-px w-full bg-black"></div>
-          </motion.header>
-        </motion.div>
+        <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
+          <nav className="relative z-10 w-full">
+            <ul className="flex flex-wrap">
+              <li className="ml-auto">
+                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="mt-auto h-px w-full bg-black"></div>
+        </header>
 
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
-
-          <motion.div 
-            className="content"
-            variants={fade}
+          <motion.div
+            initial="initial"
+            animate="enter"
+            exit="exit"
             className="mt-4 flex flex-wrap -mr-1 md:-mr-px"
+            variants={{
+              enter: { transition: { staggerChildren: 0.1 } }
+            }}
           >
             <div className="w-full md:w-auto order-2 md:order-1 mt-32 mb-0 md:mb-0 md:mt-0 text-right md:text-left">
               {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg> */}
-              <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+              <div className="overflow-hidden relative hidden md:block">
+                <motion.div variants={revealArrow}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 rotate-90 md:rotate-0 md:-mb-8 xl:-mb-12 transform md:-mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                </motion.div>
+              </div>
+
+              <div className="overflow-hidden relative block md:hidden">
+                <motion.div variants={revealArrowRight}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 md:-mb-8 rotate-90 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                </motion.div>
+              </div>
             </div>
-            <h1 className="w-full md:flex-1 text-right text-screen-display--large m-0 p-0 block order-1 md:order-2 leading-none mt-2 mb-0 pb-0 -mr-1 lg:-mr-2">Journal</h1>
+            <div className="overflow-hidden w-full md:flex-1 order-1 md:order-2">
+              <h1 className="text-right text-screen-display--large m-0 p-0 block mt-3 2xl:mt-4 mb-0 pb-0 -mr-1 lg:-mr-2">
+                <span className="block relative overflow-hidden md:pt-14 xl:pt-18 2xl:pt-20">
+                <motion.span variants={reveal} className="block">Journal</motion.span>
+                </span>
+              </h1>
+            </div>
           </motion.div>
 
           <motion.div
             initial="initial"
             animate="enter"
             exit="exit"
-            className="w-full md:w-10/12 ml-auto mt-0 md:mt-8"
+            className="w-full md:w-10/12 ml-auto mt-6 md:mt-8"
             variants={{
-              enter: { transition: { staggerChildren: 0.1 } }
+              enter: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
             }}
           >
           <nav className="pb-12 md:pb-24 pt-0 md:pt-16">
             <div>
               {entries.edges.map(({ node }, i) => {
                 return (
-                  // <motion.div variants={item} key={i}>
+                  <div className="overflow-hidden" key={i}>
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i}>
                       <div className={ node.gallery.length > 0 ? `block mb-6` : `block mb-0`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
@@ -93,7 +124,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                         })}
                       </div>
                     </Collapsible>
-                  // </motion.div>
+                  </div>
                 )
               })}
             </div>
@@ -106,7 +137,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
         animate="enter"
         exit="exit"
       >
-        <motion.section variants={fade} className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8 relative z-20">
+        <section className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8 relative z-20">
           <div className="w-full flex flex-wrap">
             <div className="w-full md:w-10/12 ml-auto">
               <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
@@ -148,7 +179,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
             </ul>
           </div>
           
-        </motion.section>
+        </section>
       </motion.div>
     </>
   )

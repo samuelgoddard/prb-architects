@@ -11,33 +11,66 @@ import { scroll } from "../theme"
 
 const windowGlobal = typeof window !== 'undefined' && window
 
-const header = {
-	initial: { opacity: 1 },
-	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
-	exit: {
-		opacity: 1,
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-	}
-}
-
 const heroImage = {
 	initial: { scale: 1 },
 	enter: { 
-    scale: 1,
-    transition: { duration: 0.75, ease: [0.43, 0.13, 0.23, 0.96] }
+    scale: 1.1,
+    transition: { duration: 3.25, ease: [0.25, 1, 0.5, 1] }
   },
 	exit: {
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+    scale: 1.065,
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
 }
 
 const fade = {
 	initial: { opacity: 0 },
-	enter: { opacity: 1, duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
+}
+
+const reveal = {
+	initial: { y: "150%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
+}
+
+const revealDelayed = {
+	initial: { y: "150%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
+  },
+}
+
+const arrowReveal = {
+	initial: { y: "-100%", x: "-100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const revealInOut = {
+	initial: { y: "100%", opacity: 0 },
+	enter: { 
+    y: "0%",
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
+  exit: { 
+    y: "100%",
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  }
 }
 
 class StudioPage extends React.Component {
@@ -92,7 +125,7 @@ class StudioPage extends React.Component {
       startAt: {
         scale: 1,
       },
-      scale: 1.25,
+      scale: 0.95,
       paused: true
     });
 
@@ -138,35 +171,54 @@ class StudioPage extends React.Component {
           imageOverride={this.props.data.studio.metaTags && this.props.data.studio.metaTags.image ? this.props.data.studio.metaTags.image.url : null }
         />
         
-        <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-          <nav className="relative z-10 w-full">
-            <ul className="flex flex-wrap">
-              <motion.li variants={fade}>
-                <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Studio</button>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
-              <motion.li className="hidden lg:block" variants={fade}>
-                <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Expertise</button>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
-              <motion.li className="hidden lg:block" variants={fade}>
-                <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Team</button>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
-              <motion.li className="hidden lg:block" variants={fade}>
-                <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Services</button>
-              </motion.li>
-              <motion.li variants={fade} className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block">/</motion.li>
-              <motion.li className="hidden lg:block" variants={fade}>
-                <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Contact</button>
-              </motion.li>
-              <li className="ml-auto">
-                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Menu</Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="mt-auto -mb-px h-px w-full border-b border-white transition ease-in-out duration-500"></div>
-        </motion.header>
+        <motion.div
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          variants={{
+            enter: { transition: { staggerChildren: 0.05 } }
+          }}
+        >
+          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+            <nav className="relative z-10 w-full overflow-hidden">
+              <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
+                <li className="pb-0 mb-0">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Studio</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Expertise</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Team</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Services</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Contact</button>
+                  </motion.span>
+                </li>
+                <li className="ml-auto">
+                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Menu</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="mt-auto -mb-px h-px w-full border-b border-white transition ease-in-out duration-500"></div>
+          </header>
+        </motion.div>
 
         <motion.div
           initial="initial"
@@ -174,23 +226,51 @@ class StudioPage extends React.Component {
           exit="exit"
           variants={fade}
         >
-          <motion.div variants={fade} className="h-14 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></motion.div>
+          <div className="h-14 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
 
-          <div className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen" id="studio">
+          <motion.div
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen"
+            id="studio"
+          >
             <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
               <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
                 <div className="w-full px-3 md:px-0 mt-12">
                   <div className="flex flex-wrap h-full">
-                    <div className="w-full mb-auto">
-                      <motion.h1 variants={fade} className="text-screen-display--large leading-negative block order-2 lg:order-1 w-full lg:w-auto mb-0 md:mb-2 lg:-mb-2"  data-scroll-sticky data-scroll data-scroll-target="#___gatsby">Our<br/>Studio</motion.h1>
+                    <div className="w-full mb-auto overflow-hidden -mt-6 md:-mt-8" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                      <div className="-mt-12 md:-mt-16">
+                        <motion.span
+                          initial="initial"
+                          animate="enter"
+                          exit="exit"
+                          variants={{
+                            enter: { transition: { staggerChildren: 0.15 } }
+                          }}
+                          className="text-screen-display--large block order-2 lg:order-1 w-full lg:w-auto pt-6 md:pt-16 relative overflow-hidden font-display -mt-10">
+                          <div className="relative overflow-hidden">
+                            <span className="block mt-0 relative z-20 bg-offblack">
+                              <motion.div variants={reveal} className="pt-12 md:pt-10 md:pt-8 xl:pt-16 2xl:pt-24 pb-0">Our</motion.div>
+                            </span>
+                          </div>
+                          <span className="-md:-mt-6 xl:-mt-4 block">
+                            <motion.div variants={reveal} className="pt-4 md:pt-12 xl:pt-20 2xl:pt-24">Studio</motion.div>
+                          </span>
+                        </motion.span>
+                      </div>
                     </div>
                     <div className="mt-auto" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                      <motion.div variants={fade} className="w-auto ml-auto order-1 lg:order-2 mb-2 md:mb-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="mt-24 md:mt-0 studio-arrow" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
-                      </motion.div>
-                      <motion.div variants={fade} className="w-full lg:w-2/3 mb-10 mt-auto">
-                        <div className="text-lg leading-snug w-full block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></div>
-                      </motion.div>
+                      <div className="order-1 lg:order-2 mb-2 md:mb-0 overflow-hidden">
+                        <div className="overflow-hidden relative">
+                          <motion.div variants={arrowReveal} className="studio-arrow-container mt-12">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0 studio-arrow" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="w-full lg:w-2/3 mb-10 mt-auto overflow-hidden">
+                        <motion.div variants={reveal} className="text-lg leading-snug w-full block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -198,11 +278,11 @@ class StudioPage extends React.Component {
               <div className="w-full md:w-1/2 md:px-3 overflow-hidden">
                 <div className="flex flex-wrap h-full">
                   <div className="mt-auto w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                    <motion.div variants={fade}>
-                      <div className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug">
+                    <div className="overflow-hidden">
+                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug">
                         <div dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroSupportingText }}></div>
-                      </div>
-                    </motion.div>
+                      </motion.div>
+                    </div>
                     <div className="w-full relative overflow-hidden">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
@@ -214,7 +294,7 @@ class StudioPage extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           
           <div className="bg-white p-4 md:p-6 relative z-20">
@@ -290,12 +370,12 @@ class StudioPage extends React.Component {
 
                           {node.relatedWork.map(({ title, slug }, i) => {
                             return(
-                              <>
+                              <div key={i}>
                                 <Link to={`/work/${slug}`} className="underline flex flex-wrap items-center hover:line-through focus:line-through">
                                   <span>{title}</span>
                                   <svg className="ml-2" xmlns="http://www.w3.org/2000/svg" width="16.073" height="16.073" viewBox="0 0 16.073 16.073"><g data-name="Group 151" fill="none" stroke="#fff"><path data-name="Path 1" d="M10.875 14.095V5.2H1.978"/><path data-name="Path 2" d="M10.875 5.199L.354 15.719"/></g></svg>
                                 </Link>
-                              </>
+                              </div>
                             )
                           })}
                           </div>

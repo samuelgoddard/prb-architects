@@ -5,34 +5,54 @@ import { motion } from "framer-motion";
 import Img from "gatsby-image";
 import Scroll from "../components/locomotiveScroll";
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
-
-const item = {
-	initial: { y: 15, opacity: 0 },
-	enter: { y: 0, opacity: 1, transition },
-	exit: {
-    y: 0,
-		opacity: 0,
-		transition: { duration: 0.5, ...transition }
-	}
-}
-
 const fade = {
 	initial: { opacity: 0 },
-	enter: { opacity: 1, transition },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  },
 	exit: {
 		opacity: 0,
-		transition: { duration: 0.5, ...transition }
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
 }
 
-const header = {
-	initial: { opacity: 1 },
-	enter: { opacity: 1, transition },
-	exit: {
-		opacity: 1,
-		transition: { duration: 0.5, ...transition }
-	}
+const revealInOut = {
+	initial: { y: "100%", opacity: 0 },
+	enter: { 
+    y: "0%",
+    opacity: 1,
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
+  exit: { 
+    y: "100%",
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
+const reveal = {
+	initial: { y: "100%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
+}
+
+const revealMeta = {
+	initial: { y: "200%" },
+	enter: { 
+    y: "0%",
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
+}
+
+const revealArrowTopRight = {
+	initial: { y: "100%", x: "-100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+  }
 }
 
 const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
@@ -47,17 +67,26 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
           initial="initial"
           animate="enter"
           exit="exit"
+          variants={{
+            enter: { transition: { staggerChildren: 0.05 } }
+          }}
         >
-          <motion.header variants={header} className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
-                <motion.li variants={fade}>
-                  <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:line-through focus:line-through invert-select" activeClassName="opacity-100" to="/">Gallery</Link>
-                </motion.li>
-                <motion.li variants={fade} className="text-xl md:text-2xl px-1 opacity-25">/</motion.li>
-                <motion.li variants={fade}>
-                  <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500 invert-select" activeClassName="opacity-100 line-through" to="/gallery-index">Index</Link>
-                </motion.li>
+                <li className="overflow-hidden relative">
+                  <motion.div variants={revealInOut}>
+                    <Link className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:line-through focus:line-through invert-select" activeClassName="opacity-100" to="/">Gallery</Link>
+                  </motion.div>
+                </li>
+                <li className="text-xl md:text-2xl px-1 opacity-25 relative overflow-hidden">
+                  <motion.div variants={revealInOut}>/</motion.div>
+                </li>
+                <li className="relative overflow-hidden">
+                  <motion.div variants={revealInOut}>
+                    <Link className="text-lg md:text-2xl px-px opacity-25 transition ease-in-out duration-500 invert-select" activeClassName="opacity-100 line-through" to="/gallery-index">Index</Link>
+                  </motion.div>
+                </li>
 
                 <li className="ml-auto">
                   <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through invert-select">Menu</Link>
@@ -65,7 +94,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
               </ul>
             </nav>
             <div className="mt-auto h-px w-full bg-black"></div>
-          </motion.header>
+          </header>
         </motion.div>
 
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-14 md:pt-22">
@@ -75,7 +104,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
             exit="exit"
             className="flex flex-wrap"
             variants={{
-              enter: { transition: { staggerChildren: 0.1 } }
+              enter: { transition: { staggerChildren: 0.075, delayChildren: 0.025 } }
             }}
           >
             <div className="w-full md:w-2/12 relative">
@@ -94,26 +123,38 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
 
               return (
                 <nav className={ i == length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
-                  <motion.span variants={fade} className="block uppercase pb-4 invert-select">{ node.title }</motion.span>
+                  <div className="relative overflow-hidden">
+                    <motion.span variants={reveal} className="block uppercase pb-4 invert-select">{ node.title }</motion.span>
+                  </div>
                   <div>
                     {work.edges.map(({ node }, i) => {
                       return (
                         <div key={i}>
                           {/* Query the child to the parent cat... */}
                           { node.category.slug == parentCat && (
-                            <div className="relative group">
-                              <motion.div variants={item}>
-                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white relative invert-select strike">
-                                  <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
-                                    <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
-                                    <span className="block leading-none invert-select">{ node.projectCode }</span>
-                                  </span>
-                                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 strike__inner strike__inner--small invert-select">{ node.title }</span>
-                                  <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                            <div className="relative group overflow-hidden border-b border-black">
+                                <Link to={`/work/${node.slug}`} className="block hover:text-white relative invert-select strike py-3 md:py-4">
+                                  <div className="relative overflow-hidden">
+                                    <div className="flex flex-wrap items-center relative overflow-hidden">
+                                      <motion.div variants={revealMeta} className="">
+                                        <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
+                                          <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
+                                          <span className="block leading-none invert-select">{ node.projectCode }</span>
+                                        </span>
+                                      </motion.div>
+                                      <motion.div variants={reveal} className="">
+                                        <span className="block text-lg md:text-3xl font-display leading-none mt-2 strike__inner strike__inner--small invert-select">{ node.title }</span>
+                                      </motion.div>
+                                      <span className="block ml-auto relative overflow-hidden">
+                                        <motion.div variants={revealArrowTopRight}>
+                                          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
+                                        </motion.div>
+                                      </span>
+                                    </div>
+                                  </div>
                                 </Link>
-                              </motion.div>
                               <div className="fixed top-0 left-0 ml-6 mt-64" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                                <div className="gallery-index-hidden-image hidden xl:block opacity-0 group-hover:opacity-75 transition ease-in-out duration-500">
+                                <div className="gallery-index-hidden-image hidden xl:block opacity-0 group-hover:opacity-75">
                                   <Img fluid={ node.indexSupportingImage.fluid } className="w-full" />
                                 </div>
                               </div>
