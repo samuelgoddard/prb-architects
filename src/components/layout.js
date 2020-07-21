@@ -144,7 +144,7 @@ function Layout({ children, location, location: { pathname } }) {
       </motion.div> */}
         
       <div id="scroll-container" data-scroll-container>
-        <AnimatePresence exitBeforeEnter initial={false}>
+        <AnimatePresence exitBeforeEnter>
           {children}
         </AnimatePresence>
       </div>
