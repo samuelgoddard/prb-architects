@@ -33,7 +33,7 @@ function Layout({ children, location, location: { pathname } }) {
             opacity: 0,
           }}
           transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1], delay: 3.3 }}
-          className="relative bg-white overflow-hidden h-full"
+          className="relative overflow-hidden h-full bg-prbred"
         >
 
           <div className="flex flex-wrap items-center h-full w-full relative">
