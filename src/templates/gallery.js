@@ -18,6 +18,18 @@ const fade = {
 	}
 }
 
+const fadeDelay = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+  },
+	exit: {
+		opacity: 0,
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+	}
+}
+
 const reveal = {
 	initial: { y: "100%" },
 	enter: { 
@@ -72,11 +84,6 @@ const IndexGalleryPage = ({ data: { home, work, workCategories }, location }) =>
       />
 
       <Scroll callback={location} />
-      <motion.section
-        initial="initial"
-        animate="enter"
-        exit="exit"
-      >
         <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
           <motion.nav
             initial="initial"
@@ -110,16 +117,21 @@ const IndexGalleryPage = ({ data: { home, work, workCategories }, location }) =>
           <div className="mt-auto h-px w-full bg-black"></div>
         </header>
 
-        <div className="w-full">
+        <motion.div
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          variants={fade}
+        >
           <Div100vh>
             {/* { JSON.stringify(location) } */}
-            <motion.div variants={fade} className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
+            <div className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
               <div className="mt-4 md:mt-6 w-auto h-28 md:h-40 3xl:h-40 pl-4 pt-2 md:p-6 hidden md:block">
-                <div className="relative overflow-hidden">
+                <motion.div className="relative overflow-hidden" variants={fade}>
                   <motion.div variants={revealArrow}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32 2xl:w-40 3xl:w-48 -mb-8 -mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                   </motion.div>
-                </div>
+                </motion.div>
               </div>
 
               <div 
@@ -140,7 +152,7 @@ const IndexGalleryPage = ({ data: { home, work, workCategories }, location }) =>
                   enter: { transition: { staggerChildren: 0.05 } }
                 }}
               >
-                <nav>
+                <motion.nav variants={fade}>
                   <div className="md:flex md:flex-wrap justify-end leading-none md:leading-extratight mb-px">
                     <div className="overflow-hidden relative">
                       <motion.div variants={reveal}>
@@ -176,12 +188,11 @@ const IndexGalleryPage = ({ data: { home, work, workCategories }, location }) =>
                       )
                     })}
                   </div>
-                </nav>
+                </motion.nav>
               </motion.div>
-            </motion.div>
+            </div>
           </Div100vh>
-        </div>
-      </motion.section>
+        </motion.div>
     </>
   )
 }
