@@ -241,23 +241,23 @@ class StudioPage extends React.Component {
                   <div className="flex flex-wrap h-full">
                     <div className="w-full mb-auto overflow-hidden -mt-6 md:-mt-8" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                       <div className="-mt-12 md:-mt-16">
-                        <motion.span
+                        <motion.h1
                           initial="initial"
                           animate="enter"
                           exit="exit"
                           variants={{
                             enter: { transition: { staggerChildren: 0.15 } }
                           }}
-                          className="text-screen-display--large block order-2 lg:order-1 w-full lg:w-auto pt-6 md:pt-16 relative overflow-hidden font-display -mt-10">
-                          <div className="relative overflow-hidden">
+                          className="text-screen-display--large block order-2 lg:order-1 w-full lg:w-auto pt-6 md:pt-16 relative overflow-hidden font-display -mt-10 pb-0 mb-0">
+                          <span className="relative overflow-hidden block">
                             <span className="block mt-0 relative z-20 bg-offblack">
-                              <motion.div variants={reveal} className="pt-12 md:pt-10 md:pt-8 xl:pt-16 2xl:pt-24 pb-0">Our</motion.div>
+                              <motion.span variants={reveal} className="pt-12 md:pt-10 md:pt-8 xl:pt-16 2xl:pt-24 pb-0 block">Our</motion.span>
                             </span>
-                          </div>
-                          <span className="-md:-mt-6 xl:-mt-4 block">
-                            <motion.div variants={reveal} className="pt-4 md:pt-12 xl:pt-20 2xl:pt-24">Studio</motion.div>
                           </span>
-                        </motion.span>
+                          <span className="-md:-mt-6 xl:-mt-4 block">
+                            <motion.span variants={reveal} className="pt-4 md:pt-12 xl:pt-20 2xl:pt-24 block">Studio</motion.span>
+                          </span>
+                        </motion.h1>
                       </div>
                     </div>
                     <div className="mt-auto" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">

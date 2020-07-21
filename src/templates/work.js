@@ -230,7 +230,7 @@ class WorkTemplate extends React.Component {
                   >
                     <div className="w-10/12 lg:w-9/12 mx-auto mt-12 md:-mt-12 mb-24 md:mb-0">
                       <div className="pt-5" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                        <span className="hidden md:block order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden -mt-10">
+                        <h1 className="hidden md:block order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden -mt-10 mb-0 pb-0">
                           {/* <motion.div
                             initial="initial"
                             animate="enter"
@@ -248,10 +248,10 @@ class WorkTemplate extends React.Component {
                             ))
                           }
                           {/* </motion.div> */}
-                        </span>
+                        </h1>
                       </div>
 
-                      <div className="pt-5">
+                      <div className="pt-3">
                         <span className="block md:hidden order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden mt-8">
                           {
                             splitTitle.map((text, i) => (
