@@ -18,7 +18,7 @@ function Layout({ children, location, location: { pathname } }) {
         <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
       </Link>
     
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 1, height: "100%" }}
         animate={{
           height: 0,
@@ -33,7 +33,7 @@ function Layout({ children, location, location: { pathname } }) {
             opacity: 0,
           }}
           transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1], delay: 3.3 }}
-          className="relative overflow-hidden h-full bg-prbred"
+          className="relative overflow-hidden h-full animation-overlay"
         >
 
           <div className="flex flex-wrap items-center h-full w-full relative">
@@ -141,7 +141,7 @@ function Layout({ children, location, location: { pathname } }) {
           </div>
 
         </motion.div>
-      </motion.div>
+      </motion.div> */}
         
       <div id="scroll-container" data-scroll-container>
         <AnimatePresence exitBeforeEnter initial={false}>

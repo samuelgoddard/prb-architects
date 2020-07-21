@@ -251,6 +251,15 @@ html.has-scroll-dragging {
     to   { opacity: 1; }
 } */
 
+.animation-overlay {
+	animation: introBg 0.25s ease-out forwards;
+}
+
+@keyframes introBg {
+	from { background: #fff; }
+	to { background: theme('colors.prbred') }
+}
+
 .carousel-img {
 	max-width: none !important;
 	/* max-height: 80vw !important; */
