@@ -38,7 +38,7 @@ function Layout({ children, location, location: { pathname } }) {
 
           <div className="flex flex-wrap items-center h-full w-full relative">
             <motion.div
-              initial={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: [0, 1, 0]
               }}
@@ -65,7 +65,7 @@ function Layout({ children, location, location: { pathname } }) {
 
             <div className="my-auto">
               <div className="flex flex-wrap items-center h-full w-full relative flex-grow-0">
-                <span className="inline-block font-display font-light leading-negative intro-text intro-top-line md:text-right md:ml-auto md:mt-0 xl:-mt-24 2xl:mt-12">
+                <span className="inline-block font-display font-light leading-negative intro-text intro-top-line md:text-right md:ml-auto md:mt-0 xl:-mt-20">
                   <div className="overflow-hidden relative">
                     <motion.span
                       className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48 2xl:mt-56"
@@ -114,7 +114,7 @@ function Layout({ children, location, location: { pathname } }) {
             
             <div className="mb-5 md:mb-6 mr-5 md:mr-6 absolute bottom-0 right-0 w-full md:w-5/12 overflow-hidden">
               <motion.div
-                initial={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
                 animate={{
                   opacity: [0, 1, 0]
                 }}
