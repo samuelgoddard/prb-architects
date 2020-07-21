@@ -66,6 +66,11 @@ h2 {
     font-size: 53vh;
     line-height: 5.5vw !important;
   }
+
+  @screen 2xl {
+    font-size: 550px !important;
+    line-height: 120px !important;
+  }
 }
 
 .wayfinder-item {

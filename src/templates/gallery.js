@@ -114,7 +114,7 @@ const IndexGalleryPage = ({ data: { home, work, workCategories }, location }) =>
           <Div100vh>
             {/* { JSON.stringify(location) } */}
             <motion.div variants={fade} className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
-              <div className="mt-4 md:mt-6 w-auto h-28 md:h-40 3xl:h-48 pl-4 pt-2 md:p-6 hidden md:block">
+              <div className="mt-4 md:mt-6 w-auto h-28 md:h-40 3xl:h-40 pl-4 pt-2 md:p-6 hidden md:block">
                 <div className="relative overflow-hidden">
                   <motion.div variants={revealArrow}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32 2xl:w-40 3xl:w-48 -mb-8 -mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>

@@ -21,19 +21,11 @@ const heroImage = {
 }
 
 const reveal = {
-	initial: { y: "125%" },
+	initial: { y: "100%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
-  }
-}
-
-const unreveal = {
-	initial: { y: "0%" },
-	enter: { 
-    y: "100%",
-    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
-  }
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+  },
 }
 
 if (typeof window !== 'undefined') {
@@ -141,12 +133,16 @@ class HomeCarousel extends Component {
                           </motion.div>
                         {/* )} */}
                       </div>
-                      <figcaption className="flex text-lg md:text-xl md:px-0 items-center overflow-hidden">
-                        <span className="block">{ node.title }</span>
-                        <span className="block ml-auto text-sm">{ node.category.title }</span>
+                      <figcaption className="text-lg md:text-xl md:px-0 overflow-hidden">
+                        <div className="relative overflow-hidden">
+                          <motion.div className="flex items-center" variants={reveal}>
+                            <span className="block">{ node.title }</span>
+                            <span className="block ml-auto text-sm">{ node.category.title }</span>
+                          </motion.div>
+                        </div>
                       </figcaption>
                     </div>
-                    <div className="w-auto h-24 bg-prbred ml-px md:ml-1">
+                    <div className="w-auto h-24 ml-px md:ml-1">
                       <span className="text-sm md:text-base leading-none text-orient-down pl-2 overflow-hidden">
                         <div className="flex flex-wrap items-center">
                         <span className="block text-2xs mr-px mb-1">PRB</span>

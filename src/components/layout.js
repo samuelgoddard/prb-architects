@@ -24,7 +24,7 @@ function Layout({ children, location, location: { pathname } }) {
           height: 0,
           opacity: 0
         }}
-        transition={{ duration: 0, delay: 3.15 }}
+        transition={{ duration: 0, delay: 3.8 }}
         className="w-full bg-transparent fixed top-0 left-0 right-0 z-50"
       >
         <motion.div
@@ -32,17 +32,17 @@ function Layout({ children, location, location: { pathname } }) {
           animate={{
             opacity: 0,
           }}
-          transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1], delay: 2.4 }}
+          transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1], delay: 3.3 }}
           className="relative bg-white overflow-hidden h-full"
         >
 
           <div className="flex flex-wrap items-center h-full w-full relative">
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{
-                opacity: 1
+                opacity: [0, 1, 0]
               }}
-              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+              transition={{ duration: 3.5, ease: [0.76, 0, 0.24, 1] }}
               className="mt-5 md:mt-6 ml-5 md:ml-6 absolute top-0 left-0 w-full md:w-5/12 overflow-hidden"
             >
               <span className="block text-lg text-left pt-1 pb-1 mt-1 mb-1">
@@ -54,15 +54,15 @@ function Layout({ children, location, location: { pathname } }) {
 
             <div className="my-auto">
               <div className="flex flex-wrap items-center h-full w-full relative flex-grow-0">
-                <span className="inline-block font-display font-light leading-negative intro-text intro-top-line md:text-right md:ml-auto md:mt-0 xl:-mt-16">
-                  <div className="overflow-hidden relativ">
+                <span className="inline-block font-display font-light leading-negative intro-text intro-top-line md:text-right md:ml-auto md:mt-0 xl:-mt-24 2xl:mt-12">
+                  <div className="overflow-hidden relative">
                     <motion.span
-                      className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48"
-                      initial={{ y: "275%" }}
+                      className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48 2xl:mt-56"
+                      initial={{ y: "265%" }}
                       animate={{
-                        y: "0%"
+                        y: ["265%", "0%", "-265%"]
                       }}
-                      transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.25 }}
+                      transition={{ duration: 3.2, ease: [0.76, 0, 0.24, 1], delay: 0.3 }}
                     >
                       PRB
                     </motion.span>
@@ -70,14 +70,14 @@ function Layout({ children, location, location: { pathname } }) {
                 </span>
                 
                 <span className="inline-block font-display font-light leading-negative intro-text intro-mid-line text-left relative -ml-8 md:-ml-16">
-                  <div className="overflow-hidden relativ">
+                  <div className="overflow-hidden relative">
                     <motion.span
-                      className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48"
-                      initial={{ y: "275%" }}
+                      className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48 2xl:mt-56"
+                      initial={{ y: "265%" }}
                       animate={{
-                        y: "0%"
+                        y: ["265%", "0%", "-265%"]
                       }}
-                      transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.4 }}
+                      transition={{ duration: 3.2, ease: [0.76, 0, 0.24, 1], delay: 0.5 }}
                     >
                       ARCHITE
                     </motion.span>
@@ -85,14 +85,14 @@ function Layout({ children, location, location: { pathname } }) {
                 </span>
                 
                 <span className="inline-block font-display font-light leading-negative intro-text intro-text__bottom-line text-left relative -ml-16">
-                  <div className="overflow-hidden relativ">
+                  <div className="overflow-hidden relative">
                     <motion.span
-                      className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48"
-                      initial={{ y: "275%" }}
+                      className="block md:pb-12 mt-16 md:mt-32 lg:mt-40 xl:mt-48 2xl:mt-56"
+                      initial={{ y: "265%" }}
                       animate={{
-                        y: "0%"
+                        y: ["265%", "0%", "-265%"]
                       }}
-                      transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.55 }}
+                      transition={{ duration: 3.2, ease: [0.76, 0, 0.24, 1], delay: 0.7 }}
                     >
                       CTS
                     </motion.span>
@@ -103,11 +103,11 @@ function Layout({ children, location, location: { pathname } }) {
             
             <div className="mb-5 md:mb-6 mr-5 md:mr-6 absolute bottom-0 right-0 w-full md:w-5/12 overflow-hidden">
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 1 }}
                 animate={{
-                  opacity: 1
+                  opacity: [0, 1, 0]
                 }}
-                transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                transition={{ duration: 3.5, ease: [0.76, 0, 0.24, 1] }}
               >
                 <span className="block text-lg text-right pt-1 pb-1">
                   <span className="border-t border-b border-black py-3 px-3 block">
