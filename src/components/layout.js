@@ -47,7 +47,18 @@ function Layout({ children, location, location: { pathname } }) {
             >
               <span className="block text-lg text-left pt-1 pb-1 mt-1 mb-1">
                 <span className="border-t border-b border-black py-3 px-3 block">
-                  Player Roberts Bell
+                  <span className="block relative overflow-hidden">
+                  <motion.span
+                    className="block"
+                    initial={{ y: "100%" }}
+                    animate={{
+                      y: "0%"
+                    }}
+                    transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.45 }}
+                  >
+                    Player Roberts Bell
+                  </motion.span>
+                  </span>
                 </span>
               </span>
             </motion.div>
@@ -111,7 +122,18 @@ function Layout({ children, location, location: { pathname } }) {
               >
                 <span className="block text-lg text-right pt-1 pb-1">
                   <span className="border-t border-b border-black py-3 px-3 block">
-                    Architectural Design + Conservation
+                    <span className="block relative overflow-hidden">
+                    <motion.span
+                      className="block"
+                      initial={{ y: "100%" }}
+                      animate={{
+                        y: "0%"
+                      }}
+                      transition={{ duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.45 }}
+                    >
+                      Architectural Design + Conservation
+                    </motion.span>
+                    </span>
                   </span>
                 </span>
               </motion.div>
