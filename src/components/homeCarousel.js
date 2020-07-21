@@ -86,7 +86,7 @@ class HomeCarousel extends Component {
         wrapAround: true,
         freeScroll: true,
         freeScrollFriction: 0.085,
-        cellAlign: 'left'
+        cellAlign: 'center'
       });
       // flickity.x = 0;
 
@@ -146,7 +146,7 @@ class HomeCarousel extends Component {
                         <span className="block ml-auto text-sm">{ node.category.title }</span>
                       </figcaption>
                     </div>
-                    <div className="w-auto h-full ml-px md:ml-1">
+                    <div className="w-auto h-24 bg-prbred ml-px md:ml-1">
                       <span className="text-sm md:text-base leading-none text-orient-down pl-2 overflow-hidden">
                         <div className="flex flex-wrap items-center">
                         <span className="block text-2xs mr-px mb-1">PRB</span>

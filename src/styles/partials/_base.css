@@ -133,7 +133,7 @@ html.has-scroll-dragging {
   }
 
 .slideshow {
-	/* margin-left: -63px; */
+	margin-left: -63px;
 
 	@screen md {
 		margin-left: 0px;
@@ -150,7 +150,7 @@ html.has-scroll-dragging {
 	@screen md {
 		height: 400px;
 		width: 42vw;
-		margin-right: 0;
+		margin-right: 8.5vw;
 		/* padding-left: 30px; */
 	}
 
@@ -160,6 +160,7 @@ html.has-scroll-dragging {
 	
 	@screen xl {
 		width: 41vw;
+		margin-right: 9.5vw;
 	}
 
 	@screen 2xl {
@@ -289,11 +290,11 @@ html.has-scroll-dragging {
 }
 .home-slider {
 	.flickity-viewport {
-		margin-left: 17px;
+		/* margin-left: 17px; */
 
 		@screen md {
 			@apply h-full !important;
-			margin-left: -20vw !important;
+			/* margin-left: -20vw !important; */
 		}
 	}
 }

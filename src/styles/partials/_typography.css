@@ -51,18 +51,20 @@ h2 {
 
 .intro-text {
   font-size: 30vh;
-  line-height: 100% !important;
+  line-height: 0.5 !important;
+
   @screen md {
     font-size: 35vh;
-    line-height: 100% !important;
+    line-height: 5.5vw !important;
   }
   @screen lg {
     font-size: 42vh;
-    line-height: 100% !important;
+    line-height: 5.5vw !important;
   }
+
   @screen xl {
     font-size: 53vh;
-    line-height: 100% !important;
+    line-height: 5.5vw !important;
   }
 }
 
