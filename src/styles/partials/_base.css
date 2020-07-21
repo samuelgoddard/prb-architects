@@ -136,6 +136,9 @@ html.has-scroll-dragging {
 	margin-left: -63px;
 
 	@screen md {
+		width: 200%;
+		margin-left: -50%;
+		margin-right: -50%;
 		margin-left: 0px;
 	}
 }
@@ -146,6 +149,7 @@ html.has-scroll-dragging {
 	width: 75vw;
 	margin-right: 50px;
 	height: auto;
+	/* transition: opacity 250ms ease-in-out; */
 
 	@screen md {
 		height: 400px;
@@ -249,6 +253,16 @@ html.has-scroll-dragging {
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
+} */
+
+/* .slide {
+	transition: opacity 2s ease-in-out;
+	opacity: 0;
+}
+
+.slide.flickity-lazyloaded,
+.slide.flickity-lazyerror {
+	opacity: 1;
 } */
 
 .animation-overlay {

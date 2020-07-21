@@ -11,7 +11,7 @@ const fade = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   },
 	exit: {
 		opacity: 0,
@@ -24,7 +24,7 @@ const revealArrowRight = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -33,7 +33,7 @@ const revealArrow = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -41,7 +41,7 @@ const reveal = {
 	initial: { y: "185%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
 }
 
@@ -71,7 +71,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
             exit="exit"
             className="mt-4 flex flex-wrap -mr-1 md:-mr-px"
             variants={{
-              enter: { transition: { staggerChildren: 0.1 } }
+              enter: { transition: { staggerChildren: 0.025 } }
             }}
           >
             <div className="w-full md:w-auto order-2 md:order-1 mt-32 mb-0 md:mb-0 md:mt-0 text-right md:text-left">
@@ -103,7 +103,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
             exit="exit"
             className="w-full md:w-10/12 ml-auto mt-6 md:mt-8"
             variants={{
-              enter: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+              enter: { transition: { staggerChildren: 0.045, delayChildren: 0.15 } }
             }}
           >
           <nav className="pb-12 md:pb-24 pt-0 md:pt-16">

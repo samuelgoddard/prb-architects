@@ -26,7 +26,7 @@ const fade = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   },
 	exit: {
 		opacity: 0,
@@ -39,11 +39,11 @@ const revealInOut = {
 	enter: { 
     y: "0%",
     opacity: 1,
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
   exit: { 
     y: "100%",
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -52,7 +52,7 @@ const revealArrow = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -61,7 +61,7 @@ const revealArrowRight = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -69,7 +69,7 @@ const reveal = {
 	initial: { y: "100%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
 }
 
@@ -225,7 +225,7 @@ class WorkTemplate extends React.Component {
                     exit="exit"
                     className="flex flex-wrap md:h-full items-center"
                     variants={{
-                      enter: { transition: { staggerChildren: 0.15, delayChildren: 0.25 } }
+                      enter: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
                     }}
                   >
                     <div className="w-10/12 lg:w-9/12 mx-auto mt-12 md:-mt-12 mb-24 md:mb-0">
@@ -316,7 +316,7 @@ class WorkTemplate extends React.Component {
                       exit="exit"
                       className="flex flex-wrap w-full border-t border-b border-black py-2 absolute bottom-0 left-0 right-0 md:relative overflow-hidden"
                       variants={{
-                        enter: { transition: { staggerChildren: 0.25 } }
+                        enter: { transition: { staggerChildren: 0.15 } }
                       }}
                     >
                       { this.props.data.datoCmsWork.metaLocation && (

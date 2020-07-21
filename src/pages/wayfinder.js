@@ -14,7 +14,7 @@ const fade = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   },
 	exit: {
 		opacity: 0,
@@ -27,7 +27,7 @@ const revealArrowTopRight = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -36,7 +36,7 @@ const revealArrowTopLeft = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -45,7 +45,7 @@ const revealArrowRight = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -53,7 +53,7 @@ const reveal = {
 	initial: { y: "150%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
 }
 
@@ -89,7 +89,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
               exit="exit"
               className="mt-auto mb-auto w-full"
               variants={{
-                enter: { transition: { staggerChildren: 0.125 } }
+                enter: { transition: { staggerChildren: 0.035, delayChildren: 0.025 } }
               }}
             >
               <nav className="h-full">
@@ -172,7 +172,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
               exit="exit"
               className="w-full md:w-10/12 md:ml-auto mt-auto"
               variants={{
-                enter: { transition: { staggerChildren: 0.125 } }
+                enter: { transition: { staggerChildren: 0.0325 } }
               }}
             >
               <div className="md:hidden">

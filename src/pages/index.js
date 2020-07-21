@@ -10,7 +10,19 @@ const fade = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+  },
+	exit: {
+		opacity: 0,
+		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
+	}
+}
+
+const fadeDelay = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
   },
 	exit: {
 		opacity: 0,
@@ -22,7 +34,7 @@ const reveal = {
 	initial: { y: "100%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
 }
 
@@ -31,7 +43,7 @@ const revealArrow = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -40,11 +52,11 @@ const revealInOut = {
 	enter: { 
     y: "0%",
     opacity: 1,
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
   exit: { 
     y: "100%",
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -83,9 +95,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
             animate="enter"
             exit="exit"
             className="relative z-10 w-full"
-            variants={{
-              enter: { transition: { staggerChildren: 0.05 } }
-            }}
+          
           >
             <ul className="flex flex-wrap">
               <li className="relative overflow-hidden">
@@ -112,23 +122,24 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
 
         <div className="w-full">
           <Div100vh>
-            <motion.div variants={fade} className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
+            <motion.div className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0">
               <div className="mt-4 md:mt-6 w-auto h-28 md:h-40 3xl:h-48 pl-4 pt-2 md:p-6 hidden md:block">
-                <div className="relative overflow-hidden">
+                <motion.div className="relative overflow-hidden" variants={fade}>
                   <motion.div variants={revealArrow}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32 2xl:w-40 3xl:w-40 -mb-8 -mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                   </motion.div>
-                </div>
+                </motion.div>
               </div>
 
-              <div 
+              <motion.div 
                 className="content"
                 className="w-full"
+                variants={fadeDelay}
               >
                 <div className="slider home-slider mt-10 md:mt-0">
                   <HomeCarousel slides={shuffledPosts} />
                 </div>
-              </div>
+              </motion.div>
 
               <motion.div 
                 className="z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 pb-4 md:p-6 md:pt-12 absolute bottom-0 right-0 md:relative"

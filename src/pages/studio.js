@@ -27,7 +27,7 @@ const fade = {
 	initial: { opacity: 0 },
   enter: { 
     opacity: 1,
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   },
 	exit: {
 		opacity: 0,
@@ -39,7 +39,7 @@ const reveal = {
 	initial: { y: "150%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
 }
 
@@ -47,7 +47,7 @@ const revealDelayed = {
 	initial: { y: "150%" },
 	enter: { 
     y: "0%",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1], delay: 0.2 }
   },
 }
 
@@ -56,7 +56,7 @@ const arrowReveal = {
 	enter: { 
     y: "0%",
     x: "0%",
-    transition: { duration: 1.35, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -65,11 +65,11 @@ const revealInOut = {
 	enter: { 
     y: "0%",
     opacity: 1,
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
   },
   exit: { 
     y: "100%",
-    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
