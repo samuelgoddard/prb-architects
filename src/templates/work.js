@@ -384,7 +384,7 @@ class WorkTemplate extends React.Component {
                     <div key={block.id}>
                       {
                         block.model.apiKey === 'content_left_align' && 
-                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 bg-white 2xl:w-9/12 2xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32 -mx-4 md:mx-0">
                               <figure className="mb-16 md:mb-32 lg:mb-48 hidden md:block">
                                 <div className="overflow-hidden block">
@@ -437,7 +437,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'content_right_align' && 
-                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 bg-white 2xl:w-9/12 2xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-4/12 md:pr-16 lg:pr-24 xl:pr-32 hidden md:block -mx-4 md:mx-0">
                               <figure className="mb-16 md:mb-32 lg:mb-48">
                                 <div className="overflow-hidden block">
@@ -492,7 +492,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'full_text' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 2xl:w-9/12 2xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-10/12 md:w-8/12 md:pl-8 lg:pl-10 xl:pl-24 -mx-4 md:mx-0">
                               <div className="md:max-w-md ml-auto md:ml-32 lg:ml-40 p-4 md:p-0">
                                 <div className="lg:text-lg leading-snug content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
@@ -510,7 +510,7 @@ class WorkTemplate extends React.Component {
                         } */}
                         {
                         block.model.apiKey === 'image100' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 2xl:w-9/12 2xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-full md:w-9/12 mx-auto">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
@@ -530,7 +530,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'image50' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 2xl:w-9/12 2xl:mx-auto">
+                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto">
                             <div className="w-8/12 md:w-5/12 mx-auto px-4 md:px-6">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
