@@ -122,7 +122,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
               const length = workCategories.edges.length - 1;
 
               return (
-                <nav className={ i == length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
+                <nav className={ i === length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
                   <div className="relative overflow-hidden">
                     <motion.span variants={reveal} className="block uppercase pb-4 invert-select">{ node.title }</motion.span>
                   </div>
@@ -131,7 +131,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
                       return (
                         <div key={i}>
                           {/* Query the child to the parent cat... */}
-                          { node.category.slug == parentCat && (
+                          { node.category.slug === parentCat && (
                             <div className="relative group overflow-hidden border-b border-black">
                                 <Link to={`/work/${node.slug}`} className="block hover:text-white relative invert-select strike py-3 md:py-4">
                                   <div className="relative overflow-hidden">

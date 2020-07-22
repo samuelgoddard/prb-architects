@@ -3,7 +3,6 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import Scroll from "../components/locomotiveScroll"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import gsap from "gsap";
 import LocomotiveScroll from "locomotive-scroll"

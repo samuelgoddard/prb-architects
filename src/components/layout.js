@@ -1,14 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import { AnimatePresence } from "framer-motion"
-import { motion } from "framer-motion"
 import "../styles/main.css"
 
 function Layout({ children, location, location: { pathname } }) {
   return (
     <>
       <a className="skip-link sr-only" href="#scroll-container">Skip to content</a>
-      
+
       <Link 
         className={ 
           pathname === "/project" || pathname === "/404" || pathname === "/wayfinder" || pathname === "/studio" || pathname === "/journal" || pathname.includes("work")

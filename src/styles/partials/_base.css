@@ -136,9 +136,9 @@ html.has-scroll-dragging {
 	margin-left: -63px;
 
 	@screen md {
-		width: 200%;
+		/* width: 200%;
 		margin-left: -50%;
-		margin-right: -50%;
+		margin-right: -50%; */
 		margin-left: 0px;
 	}
 }
@@ -231,18 +231,21 @@ html.has-scroll-dragging {
 		width: 50vw;
 		margin-right: 5vw;
 		padding-left: 0;
+		height: 450px;
 	}
 	
 	@screen xl {
 		width: 60vw;
 		margin-right: 6vw;
 		padding-left: 0;
+		height: 500px;
 	}
 
 	@screen 2xl {
 		width: 60vw;
 		margin-right: 6vw;
 		padding-left: 0;
+		height: 550px;
 	}
 }
 

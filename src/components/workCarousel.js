@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from "gatsby";
-import { motion } from "framer-motion";
 import Img from "gatsby-image";
-// import Flickity from "flickity";
-import { isBrowser } from "react-device-detect"
 
 if (typeof window !== 'undefined') {
   const Flickity = require('flickity');
@@ -24,14 +20,6 @@ class WorkCarousel extends Component {
     if (typeof window !== 'undefined') {
       let flickity = null;
       const slideshowEl = document.querySelector('.js-slideshow');
-
-      const update = () => {
-        if (flickity.slides) {
-          flickity.updateSelectedSlide();
-          flickity.settle(flickity.x);
-        }
-        window.requestAnimationFrame(update);
-      };
       
       flickity = new this.state.Flickity(slideshowEl, {
         autoPlay: false,

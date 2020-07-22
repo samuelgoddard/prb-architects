@@ -18,18 +18,6 @@ const fade = {
 	}
 }
 
-const fadeDelay = {
-	initial: { opacity: 0 },
-  enter: { 
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0.45 }
-  },
-	exit: {
-		opacity: 0,
-		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
-	}
-}
-
 const reveal = {
 	initial: { y: "100%" },
 	enter: { 
@@ -238,7 +226,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid
             }
           }
-          featuredImageMobile: teaserImage {
+          featuredImageMobile: featuredImage {
             url
             fluid(imgixParams: { w: "900", h: "1200", fm: "png", fit: "fillmax" }) {
               ...GatsbyDatoCmsFluid
