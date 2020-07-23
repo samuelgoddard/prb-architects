@@ -218,19 +218,19 @@ export const query = graphql`
           }
           featuredImageSmall: teaserImage {
             url
-            fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
+            fluid(imgixParams: { w: "1000", h: "700", fm: "jpg", fit: "fillmax" }) {
               ...GatsbyDatoCmsFluid
             }
           }
           featuredImageBig: teaserImage {
             url
-            fluid(imgixParams: { w: "1400", h: "900", fm: "png", fit: "fillmax" }) {
+            fluid(imgixParams: { w: "1000", h: "700", fm: "jpg", fit: "fillmax" }) {
               ...GatsbyDatoCmsFluid
             }
           }
-          featuredImageMobile: teaserImage {
+          featuredImageMobile: featuredImage {
             url
-            fluid(imgixParams: { w: "900", h: "1200", fm: "png", fit: "fillmax" }) {
+            fluid(imgixParams: { w: "700", h: "1000", fm: "jpg", fit: "fillmax" }) {
               ...GatsbyDatoCmsFluid
             }
           }

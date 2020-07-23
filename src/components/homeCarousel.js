@@ -121,8 +121,8 @@ class HomeCarousel extends Component {
                           {/* <motion.div variants={unreveal} className="h-full w-full bg-prbred absolute top-0 left-0 right-0 bottom-0 z-10">
                           </motion.div> */}
                           <div className="h-full w-full transform image-transform-center">
-                            <div className="relative overflow-hidden">
-                              <motion.div variants={slideInInner}>
+                            <div className="relative overflow-hidden h-full">
+                              <motion.div variants={slideInInner} className="h-full">
                                 <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
                                 <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
                               </motion.div>
