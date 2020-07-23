@@ -665,13 +665,13 @@ export const query = graphql`
       featuredImage {
         fluid(
           imgixParams: {auto: "format", sharp: 15, h: "1000", w: "800", fit: "fillmax", crop: "center" }) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       supportingImage {
         fluid(
           imgixParams: {auto: "format", sharp: 15, h: "800", w: "800", fit: "crop", crop: "center"}) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          ...GatsbyDatoCmsFluid
         }
       }
       introServices {
@@ -689,13 +689,13 @@ export const query = graphql`
           image1 {
             fluid(
               imgixParams: {auto: "format", sharp: 15, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             fluid(
               imgixParams: {auto: "format", sharp: 15, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           text
@@ -706,13 +706,13 @@ export const query = graphql`
           image1 {
             fluid(
               imgixParams: {auto: "format", sharp: 15, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             fluid(
               imgixParams: {auto: "format", sharp: 15, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           text
@@ -724,7 +724,7 @@ export const query = graphql`
             title
             fluid(
               imgixParams: {auto: "format", sharp: 15, w: "650", h: "900", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
         }
@@ -739,7 +739,7 @@ export const query = graphql`
           image {
             fluid(
               imgixParams: {auto: "format", sharp: 15, h: "750", w: "1200", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
         }
@@ -749,7 +749,7 @@ export const query = graphql`
           image {
             fluid(
               imgixParams: {auto: "format", sharp: 15, h: "1000", w: "750", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
         }

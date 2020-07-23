@@ -217,19 +217,19 @@ export const query = graphql`
           featuredImageSmall: teaserImage {
             url
             fluid(imgixParams: { auto: "compress", sharp: 10, w: "1100", h: "800", fit: "fillmax", crop: "center" }) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           featuredImageBig: teaserImage {
             url
             fluid(imgixParams: { auto: "compress", sharp: 10, w: "1100", h: "800", fit: "fillmax", crop: "center" }) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           featuredImageMobile: featuredImage {
             url
             fluid(imgixParams: { auto: "compress", sharp: 10, w: "800", h: "1100", fit: "fillmax", crop: "center" }) {
-              ...GatsbyDatoCmsFluid_tracedSVG
+              ...GatsbyDatoCmsFluid
             }
           }
           title
