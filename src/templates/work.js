@@ -189,7 +189,7 @@ class WorkTemplate extends React.Component {
                   </motion.div>
                 </div>
 
-                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden">
+                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
                         <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
