@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: 'Sohne';
-  src: local("Sohne")
+  src: local("Sohne"),
         url('../fonts/Sohne-Buch.woff') format('woff'),
         url('../fonts/Sohne-Buch.woff2') format('woff2');
   font-display: swap;
