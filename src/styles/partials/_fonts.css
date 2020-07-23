@@ -2,24 +2,33 @@
 @font-face {
   font-family: 'Founders Grotesk';
   src: url('../fonts/FoundersGrotesk-Regular.woff') format('woff'),
-      url('../fonts/FoundersGrotesk-Regular.woff2') format('woff2');
+      url('../fonts/FoundersGrotesk-Regular.woff2') format('woff2')
+      local("Founders Grotesk Regular"),
+      local("FoundersGrotesk-Regular");
   font-display: swap;
   font-style: normal;
+  unicode-range: U+000-5FF;
+  src: local('Founders Grotesk')
 }
 
 @font-face {
   font-family: 'Founders Grotesk';
   src: url('../fonts/FoundersGrotesk-Light.woff') format('woff'),
-      url('../fonts/FoundersGrotesk-Light.woff2') format('woff2');
+      url('../fonts/FoundersGrotesk-Light.woff2') format('woff2'),
+      local("Founders Grotesk Light"),
+      local("FoundersGrotesk-Light");
   font-display: swap;
   font-style: normal;
   font-weight: 300;
+  unicode-range: U+000-5FF;
 }
 
 @font-face {
   font-family: 'Sohne';
   src: url('../fonts/Sohne-Buch.woff') format('woff'),
-      url('../fonts/Sohne-Buch.woff2') format('woff2');
+      url('../fonts/Sohne-Buch.woff2') format('woff2')
+      local("Sohne");
   font-display: swap;
   font-style: normal;
+  unicode-range: U+000-5FF;
 }
