@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Founders Grotesk';
   src: local("Founders Grotesk Regular"),
-        local("FoundersGrotesk-Regular")
+        local("FoundersGrotesk-Regular"),
         url('../fonts/FoundersGrotesk-Regular.woff') format('woff'),
         url('../fonts/FoundersGrotesk-Regular.woff2') format('woff2');
   font-display: swap;
@@ -16,7 +16,7 @@
   src: local("Founders Grotesk Light"),
         local("FoundersGrotesk-Light")
         url('../fonts/FoundersGrotesk-Light.woff') format('woff'),
-        url('../fonts/FoundersGrotesk-Light.woff2') format('woff2'),;
+        url('../fonts/FoundersGrotesk-Light.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
   font-weight: 300;
