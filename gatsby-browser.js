@@ -1,9 +1,9 @@
-import "core-js-pure/features/array/find";
-import "core-js-pure/features/object/assign";
-import "core-js-pure/features/promise";
-import "core-js-pure/features/string/ends-with";
-import "core-js-pure/features/symbol/for";
-import "core-js-pure/features/weak-set";
+import "core-js/features/array/find";
+import "core-js/features/object/assign";
+import "core-js/features/promise";
+import "core-js/features/string/ends-with";
+import "core-js/features/symbol/for";
+import "core-js/features/weak-set";
 
 import React from "react";
 import Layout from "./src/components/layout";
