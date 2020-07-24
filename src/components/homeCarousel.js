@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "gatsby";
-import { motion } from "framer-motion/dist/framer-motion.cjs"
+import { motion } from "framer-motion";
 import Img from "gatsby-image";
 import wheel from "wheel"
 import normalizeWheel from "normalize-wheel"

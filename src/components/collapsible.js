@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import { Power2, gsap } from "gsap/all"
 import { isBrowser } from "react-device-detect"
-import { motion } from "framer-motion/dist/framer-motion.cjs"
+import { motion } from 'framer-motion'
 
 const reveal = {
 	initial: { y: "200%" },

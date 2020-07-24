@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import { motion } from "framer-motion/dist/framer-motion.cjs"
+import { motion } from 'framer-motion'
 
 const duration = 0.35
 

@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
-import { motion } from "framer-motion/dist/framer-motion.cjs"
+import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Div100vh from "react-div-100vh";
 import { navigate } from "@reach/router";
