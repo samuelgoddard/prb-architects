@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
-         features: [`Array.prototype.find`, `Object.assign`, `Promise`, `String.prototype.endsWith`, `Symbol`, `Symbol.for`, `WeakSet`, `Element.prototype.append`, `DocumentFragment.prototype.append`, `Array.prototype.forEach`, `Object.forEach`, `NodeList.prototype.forEach`]
+         features: [`Array.prototype.find`, `Object.assign`, `Promise`, `String.prototype.endsWith`, `Symbol`, `Symbol.for`, `WeakSet`, `Element.prototype.append`, `DocumentFragment.prototype.append`]
       },
     },
     `gatsby-plugin-postcss`,
