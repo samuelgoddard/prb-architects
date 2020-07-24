@@ -1,10 +1,3 @@
-import "core-js-pure/features/array/find";
-import "core-js-pure/features/object/assign";
-import "core-js-pure/features/promise";
-import "core-js-pure/features/string/ends-with";
-import "core-js-pure/features/symbol/for";
-import "core-js-pure/features/weak-set";
-
 import React from "react";
 import Layout from "./src/components/layout";
 
@@ -31,4 +24,10 @@ export const shouldUpdateScroll = ({
 }
 
 exports.onClientEntry = () => {
+  require("core-js-pure/features/array/find");
+  require("core-js-pure/features/object/assign");
+  require("core-js-pure/features/promise");
+  require("core-js-pure/features/string/ends-with");
+  require("core-js-pure/features/symbol/for");
+  require("core-js-pure/features/weak-set");
 }
