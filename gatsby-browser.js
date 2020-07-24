@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "./src/components/layout";
-import "core-js";
+// import "core-js/features/symbol";
 
 const transitionDelay = 0;
 
@@ -16,7 +16,7 @@ export const shouldUpdateScroll = ({
     window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
   } else {
     const savedPosition = getSavedScrollPosition(location)
-    window.setTimeout(
+    window.setTimeout( 
       () => window.scrollTo(...(savedPosition || [0, 0])),
       transitionDelay
     )

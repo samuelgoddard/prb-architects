@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Sam Goddard <hello@samgoddard.co.uk>",
   "dependencies": {
+    "@babel/polyfill": "^7.10.4",
     "core-js": "^3.6.5",
     "flickity": "^2.2.1",
     "framer-motion": "^1.8.4",
@@ -60,6 +61,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve"
   },
+  "browserslist": [
+    ">0.5%",
+    "not dead"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/samuelgoddard/gatsby-tailwind-motion"

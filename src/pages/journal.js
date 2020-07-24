@@ -2,7 +2,7 @@ import React from "react"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion/dist/framer-motion.cjs"
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
 import Collapsible from "../components/collapsible"

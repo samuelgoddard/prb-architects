@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby";
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence } from "framer-motion/dist/framer-motion.cjs"
 import "../styles/main.css"
 
 function Layout({ children, location, location: { pathname } }) {

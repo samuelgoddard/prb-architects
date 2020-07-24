@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "../components/seo";
 import { Link } from "gatsby";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion/dist/framer-motion.cjs"
 import Img from "gatsby-image";
 import Scroll from "../components/locomotiveScroll";
 

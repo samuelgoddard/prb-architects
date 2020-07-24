@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import { motion } from "framer-motion"
+import { motion } from "framer-motion/dist/framer-motion.cjs"
 import { Link } from "gatsby"
 import Scroll from "../components/locomotiveScroll"
 import HomeCarousel from "../components/homeCarousel"
