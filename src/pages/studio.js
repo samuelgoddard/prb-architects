@@ -3,7 +3,6 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import gsap from "gsap";
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
@@ -189,13 +188,19 @@ class StudioPage extends React.Component {
                 <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
                 <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
                   <motion.span className="block" variants={revealInOut}>
-                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#expertise'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Expertise</button>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#ethos'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Ethos</button>
                   </motion.span>
                 </li>
                 <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
                 <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
                   <motion.span className="block" variants={revealInOut}>
                     <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Team</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#sectors'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Sectors</button>
                   </motion.span>
                 </li>
                 <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
@@ -234,6 +239,7 @@ class StudioPage extends React.Component {
             className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen"
             id="studio"
           >
+            <div className="max-w-screen-3xl mx-auto">
             <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
               <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
                 <div className="w-full px-3 md:px-0 mt-12">
@@ -293,47 +299,55 @@ class StudioPage extends React.Component {
                 </div>
               </div>
             </div>
+            </div>
           </motion.div>
 
           
           <div className="bg-white p-4 md:p-6 relative z-20">
-            <div data-scroll-timeline="fast-spin" />
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 absolute bottom-0 right-0 mr-4 md:mr-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+            <div className="max-w-screen-3xl mx-auto">
+              <div data-scroll-timeline="fast-spin" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 absolute bottom-0 right-0 mr-4 md:mr-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
 
-            <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16">
-              <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 hidden md:block">
-                <div className="w-full">
-                  <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
-                    <div className="w-full relative overflow-hidden" data-scroll>
-                      <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
-                        <div className="image-reveal-scroll">
-                          <Img fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+              <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16">
+                <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 hidden md:block">
+                  <div className="w-full">
+                    <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                      <div className="w-full relative overflow-hidden" data-scroll>
+                        <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
+                          <div className="image-reveal-scroll">
+                            <Img fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-32 md:pb-24 overflow-hidden relative">
-                <span className="inline-block leading-slightnegative w-10/12 md:w-8/12 lg:w-7/12 xl:w-7/12 font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.introText }}></span>
+                
+                <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-32 md:pb-24 overflow-hidden relative">
+                  <span className="inline-block leading-slightnegative w-10/12 md:w-8/12 lg:w-7/12 xl:w-7/12 font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.introText }}></span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="md:mx-auto md:w-full pb-20 pt-12 md:pt-16 xl:pt-20 bg-white relative z-20" id="expertise">
-              <div className="overflow-hidden w-full md:w-10/12 max-w-screen-xl mx-auto px-4 md:px-8">
-                <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Expertise</span>
-                <div className="w-full flex flex-wrap md:-mx-8">
+          <div className="md:mx-auto md:w-full pb-20 pt-12 md:pt-16 xl:pt-20 bg-white relative z-20 px-4" id="ethos">
+            <div className="max-w-screen-3xl mx-auto">
+              <div className="overflow-hidden w-full md:w-9/12 mx-auto">
+                <div className="w-full flex flex-wrap">
                   {
                     this.props.data.studio.expertise.map((block, i) => (
-                      <div key={block.id} className="w-full md:w-1/2 md:px-8 mb-8 md:mb-16">
+                      <div key={block.id} className="w-full mb-10 md:mb-16">
                         {
                           block.model.apiKey === 'service' &&
-                            <>
-                              <span className="text-xl md:text-2xl block w-full border-b border-black mb-6 pb-2 font-display">{ block.heading }</span>
-                              <div className="leading-tight content-indented xl:w-11/12" dangerouslySetInnerHTML={{ __html: block.content }}></div>
-                            </>
+                            <div>
+                              <div className="border-b border-black mb-6">
+                                <span className="text-2xl md:text-3xl block w-full mb-0 pb-0 font-display leading-none">{ block.heading }</span>
+                                <span className="text-xs uppercase block mb-2">{ block.headingMeta }</span>
+                              </div>
+                              <div className="w-10/12 md:w-8/12 xl:w-1/2">
+                                <div className="leading-tight" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                              </div>
+                            </div>
                         }
                       </div>
                     ))
@@ -341,81 +355,73 @@ class StudioPage extends React.Component {
                 </div>
               </div>
             </div>
+          </div>
           
-          <Tabs>
-          <div className="bg-offblack relative z-20 text-white -xm-4 md:-mx-8 pb-8" id="team">
-            <div className="w-full flex flex-wrap">
-              <div className="w-full md:w-1/3 lg:w-3/12">
-                <div className="px-4 md:px-12 md:ml-3 pb-12 md:pb-24 pt-12 md:pt-24 xl:pt-24 h-half" data-scroll-sticky data-scroll data-scroll-target="#team">
-                  {this.props.data.team.edges.map(({ node }, i) => {
-                    return (
-                      <TabPanel key={i}>
-                        <span className="block uppercase mb-4 text-sm md:mb-6 xl:mb-8 pt-12">{ node.name }</span>
-                        <div className="leading-snug md:max-w-2xs content-indented" dangerouslySetInnerHTML={{ __html: node.profileText }}></div>
-
-                        { node.linkedinUrl && (
-                          <div className="mt-8">
-                          <span className="block uppercase mb-3 text-sm">Social</span>
-                          <a className="underline flex flex-wrap items-center hover:line-through focus:line-through" href={ node.linkedinUrl } target="_blank" rel="noreferrer noopener">
-                            <span>LinkedIn</span>
-                            <svg className="ml-2" xmlns="http://www.w3.org/2000/svg" width="16.073" height="16.073" viewBox="0 0 16.073 16.073"><g data-name="Group 151" fill="none" stroke="#fff"><path data-name="Path 1" d="M10.875 14.095V5.2H1.978"/><path data-name="Path 2" d="M10.875 5.199L.354 15.719"/></g></svg>
-                          </a>
-                          </div>
-                        )}
-
-                        { node.relatedWork.length > 0 && (
-                          <div className="mt-8">
-                          <span className="block uppercase mb-3 text-sm">Projects</span>
-
-                          {node.relatedWork.map(({ title, slug }, i) => {
-                            return(
-                              <div key={i}>
-                                <Link to={`/work/${slug}`} className="underline flex flex-wrap items-center hover:line-through focus:line-through">
-                                  <span>{title}</span>
-                                  <svg className="ml-2" xmlns="http://www.w3.org/2000/svg" width="16.073" height="16.073" viewBox="0 0 16.073 16.073"><g data-name="Group 151" fill="none" stroke="#fff"><path data-name="Path 1" d="M10.875 14.095V5.2H1.978"/><path data-name="Path 2" d="M10.875 5.199L.354 15.719"/></g></svg>
-                                </Link>
-                              </div>
-                            )
-                          })}
-                          </div>
-                        )}
-                      </TabPanel>
-                    )
-                  })}
-                </div>
+          <div className="bg-offblack relative z-20 text-white -mx-4 md:-mx-8" id="team">
+            <div className="max-w-screen-3xl mx-auto relative">
+              <div className="mt-auto md:absolute bottom-0 left-0 w-8/12 md:w-5/12 pl-4 md:pl-10 pt-8 md:pt-0 md:pb-6">
+                <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24">We care passionately about the health and happiness of our team, ensuring they have the freedom to focus on designing beautiful places for our clients.</span>
               </div>
 
-              <div className="w-full md:w-2/3 lg:w-8/12 ml-auto">
-                <TabList className="flex flex-wrap justify-end">
-                  {this.props.data.team.edges.map(({ node }, i) => {
-                    return (
-                      <Tab className="w-1/2 md:w-1/3 pb-6 cursor-pointer" key={i}>
-                        <div className="overflow-hidden mb-1 pb-0 w-full relative team-member transition duration-500 ease-in-out" data-scroll data-scroll-speed="0">
-                          <div className="w-full relative overflow-hidden" data-scroll>
-                            <div data-scroll data-scroll-speed="0.3" className="overflow-hidden -m-6">
-                              <div className="image-reveal-scroll relative">
-                                <Img fluid={ node.image.fluid } className="w-full object-cover mb-1 relative z-20 team-member__image"/>
-                                <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
+              <div className="w-full flex flex-wrap px-4 md:px-8">
+                <div className="w-full md:w-1/3 lg:w-3/12 h-auto">
+                  <div className="p-4 md:p-6 mb-8 md:mb-0 h-full">
+                    <div className="flex flex-wrap h-full">
+                      <div className="w-full">
+                        <motion.div className="studio-arrow-container mt-6">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0 studio-arrow" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                        </motion.div>
+
+                        <div className="w-full mb xl:w-5/12-auto pr-8">
+                          <p className="text-lg leading-tight">Our collaborative studio culture is centred around flexibility and wellbeing: putting people at the heart of everything that we do.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full">
+                  <div className="flex flex-wrap justify-end md:mb-32 xl:mb-48">
+                    {this.props.data.team.edges.map(({ node }, i) => {
+                      return (
+                        <Link to={`/studio/${node.slug}`} className="block w-1/2 md:w-1/3 cursor-pointer relative" key={i}>
+                          <div className="relative">
+                            <div className="overflow-hidden pb-0 w-full relative team-member transition duration-500 ease-in-out" data-scroll data-scroll-speed="0">
+                              <div className="w-full relative overflow-hidden" data-scroll>
+                                <div data-scroll data-scroll-speed="0.3" className="overflow-hidden -m-6">
+                                  <div className="image-reveal-scroll relative">
+                                    <Img fluid={ node.image.fluid } className="w-full object-cover mb-1 relative z-20 team-member__image"/>
+                                    <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="absolute bottom-0 left-0 right-0 w-full z-10 p-3">
+                              <div className="border-b border-white pb-2">
+                                <span className="text-lg md:text-xl xl:text-2xl block mb-0 pb-0 leading-none">{ node.name }</span>
+                                <span className="text-xs uppercase">{ node.jobTitle }</span>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        
-                        <span className="text-lg md:text-xl block mb-0 pb-0">{ node.name }</span>
-                        <span className="text-sm">{ node.jobTitle }</span>
-                      </Tab>
-                    )
-                  })}
-                </TabList>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          </Tabs>
-
-          <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24" id="services">
-            <div className="w-full flex flex-wrap md:-mx-4 items-end">
-              <div className="w-full md:w-4/12 md:px-4 hidden lg:block">
-                <div className="w-1/2">
+          
+          <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-24 lg:pt-32 xl:pt-40" id="sectors">
+            <div className="w-full flex flex-wrap mb-18 md:mb-32 lg:mb-32 xl:mb-40 max-w-screen-3xl mx-auto ">
+              <div className="w-9/12 md:w-8/12 lg:w-1/2 xl:w-5/12 md:mx-auto">
+                <p className="text-lg lg:text-xl leading-tight">We’re passionate about architecture that is appropriate and accessible, using simplicity and minimalism to create inspirational designs, woven comfortably into their setting, respecting local character and celebrating community. Our ideas respond to the fluid, dynamic nature of societal evolution, aimed around the concepts of places to live, history to share, spaces to work, sights to see, and centres to learn.</p>
+              </div>
+            </div>
+            
+            <div className="max-w-screen-3xl mx-auto">
+              <div className="w-full flex flex-wrap md:-mx-8 items-end">
+                <div className="w-full md:w-5/12 md:px-8 mb-10 md:mb-0">
                   <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
                     <div className="w-full relative overflow-hidden" data-scroll>
                       <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
@@ -426,12 +432,36 @@ class StudioPage extends React.Component {
                     </div>
                   </div>
                 </div>
+                <div className="w-full md:w-7/12 md:pr-12 xl:pr-24 md:pl-8 mb-8 md:mb-0">
+                  {
+                    this.props.data.studio.expertise.map((block, i) => (
+                      <div key={block.id} className={this.props.data.studio.expertise.length === (i + 1) ? `w-full mb-4` : `w-full mb-10 md:mb-16`}>
+                        {
+                          block.model.apiKey === 'service' &&
+                            <div>
+                              <div className="border-b border-black mb-6">
+                                <span className="text-2xl md:text-3xl block w-full mb-0 pb-0 font-display leading-none">{ block.heading }</span>
+                                <span className="text-xs uppercase block mb-2">{ block.headingMeta }</span>
+                              </div>
+                              <div className="w-10/12 md:w-10/12 lg:w-8/12 xl:w-7/12">
+                                <div className="leading-tight" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                              </div>
+                            </div>
+                        }
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
+            </div>
+          </div>
 
-              <div className="w-full lg:w-8/12 ml-auto md:px-4 pb-12 md:pb-24 xl:pb-32">
+          <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24 max-w-screen-3xl mx-auto" id="services">
+            <div className="w-full flex flex-wrap items-end">
+              <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-24 xl:pb-32">
                 <div className="overflow-hidden">
-                  <span className="block uppercase mb-8 md:mb-12 xl:mb-16">Our Services</span>
-                  <div className="w-full flex flex-wrap md:-mx-8">
+                  <span className="block uppercase mb-8 md:mb-12 md:px-8">Our Services</span>
+                  <div className="w-full flex flex-wrap">
                     {
                       this.props.data.studio.services.map((block, i) => (
                         <div key={block.id} className="text-lg md:text-xl w-full md:w-1/2 md:px-8">
@@ -512,6 +542,7 @@ export const query = graphql`
       edges {
         node {
           name
+          slug
           jobTitle
           profileText
           linkedinUrl
@@ -563,6 +594,7 @@ export const query = graphql`
           id
           model { apiKey }
           heading
+          headingMeta
           content
         }
       }

@@ -21,6 +21,7 @@
     "gatsby-transformer-sharp": "^2.3.14",
     "gsap": "^3.3.4",
     "locomotive-scroll": "^3.5.4",
+    "micromodal": "^0.4.6",
     "normalize-wheel": "^1.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
