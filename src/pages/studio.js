@@ -381,7 +381,7 @@ class StudioPage extends React.Component {
                 </div>
 
                 <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full">
-                  <div className="flex flex-wrap justify-end md:mb-32 xl:mb-48">
+                  <div className="flex flex-wrap justify-end">
                     {this.props.data.team.edges.map(({ node }, i) => {
                       return (
                         <Link to={`/studio/${node.slug}`} className="block w-1/2 md:w-1/3 cursor-pointer relative" key={i}>

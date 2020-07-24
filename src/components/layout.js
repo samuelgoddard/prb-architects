@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 import { AnimatePresence } from "framer-motion"
 import "../styles/main.css"
 
