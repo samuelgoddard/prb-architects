@@ -68,7 +68,8 @@ const SEO = ({ pathname, titleOverride, descriptionOverride, pathnameOverride, i
       <meta name="twitter:site" content={twitterAccount} />
       
       {/* Gross polyfills for Loco */}
-      <script nomodule src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
+      <script crossorigin="anonymous" src="//polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CNodeList.prototype.forEach%2CArray.from%2CString.prototype.startsWith%2CObject.assign%2CArray.prototype.entries%2CObject.entries%2CObject.fromEntries%2CDocumentFragment.prototype.append%2CElement.prototype.append%2CPromise%2CPromise.prototype.finally%2CArray.prototype.includes%2Ces6%2CEvent%2CElement.prototype.matches%2Cfetch%2CElement.prototype.remove"></script>
+
 
 
       { noIndex && (
