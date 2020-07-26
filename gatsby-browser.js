@@ -4,6 +4,10 @@ import Layout from "./src/components/layout";
 
 const transitionDelay = 0;
 
+export const onClientEntry = () => {
+  return
+}
+
 export const wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>;
 };
@@ -22,7 +26,4 @@ export const shouldUpdateScroll = ({
     )
   }
   return false
-}
-
-export const onClientEntry = () => {
 }
