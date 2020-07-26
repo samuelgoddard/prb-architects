@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Scroll from "../components/locomotiveScroll"
-import HomeCarousel from "../components/homeCarousel"
+// import HomeCarousel from "../components/homeCarousel"
 import Div100vh from "react-div-100vh";
 
 const fade = {
@@ -125,7 +125,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
               className="w-full"
             >
               <div className="slider home-slider mt-10 md:mt-0">
-                <HomeCarousel slides={shuffledPosts} />
+                {/* <HomeCarousel slides={shuffledPosts} /> */}Carousel should be here...
               </div>
             </div>
 

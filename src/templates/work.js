@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import gsap from "gsap";
-import WorkCarousel from "../components/workCarousel"
-import WorkCarouselDesktop from "../components/workCarouselDesktop"
+// import WorkCarousel from "../components/workCarousel"
+// import WorkCarouselDesktop from "../components/workCarouselDesktop"
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
@@ -368,7 +368,8 @@ class WorkTemplate extends React.Component {
                         block.model.apiKey === 'carousel' &&
                           <div className="w-full">
                             <div className="block mb-8">
-                              <WorkCarousel slides={ block.images } realLength={ block.images.length } />
+                              Carousel should be here...
+                              {/* <WorkCarousel slides={ block.images } realLength={ block.images.length } /> */}
                             </div>
                           </div>
                       }
