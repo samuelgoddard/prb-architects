@@ -1,11 +1,9 @@
-import polyfill from "./src/polyfills"
 import React from "react";
 import Layout from "./src/components/layout";
 
 const transitionDelay = 0;
 
 export const onClientEntry = () => {
-  return
 }
 
 export const wrapPageElement = ({ element, props }) => {
