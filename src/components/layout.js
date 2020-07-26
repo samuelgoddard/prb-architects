@@ -1,4 +1,3 @@
-import '../polyfills'
 import React from "react"
 import { Link } from "gatsby";
 import { AnimatePresence } from "framer-motion"
