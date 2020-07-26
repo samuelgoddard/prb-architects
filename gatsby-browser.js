@@ -1,10 +1,4 @@
-import "core-js/features/array/find";
-import "core-js/features/object/assign";
-import "core-js/features/promise";
-import "core-js/features/string/ends-with";
-import "core-js/features/symbol/for";
-import "core-js/features/weak-set";
-
+import polyfill from "./src/polyfills"
 import React from "react";
 import Layout from "./src/components/layout";
 

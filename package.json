@@ -6,9 +6,9 @@
   "author": "Sam Goddard <hello@samgoddard.co.uk>",
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
-    "core-js": "^3.6.5",
+    "core-js": "^2.5.7",
     "flickity": "^2.2.1",
-    "framer-motion": "^1.8.4",
+    "framer-motion": "^1.11.1",
     "gatsby": "^2.23.17",
     "gatsby-image": "^2.2.40",
     "gatsby-plugin-anchor-links": "^1.1.1",
