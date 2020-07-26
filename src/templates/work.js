@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import gsap from "gsap";
-// import WorkCarousel from "../components/workCarousel"
-// import WorkCarouselDesktop from "../components/workCarouselDesktop"
+import WorkCarousel from "../components/workCarousel"
+import WorkCarouselDesktop from "../components/workCarouselDesktop"
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
@@ -189,7 +189,7 @@ class WorkTemplate extends React.Component {
                   </motion.div>
                 </div>
 
-                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
+                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
                         <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
@@ -368,8 +368,7 @@ class WorkTemplate extends React.Component {
                         block.model.apiKey === 'carousel' &&
                           <div className="w-full">
                             <div className="block mb-8">
-                              Carousel should be here...
-                              {/* <WorkCarousel slides={ block.images } realLength={ block.images.length } /> */}
+                              <WorkCarousel slides={ block.images } realLength={ block.images.length } />
                             </div>
                           </div>
                       }
@@ -665,13 +664,13 @@ export const query = graphql`
       }
       featuredImage {
         fluid(
-          imgixParams: {auto: "format", sharp: 15, h: "1000", w: "800", fit: "fillmax", crop: "center" }) {
+          imgixParams: {auto: "format", sharp:0, h: "1000", w: "800", fit: "fillmax", crop: "center" }) {
           ...GatsbyDatoCmsFluid
         }
       }
       supportingImage {
         fluid(
-          imgixParams: {auto: "format", sharp: 15, h: "800", w: "800", fit: "crop", crop: "center"}) {
+          imgixParams: {auto: "format", sharp:0, h: "800", w: "800", fit: "crop", crop: "center"}) {
           ...GatsbyDatoCmsFluid
         }
       }
@@ -689,13 +688,13 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
-              imgixParams: {auto: "format", sharp: 15, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             fluid(
-              imgixParams: {auto: "format", sharp: 15, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -706,13 +705,13 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
-              imgixParams: {auto: "format", sharp: 15, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             fluid(
-              imgixParams: {auto: "format", sharp: 15, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -724,7 +723,7 @@ export const query = graphql`
           images {
             title
             fluid(
-              imgixParams: {auto: "format", sharp: 15, w: "650", h: "900", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, w: "650", h: "900", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -739,7 +738,7 @@ export const query = graphql`
           model { apiKey }
           image {
             fluid(
-              imgixParams: {auto: "format", sharp: 15, h: "750", w: "1200", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "750", w: "1200", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -749,7 +748,7 @@ export const query = graphql`
           model { apiKey }
           image {
             fluid(
-              imgixParams: {auto: "format", sharp: 15, h: "1000", w: "750", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1000", w: "750", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }

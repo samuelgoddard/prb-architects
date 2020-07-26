@@ -78,33 +78,33 @@ class StudioPage extends React.Component {
   }
 
   componentDidMount() {
-    // const members = document.querySelectorAll('.team-member');
-    // if(Object.keys(members).length > 0) {
-    //   function memberHover(member) {
-    //     members.forEach(member => {
-    //       member.classList.remove('opacity-100');
-    //       member.classList.add('opacity-25');
-    //       member.classList.add('team-member--deactive');
-    //     });
-    //     member.target.classList.remove('team-member--deactive');
-    //     member.target.classList.add('team-member--active');
-    //     member.target.classList.add('opacity-100');
-    //   };
-    //   function memberReset(member) {
-    //     members.forEach(member => {
-    //       member.classList.remove('opacity-25');
-    //       member.classList.remove('team-member--active');
-    //       member.classList.remove('team-member--deactive');
-    //       member.classList.add('opacity-100');
-    //     });
-    //   }
-    //   members.forEach(member => {
-    //     member.addEventListener('mouseenter', memberHover);
-    //   });
-    //   members.forEach(member => {
-    //     member.addEventListener('mouseleave', memberReset);
-    //   });
-    // }
+    const members = document.querySelectorAll('.team-member');
+    if(Object.keys(members).length > 0) {
+      function memberHover(member) {
+        members.forEach(member => {
+          member.classList.remove('opacity-100');
+          member.classList.add('opacity-25');
+          member.classList.add('team-member--deactive');
+        });
+        member.target.classList.remove('team-member--deactive');
+        member.target.classList.add('team-member--active');
+        member.target.classList.add('opacity-100');
+      };
+      function memberReset(member) {
+        members.forEach(member => {
+          member.classList.remove('opacity-25');
+          member.classList.remove('team-member--active');
+          member.classList.remove('team-member--deactive');
+          member.classList.add('opacity-100');
+        });
+      }
+      members.forEach(member => {
+        member.addEventListener('mouseenter', memberHover);
+      });
+      members.forEach(member => {
+        member.addEventListener('mouseleave', memberReset);
+      });
+    }
     
     let locomotiveScroll
     locomotiveScroll = new LocomotiveScroll({
