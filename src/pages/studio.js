@@ -244,7 +244,7 @@ class StudioPage extends React.Component {
               <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
                 <div className="w-full px-3 md:px-0 mt-12">
                   <div className="flex flex-wrap h-full">
-                    <div className="w-full mb-auto overflow-hidden -mt-6 md:-mt-8" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                    <div className="w-full mb-auto overflow-hidden -mt-8 md:-mt-12" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                       <div className="-mt-12 md:-mt-16">
                         <motion.h1
                           initial="initial"
@@ -256,7 +256,7 @@ class StudioPage extends React.Component {
                           className="text-screen-display--large block order-2 lg:order-1 w-full lg:w-auto pt-6 md:pt-16 relative overflow-hidden font-display -mt-10 pb-0 mb-0">
                           <span className="relative overflow-hidden block">
                             <span className="block mt-0 relative z-20 bg-offblack">
-                              <motion.span variants={reveal} className="pt-12 md:pt-10 md:pt-8 xl:pt-16 2xl:pt-24 pb-0 block">Our</motion.span>
+                              <motion.span variants={reveal} className="pt-12 md:pt-10 lg:pt-12 xl:pt-16 2xl:pt-24 pb-0 block">Our</motion.span>
                             </span>
                           </span>
                           <span className="-md:-mt-6 xl:-mt-4 block">
@@ -386,8 +386,8 @@ class StudioPage extends React.Component {
                       return (
                         <Link to={`/studio/${node.slug}`} className="block w-1/2 md:w-1/3 cursor-pointer relative" key={i}>
                           <div className="relative">
-                            <div className="overflow-hidden pb-0 w-full relative team-member transition duration-500 ease-in-out" data-scroll data-scroll-speed="0">
-                              <div className="w-full relative overflow-hidden" data-scroll>
+                            <div className="overflow-hidden pb-0 w-full relative team-member transition duration-500 ease-in-out group" data-scroll data-scroll-speed="0">
+                              <div className="w-full relative overflow-hidden team-member__inner" data-scroll>
                                 <div data-scroll data-scroll-speed="0.3" className="overflow-hidden -m-6">
                                   <div className="image-reveal-scroll relative">
                                     <Img fluid={ node.image.fluid } className="w-full object-cover mb-1 relative z-20 team-member__image"/>
@@ -395,11 +395,14 @@ class StudioPage extends React.Component {
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div className="absolute bottom-0 left-0 right-0 w-full z-10 p-3">
-                              <div className="border-b border-white pb-2">
-                                <span className="text-lg md:text-xl xl:text-2xl block mb-0 pb-0 leading-none">{ node.name }</span>
-                                <span className="text-xs uppercase">{ node.jobTitle }</span>
+                              <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 p-3 text-white opacity-0 group-hover:opacity-100 transition ease-in-out duration-500 flex flex-wrap items-center justify-center text-lg">
+                                <span className="-mt-6">Read Bio</span>
+                              </div>
+                              <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
+                                <div className="border-b border-white pb-2">
+                                  <span className="text-lg md:text-xl xl:text-2xl block mb-0 pb-0 leading-none text-white">{ node.name }</span>
+                                  <span className="text-xs uppercase text-white">{ node.jobTitle }</span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -412,8 +415,8 @@ class StudioPage extends React.Component {
             </div>
           </div>
           
-          <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-24 lg:pt-32 xl:pt-40" id="sectors">
-            <div className="w-full flex flex-wrap mb-18 md:mb-32 lg:mb-32 xl:mb-40 max-w-screen-3xl mx-auto ">
+          <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-40 md:-mb-2" id="sectors">
+            <div className="w-full flex flex-wrap mb-18 md:mb-32 lg:mb-32 xl:mb-48 max-w-screen-3xl mx-auto ">
               <div className="w-9/12 md:w-8/12 lg:w-1/2 xl:w-5/12 md:mx-auto">
                 <p className="text-lg lg:text-xl leading-tight">We’re passionate about architecture that is appropriate and accessible, using simplicity and minimalism to create inspirational designs, woven comfortably into their setting, respecting local character and celebrating community. Our ideas respond to the fluid, dynamic nature of societal evolution, aimed around the concepts of places to live, history to share, spaces to work, sights to see, and centres to learn.</p>
               </div>
@@ -456,9 +459,9 @@ class StudioPage extends React.Component {
             </div>
           </div>
 
-          <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-16 xl:pt-24 max-w-screen-3xl mx-auto" id="services">
+          <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-40 max-w-screen-3xl mx-auto" id="services">
             <div className="w-full flex flex-wrap items-end">
-              <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-24 xl:pb-32">
+              <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-32 xl:pb-40">
                 <div className="overflow-hidden">
                   <span className="block uppercase mb-8 md:mb-12 md:px-8">Our Services</span>
                   <div className="w-full flex flex-wrap">
@@ -481,8 +484,17 @@ class StudioPage extends React.Component {
             </div>
           </div>
 
-          <div className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8 relative z-20" id="contact">
-            <div className="w-full flex flex-wrap">
+          <div className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-6 relative z-20" id="contact">
+            <div className="w-full flex flex-wrap items-end">
+              <div className="w-full md:w-2/12">
+                <Link 
+                  className={`pr-8 z-30 w-32 md:w-40 ml-6 pr-12 -mb-3 hidden md:block`}
+                  to="/"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
+                </Link>
+              </div>
+              
               <div className="w-full md:w-10/12 ml-auto">
                 <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
                   <div className="w-full">
@@ -492,40 +504,38 @@ class StudioPage extends React.Component {
                   <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 ml-auto transform rotate-90 absolute bottom-0 right-0 m-4 md:m-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                   </div>
+                </div>
+
+                <div className="md:hidden">
+                  <Link 
+                    className={`block pr-8 pb-4 z-30 w-32 md:w-40 ml-4 md:ml-0`}
+                    to="/"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
+                  </Link>
+                </div>
+
+                <ul className="flex flex-wrap border-t border-black border-b mx-4 md:mx-6">
+                  <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
+
+                  <li className="ml-auto block border-l border-black">
+                    <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ this.props.data.studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">{ this.props.data.studio.studioEmailAddress }</a>
+                  </li>
+
+                  <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
+
+                  <li className="border-l border-black">
+                    <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
+                  </li>
+
+                  <li className="border-l border-black">
+                    <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
+                  </li>
+                </ul>
+                <ul className="flex flex-wrap border-b border-black md:hidden mx-4 md:mx-0">
+                  <li className="md:text-lg py-2 pr-12 block invert-select">Architecture + Conservation</li>
+                </ul>
               </div>
-              </div>
-            </div>
-
-            <div className="w-full md:w-10/12 ml-auto mr-4 md:mr-6 px-4 md:px-0 md:pl-12 lg:pl-4">
-              <div className="md:hidden">
-                <Link 
-                  className={`block pr-8 pb-4 z-30 w-32 md:w-40`}
-                  to="/"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
-                </Link>
-              </div>
-
-              <ul className="flex flex-wrap border-t border-black border-b">
-                <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
-
-                <li className="ml-auto block border-l border-black">
-                  <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ this.props.data.studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">{ this.props.data.studio.studioEmailAddress }</a>
-                </li>
-
-                <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
-
-                <li className="border-l border-black">
-                  <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
-                </li>
-
-                <li className="border-l border-black">
-                  <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
-                </li>
-              </ul>
-              <ul className="flex flex-wrap border-b border-black md:hidden">
-                <li className="md:text-lg py-2 pr-12 block invert-select">Architecture + Conservation</li>
-              </ul>
             </div>
           </div>
         </motion.div>

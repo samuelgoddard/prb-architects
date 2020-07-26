@@ -90,7 +90,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
             </div>
             <div className="overflow-hidden w-full md:flex-1 order-1 md:order-2">
               <h1 className="text-right text-screen-display--large m-0 p-0 block mt-3 2xl:mt-4 mb-0 pb-0 -mr-1 lg:-mr-2">
-                <span className="block relative overflow-hidden md:pt-14 xl:pt-18 2xl:pt-20">
+                <span className="block relative overflow-hidden pt-3 md:pt-14 xl:pt-18 2xl:pt-20">
                 <motion.span variants={reveal} className="block">Journal</motion.span>
                 </span>
               </h1>
@@ -112,7 +112,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                 return (
                   <div className="overflow-hidden" key={i}>
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i}>
-                      <div className={ node.gallery.length > 0 ? `block mb-6` : `block mb-0`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
+                      <div className={ node.gallery.length > 0 ? `block mb-6 w-11/12 md:w-2/3` : `block mb-0 w-11/12 md:w-2/3`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
                       <div className="flex flex-wrap -mx-3 overflow-hidden">
                         {node.gallery.map(({ fluid }, i) => {
@@ -137,7 +137,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
         animate="enter"
         exit="exit"
       >
-        <section className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-8 relative z-20">
+        <section className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-6 relative z-20">
           <div className="w-full flex flex-wrap">
             <div className="w-full md:w-10/12 ml-auto">
               <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">

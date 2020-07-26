@@ -144,7 +144,7 @@ class WorkTemplate extends React.Component {
           imageOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.image ? this.props.data.datoCmsWork.metaTags.image.url : null }
         />
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute top-0 left-0 right-0 " data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
           <motion.nav
             initial="initial"
             animate="enter"
@@ -565,7 +565,7 @@ class WorkTemplate extends React.Component {
               </section>
             
               {/* Footer */}
-              <section className="px-4 md:px-6 bg-prbred pt-12 md:pt-24 lg:pt-32 pb-6 md:pb-10">
+              <section className="px-4 md:px-6 bg-prbred pt-12 md:pt-24 lg:pt-32 pb-6 md:pb-6">
                 <div className="-mx-4 md:-mx-6">
                   <div className="w-full flex flex-wrap">
                     <div className="w-full md:w-10/12 ml-auto">

@@ -322,11 +322,7 @@ video {
 }
 
 
-.team-member {
-	@apply relative;
-}
-
-.team-member {
+.team-member__inner {
 	@apply opacity-100 relative transition duration-300 ease-in-out;
 
 	&:after {
@@ -347,9 +343,11 @@ video {
 		background-blend-mode: darken;
 	}
 
-	&:after {
-		content: " ";
-		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-prbred z-30 opacity-100 transition duration-300 ease-in-out;
+	.team-member__inner {
+		&:after {
+			content: " ";
+			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-prbred z-10 opacity-100 transition duration-300 ease-in-out;
+		}
 	}
 }
 
@@ -362,10 +360,12 @@ video {
 		background-blend-mode: darken;
 	}
 
-	&:after {
-		content: " ";
-		mix-blend-mode: none;
-		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-black z-30 opacity-50 transition duration-300 ease-in-out;
+	.team-member__inner {
+		&:after {
+			content: " ";
+			mix-blend-mode: none;
+			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-black z-10 opacity-50 transition duration-300 ease-in-out;
+		}
 	}
 }
 
