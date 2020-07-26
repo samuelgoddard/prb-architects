@@ -17,6 +17,31 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+         features: [
+          `Array.prototype.forEach`,
+          `NodeList.prototype.forEach`,
+          `Array.from`,
+          `String.prototype.startsWith`,
+          `Object.assign`,
+          `Array.prototype.entries`,
+          `Object.entries`,
+          `Object.fromEntries`,
+          `DocumentFragment.prototype.append`,
+          `Element.prototype.append`,
+          `Promise`,
+          `Promise.prototype.finally`,
+          `Array.prototype.includes`,
+          `es6`,
+          `Event`,
+          `Element.prototype.matches`,
+          `fetch`,
+          `Element.prototype.remove`
+        ]
+      },
+    },
     `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
