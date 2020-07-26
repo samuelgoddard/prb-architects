@@ -31,8 +31,11 @@ module.exports = {
           `Object.fromEntries`,
           `DocumentFragment.prototype.append`,
           `Element.prototype.append`,
+          `Promise`,
           `Promise.prototype.finally`,
           `Array.prototype.includes`,
+          `es6`,
+          `Event`,
           `Element.prototype.matches`,
           `fetch`,
           `Element.prototype.remove`
