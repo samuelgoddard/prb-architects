@@ -93,10 +93,48 @@ class HomeCarousel extends Component {
 
       // update();
     }
+
+    const members = document.querySelectorAll('.slide');
+    if(Object.keys(members).length > 0) {
+      function memberHover(member) {
+        members.forEach(member => {
+          member.classList.remove('opacity-100');
+          member.classList.add('opacity-50');
+          member.classList.add('slide--deactive');
+        });
+        member.target.classList.remove('slide--deactive');
+        member.target.classList.add('opacity-100');
+      };
+      function memberReset(member) {
+        members.forEach(member => {
+          member.classList.remove('opacity-50');
+          member.classList.remove('slide--deactive');
+          member.classList.add('opacity-100');
+        });
+      }
+      members.forEach(member => {
+        member.addEventListener('mouseenter', memberHover);
+      });
+      members.forEach(member => {
+        member.addEventListener('mouseleave', memberReset);
+      });
+    }
   }
+
+  shuffleArray(array) {
+    let i = array.length - 1;
+    for (; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
 
   
   render() {
+    const shuffledPosts = this.shuffleArray(this.props.slides);
     return (
       <motion.div
         initial="initial"
@@ -104,7 +142,7 @@ class HomeCarousel extends Component {
         exit="exit"
         className="slideshow js-slideshow md:fixed md:top-0 md:left-0 md:right-0 md:bottom-0 md:h-full md:pt-16 lg:pt-20 xl:pt-32"
       >
-        {this.props.slides.map(({ node }, i) => {
+        {shuffledPosts.map(({ node }, i) => {
           return (
             <motion.div variants={slideIn} className="slide" key={i}>
               <Link to={`/work/${ node.slug }`} className="block h-full slide__link group">

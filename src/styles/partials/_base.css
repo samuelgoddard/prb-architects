@@ -150,7 +150,7 @@ html.has-scroll-dragging {
 	width: 75vw;
 	margin-right: 50px;
 	height: auto;
-	/* transition: opacity 250ms ease-in-out; */
+	transition: opacity 650ms ease-in-out;
 
 	@screen md {
 		height: 400px;
@@ -179,9 +179,10 @@ html.has-scroll-dragging {
 	}
 
 	.slide__img {
-		/* transition: transform ease 750ms; */
+		transition: all ease 650ms;
 		height: 100vh;
 		max-height: calc(68vh - 115px);
+	
 
 		@media screen and (device-aspect-ratio: 40/71) {
 			max-height: calc(57vh - 115px);
@@ -205,6 +206,24 @@ html.has-scroll-dragging {
 			height: 100%;
 			max-height: none;
 		}
+	}
+}
+
+.slide__link {
+	&:after {
+		content: " ";
+		mix-blend-mode: multiply;
+		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-transparent z-30 opacity-0 transition duration-300 ease-in-out;
+	}
+}
+
+.slide--deactive {
+	opacity: 0.75 !important;
+
+	.slide__img {
+		-webkit-filter: grayscale(100%);
+		mix-blend-mode: darken;
+		background-blend-mode: darken;
 	}
 }
 
@@ -244,6 +263,32 @@ html.has-scroll-dragging {
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
+} */
+
+.home-arrow:hover {
+	.home-arrow__easter-egg {
+		animation: fadeIn 0.3s ease-out forwards;
+	}
+	.home-arrow__easter-egg--delay {
+		animation: fadeIn 0.3s ease-out 0.15s forwards;
+	}
+}
+
+.home-arrow__easter-egg {
+	opacity: 0;
+	transition: all ease 250ms;
+	transform: translateY(20px)
+}
+
+@keyframes fadeIn {
+    from { 
+		opacity: 0;
+		transform: translateY(20px)
+	}
+    to   {
+		opacity: 1;
+		transform: translateY(0px)
+	}
 } */
 
 /* .slide {
@@ -367,6 +412,15 @@ video {
 			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-black z-10 opacity-50 transition duration-300 ease-in-out;
 		}
 	}
+}
+
+.z-100 {
+	z-index: 100 !important;
+}
+
+.\/ {
+	position: relative;
+	z-index: 20 !important;
 }
 
 .flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-button{display: none !important;}

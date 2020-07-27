@@ -136,6 +136,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
         initial="initial"
         animate="enter"
         exit="exit"
+        variants={fade}
       >
         <section className="bg-prbred pt-12 md:pt-24 lg:pt-32 pb-4 md:pb-6 relative z-20">
           <div className="w-full flex flex-wrap">
@@ -145,11 +146,11 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                   <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-none md:px-6 mb-6 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
 
                   <div className="md:flex md:flex-wrap">
-                    <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white md:pl-6 focus:text-white invert-select">Email Us</a>
+                    <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white md:pl-6 focus:text-white invert-select">Email us</a>
 
-                    <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">Call Us { studio.studioTelephone }</a>
+                    <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">Call us { studio.studioTelephone }</a>
 
-                    <Link to={`/journal`} className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">About Our Studio</Link>
+                    <Link to={`/studio`} className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">About our studio</Link>
                   </div>
                 </div>
                 <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
@@ -169,7 +170,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
               </Link>
             </div>
 
-            <ul className="flex flex-wrap border-t border-black border-b">
+            <ul className="flex flex-wrap border-t border-black border-b lg:ml-8">
               <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
 
               <li className="ml-auto block border-l border-black">

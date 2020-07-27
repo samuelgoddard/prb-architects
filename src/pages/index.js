@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
@@ -61,8 +61,14 @@ function shuffleArray(array) {
 
 const IndexPage = ({ data: { home, work, workCategories }, location }) => {
   const shuffledPosts = shuffleArray(work.edges);
+  const [darkMode, setDarkMode] = useState(false);
+  function toggleButton () {
+    if(!darkMode) setDarkMode(true);
+    else setDarkMode(false);
+  }
+
   return (
-    <>
+    <div>
 
       <SEO
         titleOverride={home.metaTags && home.metaTags.title ? home.metaTags.title : null }
@@ -112,12 +118,23 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
       >
         <Div100vh>
           <motion.div className="h-full pt-14 md:pt-22 md:flex md:flex-wrap md:flex-grow-0" variants={fade}>
-            <div className="mt-4 md:mt-6 w-auto h-28 md:h-40 3xl:h-48 pl-4 pt-2 md:p-6 hidden md:block">
+            <div className="w-auto h-28 md:h-40 3xl:h-48 pl-4 pt-2 md:p-6 hidden md:block home-arrow relative group">
               <motion.div className="relative overflow-hidden" variants={fade}>
-                <motion.div variants={revealArrow}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32 2xl:w-40 3xl:w-40 -mb-8 -mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                <motion.div variants={revealArrow} className="relative z-20">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32 2xl:w-40 3xl:w-40 -mb-8 -mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="currentColor" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                 </motion.div>
               </motion.div>
+
+              <div className="absolute top-0 right-0 -mr-24 mt-18 text-black font-display opacity-0 group-hover:opacity-100">
+                <div className="pt-px">
+                  <div className="overflow-hidden relative pt-2 mb-1 2xl:pt-8">
+                    <span className="opacity-0 block text-lg md:text-xl home-arrow__easter-egg leading-none">Nottingham</span>
+                  </div>
+                  <div className="overflow-hidden relative">
+                    <span className="opacity-0 block text-sm home-arrow__easter-egg--delay leading-none">52.9548° N, 1.1581° W</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div
@@ -179,7 +196,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
           </motion.div>
         </Div100vh>
       </motion.div>
-    </>
+    </div>
   )
 }
 

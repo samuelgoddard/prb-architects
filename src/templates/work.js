@@ -555,11 +555,17 @@ class WorkTemplate extends React.Component {
               
 
               {/* Looking for work? */}
-              <section>
+              <section className="pb-10 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
                 <div className="w-full md:w-10/12 ml-auto px-4 md:px-6">
                   <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0">
-                    <span className="block font-display text-4xl md:text-6xl leading-none mb-4">Looking to work with us on a similar project?</span>
-                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="block font-display text-2xl underline hover:text-prbred focus:text-prbred">Get in touch</a>
+                    <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category.title.toLowerCase() } project? Get in touch here</span>
+                    <div className="lg:flex lg:flex-wrap">
+                      <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display pl-1 lg:pl-1 lg:px-3 leading-extratight underline hover:text-prbred focus:text-prbred invert-select">Email us</a>
+
+                      <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display pl-1 lg:px-3 leading-extratight underline hover:text-prbred focus:text-prbred invert-select">Call us { this.props.data.studio.studioTelephone }</a>
+
+                      <Link to={`/journal`} className="text-xl md:text-2xl block font-display pl-1 lg:px-3 leading-extratight underline hover:text-prbred focus:text-prbred invert-select">See our journal</Link>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -761,6 +767,7 @@ export const query = graphql`
       studioInstagramUrl
       studioLinkedinUrl
       studioEmailAddress
+      studioTelephone
       heroSupportingText
     }
     relatedWork: allDatoCmsWork(filter: {category: {slug: {eq: $cat}}}) {
