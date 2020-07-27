@@ -142,8 +142,15 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
             <div className="w-full md:w-10/12 ml-auto">
               <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
                 <div className="w-full">
-                  <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-extratight md:px-6 mb-6 invert-select">Looking for an architectual<br/>team for your project?</span>
-                  <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</a>
+                  <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-none md:px-6 mb-6 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
+
+                  <div className="md:flex md:flex-wrap">
+                    <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white md:pl-6 focus:text-white invert-select">Email Us</a>
+
+                    <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">Call Us { studio.studioTelephone }</a>
+
+                    <Link to={`/journal`} className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">About Our Studio</Link>
+                  </div>
                 </div>
                 <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 ml-auto transform rotate-90 absolute bottom-0 right-0 m-4 md:m-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
@@ -214,6 +221,7 @@ export const query = graphql`
       studioInstagramUrl
       studioLinkedinUrl
       studioEmailAddress
+      studioTelephone
       heroSupportingText
     }
   }

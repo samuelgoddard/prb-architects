@@ -360,7 +360,7 @@ class StudioPage extends React.Component {
           <div className="bg-offblack relative z-20 text-white -mx-4 md:-mx-8" id="team">
             <div className="max-w-screen-3xl mx-auto relative">
               <div className="mt-auto md:absolute bottom-0 left-0 w-8/12 md:w-5/12 pl-4 md:pl-10 pt-8 md:pt-0 md:pb-6">
-                <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24">We care passionately about the health and happiness of our team, ensuring they have the freedom to focus on designing beautiful places for our clients.</span>
+                <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24 block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
               </div>
 
               <div className="w-full flex flex-wrap px-4 md:px-8">
@@ -373,7 +373,7 @@ class StudioPage extends React.Component {
                         </motion.div>
 
                         <div className="w-full mb xl:w-5/12-auto pr-8">
-                          <p className="text-lg leading-tight">Our collaborative studio culture is centred around flexibility and wellbeing: putting people at the heart of everything that we do.</p>
+                          <div className="text-lg leading-tight" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamIntro }}></div>
                         </div>
                       </div>
                     </div>
@@ -418,7 +418,7 @@ class StudioPage extends React.Component {
           <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-40 md:-mb-2" id="sectors">
             <div className="w-full flex flex-wrap mb-18 md:mb-32 lg:mb-32 xl:mb-48 max-w-screen-3xl mx-auto ">
               <div className="w-9/12 md:w-8/12 lg:w-1/2 xl:w-5/12 md:mx-auto">
-                <p className="text-lg lg:text-xl leading-tight">We’re passionate about architecture that is appropriate and accessible, using simplicity and minimalism to create inspirational designs, woven comfortably into their setting, respecting local character and celebrating community. Our ideas respond to the fluid, dynamic nature of societal evolution, aimed around the concepts of places to live, history to share, spaces to work, sights to see, and centres to learn.</p>
+                <div className="text-lg lg:text-xl leading-tight content" dangerouslySetInnerHTML={{ __html: this.props.data.studio.sectorsIntroText }}></div>
               </div>
             </div>
             
@@ -429,7 +429,7 @@ class StudioPage extends React.Component {
                     <div className="w-full relative overflow-hidden" data-scroll>
                       <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
                         <div className="image-reveal-scroll">
-                          <Img fluid={ this.props.data.studio.servicesSupportingImage.fluid } className="w-full max-w-full object-cover"/>
+                          <Img fluid={ this.props.data.studio.sectorsSupportingImage.fluid } className="w-full max-w-full object-cover"/>
                         </div>
                       </div>
                     </div>
@@ -437,10 +437,10 @@ class StudioPage extends React.Component {
                 </div>
                 <div className="w-full md:w-7/12 md:pr-12 xl:pr-24 md:pl-8 mb-8 md:mb-0">
                   {
-                    this.props.data.studio.expertise.map((block, i) => (
-                      <div key={block.id} className={this.props.data.studio.expertise.length === (i + 1) ? `w-full mb-4` : `w-full mb-10 md:mb-16`}>
+                    this.props.data.studio.sectors.map((block, i) => (
+                      <div key={block.id} className={this.props.data.studio.sectors.length === (i + 1) ? `w-full mb-4` : `w-full mb-10 md:mb-16`}>
                         {
-                          block.model.apiKey === 'service' &&
+                          block.model.apiKey === 'sector' &&
                             <div>
                               <div className="border-b border-black mb-6">
                                 <span className="text-2xl md:text-3xl block w-full mb-0 pb-0 font-display leading-none">{ block.heading }</span>
@@ -498,8 +498,15 @@ class StudioPage extends React.Component {
               <div className="w-full md:w-10/12 ml-auto">
                 <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
                   <div className="w-full">
-                    <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-extratight md:px-6 mb-6 invert-select">Looking for an architectual<br/>team for your project?</span>
-                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight md:px-6 underline hover:text-white focus:text-white invert-select">Get in touch</a>
+                    <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-none md:px-6 mb-6 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
+
+                    <div className="md:flex md:flex-wrap">
+                      <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white md:pl-6 focus:text-white invert-select">Email Us</a>
+
+                      <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">Call Us { this.props.data.studio.studioTelephone }</a>
+
+                      <Link to={`/journal`} className="text-xl md:text-2xl block font-display px-4 leading-extratight underline hover:text-white focus:text-white invert-select">See Our Journal</Link>
+                    </div>
                   </div>
                   <div className="w-full order-2 md:order-1 md:px-3 overflow-hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 ml-auto transform rotate-90 absolute bottom-0 right-0 m-4 md:m-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
@@ -584,6 +591,7 @@ export const query = graphql`
       studioTwitterUrl
       studioInstagramUrl
       studioLinkedinUrl
+      studioTelephone
       studioEmailAddress
       heroSupportingText
       heroImage {
@@ -608,6 +616,18 @@ export const query = graphql`
           content
         }
       }
+      sectorsIntroText
+      sectors {
+        ... on DatoCmsSector {
+          id
+          model { apiKey }
+          heading
+          headingMeta
+          content
+        }
+      }
+      teamIntro
+      teamSupportingText
       services {
         ... on DatoCmsServiceHeading {
           id
@@ -615,7 +635,7 @@ export const query = graphql`
           text
         }
       }
-      servicesSupportingImage {
+      sectorsSupportingImage {
         fluid(
           imgixParams: {h: "1200", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid
