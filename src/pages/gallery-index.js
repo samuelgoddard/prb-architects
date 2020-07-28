@@ -147,7 +147,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
                                       </motion.div>
                                       <span className="block ml-auto relative overflow-hidden">
                                         <motion.div variants={revealArrowTopRight}>
-                                          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
+                                          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-1" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
                                         </motion.div>
                                       </span>
                                     </div>

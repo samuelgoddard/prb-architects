@@ -50,7 +50,7 @@ class WorkCarousel extends Component {
                       <div className="overflow-hidden mb-1 pb-0">
                         <Img fluid={fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2" />
                       </div>
-                      <figcaption className="flex md:text-xl md:px-0 items-center p-3">
+                      <figcaption className="flex md:text-xl md:px-0 items-center px-3">
                         { title && (
                           <span className="block">{ title }</span>
                         )}

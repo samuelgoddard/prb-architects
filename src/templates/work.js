@@ -144,7 +144,7 @@ class WorkTemplate extends React.Component {
           imageOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.image ? this.props.data.datoCmsWork.metaTags.image.url : null }
         />
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white fixed top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
           <motion.nav
             initial="initial"
             animate="enter"
@@ -189,7 +189,7 @@ class WorkTemplate extends React.Component {
                   </motion.div>
                 </div>
 
-                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden fixed top-0 left-0">
+                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
                         <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
@@ -212,7 +212,7 @@ class WorkTemplate extends React.Component {
                         enter: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
                       }}
                     >
-                      <div className="w-10/12 lg:w-9/12 mx-auto mt-12 md:-mt-12 mb-24 md:mb-0">
+                      <div className="w-10/12 lg:w-9/12 mx-auto mt-24 md:-mt-12 mb-32 md:mb-0">
                         <div className="pt-5" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                           <h1 className="hidden md:block order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden -mt-10 mb-0 pb-0">
                             {
@@ -243,13 +243,13 @@ class WorkTemplate extends React.Component {
                           <motion.div variants={reveal}>
                             <div className="flex flex-wrap items-center justify-center ">
                               <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                              <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                              <span className="block text-xl md:text-3xl lg:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
                             </div>
                           </motion.div>
                         </div>
                         <div className="flex-wrap items-center justify-center flex ml-3 mt-3 md:hidden">
                           <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                          <span className="block text-2xl md:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                          <span className="block text-xl md:text-3xl lg:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
                         </div>
                       </div>
                     </motion.div>
@@ -270,7 +270,7 @@ class WorkTemplate extends React.Component {
 
                     <motion.div variants={fade} className="flex flex-wrap w-full md:mx-0 mt-auto md:absolute bottom-0 left-0 right-0 md:mb-6">
                     <div className="w-full md:text-right mb-4 md:mb-0 block md:hidden">
-                      <div className="flex flex-wrap w-full px-3 pt-1 pb-2 md:py-0 border-t border-b border-black md:relative">
+                      <div className="flex flex-wrap w-full px-3 pt-1 pb-1 md:py-0 border-t border-b border-black md:relative">
                         { this.props.data.datoCmsWork.metaLocation && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ this.props.data.datoCmsWork.metaLocation }</span>
                         )}
@@ -319,7 +319,7 @@ class WorkTemplate extends React.Component {
                   <div className="w-full flex flex-wrap items-end pr-4 pl-4 md:p-6">
                     <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 text-white">
                       <div className="max-w-xs flex-wrap hidden md:flex">
-                        <div className="ml-auto flex flex-wrap items-center mb-3">
+                        <div className="ml-auto flex flex-wrap items-center mb-1">
                           <span className="text-2xs mt-1 mr-1">PRB</span>
                           <span className="block">{ this.props.data.datoCmsWork.projectCode }</span>
                         </div>
@@ -336,7 +336,7 @@ class WorkTemplate extends React.Component {
                     </div>
 
                     <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 ml-auto text-white pb-8 md:pb-24">
-                      <div className="md:text-lg lg:text-xl max-w-xs md:max-w-lg mb-10 md:mb-16 leading-snug content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.datoCmsWork.introText }}></div>
+                      <div className="md:text-lg lg:text-xl max-w-2xs md:max-w-md xl:max-w-lg mb-10 md:mb-16 leading-snug content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.datoCmsWork.introText }}></div>
 
                       <div className="border-t border-white">
                         {
@@ -345,8 +345,8 @@ class WorkTemplate extends React.Component {
                               {
                                 block.model.apiKey === 'service' &&
                                 <div className="w-full">
-                                  <div className="flex flex-wrap items-start border-b border-current w-full py-3 md:py-6 xl:py-8">
-                                    <span className="block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0">0{ i + 1 }</span>
+                                  <div className="flex flex-wrap items-start border-b border-current w-full pt-4 py-3 md:pt-5 md:py-6 xl:py-8">
+                                    <span className="block text-xs mr-3 w-auto text-left mb-2 md:mb-0 md:mt-px">0{ i + 1 }</span>
                                     <span className={`block text-xl md:text-2xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ block.heading }</span>
                                   </div>
                                 </div>
@@ -390,11 +390,11 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div data-scroll data-scroll-speed="-0.6" className="overflow-hidden -m-10">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-10"/>
+                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-12"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Exterior</span>
                                   <span className="block ml-auto">(1—5)</span>
                                 </figcaption>
@@ -413,7 +413,7 @@ class WorkTemplate extends React.Component {
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Interior</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
@@ -424,10 +424,10 @@ class WorkTemplate extends React.Component {
                               <figure className="pt-12">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
-                                    <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                    <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Interior</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
@@ -447,14 +447,14 @@ class WorkTemplate extends React.Component {
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Interior</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
                               </figure>
                             </div>
                             <div className="w-8/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-16">
-                              <div className="max-w-md ml-auto md:ml-32 lg:ml-40 p-4 md:p-0">
+                              <div className="max-w-md ml-auto md:ml-32 lg:ml-40 p-4 pl-0 md:p-0">
                                 <div className="lg:text-lg leading-snug content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
 
@@ -462,11 +462,11 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div data-scroll data-scroll-speed="-0.6" className="overflow-hidden -m-10">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-10"/>
+                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-12"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Exterior</span>
                                   <span className="block ml-auto">(1—5)</span>
                                 </figcaption>
@@ -478,11 +478,11 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div data-scroll data-scroll-speed="-0.6" className="overflow-hidden -m-10">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-10"/>
+                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover py-8 md:p-12"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Interior</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
@@ -516,11 +516,11 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div data-scroll data-scroll-speed="0.65" className="overflow-hidden -m-10">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover p-10"/>
+                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover py-10 md:p-12"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Interior</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
@@ -531,16 +531,16 @@ class WorkTemplate extends React.Component {
                         {
                         block.model.apiKey === 'image50' &&
                           <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto">
-                            <div className="w-8/12 md:w-5/12 mx-auto px-4 md:px-6">
+                            <div className="w-10/12 md:w-5/12 mx-auto px-4 md:px-6">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
                                   <div data-scroll data-scroll-speed="-0.7" className="overflow-hidden -m-10">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover p-10"/>
+                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover p-12"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-3 md:px-0 pt-1">
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">Interior</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
@@ -558,41 +558,43 @@ class WorkTemplate extends React.Component {
               <section className="pb-10 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
                 <div className="w-full md:w-10/12 ml-auto px-4 md:px-6">
                   <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0">
-                    <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category.title.toLowerCase() } project? Get in touch here</span>
+                    <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category.title.toLowerCase() } project? Get in touch.</span>
                     <div className="lg:flex lg:flex-wrap">
-                      <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display pl-1 lg:pl-1 lg:px-3 leading-extratight underline hover:text-prbred focus:text-prbred invert-select">Email us</a>
+                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 xl:pl-1 leading-extratight hover:line-through focus:line-through mb-1 lg:mb-0">Email us</a>
 
-                      <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-xl md:text-2xl block font-display pl-1 lg:px-3 leading-extratight underline hover:text-prbred focus:text-prbred invert-select">Call us { this.props.data.studio.studioTelephone }</a>
+                    <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 leading-extratight hover:line-through focus:line-through mb-1 lg:mb-0">Call us { this.props.data.studio.studioTelephone }</a>
 
-                      <Link to={`/journal`} className="text-xl md:text-2xl block font-display pl-1 lg:px-3 leading-extratight underline hover:text-prbred focus:text-prbred invert-select">See our journal</Link>
+                    <a href="https://www.google.com/maps/place/Joe+Player+Architects/@52.9102415,-2.0502116,9z/data=!4m8!1m2!2m1!1sprb+architects!3m4!1s0x4879c976dea9576d:0xe3a2c18b503a7008!8m2!3d52.9886641!4d-0.9284911" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1 mb-1 lg:mb-0">Find us</a>
+
+                    <Link to={`/journal`} className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1">Read Journal</Link>
                     </div>
                   </div>
                 </div>
               </section>
             
               {/* Footer */}
-              <section className="px-4 md:px-6 bg-prbred pt-12 md:pt-24 lg:pt-32 pb-6 md:pb-6">
-                <div className="-mx-4 md:-mx-6">
+              <section className="md:px-6 bg-prbred pt-6 md:pt-24 lg:pt-32 pb-6 md:pb-6">
+                <div className="">
                   <div className="w-full flex flex-wrap">
                     <div className="w-full md:w-10/12 ml-auto">
-                    <div className="flex flex-wrap items-end md:-mx-3">
-                      <div className="w-full md:w-auto order-2 md:order-1 md:px-3 overflow-hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 lg:w-64 ml-auto md:ml-0 transform rotate-45" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+                    <div className="flex flex-wrap items-end md:-mx-3 md:pl-6">
+                      <div className="w-full md:w-auto order-1 md:order-1 md:px-3 overflow-hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 lg:w-64 md:ml-auto md:ml-0 transform rotate-45 md:-mb-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                       </div>
-                      <div className="w-full md:w-8/12 order-1 md:order-2 p-4 md:p-0 md:px-3 mb-8 md:mb-0">
+                      <div className="w-full md:w-8/12 order-2 md:order-2 p-4 md:p-0 md:px-3 mb-18 md:mb-0">
                         <span className="block leading-tight text-sm uppercase mb-3 invert-select">More { this.props.data.datoCmsWork.category.title } projects</span>
 
                         {this.props.data.relatedWork.edges.map(({ node }, i) => {
                           return (
                             <div key={i}>
                               { node.slug !== this.props.data.datoCmsWork.slug &&(
-                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-5 hover:text-white group">
+                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-4 xl:py-5 hover:text-white group">
                                   <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
                                     <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
                                     <span className="block leading-none invert-select">{ node.projectCode }</span>
                                   </span>
-                                  <span className="block text-lg md:text-3xl font-display leading-none mt-2 group-hover:line-through invert-select">{ node.title }</span>
-                                  <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                                  <span className="block text-xl md:text-2xl xl:text-3xl font-display leading-none mt-2 group-hover:line-through invert-select">{ node.title }</span>
+                                  <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-2" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                                 </Link>
                               )}
                             </div>
@@ -604,10 +606,10 @@ class WorkTemplate extends React.Component {
                   </div>
                 </div>
 
-                <motion.div variants={fade} className="w-full md:w-10/12 ml-auto mt-0 md:mt-24 lg:mt-32 md:pl-12 lg:pl-4">
+                <motion.div variants={fade} className="w-full md:w-10/12 ml-auto mt-0 md:mt-24 lg:mt-32 md:pl-12 lg:pl-4 px-4 md:px-0">
                   <div className="md:hidden">
                     <Link 
-                      className={`block pr-8 pb-4 z-30 w-32 md:w-40`}
+                      className={`block pr-8 pb-4 z-30 w-28 md:w-40`}
                       to="/"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-full" viewBox="0 0 113 92"><g data-name="Group 79"><text data-name="Player Roberts Bell" transform="translate(0 23)" fontSize="35" fontFamily="Founders Grotesk"><tspan x="0" y="0">Player</tspan><tspan x="0" y="28">Roberts</tspan><tspan x="0" y="56">Bell</tspan></text><g data-name="Group 40" fill="none" stroke="#000"><path data-name="Path 1" d="M74.366 66.11v11.747H62.619"/><path data-name="Path 2" d="M74.366 77.857l-13.891-13.89"/></g></g></svg>
@@ -615,24 +617,32 @@ class WorkTemplate extends React.Component {
                   </div>
 
                   <ul className="flex flex-wrap border-t border-black border-b">
-                    <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
-
-                    <li className="ml-auto block border-l border-black">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ this.props.data.studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">{ this.props.data.studio.studioEmailAddress }</a>
+                    <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 md:pr-3 lg:pr-4 xl:pr-5 block xl:border-r border-black hidden md:block invert-select">Architecture + Conservation</li>
+                      
+                    <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 lg:px-3 lg:px-4 xl:px-5 xl:pr-6 hidden xl:block invert-select">&copy; 2020</li>
+                    
+                    <li className="block md:border-l border-black invert-select">
+                      <Link className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 md:px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" to={`/privacy`} target="_blank" rel="noopener noreferrer">Privacy</Link>
                     </li>
 
-                    <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">Architecture + Conservation</li>
+                    <li className="ml-auto block border-l border-black invert-select">
+                      <a className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`tel:${ this.props.data.studio.studioTelephone }`} target="_blank" rel="noopener noreferrer"><span className="block invert-select md:hidden">Tel</span><span className="hidden invert-select md:block">{this.props.data.studio.studioTelephone }</span></a>
+                    </li>
 
-                    <li className="border-l border-black invert-select">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
+                    <li className="invert-select block border-l border-black">
+                      <a className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ this.props.data.studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">Email</a>
                     </li>
 
                     <li className="border-l border-black invert-select">
-                      <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
+                      <a className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">Twi<span className="hidden md:inline invert-select">tter</span></a>
+                    </li>
+
+                    <li className="border-l border-black invert-select">
+                      <a className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ this.props.data.studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer">Insta<span className="hidden md:inline invert-select">gram</span></a>
                     </li>
                   </ul>
                   <ul className="flex flex-wrap border-b border-black md:hidden">
-                    <li className="md:text-lg py-2 block pr-12 invert-select">Architecture + Conservation</li>
+                    <li className="text-sm md:text-lg py-2 block pr-12 block invert-select">Architecture + Conservation</li>
                   </ul>
                 </motion.div>
                 
@@ -694,13 +704,13 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "750", w: "1200", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1200", w: "750", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -711,13 +721,13 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "900", w: "650", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1200", w: "750", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "650", w: "900", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "750", w: "1200", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -729,7 +739,7 @@ export const query = graphql`
           images {
             title
             fluid(
-              imgixParams: {auto: "format", sharp:0, w: "650", h: "900", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, w: "750", h: "1200", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -744,7 +754,7 @@ export const query = graphql`
           model { apiKey }
           image {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "750", w: "1200", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "700", w: "1200", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
           }

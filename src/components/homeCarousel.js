@@ -77,7 +77,7 @@ class HomeCarousel extends Component {
 
       wheel.addWheelListener(slideshowEl, event => {
         const wheelNormalized = normalizeWheel(event);
-        flickity.applyForce(-wheelNormalized.pixelY / 30);
+        flickity.applyForce(-wheelNormalized.pixelY / 20);
         flickity.startAnimation();
         flickity.dragEnd();
       });

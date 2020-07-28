@@ -20,7 +20,7 @@ h2 {
 }
 
 .text-screen-display {
-  @apply text-5xl;
+  @apply text-6xl;
   line-height: 1;
 
   @screen md {
@@ -30,7 +30,7 @@ h2 {
 
   @screen xl {
     font-size: 8.5vw;
-    line-height: 5.2vw;
+    line-height: 5.3vw;
   }
 }
 

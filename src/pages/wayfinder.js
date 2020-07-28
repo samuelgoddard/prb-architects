@@ -184,50 +184,42 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                 </Link>
               </div>
 
-              <ul className="flex flex-wrap border-t border-black border-b invert-select">
-                <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">
-                  <div className="relative overflow-hidden">
-                    <motion.span className="block" variants={reveal}>&copy; 2020</motion.span>
-                  </div>
+              <ul className="flex flex-wrap border-t border-black border-b">
+                <li className="text-sm lg:text-lg xl:text-xl pr-2 md:pr-3 lg:pr-4 xl:pr-5 block xl:border-r border-black hidden md:block invert-select relative overflow-hidden">
+                  <span className="block relative overflow-hidden my-2 md:my-3">
+                    <motion.span className="block" variants={reveal}>Architecture + Conservation</motion.span>
+                  </span>
+                </li>
+                  
+                <li className="text-sm lg:text-lg xl:text-xl my-2 md:my-3 pr-2 lg:px-3 lg:px-4 xl:px-5 xl:pr-6 hidden xl:block invert-select overflow-hidden relative">
+                  <motion.span className="block" variants={reveal}>&copy; 2020</motion.span>
+                </li>
+                
+                <li className="block md:border-l border-black invert-select">
+                  <Link className="text-sm lg:text-lg xl:text-xl my-2 md:my-3 md:px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through relative overflow-hidden" to={`/privacy`} target="_blank" rel="noopener noreferrer">
+                    <motion.span className="block" variants={reveal}>Privacy</motion.span>
+                  </Link>
                 </li>
 
                 <li className="ml-auto block border-l border-black invert-select">
-                  <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">
-                    <div className="relative overflow-hidden">
-                      <motion.span className="block" variants={reveal}>
-                        { studio.studioEmailAddress }
-                      </motion.span>
-                    </div>
-                  </a>
+                  <a className="text-sm lg:text-lg xl:text-xl my-2 md:my-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through relative overflow-hidden" href={`tel:${ studio.studioTelephone }`} target="_blank" rel="noopener noreferrer"><motion.span className="block invert-select md:hidden" variants={reveal}>Tel</motion.span><motion.span className="hidden invert-select md:block" variants={reveal}>{studio.studioTelephone }</motion.span></a>
                 </li>
 
-                <li className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 border-l border-black pr-4 lg:pr-12 xl:pr-32 2xl:pr-64 hidden md:block invert-select">
-                  <div className="relative overflow-hidden">
-                    <motion.span className="block" variants={reveal}>Architecture + Conservation</motion.span>
-                  </div>
+                <li className="invert-select block border-l border-black">
+                  <a className="text-sm lg:text-lg xl:text-xl my-2 md:my-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through relative overflow-hidden" href={`mailto:${ studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer"><motion.span className="block" variants={reveal}>Email</motion.span></a>
                 </li>
 
                 <li className="border-l border-black invert-select">
-                  <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">
-                    <div className="relative overflow-hidden">
-                      <motion.span className="block" variants={reveal}>
-                        Twi<span className="hidden md:inline invert-select">tter</span>
-                      </motion.span>
-                    </div>
-                  </a>
+                  <a className="text-sm lg:text-lg xl:text-xl my-2 md:my-3 px-2 lg:px-4 xl:px-5 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select overflow-hidden relative" href={ studio.studioTwitterUrl } target="_blank" rel="noopener noreferrer">
+                  <motion.span className="block" variants={reveal}>Twi<span className="hidden md:inline invert-select">tter</span></motion.span></a>
                 </li>
 
                 <li className="border-l border-black invert-select">
-                  <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select" href={ studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer">
-                    <div className="relative overflow-hidden">
-                      <motion.span className="block" variants={reveal}>Insta<span className="hidden md:inline invert-select">gram</span>
-                      </motion.span>
-                    </div>
-                  </a>
+                  <a className="text-sm lg:text-lg xl:text-xl my-2 md:my-3 px-2 lg:px-4 xl:px-5 pr-0 lg:pr-0 xl:pr-0 block hover:text-white focus:text-white hover:line-through focus:line-through invert-select overflow-hidden relative" href={ studio.studioInstagramUrl } target="_blank" rel="noopener noreferrer"><motion.span className="block" variants={reveal}>Insta<span className="hidden md:inline invert-select">gram</span></motion.span></a>
                 </li>
               </ul>
-              <ul className="flex flex-wrap border-b border-black md:hidden invert-select">
-                <li className="md:text-lg py-2 pr-12 block invert-select">Architecture + Conservation</li>
+              <ul className="flex flex-wrap border-b border-black md:hidden">
+                <li className="text-sm md:text-lg py-2 block pr-12 block invert-select overflow-hidden relative"><motion.span className="block" variants={reveal}>Architecture + Conservation</motion.span></li>
               </ul>
             </motion.div>
           </div>
@@ -246,6 +238,7 @@ export const query = graphql`
       studioInstagramUrl
       studioLinkedinUrl
       studioEmailAddress
+      studioTelephone
       heroSupportingText
     }
     work: allDatoCmsWork {

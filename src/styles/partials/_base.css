@@ -36,7 +36,11 @@ button {
 }
 
 .p-screen-inner {
-	padding-top: calc(100vh - 100px);
+	padding-top: calc(100vh - 50px);
+
+	@screen md {
+		padding-top: calc(100vh - 100px);
+	}
 }
 
 .h-screen-no-header {
