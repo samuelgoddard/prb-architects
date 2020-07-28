@@ -23,7 +23,7 @@ button {
 
 @responsive {
 .h-screen-inner {
-	height: calc(75vh);
+	height: calc(95vh);
 
 	@screen md {
 		height: calc(100vh - 103px);		

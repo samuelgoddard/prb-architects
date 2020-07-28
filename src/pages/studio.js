@@ -161,7 +161,7 @@ class StudioPage extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="overflow-hidden">
         <SEO
           titleOverride={this.props.data.studio.metaTags && this.props.data.studio.metaTags.title ? this.props.data.studio.metaTags.title : null }
           descriptionOverride={this.props.data.studio.metaTags && this.props.data.studio.metaTags.description ? this.props.data.studio.metaTags.description : null }
@@ -555,7 +555,7 @@ class StudioPage extends React.Component {
             </div>
           </section>
         </motion.div>
-      </>
+      </div>
     )
   }
 }

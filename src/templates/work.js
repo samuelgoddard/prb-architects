@@ -189,7 +189,7 @@ class WorkTemplate extends React.Component {
                   </motion.div>
                 </div>
 
-                  <div className="w-full h-screen-image overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
+                  <div className="w-full h-full overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
                         <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
@@ -270,7 +270,7 @@ class WorkTemplate extends React.Component {
 
                     <motion.div variants={fade} className="flex flex-wrap w-full md:mx-0 mt-auto md:absolute bottom-0 left-0 right-0 md:mb-6">
                     <div className="w-full md:text-right mb-4 md:mb-0 block md:hidden">
-                      <div className="flex flex-wrap w-full px-3 pt-1 pb-1 md:py-0 border-t border-b border-black md:relative">
+                      <div className="flex flex-wrap w-full px-3 pt-2 pb-2 md:py-0 border-t border-b border-black md:relative">
                         { this.props.data.datoCmsWork.metaLocation && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ this.props.data.datoCmsWork.metaLocation }</span>
                         )}
