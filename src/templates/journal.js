@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
-import Collapsible from "../components/collapsible"
 
 const fade = {
 	initial: { opacity: 0 },
@@ -19,16 +18,13 @@ const fade = {
 	}
 }
 
-const fadeSlow = {
-	initial: { opacity: 0 },
-  enter: { 
-    opacity: 1,
-    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
-  },
-	exit: {
-		opacity: 0,
-		transition: { duration: 0, ease: [0.76, 0, 0.24, 1] }
-	}
+const revealArrowTopRight = {
+	initial: { y: "100%", x: "-100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
+  }
 }
 
 const revealArrowRight = {
@@ -40,12 +36,16 @@ const revealArrowRight = {
   }
 }
 
-const revealArrow = {
-	initial: { y: "-100%", x: "-100%" },
+const revealInOut = {
+	initial: { y: "100%", opacity: 0 },
 	enter: { 
     y: "0%",
-    x: "0%",
+    opacity: 1,
     transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
+  },
+  exit: { 
+    y: "100%",
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -57,59 +57,111 @@ const reveal = {
   },
 }
 
-const JournalPage = ({ data: { entries, studio }, location }) => {
+const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
   return (
     <>
       <SEO
-        titleOverride={`Journal`}
+        titleOverride={`Journal - ${entry.title}`}
         pathnameOverride={location.pathname}
       />
         <Scroll callback={location} />
 
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fadeSlow} className="bg-white -4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-30 flex flex-wrap z-10"></motion.div>
+        <motion.div
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          variants={{
+            enter: { transition: { staggerChildren: 0.05 } }
+          }}
+        >
+          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+            <nav className="relative z-10 w-full">
+              <ul className="flex flex-wrap">
+                <li className="block relative overflow-hidden">
+                  <Link className="text-lg md:text-2xl pr-px hover:line-through focus:line-through block relative overflow-hidden" to="/journal">
+                    <motion.div variants={revealInOut}>
+                      <div className="flex flex-wrap items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
+                        <span className="block ml-3">All Journal Entries</span>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </li>
+                <li className="ml-auto">
+                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="mt-auto h-px w-full bg-black"></div>
+          </header>
+        </motion.div>
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex flex-wrap">
-          <nav className="relative z-10 w-full">
-            <ul className="flex flex-wrap">
-              <li className="ml-auto">
-                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="mt-auto h-px w-full bg-black"></div>
-        </header>
+        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22 max-w-screen-3xl mx-auto">
+          
+        <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
 
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
           <motion.div
             initial="initial"
             animate="enter"
             exit="exit"
-            className="mt-4 flex flex-wrap -mr-1 md:-mr-px"
+            className="mt-4 flex flex-wrap mb-8 md:mb-10 xl:mb-12"
             variants={{
               enter: { transition: { staggerChildren: 0.025 } }
             }}
           >
-            <div className="w-full md:w-auto order-2 md:order-1 mt-32 mb-0 md:mb-0 md:mt-0 text-right md:text-left">
-              {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg> */}
-              <div className="overflow-hidden relative hidden md:block">
-                <motion.div variants={revealArrow}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 rotate-90 md:rotate-0 md:-mb-8 xl:-mb-12 transform md:-mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
-                </motion.div>
-              </div>
-
-              <div className="overflow-hidden relative block md:hidden">
-                <motion.div variants={revealArrowRight}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 md:-mb-8 rotate-90 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
-                </motion.div>
-              </div>
-            </div>
-            <div className="overflow-hidden w-full md:flex-1 order-1 md:order-2">
-              <h1 className="text-right text-screen-display--large m-0 p-0 block mt-3 2xl:mt-4 mb-0 pb-0 -mr-1 lg:-mr-2">
-                <span className="block relative overflow-hidden pt-3 md:pt-14 xl:pt-18 2xl:pt-20">
-                <motion.span variants={reveal} className="block">Journal</motion.span>
+            <div className="overflow-hidden w-11/12 md:w-8/12">
+              <h1 className="text-left font-display text-screen-display--journal m-0 p-0 block">
+                <span className="block relative overflow-hidden pt-5">
+                <motion.span variants={reveal} className="block">{ entry.title }</motion.span>
                 </span>
               </h1>
             </div>
+
+            <div className="w-full md:w-auto mt-20 mb-0 md:mb-0 md:mt-0 text-right ml-auto">
+              {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 xl:w-48 ml-auto md:ml-0 mt-2 rotate-90 md:rotate-0 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg> */}
+              <div className="overflow-hidden relative block">
+                <motion.div variants={revealArrowRight}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="studio-arrow ml-auto md:ml-0 mt-0 md:mt-2 rotate-90 transform" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className="w-full mb-12 md:mb-16 xl:mb-24"
+            variants={{
+              enter: { transition: { delayChildren: 0.5 } }
+            }}
+          >
+            <div className="flex flex-wrap -mx-3 overflow-hidden">
+              {entry.gallery.map(({ fluid }, i) => {
+                return(
+                  <motion.div variants={fade} className="w-1/2 md:w-4/12 px-3 mb-5" key={i}>
+                    <Img fluid={ fluid } className="w-full object-cover"/>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className="w-full md:w-10/12 ml-auto mb-16 md:mb-16 xl:mb-24"
+            variants={{
+              enter: { transition: { delayChildren: 0.5 } }
+            }}
+          >
+            <motion.div variants={fade}>
+              <div className="mb-8 text-sm">
+                <Moment format="DD.MM.Y">{ entry.date }</Moment>
+              </div>
+              <div className="content text-lg leading-tight w-10/12 md:w-full md:max-w-md xl:max-w-lg" dangerouslySetInnerHTML={{ __html: entry.content }}></div>
+            </motion.div>
           </motion.div>
 
           <motion.div
@@ -126,19 +178,21 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
               {entries.edges.map(({ node }, i) => {
                 return (
                   <div className="overflow-hidden" key={i}>
-                    <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i}>
-                      <div className={ node.gallery.length > 0 ? `block mb-6 w-10/12 md:w-2/3 xl:w-7/12` : `block mb-0 w-10/12 md:w-2/3 xl:w-7/12`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
-
-                      <div className="flex flex-wrap -mx-3 overflow-hidden">
-                        {node.gallery.map(({ fluid }, i) => {
-                          return(
-                            <div className="w-9/12 md:w-3/12 px-3 mb-5" key={i}>
-                              <Img fluid={ fluid } className="w-full object-cover"/>
-                            </div>
-                          )
-                        })}
+                    <Link to={`/journal/${node.slug}`} className="Collapse w-full group strike">
+                      <div className="border-b border-current w-full py-1 md:py-3 xl:pt-4 xl:pb-2 overflow-hidden">
+                        <div className="relative overflow-hidden py-3">
+                          <motion.div variants={reveal} className="flex flex-wrap items-start">
+                            <span className={`block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}><Moment format="DD.MM.Y">{ node.date }</Moment></span>
+                            <span className={`block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ node.title }</span>
+                            <span className="block ml-auto pl-4 transform origin-center rotate-0">
+                            <motion.div variants={revealArrowTopRight}>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-1" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
+                            </motion.div>
+                            </span>
+                          </motion.div>
+                        </div>
                       </div>
-                    </Collapsible>
+                    </Link>
                   </div>
                 )
               })}
@@ -223,11 +277,23 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
   )
 }
 
-export default JournalPage
+export default JournalEntryPage
 
 export const query = graphql`
-  query JournalQuery {
-    entries: allDatoCmsJournal(sort: {fields: date, order: DESC}) {
+  query JournalEntryQuery($slug: String!) {
+    entry: datoCmsJournal(slug: { eq: $slug}) {
+      title
+      date
+      content
+      gallery {
+        fluid(
+          imgixParams: {auto: "format", sharp:10, h: "950", w: "950", fit: "crop", crop: "faces, center"}) {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+      slug
+    }
+    entries: allDatoCmsJournal(sort: {fields: date, order: DESC}, filter: {slug: {ne: $slug}}, limit: 6) {
       edges {
         node {
           title

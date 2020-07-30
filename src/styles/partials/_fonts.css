@@ -1,4 +1,4 @@
-/* IBM Mono (Sans) */
+/* Founders Grotesk */
 @font-face {
   font-family: 'Founders Grotesk';
   src: local("Founders Grotesk Regular"),
@@ -9,7 +9,6 @@
   font-style: normal;
   unicode-range: U+000-5FF;
 }
-
 @font-face {
   font-family: 'Founders Grotesk';
   src: local("Founders Grotesk Light"),
@@ -22,6 +21,7 @@
   unicode-range: U+000-5FF;
 }
 
+/* Sohne */
 @font-face {
   font-family: 'Sohne';
   src: local("Sohne"),

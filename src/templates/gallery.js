@@ -209,7 +209,7 @@ export const query = graphql`
         }
       }
     }
-    work: allDatoCmsWork(filter: {category: {slug: {eq: $slug}}}) {
+    work: allDatoCmsWork(filter: {category: {elemMatch: {slug: {eq: $slug}}}}) {
       edges {
         node {
           id

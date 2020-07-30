@@ -277,7 +277,7 @@ class WorkTemplate extends React.Component {
                         { this.props.data.datoCmsWork.metaSize && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaSize }</span>
                         )}
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.category.title }</span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.category[0].title }</span>
                         { this.props.data.datoCmsWork.metaCost && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-right">{ this.props.data.datoCmsWork.metaCost }</span>
                         )}
@@ -301,7 +301,7 @@ class WorkTemplate extends React.Component {
                         { this.props.data.datoCmsWork.metaSize && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaSize }</motion.div></span>
                         )}
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category.title }</motion.div></span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category[0].title }</motion.div></span>
                         { this.props.data.datoCmsWork.metaCost && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto ml-auto text-right relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaCost }</motion.div></span>
                         )}
@@ -558,7 +558,7 @@ class WorkTemplate extends React.Component {
               <section className="pb-10 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
                 <div className="w-full md:w-10/12 ml-auto px-4 md:px-6">
                   <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0">
-                    <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category.title.toLowerCase() } project? Get in touch.</span>
+                    <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category[0].title.toLowerCase() } project? Get in touch.</span>
                     <div className="lg:flex lg:flex-wrap">
                     <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 xl:pl-1 leading-extratight hover:line-through focus:line-through mb-1 lg:mb-0">Email us</a>
 
@@ -582,7 +582,7 @@ class WorkTemplate extends React.Component {
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 lg:w-64 md:ml-auto md:ml-0 transform rotate-45 md:-mb-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                       </div>
                       <div className="w-full md:w-8/12 order-2 md:order-2 p-4 md:p-0 md:px-3 mb-18 md:mb-0">
-                        <span className="block leading-tight text-sm uppercase mb-3 invert-select">More { this.props.data.datoCmsWork.category.title } projects</span>
+                        <span className="block leading-tight text-sm uppercase mb-3 invert-select">More { this.props.data.datoCmsWork.category[0].title } projects</span>
 
                         {this.props.data.relatedWork.edges.map(({ node }, i) => {
                           return (
@@ -675,8 +675,8 @@ export const query = graphql`
       metaCost
       introText
       category {
-          slug
-          title
+        slug
+        title
       }
       featuredImage {
         fluid(
@@ -780,7 +780,7 @@ export const query = graphql`
       studioTelephone
       heroSupportingText
     }
-    relatedWork: allDatoCmsWork(filter: {category: {slug: {eq: $cat}}}) {
+    relatedWork: allDatoCmsWork(filter: {category: {elemMatch: {slug: {eq: $cat}}}}) {
       edges {
         node {
           id

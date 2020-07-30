@@ -17,6 +17,18 @@ const fade = {
 	}
 }
 
+const fadeSlow = {
+	initial: { opacity: 0 },
+  enter: { 
+    opacity: 1,
+    transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1], delay: 0.3 }
+  },
+	exit: {
+		opacity: 0,
+		transition: { duration: 0, ease: [0.76, 0, 0.24, 1] }
+	}
+}
+
 const revealInOut = {
 	initial: { y: "100%", opacity: 0 },
 	enter: { 
@@ -55,7 +67,7 @@ const revealArrowTopRight = {
   }
 }
 
-const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
+const GalleryIndexPage = ({ data: { work, workCategories, development },location }) => {
   return (
     <>
       <Scroll callback={location} />
@@ -63,6 +75,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
         titleOverride={`Gallery Index`}
         pathnameOverride={location.pathname}
       />
+    
         <motion.div
           initial="initial"
           animate="enter"
@@ -71,7 +84,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <li className="overflow-hidden relative">
@@ -98,6 +111,8 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
         </motion.div>
 
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-14 md:pt-22">
+          <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-prbred w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
+
           <motion.div
             initial="initial"
             animate="enter"
@@ -122,7 +137,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
               const length = workCategories.edges.length - 1;
 
               return (
-                <nav className={ i === length ? `pb-32 md:pt-5` : `pb-5 md:pb-8 pt-5`} key={i}>
+                <nav className={`pb-5 md:pb-8 pt-5`} key={i}>
                   <div className="relative overflow-hidden">
                     <motion.span variants={reveal} className="block uppercase pb-4 invert-select">{ node.title }</motion.span>
                   </div>
@@ -131,7 +146,7 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
                       return (
                         <div key={i}>
                           {/* Query the child to the parent cat... */}
-                          { node.category.slug === parentCat && (
+                          { node.category[0].slug === parentCat && (
                             <div className="relative group overflow-hidden border-b border-black">
                                 <Link to={`/work/${node.slug}`} className="block hover:text-white relative invert-select strike py-3 md:py-4">
                                   <div className="relative overflow-hidden">
@@ -167,6 +182,51 @@ const GalleryIndexPage = ({ data: { work, workCategories },location }) => {
                 </nav>
               )
             })}
+
+            <nav className="pb-18 md:pb-32 pt-5 md:pt-5">
+              <div className="relative overflow-hidden">
+                <motion.span variants={reveal} className="block uppercase pb-4 invert-select">In Development</motion.span>
+              </div>
+              {development.edges.map(({ node }, i) => {
+                return (
+                  <div key={i}>
+                      <div className="relative group overflow-hidden border-b border-black">
+                        <Link to={`/journal/${ node.slug }`} className="block hover:text-white relative invert-select strike py-3 md:py-4">
+                          <div className="relative overflow-hidden">
+                            <div className="flex flex-wrap items-center relative overflow-hidden">
+                              <motion.div variants={revealMeta} className="">
+                                <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
+                                  <span className="block text-2xs pt-px mr-1 invert-select">DEV</span>
+                                  <span className="block leading-none invert-select">
+                                    { node.indexProjectCode ? (
+                                    <>{ node.indexProjectCode }</>
+                                    ) : (
+                                    <>xx—xxx</>
+                                    ) }
+                                  </span>
+                                </span>
+                              </motion.div>
+                              <motion.div variants={reveal} className="">
+                                <span className="block text-lg md:text-3xl font-display leading-none mt-2 strike__inner strike__inner--small invert-select">{ node.indexTitle }</span>
+                              </motion.div>
+                              <span className="block ml-auto relative overflow-hidden">
+                                <motion.div variants={revealArrowTopRight}>
+                                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-1" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
+                                </motion.div>
+                              </span>
+                            </div>
+                          </div>
+                        </Link>
+                        {/* <div className="fixed top-0 left-0 ml-6 mt-64" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                          <div className="gallery-index-hidden-image hidden xl:block opacity-0 group-hover:opacity-75">
+                            <Img fluid={ node.indexSupportingImage.fluid } className="w-full" />
+                          </div>
+                        </div> */}
+                      </div>
+                  </div>
+                )
+              })}
+            </nav>
           </div>
         </motion.div>
       </motion.div>
@@ -183,6 +243,15 @@ export const query = graphql`
         node {
           id
           title
+          slug
+        }
+      }
+    }
+    development: allDatoCmsJournal(filter: {showInGalleryIndex: {eq: true}}) {
+      edges {
+        node {
+          indexTitle
+          indexProjectCode
           slug
         }
       }

@@ -6,25 +6,21 @@ module.exports = async ({ actions, graphql }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allDatoCmsWork {
+        allDatoCmsJournal {
           edges {
             node {
               slug
-              category {
-                slug
-              }
             }
           }
         }
       }   
     `).then(result => {
-      result.data.allDatoCmsWork.edges.map(edge => {
+      result.data.allDatoCmsJournal.edges.map(edge => {
         createPage({
-          path: `work/${edge.node.slug}`,
-          component: path.resolve(`./src/templates/work.js`),
+          path: `journal/${edge.node.slug}`,
+          component: path.resolve(`./src/templates/journal.js`),
           context: {
             slug: edge.node.slug,
-            cat: edge.node.category[0].slug
           },
         })
       })      
