@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
+import Div100vh from "react-div-100vh";
 
 const fade = {
 	initial: { opacity: 0 },
@@ -60,12 +61,11 @@ const reveal = {
 const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
   return (
     <>
+      <Scroll callback={location} />
       <SEO
         titleOverride={`Journal - ${entry.title}`}
         pathnameOverride={location.pathname}
       />
-        <Scroll callback={location} />
-
         <motion.div
           initial="initial"
           animate="enter"
@@ -75,6 +75,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           }}
         >
           <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <li className="block relative overflow-hidden">
@@ -95,8 +96,9 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
             <div className="mt-auto h-px w-full bg-black"></div>
           </header>
         </motion.div>
-
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22 max-w-screen-3xl mx-auto">
+        
+        <Div100vh>
+        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="p-4 md:p-6 pt-14 md:pt-22 max-w-screen-3xl mx-auto">
           
         <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
 
@@ -111,7 +113,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           >
             <div className="overflow-hidden w-11/12 md:w-8/12">
               <h1 className="text-left font-display text-screen-display--journal m-0 p-0 block">
-                <span className="block relative overflow-hidden pt-5">
+                <span className="block relative overflow-hidden pt-6">
                 <motion.span variants={reveal} className="block">{ entry.title }</motion.span>
                 </span>
               </h1>
@@ -173,32 +175,32 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
               enter: { transition: { staggerChildren: 0.045, delayChildren: 0.15 } }
             }}
           >
-          <nav className="pb-12 md:pb-24 pt-0 md:pt-16">
-            <div>
-              {entries.edges.map(({ node }, i) => {
-                return (
-                  <div className="overflow-hidden" key={i}>
-                    <Link to={`/journal/${node.slug}`} className="Collapse w-full group strike">
-                      <div className="border-b border-current w-full py-1 md:py-3 xl:pt-4 xl:pb-2 overflow-hidden">
-                        <div className="relative overflow-hidden py-3">
-                          <motion.div variants={reveal} className="flex flex-wrap items-start">
-                            <span className={`block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}><Moment format="DD.MM.Y">{ node.date }</Moment></span>
-                            <span className={`block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ node.title }</span>
-                            <span className="block ml-auto pl-4 transform origin-center rotate-0">
-                            <motion.div variants={revealArrowTopRight}>
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-1" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
+            <nav className="pb-12 md:pb-24 pt-0 md:pt-16">
+              <div>
+                {entries.edges.map(({ node }, i) => {
+                  return (
+                    <div className="overflow-hidden" key={i}>
+                      <Link to={`/journal/${node.slug}`} className="Collapse w-full group strike">
+                        <div className="border-b border-current w-full py-1 md:py-3 xl:pt-4 xl:pb-2 overflow-hidden">
+                          <div className="relative overflow-hidden py-3">
+                            <motion.div variants={reveal} className="flex flex-wrap items-start">
+                              <span className={`block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}><Moment format="DD.MM.Y">{ node.date }</Moment></span>
+                              <span className={`block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ node.title }</span>
+                              <span className="block ml-auto pl-4 transform origin-center rotate-0">
+                              <motion.div variants={revealArrowTopRight}>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-1" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg>
+                              </motion.div>
+                              </span>
                             </motion.div>
-                            </span>
-                          </motion.div>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </div>
-                )
-              })}
-            </div>
-          </nav>
-        </motion.div>
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
+            </nav>
+          </motion.div>
       </motion.div>
       
       <motion.div
@@ -273,6 +275,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           </div>
         </section>
       </motion.div>
+      </Div100vh>
     </>
   )
 }

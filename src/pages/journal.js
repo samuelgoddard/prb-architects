@@ -6,6 +6,8 @@ import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
 import Collapsible from "../components/collapsible"
+import Div100vh from "react-div-100vh";
+
 
 const fade = {
 	initial: { opacity: 0 },
@@ -78,7 +80,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
           </nav>
           <div className="mt-auto h-px w-full bg-black"></div>
         </header>
-
+        <Div100vh>
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
           <motion.div
             initial="initial"
@@ -219,6 +221,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
           </div>
         </section>
       </motion.div>
+      </Div100vh>
     </>
   )
 }
