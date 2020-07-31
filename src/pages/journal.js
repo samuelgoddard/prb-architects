@@ -8,7 +8,6 @@ import Moment from "react-moment"
 import Collapsible from "../components/collapsible"
 import Div100vh from "react-div-100vh";
 
-
 const fade = {
 	initial: { opacity: 0 },
   enter: { 
@@ -80,7 +79,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
           </nav>
           <div className="mt-auto h-px w-full bg-black"></div>
         </header>
-        <Div100vh>
+        <div className="w-full h-full bg-white">
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
           <motion.div
             initial="initial"
@@ -128,7 +127,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
               {entries.edges.map(({ node }, i) => {
                 return (
                   <div className="overflow-hidden" key={i}>
-                    <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i}>
+                    <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i} link={`/journal/${node.slug}`}>
                       <div className={ node.gallery.length > 0 ? `block mb-6 w-10/12 md:w-2/3 xl:w-7/12` : `block mb-0 w-10/12 md:w-2/3 xl:w-7/12`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
                       <div className="flex flex-wrap -mx-3 overflow-hidden">
@@ -170,7 +169,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
 
                   <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Call us { studio.studioTelephone }</a>
 
-                  <a href="https://www.google.com/maps/place/Joe+Player+Architects/@52.9102415,-2.0502116,9z/data=!4m8!1m2!2m1!1sprb+architects!3m4!1s0x4879c976dea9576d:0xe3a2c18b503a7008!8m2!3d52.9886641!4d-0.9284911" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Find us</a>
+                  <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Find us</a>
 
                   <Link to={`/studio`} className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select">Our studio</Link>
                   </div>
@@ -221,7 +220,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
           </div>
         </section>
       </motion.div>
-      </Div100vh>
+      </div>
     </>
   )
 }

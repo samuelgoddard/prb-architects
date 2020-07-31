@@ -201,7 +201,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development },location
                                     { node.indexProjectCode ? (
                                     <>{ node.indexProjectCode }</>
                                     ) : (
-                                    <>xx—xxx</>
+                                    <>xx—z</>
                                     ) }
                                   </span>
                                 </span>

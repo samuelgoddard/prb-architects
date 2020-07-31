@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
+import { Link } from "gatsby"
 import { Power2, gsap } from "gsap/all"
 import { isBrowser } from "react-device-detect"
 import { motion } from 'framer-motion'
@@ -39,7 +40,7 @@ const collapsible = node => {
   return { open, close }
 }
 
-const Collapsible = ({ children, heading, index, textLarge }) => {
+const Collapsible = ({ children, heading, index, textLarge, link }) => {
 
   const [state, setState] = useState({
     initial: false,
@@ -82,7 +83,7 @@ const Collapsible = ({ children, heading, index, textLarge }) => {
         <div className="relative overflow-hidden py-3">
           <motion.div variants={reveal} className="flex flex-wrap items-start">
             <span className={`block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}>{ index }</span>
-            <span className={textLarge ? `block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto` : `block text-xl md:text-2xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-2 w-9/12 md:w-auto strike__inner strike__inner--small`}>{ heading }</span>
+            <span className={textLarge ? `block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 hover:line-through w-7/12 md:w-7/12 lg:w-8/12` : `block text-xl md:text-2xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-2 w-7/12 md:w-7/12 lg:w-8/12 hover:line-through`}>{ heading }</span>
             <span className="block ml-auto pl-4 transform origin-center rotate-0">
               <svg xmlns="http://www.w3.org/2000/svg" className={state.clicked ? `w-4 md:w-6 transform rotate-90 transition duration-500 ease-in-out` : `transition duration-500 ease-in-out w-4 md:w-6 transform -rotate-90`} viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
             </span>
@@ -91,6 +92,9 @@ const Collapsible = ({ children, heading, index, textLarge }) => {
       </div>
       {children && (
         <div className="Collapse_Content border-b border-current opacity-0" ref={el => (body = el)}>
+          { link && (
+            <Link to={link} className="absolute top-0 right-0 z-10 hover:line-through mt-10 md:mt-6 xl:mt-8 mr-8 md:mr-10 font-display md:text-lg">Go To Article</Link>
+          )}
           <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24">{children}</div>
         </div>
       )}

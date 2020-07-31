@@ -97,7 +97,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           </header>
         </motion.div>
         
-        <Div100vh>
+        <div className="bg-white pt-2 w-full h-full">
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="p-4 md:p-6 pt-14 md:pt-22 max-w-screen-3xl mx-auto">
           
         <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
@@ -128,43 +128,86 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
               </div>
             </div>
           </motion.div>
+          
+          { entry.gallery.length > 2 ? (
+            <>
+              <motion.div
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className="w-full mb-12 md:mb-16 xl:mb-24"
+                variants={{
+                  enter: { transition: { delayChildren: 0.5 } }
+                }}
+              >
+                <div className="flex flex-wrap -mx-3 overflow-hidden">
+                  {entry.gallery.map(({ fluid }, i) => {
+                    return(
+                      <motion.div variants={fade} className="w-1/2 md:w-4/12 px-3 mb-5" key={i}>
+                        <Img fluid={ fluid } className="w-full object-cover"/>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
 
-          <motion.div
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="w-full mb-12 md:mb-16 xl:mb-24"
-            variants={{
-              enter: { transition: { delayChildren: 0.5 } }
-            }}
-          >
-            <div className="flex flex-wrap -mx-3 overflow-hidden">
-              {entry.gallery.map(({ fluid }, i) => {
-                return(
-                  <motion.div variants={fade} className="w-1/2 md:w-4/12 px-3 mb-5" key={i}>
-                    <Img fluid={ fluid } className="w-full object-cover"/>
-                  </motion.div>
-                )
-              })}
+              <motion.div
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className="w-full md:w-10/12 ml-auto mb-16 md:mb-16 xl:mb-24"
+                variants={{
+                  enter: { transition: { delayChildren: 0.5 } }
+                }}
+              >
+                <motion.div variants={fade}>
+                  <div className="mb-8 text-sm">
+                    <Moment format="DD.MM.Y">{ entry.date }</Moment>
+                  </div>
+                  <div className="content text-lg leading-tight w-10/12 md:w-full md:max-w-md xl:max-w-lg" dangerouslySetInnerHTML={{ __html: entry.content }}></div>
+                </motion.div>
+              </motion.div>
+            </>
+          ) : (
+            <div className="flex flex-wrap mb-12 md:mb-16 xl:mb-24 md:-mx-4">
+              <motion.div
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className={ entry.gallery.length === 2 ? `w-full lg:w-1/2` : `w-full lg:w-3/12`}
+                variants={{
+                  enter: { transition: { delayChildren: 0.5 } }
+                }}
+              >
+                <div className="flex flex-wrap -mx-3 overflow-hidden md:px-4 mb-6 md:mb-10 xl:mb-0">
+                  {entry.gallery.map(({ fluid }, i) => {
+                    return(
+                      <motion.div variants={fade} className={ entry.gallery.length === 2 ? `w-1/2 md:w-1/2 lg:w-1/2 px-3 mb-5` : `w-full px-3 mb-5` } key={i}>
+                        <Img fluid={ fluid } className="w-full object-cover"/>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial="initial"
+                animate="enter"
+                exit="exit"
+                className="w-full lg:w-1/2 md:px-4"
+                variants={{
+                  enter: { transition: { delayChildren: 0.5 } }
+                }}
+              >
+                <motion.div variants={fade}>
+                  <div className="mb-8 text-sm">
+                    <Moment format="DD.MM.Y">{ entry.date }</Moment>
+                  </div>
+                  <div className="content xl:text-lg leading-tight w-10/12 md:w-full md:max-w-md xl:max-w-lg" dangerouslySetInnerHTML={{ __html: entry.content }}></div>
+                </motion.div>
+              </motion.div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            className="w-full md:w-10/12 ml-auto mb-16 md:mb-16 xl:mb-24"
-            variants={{
-              enter: { transition: { delayChildren: 0.5 } }
-            }}
-          >
-            <motion.div variants={fade}>
-              <div className="mb-8 text-sm">
-                <Moment format="DD.MM.Y">{ entry.date }</Moment>
-              </div>
-              <div className="content text-lg leading-tight w-10/12 md:w-full md:max-w-md xl:max-w-lg" dangerouslySetInnerHTML={{ __html: entry.content }}></div>
-            </motion.div>
-          </motion.div>
+          )}
 
           <motion.div
             initial="initial"
@@ -181,9 +224,9 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                   return (
                     <div className="overflow-hidden" key={i}>
                       <Link to={`/journal/${node.slug}`} className="Collapse w-full group strike">
-                        <div className="border-b border-current w-full py-1 md:py-3 xl:pt-4 xl:pb-2 overflow-hidden">
+                        <div className="border-b border-current w-full pt-1 pb-0 md:pt-2 md:pb-2 xl:pt-3 xl:pb-3 overflow-hidden">
                           <div className="relative overflow-hidden py-3">
-                            <motion.div variants={reveal} className="flex flex-wrap items-start">
+                            <motion.div variants={reveal} className="flex flex-wrap items-center">
                               <span className={`block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}><Moment format="DD.MM.Y">{ node.date }</Moment></span>
                               <span className={`block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ node.title }</span>
                               <span className="block ml-auto pl-4 transform origin-center rotate-0">
@@ -219,14 +262,14 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                 <div className="w-full mb-12 md:mb-8 lg:mb-3">
                   <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-none md:px-6 mb-6 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
 
-                  <div className="md:flex md:flex-wrap">
-                  <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 md:pl-6 lg:pl-6 lg:ml-px leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Email us</a>
+                  <div className="">
+                  <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 md:pl-6 lg:pl-6 lg:ml-px leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1">Email us</a>
 
-                  <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Call us { studio.studioTelephone }</a>
+                  <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 lg:pl-6 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1">Call us { studio.studioTelephone }</a>
 
-                  <a href="https://www.google.com/maps/place/Joe+Player+Architects/@52.9102415,-2.0502116,9z/data=!4m8!1m2!2m1!1sprb+architects!3m4!1s0x4879c976dea9576d:0xe3a2c18b503a7008!8m2!3d52.9886641!4d-0.9284911" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Find us</a>
+                  <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:pl-6 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1">Find us</a>
 
-                  <Link to={`/studio`} className="text-lg md:text-xl block pl-4 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select">Our studio</Link>
+                  <Link to={`/studio`} className="text-lg md:text-xl block pl-4 lg:pl-6 lg:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select">Our studio</Link>
                   </div>
                 </div>
             </div>
@@ -275,7 +318,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           </div>
         </section>
       </motion.div>
-      </Div100vh>
+      </div>
     </>
   )
 }

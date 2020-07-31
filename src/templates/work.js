@@ -564,7 +564,7 @@ class WorkTemplate extends React.Component {
 
                     <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 leading-extratight hover:line-through focus:line-through mb-1 lg:mb-0">Call us { this.props.data.studio.studioTelephone }</a>
 
-                    <a href="https://www.google.com/maps/place/Joe+Player+Architects/@52.9102415,-2.0502116,9z/data=!4m8!1m2!2m1!1sprb+architects!3m4!1s0x4879c976dea9576d:0xe3a2c18b503a7008!8m2!3d52.9886641!4d-0.9284911" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1 mb-1 lg:mb-0">Find us</a>
+                    <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1 mb-1 lg:mb-0">Find us</a>
 
                     <Link to={`/journal`} className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1">Read Journal</Link>
                     </div>

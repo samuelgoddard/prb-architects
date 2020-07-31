@@ -172,7 +172,7 @@ class HomeCarousel extends Component {
                         <div className="relative overflow-hidden">
                           <motion.div className="flex items-center" variants={reveal}>
                             <span className="block">{ node.title }</span>
-                            <span className="block ml-auto text-sm">{ node.category.title }</span>
+                            <span className="block ml-auto text-sm">{ node.category[0].title }</span>
                           </motion.div>
                         </div>
                       </figcaption>
