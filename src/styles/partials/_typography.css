@@ -158,6 +158,13 @@ button {
     @apply mb-6;
   }
 
+  a {
+    @apply underline;
+
+    &:hover, &:focus {
+      @apply text-prbred;
+    }
+  }
   /* Headings following paragraphs */
   p + h1, p + h2, p + h3, p + h4 {
     @apply pt-6 block;
@@ -194,6 +201,12 @@ button {
         width: 100%;
       }
     }
+  }
+}
+
+.content--fancy {
+  p:first-of-type {
+    @apply text-xl;
   }
 }
 
