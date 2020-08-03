@@ -41,7 +41,7 @@ const PersonTemplate = ({ data: { person }, location }) => {
           <nav className="relative z-10 w-full overflow-hidden">
             <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
               <li className="ml-auto">
-                <Link to="/studio" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Close Bio</Link>
+                <Link to="/studio#team" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Close Bio</Link>
               </li>
             </ul>
           </nav>
@@ -55,7 +55,7 @@ const PersonTemplate = ({ data: { person }, location }) => {
         className=""
         variants={fade}
       >
-        <Div100vh>
+        <div className="min-h-screen">
           <div className="flex flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-offblack">
             <div className="text-white relative bg-offblack pb-24 md:pb-32">
               <div className="w-10/12 md:w-9/12 mx-auto relative">
@@ -104,7 +104,7 @@ const PersonTemplate = ({ data: { person }, location }) => {
               </div>
             </div>
           </div>
-        </Div100vh>
+        </div>
       </motion.div>
     </>
   )

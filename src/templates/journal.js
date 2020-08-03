@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
-import Div100vh from "react-div-100vh";
 
 const fade = {
 	initial: { opacity: 0 },
@@ -93,7 +92,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                 </li>
               </ul>
             </nav>
-            <div className="mt-auto h-px w-full bg-black"></div>
+            <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
           </header>
         </motion.div>
         
@@ -262,7 +261,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                 <div className="w-full mb-12 md:mb-8 lg:mb-3">
                   <span className="text-3xl md:text-5xl xl:text-6xl block font-display px-4 leading-none md:px-6 mb-6 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
 
-                  <div className="">
+                  <div className="md:flex md:flex-wrap">
                   <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 md:pl-6 lg:pl-6 lg:ml-px leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1">Email us</a>
 
                   <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-4 lg:px-3 lg:pl-6 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1">Call us { studio.studioTelephone }</a>

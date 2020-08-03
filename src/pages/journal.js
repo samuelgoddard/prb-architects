@@ -6,7 +6,6 @@ import { motion } from 'framer-motion'
 import Scroll from "../components/locomotiveScroll"
 import Moment from "react-moment"
 import Collapsible from "../components/collapsible"
-import Div100vh from "react-div-100vh";
 
 const fade = {
 	initial: { opacity: 0 },
@@ -77,7 +76,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
               </li>
             </ul>
           </nav>
-          <div className="mt-auto h-px w-full bg-black"></div>
+          <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
         </header>
         <div className="w-full h-full bg-white">
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
@@ -128,7 +127,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                 return (
                   <div className="overflow-hidden" key={i}>
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i} link={`/journal/${node.slug}`}>
-                      <div className={ node.gallery.length > 0 ? `block mb-6 w-10/12 md:w-2/3 xl:w-7/12` : `block mb-0 w-10/12 md:w-2/3 xl:w-7/12`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
+                      <div className={ node.gallery.length > 0 ? `block leading-tight mb-6 w-10/12 md:w-2/3 xl:w-7/12` : `block leading-tight mb-0 w-10/12 md:w-2/3 xl:w-7/12`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
                       <div className="flex flex-wrap -mx-3 overflow-hidden">
                         {node.gallery.map(({ fluid }, i) => {

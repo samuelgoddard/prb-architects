@@ -106,7 +106,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development },location
                 </li>
               </ul>
             </nav>
-            <div className="mt-auto h-px w-full bg-black"></div>
+            <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
           </header>
         </motion.div>
 

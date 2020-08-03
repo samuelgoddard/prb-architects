@@ -23,7 +23,7 @@ button {
 
 @responsive {
 .h-screen-inner {
-	height: calc(80vh);
+	height: calc(75vh);
 
 	@screen md {
 		height: calc(100vh - 103px);		
@@ -36,11 +36,7 @@ button {
 }
 
 .p-screen-inner {
-	padding-top: calc(100vh - 75px);
-
-	@screen md {
-		padding-top: calc(100vh - 100px);
-	}
+	padding-top: calc(100vh - 100px);
 }
 
 .h-screen-no-header {

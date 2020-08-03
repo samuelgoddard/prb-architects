@@ -77,7 +77,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
             </li>
           </ul>
         </nav>
-        <div className="mt-auto h-px w-full border-b border-black"></div>
+        <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
       </header>
 
       <Div100vh>

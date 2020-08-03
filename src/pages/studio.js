@@ -274,7 +274,7 @@ class StudioPage extends React.Component {
                         </div>
                       </div>
                       <div className="w-full lg:w-2/3 mb-10 mt-auto overflow-hidden">
-                        <motion.div variants={reveal} className="text-lg leading-snug w-full block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
+                        <motion.div variants={reveal} className="text-lg leading-tight w-full block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
                       </div>
                     </div>
                   </div>
@@ -284,7 +284,7 @@ class StudioPage extends React.Component {
                 <div className="flex flex-wrap h-full">
                   <div className="mt-auto w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <div className="overflow-hidden">
-                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug">
+                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-tight">
                         <div dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroSupportingText }}></div>
                       </motion.div>
                     </div>
@@ -356,59 +356,60 @@ class StudioPage extends React.Component {
               </div>
             </div>
           </div>
-          
-          <div className="bg-offblack relative z-20 text-white -mx-4 md:-mx-8" id="team">
-            <div className="max-w-screen-3xl mx-auto relative">
-              <div className="mt-auto md:absolute bottom-0 left-0 w-8/12 md:w-5/12 pl-4 md:pl-10 pt-8 md:pt-0 md:pb-6">
-                <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24 block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
-              </div>
+          <div className="pt-2 bg-white w-full relative z-20 -mt-1" id="team">
+            <div className="bg-offblack relative z-20 text-white -mx-4 md:-mx-8">
+              <div className="max-w-screen-3xl mx-auto relative">
+                <div className="mt-auto md:absolute bottom-0 left-0 w-8/12 md:w-5/12 pl-4 md:pl-10 pt-8 md:pt-0 md:pb-6">
+                  <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24 block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
+                </div>
 
-              <div className="w-full flex flex-wrap px-4 md:px-8">
-                <div className="w-full md:w-1/3 lg:w-3/12 h-auto">
-                  <div className="p-4 md:p-6 mb-8 md:mb-0 h-full">
-                    <div className="flex flex-wrap h-full">
-                      <div className="w-full">
-                        <motion.div className="studio-arrow-container mt-6">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0 studio-arrow" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
-                        </motion.div>
+                <div className="w-full flex flex-wrap px-4 md:px-8">
+                  <div className="w-full md:w-1/3 lg:w-3/12 h-auto">
+                    <div className="p-4 md:p-6 mb-8 md:mb-0 h-full">
+                      <div className="flex flex-wrap h-full">
+                        <div className="w-full">
+                          <motion.div className="studio-arrow-container mt-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0 studio-arrow" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                          </motion.div>
 
-                        <div className="w-full mb xl:w-5/12-auto pr-8">
-                          <div className="text-lg leading-tight" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamIntro }}></div>
+                          <div className="w-full mb xl:w-5/12-auto pr-8">
+                            <div className="text-lg leading-tight" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamIntro }}></div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full">
-                  <div className="flex flex-wrap justify-end">
-                    {this.props.data.team.edges.map(({ node }, i) => {
-                      return (
-                        <Link to={`/studio/${node.slug}`} className="block w-1/2 md:w-1/3 cursor-pointer relative" key={i}>
-                          <div className="relative">
-                            <div className="overflow-hidden pb-0 w-full relative team-member transition duration-500 ease-in-out group" data-scroll data-scroll-speed="0">
-                              <div className="w-full relative overflow-hidden team-member__inner" data-scroll>
-                                <div data-scroll data-scroll-speed="0.3" className="overflow-hidden -m-6">
-                                  <div className="image-reveal-scroll relative">
-                                    <Img fluid={ node.image.fluid } className="w-full object-cover mb-1 relative z-20 team-member__image"/>
-                                    <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
+                  <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full">
+                    <div className="flex flex-wrap justify-end">
+                      {this.props.data.team.edges.map(({ node }, i) => {
+                        return (
+                          <Link to={`/studio/${node.slug}`} className="block w-1/2 md:w-1/3 cursor-pointer relative" key={i}>
+                            <div className="relative">
+                              <div className="overflow-hidden pb-0 w-full relative team-member transition duration-500 ease-in-out group" data-scroll data-scroll-speed="0">
+                                <div className="w-full relative overflow-hidden team-member__inner" data-scroll>
+                                  <div data-scroll data-scroll-speed="0.3" className="overflow-hidden -m-6">
+                                    <div className="image-reveal-scroll relative">
+                                      <Img fluid={ node.image.fluid } className="w-full object-cover mb-1 relative z-20 team-member__image"/>
+                                      <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 p-3 text-white opacity-0 group-hover:opacity-100 transition ease-in-out duration-500 flex flex-wrap items-center justify-center text-lg">
+                                  <span className="-mt-6">Read Bio</span>
+                                </div>
+                                <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
+                                  <div className="border-b border-white pb-2">
+                                    <span className="text-lg md:text-xl xl:text-2xl block mb-0 pb-0 leading-none text-white">{ node.name }</span>
+                                    <span className="text-xs uppercase text-white">{ node.jobTitle }</span>
                                   </div>
                                 </div>
                               </div>
-                              <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 p-3 text-white opacity-0 group-hover:opacity-100 transition ease-in-out duration-500 flex flex-wrap items-center justify-center text-lg">
-                                <span className="-mt-6">Read Bio</span>
-                              </div>
-                              <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
-                                <div className="border-b border-white pb-2">
-                                  <span className="text-lg md:text-xl xl:text-2xl block mb-0 pb-0 leading-none text-white">{ node.name }</span>
-                                  <span className="text-xs uppercase text-white">{ node.jobTitle }</span>
-                                </div>
-                              </div>
                             </div>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                          </Link>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>

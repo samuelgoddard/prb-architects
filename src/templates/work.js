@@ -167,7 +167,7 @@ class WorkTemplate extends React.Component {
               </li>
             </ul>
           </motion.nav>
-          <div className="mt-auto h-px w-full bg-black"></div>
+          <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
         </header>
 
         <motion.div
@@ -176,7 +176,7 @@ class WorkTemplate extends React.Component {
           exit="exit"
           variants={fade}
         >
-          <div className="bg-white min-h-screen-image md:pt-22 p-screen-inner overflow-hidden">
+          <div className="bg-white min-h-screen-image md:pt-22 p-screen-inner relative overflow-hidden">
             <div className="px-4 md:px-6">
               <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
                 <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
@@ -190,9 +190,9 @@ class WorkTemplate extends React.Component {
                 </div>
 
                   <div className="w-full h-full overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
-                    <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
+                    <motion.div variants={heroImage} className="h-full w-full transform relative image-transform-center">
                       <div className="h-full hero-image-transform">
-                        <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover" />
+                        <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover" />
                       </div>
                     </motion.div>
                   </div>
@@ -257,7 +257,7 @@ class WorkTemplate extends React.Component {
                     <div className="w-auto mb-8 md:mb-0 absolute top-0 md:top-0 left-0 mr-0 hidden md:block ml-1 overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                       <div className="relative overflow-hidden">
                         <motion.div variants={revealArrow}>
-                          <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -mb-5 xl:-mb-8 mr-5 xl:-mr-8 transform rotate -rotate-90" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -ml-3 xl:-ml-5 transform rotate rotate-45 -mt-1" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                         </motion.div>
                       </div>
                     </div>
@@ -272,14 +272,14 @@ class WorkTemplate extends React.Component {
                     <div className="w-full md:text-right mb-4 md:mb-0 block md:hidden">
                       <div className="flex flex-wrap w-full px-3 pt-2 pb-2 md:py-0 border-t border-b border-black md:relative">
                         { this.props.data.datoCmsWork.metaLocation && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-left">{ this.props.data.datoCmsWork.metaLocation }</span>
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaLocation }</span>
                         )}
                         { this.props.data.datoCmsWork.metaSize && (
                           <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaSize }</span>
                         )}
                         <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.category[0].title }</span>
                         { this.props.data.datoCmsWork.metaCost && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-right">{ this.props.data.datoCmsWork.metaCost }</span>
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaCost }</span>
                         )}
                       </div>
                     </div>
@@ -295,15 +295,15 @@ class WorkTemplate extends React.Component {
                         }}
                       >
                         { this.props.data.datoCmsWork.metaLocation && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaLocation }</motion.div>
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 mr-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaLocation }</motion.div>
                           </span>
                         )}
                         { this.props.data.datoCmsWork.metaSize && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaSize }</motion.div></span>
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaSize }</motion.div></span>
                         )}
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category[0].title }</motion.div></span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category[0].title }</motion.div></span>
                         { this.props.data.datoCmsWork.metaCost && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto ml-auto text-right relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaCost }</motion.div></span>
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 ml-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaCost }</motion.div></span>
                         )}
                       </motion.div>
                     </div>
@@ -336,7 +336,7 @@ class WorkTemplate extends React.Component {
                     </div>
 
                     <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 ml-auto text-white pb-8 md:pb-24">
-                      <div className="md:text-lg lg:text-xl max-w-2xs md:max-w-md xl:max-w-lg mb-10 md:mb-16 leading-snug content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.datoCmsWork.introText }}></div>
+                      <div className="md:text-lg lg:text-xl max-w-2xs md:max-w-md xl:max-w-lg mb-10 md:mb-16 leading-tight content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.datoCmsWork.introText }}></div>
 
                       <div className="border-t border-white">
                         {
@@ -347,7 +347,7 @@ class WorkTemplate extends React.Component {
                                 <div className="w-full">
                                   <div className="flex flex-wrap items-start border-b border-current w-full pt-4 py-3 md:pt-5 md:py-6 xl:py-8">
                                     <span className="block text-xs mr-3 w-auto text-left mb-2 md:mb-0 md:mt-px">0{ i + 1 }</span>
-                                    <span className={`block text-xl md:text-2xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ block.heading }</span>
+                                    <span className={`block text-xl md:text-2xl text-left font-display leading-tight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ block.heading }</span>
                                   </div>
                                 </div>
                               }
@@ -401,7 +401,7 @@ class WorkTemplate extends React.Component {
                               </figure>
 
                               <div className="max-w-md ml-auto md:mr-32 lg:mr-40 p-4 md:p-0">
-                                <div className="lg:text-lg leading-snug content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
                             </div>
                             <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-48 lg:pt-64 hidden md:block">
@@ -455,7 +455,7 @@ class WorkTemplate extends React.Component {
                             </div>
                             <div className="w-8/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-16">
                               <div className="max-w-md ml-auto md:ml-32 lg:ml-40 p-4 pl-0 md:p-0">
-                                <div className="lg:text-lg leading-snug content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
 
                               <figure className="md:pt-32 hidden md:block">
@@ -495,7 +495,7 @@ class WorkTemplate extends React.Component {
                           <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-10/12 md:w-8/12 md:pl-8 lg:pl-10 xl:pl-24 -mx-4 md:mx-0">
                               <div className="md:max-w-md ml-auto md:ml-32 lg:ml-40 p-4 md:p-0">
-                                <div className="lg:text-lg leading-snug content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
                               </div>
                             </div>
                           </div>
@@ -557,16 +557,16 @@ class WorkTemplate extends React.Component {
               {/* Looking for work? */}
               <section className="pb-10 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
                 <div className="w-full md:w-10/12 ml-auto px-4 md:px-6">
-                  <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0">
+                  <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm pr-12 md:pr-0 md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0">
                     <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category[0].title.toLowerCase() } project? Get in touch.</span>
                     <div className="lg:flex lg:flex-wrap">
-                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 xl:pl-1 leading-extratight hover:line-through focus:line-through mb-1 lg:mb-0">Email us</a>
+                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 xl:pl-1 leading-tight hover:line-through focus:line-through mb-1 lg:mb-0">Email us</a>
 
-                    <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 leading-extratight hover:line-through focus:line-through mb-1 lg:mb-0">Call us { this.props.data.studio.studioTelephone }</a>
+                    <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 leading-tight hover:line-through focus:line-through mb-1 lg:mb-0">Call us { this.props.data.studio.studioTelephone }</a>
 
-                    <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1 mb-1 lg:mb-0">Find us</a>
+                    <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-2 leading-tight hover:line-through focus:line-through pl-1 mb-1 lg:mb-0">Find us</a>
 
-                    <Link to={`/journal`} className="text-lg md:text-xl block md:px-2 leading-extratight hover:line-through focus:line-through pl-1">Read Journal</Link>
+                    <Link to={`/journal`} className="text-lg md:text-xl block md:px-2 leading-tight hover:line-through focus:line-through pl-1">Read Journal</Link>
                     </div>
                   </div>
                 </div>

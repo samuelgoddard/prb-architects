@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
@@ -61,11 +61,6 @@ function shuffleArray(array) {
 
 const IndexPage = ({ data: { home, work, workCategories }, location }) => {
   const shuffledPosts = shuffleArray(work.edges);
-  const [darkMode, setDarkMode] = useState(false);
-  function toggleButton () {
-    if(!darkMode) setDarkMode(true);
-    else setDarkMode(false);
-  }
 
   return (
     <div>
@@ -107,7 +102,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
             </li>
           </ul>
         </motion.nav>
-        <div className="mt-auto h-px w-full bg-black"></div>
+        <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
       </header>
 
       <motion.div
