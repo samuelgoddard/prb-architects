@@ -555,19 +555,23 @@ class WorkTemplate extends React.Component {
               
 
               {/* Looking for work? */}
-              <section className="pb-10 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
-                <div className="w-full md:w-10/12 ml-auto px-4 md:px-6">
-                  <div className="mb-20 md:mb-24 lg:mb-32 max-w-sm pr-12 md:pr-0 md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0">
-                    <span className="block font-display text-4xl md:text-6xl leading-none mb-5 xl:mb-8 pl-1">Need help with a { this.props.data.datoCmsWork.category[0].title.toLowerCase() } project? Get in touch.</span>
-                    <div className="lg:flex lg:flex-wrap">
-                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 xl:pl-1 leading-tight hover:line-through focus:line-through mb-1 lg:mb-0">Email us</a>
+              <section className="pb-4 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
+                <div className="w-full md:w-10/12 ml-auto px-4 md:px-6 mb-0 md:mb-24 lg:mb-32">
+                  <div className="max-w-sm pr-12 md:pr-0 md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0 mb-2 md:mb-8">
+                    <span className="block font-display text-4xl md:text-6xl leading-none pr-1">Need help with a<span className="block">{ this.props.data.datoCmsWork.category[0].title.toLowerCase() } project?</span>Get in touch.</span>
+                  </div>
 
-                    <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block pl-1 md:px-2 leading-tight hover:line-through focus:line-through mb-1 lg:mb-0">Call us { this.props.data.studio.studioTelephone }</a>
+                  <div className="flex flex-wrap border-t border-b border-black w-auto pr-12 md:pr-0 md:max-w-lg lg:max-w-xl">
+                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block py-2 lg:py-3 pr-3 lg:pr-4 leading-tight hover:line-through focus:line-through lg:mb-0 border-r border-black">Email</a>
 
-                    <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-2 leading-tight hover:line-through focus:line-through pl-1 mb-1 lg:mb-0">Find us</a>
+                    <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block pl-2 lg:pl-3 px-3 lg:px-4 py-2 lg:py-3 leading-tight hover:line-through focus:line-through lg:mb-0 border-r border-black">
+                      <span className="hidden md:block">{ this.props.data.studio.studioTelephone }</span>
+                      <span className="block md:hidden">Tel</span>
+                    </a>
 
-                    <Link to={`/journal`} className="text-lg md:text-xl block md:px-2 leading-tight hover:line-through focus:line-through pl-1">Read Journal</Link>
-                    </div>
+                    <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through py-2 lg:py-3 pl-3 lg:pl-4 lg:pr-16 pr-8">Find us</a>
+
+                    <Link to={`/journal`} className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through pl-3 lg:pl-4 py-2 lg:py-3 border-l border-black ml-auto">Journal</Link>
                   </div>
                 </div>
               </section>
@@ -578,11 +582,11 @@ class WorkTemplate extends React.Component {
                   <div className="w-full flex flex-wrap">
                     <div className="w-full md:w-10/12 ml-auto">
                     <div className="flex flex-wrap items-end md:-mx-3 md:pl-6">
-                      <div className="w-full md:w-auto order-1 md:order-1 md:px-3 overflow-hidden">
+                      <div className="w-full md:w-auto order-1 md:order-1 md:px-3 overflow-hidden mb-16 md:mb-0">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-40 lg:w-64 md:ml-auto md:ml-0 transform rotate-45 md:-mb-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                       </div>
                       <div className="w-full md:w-8/12 order-2 md:order-2 p-4 md:p-0 md:px-3 mb-18 md:mb-0">
-                        <span className="block leading-tight text-sm uppercase mb-3 invert-select">More { this.props.data.datoCmsWork.category[0].title } projects</span>
+                        <span className="block leading-tight text-xs md:text-sm uppercase mb-1 md:mb-3 invert-select">More { this.props.data.datoCmsWork.category[0].title } projects</span>
 
                         {this.props.data.relatedWork.edges.map(({ node }, i) => {
                           return (

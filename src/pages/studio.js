@@ -274,7 +274,7 @@ class StudioPage extends React.Component {
                         </div>
                       </div>
                       <div className="w-full lg:w-2/3 mb-10 mt-auto overflow-hidden">
-                        <motion.div variants={reveal} className="text-lg leading-tight w-full block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
+                        <motion.div variants={reveal} className="text-lg leading-snug w-full block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
                       </div>
                     </div>
                   </div>
@@ -284,7 +284,7 @@ class StudioPage extends React.Component {
                 <div className="flex flex-wrap h-full">
                   <div className="mt-auto w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <div className="overflow-hidden">
-                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-tight">
+                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug">
                         <div dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroSupportingText }}></div>
                       </motion.div>
                     </div>
@@ -345,7 +345,7 @@ class StudioPage extends React.Component {
                                 <span className="text-xs uppercase block mb-2">{ block.headingMeta }</span>
                               </div>
                               <div className="w-10/12 md:w-8/12 xl:w-1/2 max-w-2xl">
-                                <div className="leading-tight" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                                <div className="leading-snug" dangerouslySetInnerHTML={{ __html: block.content }}></div>
                               </div>
                             </div>
                         }
@@ -496,22 +496,25 @@ class StudioPage extends React.Component {
                 </Link>
               </div>
               <div className="w-full md:w-10/12 mx-4 md:mx-0 md:px-5">
-                <div className="flex flex-wrap items-end relative pb-16 md:pb-24 lg:pb-32">
+                <div className="flex flex-wrap items-end relative">
                   <div className="w-full md:px-3 overflow-hidden mb-3 md:mb-0">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 md:ml-auto transform -rotate-90 md:rotate-90 md:absolute top-0 left-0 md:left-auto md:top-auto md:bottom-0 md:right-0 md:m-6 md:mr-0" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
                   </div>
-                  <div className="w-full mb-12 md:mb-8 lg:mb-3">
-                    <span className="text-3xl md:text-5xl xl:text-6xl block font-display leading-none mb-6 lg:pl-8 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
+                  <div className="w-full md:mb-8 lg:mb-3">
+                    <span className="text-3xl md:text-5xl xl:text-6xl block font-display leading-none mb-6 md:mb-0 lg:mb-6 lg:pl-8 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
+                  </div>
 
-                    <div className="md:flex md:flex-wrap">
-                      <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:pl-0 md:px-3 lg:pl-8 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Email us</a>
+                  <div className="flex flex-wrap border-t border-b border-black w-full md:pr-0 md:max-w-xl lg:max-w-xl lg:ml-8 mb-16 md:mb-40 lg:mb-40">
+                    <a href={`mailto:${ this.props.data.studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block py-2 lg:py-3 pr-3 lg:pr-4 leading-tight hover:line-through focus:line-through lg:mb-0 border-r border-black">Email</a>
 
-                      <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Call us { this.props.data.studio.studioTelephone }</a>
+                    <a href={`tel:${ this.props.data.studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block pl-2 lg:pl-3 px-3 lg:px-4 py-2 lg:py-3 leading-tight hover:line-through focus:line-through lg:mb-0 border-r border-black">
+                      <span className="hidden md:block">{ this.props.data.studio.studioTelephone }</span>
+                      <span className="block md:hidden">Tel</span>
+                    </a>
 
-                      <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-lg md:text-xl block md:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select mb-1 lg:mb-0">Find us</a>
+                    <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through py-2 lg:py-3 pl-3 lg:pl-4 lg:pr-16 pr-8">Find us</a>
 
-                      <Link to={`/journal`} className="text-lg md:text-xl block md:px-3 leading-extratight hover:line-through focus:line-through hover:text-white focus:text-white invert-select">Read Journal</Link>
-                    </div>
+                    <Link to={`/journal`} className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through pl-3 lg:pl-4 py-2 lg:py-3 ml-auto border-l border-black">Journal</Link>
                   </div>
                 </div>
                 <div className="md:hidden">
