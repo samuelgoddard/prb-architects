@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import gsap from "gsap";
-import WorkCarousel from "../components/workCarousel"
-import WorkCarouselDesktop from "../components/workCarouselDesktop"
+// import WorkCarousel from "../components/workCarousel"
+// import WorkCarouselDesktop from "../components/workCarouselDesktop"
 import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
@@ -314,7 +314,7 @@ class WorkTemplate extends React.Component {
             </div>
 
             <div className="z-20 bg-white relative">
-              <section className="mb-0 md:mb-20 lg:mb-32 px-4 md:px-6">
+              <section className="mb-8 md:mb-20 lg:mb-32 px-4 md:px-6">
                 <div className="bg-offblack -mx-4 md:-mx-6 pt-24">
                   <div className="w-full flex flex-wrap items-end pr-4 pl-4 md:p-6">
                     <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 text-white">
@@ -360,7 +360,7 @@ class WorkTemplate extends React.Component {
                 </div>
               </section>
               
-              <section className="-mx-4 md:mx-0 bg-white block md:hidden">
+              {/* <section className="-mx-4 md:mx-0 bg-white block md:hidden">
                 {
                   this.props.data.datoCmsWork.contentBlocks.map((block, i) => (
                     <div key={block.id}>
@@ -375,7 +375,7 @@ class WorkTemplate extends React.Component {
                     </div>
                   )
                 )}
-              </section>
+              </section> */}
 
               {/* Content Section Start */}
               <section>
