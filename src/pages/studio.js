@@ -239,7 +239,7 @@ class StudioPage extends React.Component {
             className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen"
             id="studio"
           >
-            <div className="max-w-screen-3xl mx-auto">
+            <div className=" mx-auto">
             <div className="flex flex-wrap -mx-4 md:-mx-3 md:mt-8 md:h-screen-inner" id="something">
               <div className="w-full md:w-1/2 flex flex-wrap md:px-3">
                 <div className="w-full px-3 md:px-0 mt-12">
@@ -304,7 +304,7 @@ class StudioPage extends React.Component {
 
           
           <div className="bg-white p-4 md:p-6 relative z-20">
-            <div className="max-w-screen-3xl mx-auto">
+            <div className=" mx-auto">
               <div data-scroll-timeline="fast-spin" />
               <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 absolute bottom-0 right-0 mr-4 md:mr-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
 
@@ -331,7 +331,7 @@ class StudioPage extends React.Component {
           </div>
 
           <div className="md:mx-auto md:w-full pb-20 pt-12 md:pt-16 xl:pt-20 bg-white relative z-20 px-4" id="ethos">
-            <div className="max-w-screen-3xl mx-auto">
+            <div className=" mx-auto">
               <div className="overflow-hidden w-full md:w-9/12 mx-auto">
                 <div className="w-full flex flex-wrap">
                   {
@@ -358,7 +358,7 @@ class StudioPage extends React.Component {
           </div>
           <div className="pt-2 bg-white w-full relative z-20 -mt-1" id="team">
             <div className="bg-offblack relative z-20 text-white -mx-4 md:-mx-8">
-              <div className="max-w-screen-3xl mx-auto relative">
+              <div className=" mx-auto relative">
                 <div className="mt-auto md:absolute bottom-0 left-0 w-8/12 md:w-5/12 pl-4 md:pl-10 pt-8 md:pt-0 md:pb-6">
                   <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24 block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
                 </div>
@@ -417,13 +417,13 @@ class StudioPage extends React.Component {
           </div>
           
           <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-40 md:-mb-2" id="sectors">
-            <div className="w-full flex flex-wrap mb-18 md:mb-32 lg:mb-32 xl:mb-48 max-w-screen-3xl mx-auto ">
+            <div className="w-full flex flex-wrap mb-18 md:mb-32 lg:mb-32 xl:mb-48  mx-auto ">
               <div className="w-9/12 md:w-8/12 lg:w-1/2 xl:w-5/12 md:mx-auto max-w-2xl">
                 <div className="text-lg lg:text-xl leading-tight content" dangerouslySetInnerHTML={{ __html: this.props.data.studio.sectorsIntroText }}></div>
               </div>
             </div>
             
-            <div className="max-w-screen-3xl mx-auto">
+            <div className=" mx-auto">
               <div className="w-full flex flex-wrap md:-mx-8 items-end">
                 <div className="w-full md:w-5/12 md:px-8 mb-10 md:mb-0">
                   <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
@@ -460,7 +460,7 @@ class StudioPage extends React.Component {
             </div>
           </div>
 
-          <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-40 max-w-screen-3xl mx-auto" id="services">
+          <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-40  mx-auto" id="services">
             <div className="w-full flex flex-wrap items-end">
               <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-32 xl:pb-40">
                 <div className="overflow-hidden">

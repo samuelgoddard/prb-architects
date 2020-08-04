@@ -97,7 +97,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
         </motion.div>
         
         <div className="bg-white pt-2 w-full h-full">
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="p-4 md:p-6 pt-14 md:pt-22 max-w-screen-3xl mx-auto">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="p-4 md:p-6 pt-14 md:pt-22 mx-auto">
           
         <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
 

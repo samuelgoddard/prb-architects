@@ -57,26 +57,25 @@ const PersonTemplate = ({ data: { person }, location }) => {
       >
         <div className="min-h-screen">
           <div className="flex flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-offblack">
-            <div className="text-white relative bg-offblack pb-24 md:pb-32">
-              <div className="w-10/12 md:w-9/12 mx-auto relative">
-                <h1 className="text-2xl md:text-3xl block w-full border-b border-white pb-1 mb-6 md:mb-10 xl:mb-14">{ person.name }</h1>
-
-                <div className="absolute top-0 left-0 w-full mt-16 p-12 md:p-0">
-                  <Img fluid={ person.image.fluid } className="w-full max-w-sm object-cover mb-1 relative z-10 opacity-25 "/>
-                </div>
+            <div className="text-white relative bg-offblack pb-24 md:pb-32 w-full">
+              <div className="w-10/12 lg:w-9/12 mx-auto relative">
+                <h1 className="text-2xl lg:text-3xl block w-full border-b border-white pb-1 mb-6 lg:mb-10 xl:mb-14">{ person.name }</h1>
                 <div className="flex flex-wrap relative">
 
-                  <div className="w-full md:flex-1 relative z-10">
-                    <div className="w-full md:w-1/2 xl:w-5/12 mx-auto">
+                  <div className="w-full lg:w-1/3 2xl:w-1/4 mb-8 lg:mb-0">
+                    <Img fluid={ person.image.fluid } className="w-full object-cover mb-1 relative z-10 opacity-25 "/>
+                  </div>
+                  <div className="w-full lg:flex-1 relative z-10">
+                    <div className="lg:w-10/12 xl:w-8/12 lg:pl-8">
                       <div className="leading-tight content" dangerouslySetInnerHTML={{ __html: person.profileText }}></div>
                     </div>
                   </div>
 
-                  <div className="w-full md:w-auto relative z-10">
+                  <div className="w-full lg:w-auto relative z-10">
                     { person.linkedinUrl && (
-                      <div className="md:text-right">
+                      <div className="lg:text-right">
                         <span className="block uppercase mb-3 text-sm">Social</span>
-                        <a className="underline flex flex-wrap md:justify-end items-center hover:line-through focus:line-through" href={ person.linkedinUrl } target="_blank" rel="noreferrer noopener">
+                        <a className="underline flex flex-wrap lg:justify-end items-center hover:line-through focus:line-through" href={ person.linkedinUrl } target="_blank" rel="noreferrer noopener">
                           <span>LinkedIn</span>
                           <svg className="ml-2" xmlns="http://www.w3.org/2000/svg" width="16.073" height="16.073" viewBox="0 0 16.073 16.073"><g data-name="Group 151" fill="none" stroke="#fff"><path data-name="Path 1" d="M10.875 14.095V5.2H1.978"/><path data-name="Path 2" d="M10.875 5.199L.354 15.719"/></g></svg>
                         </a>
@@ -84,13 +83,13 @@ const PersonTemplate = ({ data: { person }, location }) => {
                     )}
 
                     { person.relatedWork.length > 0 && (
-                      <div className="mt-8 md:text-right">
+                      <div className="mt-8 lg:text-right">
                         <span className="block uppercase mb-3 text-sm">Projects</span>
 
                         {person.relatedWork.map(({ title, slug }, i) => {
                           return(
                             <div key={i}>
-                              <Link to={`/work/${slug}`} className="underline flex flex-wrap md:justify-end items-center hover:line-through focus:line-through">
+                              <Link to={`/work/${slug}`} className="underline flex flex-wrap lg:justify-end items-center hover:line-through focus:line-through">
                                 <span>{title}</span>
                                 <svg className="ml-2" xmlns="http://www.w3.org/2000/svg" width="16.073" height="16.073" viewBox="0 0 16.073 16.073"><g data-name="Group 151" fill="none" stroke="#fff"><path data-name="Path 1" d="M10.875 14.095V5.2H1.978"/><path data-name="Path 2" d="M10.875 5.199L.354 15.719"/></g></svg>
                               </Link>

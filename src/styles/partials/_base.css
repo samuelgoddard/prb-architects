@@ -174,8 +174,9 @@ html.has-scroll-dragging {
 	}
 
 	@screen 3xl {
-		width: 48vw;
-		height: 540px;
+		width: 24vw;
+		height: 430px;
+		margin-right: 4.5vw;
 	}
 
 	.slide__img {

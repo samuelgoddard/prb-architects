@@ -25,12 +25,17 @@ h2 {
 
   @screen md {
     font-size: 7.5vw;
-    line-height: 4.7vw;
+    line-height: 4.8vw;
   }
 
   @screen xl {
     font-size: 8.5vw;
-    line-height: 5.3vw;
+    line-height: 5.4vw;
+  }
+
+  @screen 3xl {
+    font-size: 8.5vw;
+    line-height: 6.1vw;
   }
 }
 

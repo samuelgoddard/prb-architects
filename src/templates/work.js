@@ -135,6 +135,12 @@ class WorkTemplate extends React.Component {
   render () {
     const splitTitle = this.props.data.datoCmsWork.title.match(/\b(\w+)/g);
 
+    const metaArray = [];
+    if (this.props.data.datoCmsWork.metaLocation) { metaArray.push(this.props.data.datoCmsWork.metaLocation) }
+    if (this.props.data.datoCmsWork.metaSize) { metaArray.push(this.props.data.datoCmsWork.metaSize) }
+    if (this.props.data.datoCmsWork.category[0].title) { metaArray.push(this.props.data.datoCmsWork.category[0].title) }
+    if (this.props.data.datoCmsWork.metaCost) { metaArray.push(this.props.data.datoCmsWork.metaCost) }
+
     return (
       <>
         <SEO
@@ -270,17 +276,31 @@ class WorkTemplate extends React.Component {
 
                     <motion.div variants={fade} className="flex flex-wrap w-full md:mx-0 mt-auto md:absolute bottom-0 left-0 right-0 md:mb-6">
                     <div className="w-full md:text-right mb-4 md:mb-0 block md:hidden">
-                      <div className="flex flex-wrap w-full px-3 pt-2 pb-2 md:py-0 border-t border-b border-black md:relative">
-                        { this.props.data.datoCmsWork.metaLocation && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaLocation }</span>
-                        )}
-                        { this.props.data.datoCmsWork.metaSize && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaSize }</span>
-                        )}
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.category[0].title }</span>
-                        { this.props.data.datoCmsWork.metaCost && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 text-center">{ this.props.data.datoCmsWork.metaCost }</span>
-                        )}
+                      <div className="flex flex-wrap w-full px-0 pt-2 pb-2 md:py-0 border-t border-b border-black md:relative">
+
+                        { metaArray.map((block, i) => {
+                          let dynamicClassName = null;
+                          if (i === 0 && metaArray.length === 2) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left relative overflow-hidden"
+                          } else if (i === 1 && metaArray.length === 2) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg flex-1 ml-auto text-right relative overflow-hidden"
+                          } else if (i === 0 && metaArray.length === 1) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg flex-1 mx-auto text-center relative overflow-hidden"
+                          } else if (i === 0 && metaArray.length === 4 || i === 0 && metaArray.length === 3) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left relative overflow-hidden" }
+                          else if (i === 3 && metaArray.length === 4 || i === 2 && metaArray.length === 3) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto ml-auto text-right relative overflow-hidden" }
+                          else {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"
+                          }
+                          return (
+                            <span className={ dynamicClassName } key={i}>
+                              <motion.div variants={reveal}>
+                                { block }
+                              </motion.div>
+                            </span>
+                          )
+                        })}
                       </div>
                     </div>
                     
@@ -294,17 +314,41 @@ class WorkTemplate extends React.Component {
                           enter: { transition: { staggerChildren: 0.15 } }
                         }}
                       >
-                        { this.props.data.datoCmsWork.metaLocation && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 mr-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaLocation }</motion.div>
+                        { metaArray.map((block, i) => {
+                          let dynamicClassName = null;
+                          if (i === 0 && metaArray.length === 2) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left relative overflow-hidden"
+                          } else if (i === 1 && metaArray.length === 2) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg flex-1 ml-auto text-right relative overflow-hidden"
+                          } else if (i === 0 && metaArray.length === 1) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg flex-1 mx-auto text-center relative overflow-hidden"
+                          } else if (i === 0 && metaArray.length === 4 || i === 0 && metaArray.length === 3) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto mr-auto text-left relative overflow-hidden" }
+                          else if (i === 3 && metaArray.length === 4 || i === 2 && metaArray.length === 3) {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto ml-auto text-right relative overflow-hidden" }
+                          else {
+                            dynamicClassName = "block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"
+                          }
+                          return (
+                            <span className={ dynamicClassName } key={i}>
+                              <motion.div variants={reveal}>
+                                { block }
+                              </motion.div>
+                            </span>
+                          )
+                        })}
+
+                        {/* { this.props.data.datoCmsWork.metaLocation && (
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaLocation }</motion.div>
                           </span>
                         )}
                         { this.props.data.datoCmsWork.metaSize && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaSize }</motion.div></span>
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaSize }</motion.div></span>
                         )}
-                        <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category[0].title }</motion.div></span>
+                        <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.category[0].title }</motion.div></span>
                         { this.props.data.datoCmsWork.metaCost && (
-                          <span className="block leading-tight text-sm md:text-base lg:text-lg flex-1 ml-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaCost }</motion.div></span>
-                        )}
+                          <span className="block leading-tight text-sm md:text-base lg:text-lg w-auto mx-auto text-center relative overflow-hidden"><motion.div variants={reveal}>{ this.props.data.datoCmsWork.metaCost }</motion.div></span>
+                        )} */}
                       </motion.div>
                     </div>
                   </motion.div>
@@ -335,7 +379,7 @@ class WorkTemplate extends React.Component {
                       </div>
                     </div>
 
-                    <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 ml-auto text-white pb-8 md:pb-24">
+                    <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 ml-auto text-white pb-8 md:pb-24 3xl:pb-40">
                       <div className="md:text-lg lg:text-xl max-w-2xs md:max-w-md xl:max-w-lg mb-10 md:mb-16 leading-tight content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.datoCmsWork.introText }}></div>
 
                       <div className="border-t border-white">
@@ -384,7 +428,7 @@ class WorkTemplate extends React.Component {
                     <div key={block.id}>
                       {
                         block.model.apiKey === 'content_left_align' && 
-                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-32 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32 -mx-4 md:mx-0">
                               <figure className="mb-16 md:mb-32 lg:mb-48 hidden md:block">
                                 <div className="overflow-hidden block">
@@ -437,7 +481,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'content_right_align' && 
-                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-4/12 md:pr-16 lg:pr-24 xl:pr-32 hidden md:block -mx-4 md:mx-0">
                               <figure className="mb-16 md:mb-32 lg:mb-48">
                                 <div className="overflow-hidden block">
@@ -492,7 +536,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'full_text' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-10/12 md:w-8/12 md:pl-8 lg:pl-10 xl:pl-24 -mx-4 md:mx-0">
                               <div className="md:max-w-md ml-auto md:ml-32 lg:ml-40 p-4 md:p-0">
                                 <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
@@ -510,7 +554,7 @@ class WorkTemplate extends React.Component {
                         } */}
                         {
                         block.model.apiKey === 'image100' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-full md:w-9/12 mx-auto">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
@@ -530,7 +574,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'image50' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 bg-white 3xl:w-9/12 3xl:mx-auto">
+                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto">
                             <div className="w-10/12 md:w-5/12 mx-auto px-4 md:px-6">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
@@ -556,7 +600,7 @@ class WorkTemplate extends React.Component {
 
               {/* Looking for work? */}
               <section className="pb-4 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
-                <div className="w-full md:w-10/12 ml-auto px-4 md:px-6 mb-0 md:mb-24 lg:mb-32">
+                <div className="w-full md:w-10/12 ml-auto px-4 md:px-6 mb-0 md:mb-24 lg:mb-32 3xl:mb-40">
                   <div className="max-w-sm pr-12 md:pr-0 md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0 mb-2 md:mb-8">
                     <span className="block font-display text-4xl md:text-6xl leading-none pr-1">Need help with a<span className="block">{ this.props.data.datoCmsWork.category[0].title.toLowerCase() } project?</span>Get in touch.</span>
                   </div>
