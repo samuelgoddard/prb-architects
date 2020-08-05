@@ -177,7 +177,54 @@ class StudioPage extends React.Component {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+            <nav className="relative z-10 w-full overflow-hidden">
+              <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
+                <li className="pb-0 mb-0">
+                  <motion.span className="hidden lg:block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#studio'))} className="text-lg md:text-2xl pr-px opacity-100 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Studio</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#ethos'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Ethos</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#team'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Team</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#sectors'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Sectors</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#services'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Services</button>
+                  </motion.span>
+                </li>
+                <li className="text-xl md:text-2xl px-2 opacity-25 hidden lg:block pb-0 mb-0 relative overflow-hidden"><motion.span className="block" variants={revealInOut}>/</motion.span></li>
+                <li className="hidden lg:block pb-0 mb-0 relative overflow-hidden">
+                  <motion.span className="block" variants={revealInOut}>
+                    <button onClick={() => windowGlobal.scroll.scrollTo(document.querySelector('#contact'), -75)} className="text-lg md:text-2xl pr-px opacity-25 transition ease-in-out duration-500 hover:border-transparent outline-none hover:line-through focus:line-through">Contact</button>
+                  </motion.span>
+                </li>
+                <li className="ml-auto">
+                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Menu</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="mt-auto -mb-px h-px w-full border-b border-white transition ease-in-out duration-500"></div>
+          </header>
+
+
+          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed md:hidden fixed-when-scroll top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full overflow-hidden">
               <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
                 <li className="pb-0 mb-0">
@@ -230,7 +277,8 @@ class StudioPage extends React.Component {
           exit="exit"
           variants={fade}
         >
-          <div className="h-14 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
+          <div className="h-14 md:h-22 z-30 fixed top-0 left-0 bg-offblack w-full hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
+          <div className="h-14 md:h-22 z-30 fixed fixed-when-scroll top-0 left-0 bg-offblack w-full block md:hidden" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
 
           <motion.div
             initial="initial"
@@ -259,7 +307,7 @@ class StudioPage extends React.Component {
                               <motion.span variants={reveal} className="pt-12 md:pt-10 lg:pt-12 xl:pt-16 2xl:pt-24 pb-0 block">Our</motion.span>
                             </span>
                           </span>
-                          <span className="-md:-mt-6 xl:-mt-4 block">
+                          <span className="-md:-mt-6 xl:-mt-4 3xl:mt-0 block">
                             <motion.span variants={reveal} className="pt-4 md:pt-12 xl:pt-20 2xl:pt-24 block">Studio</motion.span>
                           </span>
                         </motion.h1>

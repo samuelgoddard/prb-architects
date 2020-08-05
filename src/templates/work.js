@@ -150,7 +150,33 @@ class WorkTemplate extends React.Component {
           imageOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.image ? this.props.data.datoCmsWork.metaTags.image.url : null }
         />
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white fixed top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
+          <motion.nav
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className="relative z-10 w-full"
+          >
+            <ul className="flex flex-wrap">
+              <li className="block relative overflow-hidden">
+                <Link className="text-lg md:text-2xl pr-px hover:line-through focus:line-through block relative overflow-hidden" to="/">
+                  <motion.div variants={revealInOut}>
+                    <div className="flex flex-wrap items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
+                      <span className="block ml-3">All Projects</span>
+                    </div>
+                  </motion.div>
+                </Link>
+              </li>
+              <li className="ml-auto">
+                <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
+              </li>
+            </ul>
+          </motion.nav>
+          <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
+        </header>
+
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute fixed-when-scroll top-0 left-0 right-0 h-0">
           <motion.nav
             initial="initial"
             animate="enter"
@@ -233,16 +259,16 @@ class WorkTemplate extends React.Component {
                         </div>
 
                         <div className="pt-3">
-                          <span className="block md:hidden order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden mt-8">
+                          <h1 className="block md:hidden order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden mt-8">
                             {
                               splitTitle.map((text, i) => (
                                 <div variants={reveal} key={i} className="relative overflow-hidden">
-                                  <span className={i === 0 ? `block mt-0 relative z-20` : `md:-mt-6 xl:-mt-4 relative z-0 block`} key={i}>
+                                  <span className={i === 0 ? `pt-1 block mt-0 relative z-20` : `md:-mt-6 xl:-mt-4 relative z-0 block pt-1`} key={i}>
                                   <motion.div variants={reveal} className="pt-0" key={i}>{ text }</motion.div></span>
                                 </div>
                               ))
                             }
-                          </span>
+                          </h1>
                         </div>
 
                         <div className="hidden md:block md:ml-3 mt-3 overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">

@@ -67,7 +67,7 @@ const revealArrowTopRight = {
   }
 }
 
-const GalleryIndexPage = ({ data: { work, workCategories, development },location }) => {
+const GalleryIndexPage = ({ data: { work, workCategories, development }, location }) => {
   return (
     <>
       <Scroll callback={location} />

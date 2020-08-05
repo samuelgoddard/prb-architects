@@ -7,8 +7,31 @@ body {
 	}
 }
 
+.page-header {
+	@supports (-webkit-appearance:none) {
+		.os-android & {
+		min-height: calc(100vh - 56px);
+		}
+	}
+}
+
 html {
 	scroll-behavior: smooth;
+}
+
+.fixed-when-scroll {
+	transition: all ease 350ms;
+	@apply fixed !important;
+
+	transform: translateY(-3.65rem) !important;
+
+	@screen md {
+		@apply hidden;
+	}
+}
+
+[data-direction="up"] .fixed-when-scroll {
+	transform: translateY(0px) !important;
 }
 
 button {

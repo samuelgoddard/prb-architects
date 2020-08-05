@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect} from "react"
 import SEO from "../components/seo"
 import { motion } from "framer-motion"
 import { Link } from "gatsby"
@@ -64,7 +64,6 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
 
   return (
     <div>
-
       <SEO
         titleOverride={home.metaTags && home.metaTags.title ? home.metaTags.title : null }
         descriptionOverride={home.metaTags && home.metaTags.description ? home.metaTags.description : null }

@@ -73,8 +73,30 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
 
+            <nav className="relative z-10 w-full">
+              <ul className="flex flex-wrap">
+                <li className="block relative overflow-hidden">
+                  <Link className="text-lg md:text-2xl pr-px hover:line-through focus:line-through block relative overflow-hidden" to="/journal">
+                    <motion.div variants={revealInOut}>
+                      <div className="flex flex-wrap items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6" viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
+                        <span className="block ml-3">All Journal Entries</span>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </li>
+                <li className="ml-auto">
+                  <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-2xl px-px text-black hover:line-through focus:line-through">Menu</Link>
+                </li>
+              </ul>
+            </nav>
+            <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
+          </header>
+
+
+          <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute fixed-when-scroll top-0 left-0 right-0 h-0 md:hidden">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <li className="block relative overflow-hidden">
@@ -99,7 +121,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
         <div className="bg-white pt-2 w-full h-full">
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="p-4 md:p-6 pt-14 md:pt-22 mx-auto">
           
-        <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
+        <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
 
           <motion.div
             initial="initial"

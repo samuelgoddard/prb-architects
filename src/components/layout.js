@@ -153,7 +153,7 @@ function Layout({ children, location, location: { pathname } }) {
         </motion.div>
       </motion.div> */}
         
-      <div id="scroll-container" data-scroll-container>
+      <div id="scroll-container" className="content-inner" data-scroll-container>
         <AnimatePresence exitBeforeEnter>
           {children}
         </AnimatePresence>

@@ -6,6 +6,7 @@ const postcssNested = require("postcss-nested");
 
 module.exports = () => ({
   plugins: [
+    require('postcss-100vh-fix'),
     postcssImport({
       resolve: postcssResolver({
         extensions: [".css"],
@@ -14,6 +15,6 @@ module.exports = () => ({
     }),
     postcssPresetEnv({ stage: 2 }),
     tailwindcss("./tailwind.config.js"),
-    postcssNested({ unwrap: ["screen"] })
+    postcssNested({ unwrap: ["screen"] }),
   ],
 })

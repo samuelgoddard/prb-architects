@@ -35,7 +35,7 @@ h2 {
 
   @screen 3xl {
     font-size: 8.5vw;
-    line-height: 6.1vw;
+    line-height: 6.3vw;
   }
 }
 
@@ -66,6 +66,11 @@ h2 {
   @screen xl {
     font-size: 12.5vw;
     line-height: 5.5vw !important;
+  }
+
+  @screen 3xl {
+    font-size: 12.5vw;
+    line-height: 6.2vw !important;
   }
 }
 
