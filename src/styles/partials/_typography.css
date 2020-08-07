@@ -55,22 +55,23 @@ h2 {
 }
 
 .text-screen-display--large {
-  @apply text-7xl;
+  @apply text-7xl pt-5;
   line-height: 0.75;
 
   @screen md {
-    font-size: 12vw;
-    line-height: 5.2vw !important;
+    font-size: 15vw;
+    line-height: 0.5;
+    padding-top: 5.5vw;
   }
 
   @screen xl {
     font-size: 12.5vw;
-    line-height: 5.5vw !important;
+    padding-top: 4vw;
   }
 
   @screen 3xl {
     font-size: 12.5vw;
-    line-height: 6.2vw !important;
+    padding-top: 4vw;
   }
 }
 
@@ -113,7 +114,7 @@ h2 {
 
 .text-screen-studio-blurb {
   p {
-    @apply text-3xl;
+    @apply text-4xl;
 
     @screen md {
       font-size: 3.45vw;

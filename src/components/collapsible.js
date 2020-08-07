@@ -78,7 +78,8 @@ const Collapsible = ({ children, heading, index, textLarge, link }) => {
   }, [state])
 
   return (
-    <button className="Collapse w-full group strike" onClick={() => handleClick()}>
+    <div className="relative">
+    <button className="Collapse w-full group" onClick={() => handleClick()}>
       <div className="border-b border-current w-full py-1 md:py-3 xl:py-5 overflow-hidden">
         <div className="relative overflow-hidden py-3">
           <motion.div variants={reveal} className="flex flex-wrap items-start">
@@ -90,15 +91,16 @@ const Collapsible = ({ children, heading, index, textLarge, link }) => {
           </motion.div>
         </div>
       </div>
-      {children && (
-        <div className="Collapse_Content border-b border-current opacity-0" ref={el => (body = el)}>
-          { link && (
-            <Link to={link} className="absolute top-0 right-0 z-10 hover:line-through mt-10 md:mt-6 xl:mt-8 mr-8 md:mr-10 font-display md:text-lg">Go To Article</Link>
-          )}
-          <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24">{children}</div>
-        </div>
-      )}
     </button>
+    {children && (
+      <div className="Collapse_Content relative" ref={el => (body = el)}>
+        { link && (
+          <Link to={link} className="absolute top-0 right-0 z-10 hover:line-through pt-px md:pt-0 mt-3 md:mt-5 mr-0 font-display md:text-lg"><span className="mt-px block mr-px">Go to article</span></Link>
+        )}
+        <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24 border-b border-black">{children}</div>
+      </div>
+    )}
+    </div>
   )
 }
 

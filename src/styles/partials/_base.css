@@ -344,29 +344,6 @@ html.has-scroll-dragging {
 	}
 }
 
-
-.studio-arrow-container {
-	width: 110px;
-
-	@screen md {
-		width: 14vw;
-	}
-	@screen lg {
-		width: 11vw;
-	}
-}
-
-.studio-arrow {
-	width: 110px;
-
-	@screen md {
-		width: 14vw;
-	}
-	@screen lg {
-		width: 11vw;
-	}
-}
-
 .gallery-index-hidden-image {
 	width: 12vw;
 	max-width: 350px;
@@ -392,17 +369,13 @@ video {
 
 
 .team-member__inner {
-	@apply opacity-100 relative transition duration-300 ease-in-out;
+	@apply opacity-100 relative;
 
 	&:after {
 		content: " ";
 		mix-blend-mode: multiply;
-		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-transparent z-30 opacity-0 transition duration-300 ease-in-out;
+		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-transparent z-30 opacity-0;
 	}
-}
-
-.team-member__image {
-	transition: all ease-in-out 300ms;
 }
 
 .team-member--active {
@@ -415,7 +388,7 @@ video {
 	.team-member__inner {
 		&:after {
 			content: " ";
-			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-prbred z-10 opacity-100 transition duration-300 ease-in-out;
+			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-prbred z-10 opacity-100;
 		}
 	}
 }
@@ -433,7 +406,7 @@ video {
 		&:after {
 			content: " ";
 			mix-blend-mode: none;
-			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-black z-10 opacity-50 transition duration-300 ease-in-out;
+			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-black z-10 opacity-50;
 		}
 	}
 }

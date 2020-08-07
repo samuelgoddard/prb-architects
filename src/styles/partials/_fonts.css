@@ -1,33 +1,25 @@
 /* Founders Grotesk */
 @font-face {
   font-family: 'Founders Grotesk';
-  src: local("Founders Grotesk Regular"),
-        local("FoundersGrotesk-Regular"),
-        url('../fonts/FoundersGrotesk-Regular.woff') format('woff'),
+  src:  url('../fonts/FoundersGrotesk-Regular.woff') format('woff'),
         url('../fonts/FoundersGrotesk-Regular.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
-  unicode-range: U+000-5FF;
 }
 @font-face {
   font-family: 'Founders Grotesk';
-  src: local("Founders Grotesk Light"),
-        local("FoundersGrotesk-Light")
-        url('../fonts/FoundersGrotesk-Light.woff') format('woff'),
+  src:  url('../fonts/FoundersGrotesk-Light.woff') format('woff'),
         url('../fonts/FoundersGrotesk-Light.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
   font-weight: 300;
-  unicode-range: U+000-5FF;
 }
 
 /* Sohne */
 @font-face {
   font-family: 'Sohne';
-  src: local("Sohne"),
-        url('../fonts/Sohne-Buch.woff') format('woff'),
+  src:  url('../fonts/Sohne-Buch.woff') format('woff'),
         url('../fonts/Sohne-Buch.woff2') format('woff2');
   font-display: swap;
   font-style: normal;
-  unicode-range: U+000-5FF;
 }
