@@ -8,15 +8,15 @@ class Header extends React.Component {
         <nav className="relative z-10 w-full">
           <ul className="flex flex-wrap">
             <li>
-              <Link className="text-lg md:text-xl pr-px opacity-25" activeClassName="opacity-100 line-through" to="/">Gallery</Link>
+              <Link className="text-lg md:text-xl pr-px opacity-25" partiallyActive={true} activeClassName="opacity-100 line-through" to="/">Gallery</Link>
             </li>
             <li className="text-xl px-1 opacity-25">/</li>
             <li>
-              <Link className="text-lg md:text-xl px-px opacity-25" activeClassName="opacity-100 line-through" to="/gallery-index">Index</Link>
+              <Link className="text-lg md:text-xl px-px opacity-25" partiallyActive={true} activeClassName="opacity-100 line-through" to="/gallery-index">Index</Link>
             </li>
 
             <li className="ml-auto">
-              <Link to="/wayfinder" activeClassName="line-through" className="text-lg md:text-xl px-px text-black hover:line-through focus:line-through">Menu</Link>
+              <Link to="/wayfinder" partiallyActive={true} activeClassName="line-through" className="text-lg md:text-xl px-px text-black hover:line-through focus:line-through">Menu</Link>
             </li>
           </ul>
         </nav>
