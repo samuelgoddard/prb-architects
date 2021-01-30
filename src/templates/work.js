@@ -807,17 +807,6 @@ export const query = graphql`
           }
           text
         }
-        ... on DatoCmsCarousel {
-          id
-          model { apiKey }
-          images {
-            title
-            fluid(
-              imgixParams: {auto: "format", sharp:0, w: "850", h: "1300", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
-            }
-          }
-        }
         ... on DatoCmsFullText {
           id
           model { apiKey }
