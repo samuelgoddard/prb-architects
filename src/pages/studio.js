@@ -335,7 +335,7 @@ class StudioPage extends React.Component {
                     <div className="w-full relative overflow-hidden">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
-                        <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover studio-image" />
+                        <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
                       </div>
                     </motion.div>
                     </div>
@@ -388,9 +388,11 @@ class StudioPage extends React.Component {
                                 <span className="text-3xl md:text-3xl block w-full mb-0 pb-0 font-display leading-none pt-1">{ block.heading }</span>
                                 <span className="text-xs uppercase block mb-2">{ block.headingMeta }</span>
                               </div>
-                              <div className="w-8/12 md:w-8/12 xl:w-1/2 max-w-2xl 2xl:max-w-xl">
-                                <div className="leading-snug" dangerouslySetInnerHTML={{ __html: block.content }}></div>
-                              </div>
+                              { block.content && (
+                                <div className="w-8/12 md:w-8/12 xl:w-1/2 max-w-2xl 2xl:max-w-xl">
+                                  <div className="leading-snug" dangerouslySetInnerHTML={{ __html: block.content }}></div>
+                                </div>
+                              )}
                             </div>
                         }
                       </div>
@@ -630,7 +632,7 @@ export const query = graphql`
           }
           image {
             fluid(
-              imgixParams: {h: "1100", w: "800", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+              imgixParams: {w: "800", h: "1100", fit: "crop", crop: "faces", auto: "format" }) {
               ...GatsbyDatoCmsFluid
             }
           }
@@ -657,7 +659,7 @@ export const query = graphql`
       heroSupportingText
       heroImage {
         fluid(
-          imgixParams: {h: "1200", w: "1200", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
+          imgixParams: {h: "1100", w: "1600", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid
         }
       }
