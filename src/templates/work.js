@@ -395,9 +395,9 @@ class WorkTemplate extends React.Component {
                         </div>
                         <div className="w-full relative" data-scroll data-scroll-speed="0">
                           <div className="w-full relative overflow-hidden" data-scroll>
-                            <div data-scroll data-scroll-speed="0.75" className="overflow-hidden -m-10">
+                            <div className="overflow-hidden">
                               <div className="image-reveal-scroll">
-                                <Img fluid={ this.props.data.datoCmsWork.supportingImage.fluid } className="w-full max-w-full p-10"/>
+                                <Img fluid={ this.props.data.datoCmsWork.supportingImage.fluid } className="w-full max-w-full"/>
                               </div>
                             </div>
                           </div>
@@ -458,16 +458,18 @@ class WorkTemplate extends React.Component {
                             <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32 -mx-4 md:mx-0">
                               <figure className="mb-16 md:mb-32 lg:mb-48 hidden md:block">
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="-0.6" className="overflow-hidden -m-10">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-12"/>
+                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Exterior</span>
-                                  <span className="block ml-auto">(1—5)</span>
-                                </figcaption>
+                                { block.image1.title && (
+                                  <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
+                                    <span className="block">{block.image1.title}</span>
+                                    <span className="block ml-auto">(1—5)</span>
+                                  </figcaption>
+                                )}
                               </figure>
 
                               <div className="max-w-md ml-auto md:mr-32 lg:mr-40 p-4 md:p-0">
@@ -477,16 +479,18 @@ class WorkTemplate extends React.Component {
                             <div className="w-4/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-48 lg:pt-64 hidden md:block">
                               <figure className="md:pt-32">
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="0.75" className="overflow-hidden -m-12">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-12"/>
+                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
+                                { block.image2.title && (
                                 <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Interior</span>
+                                  <span className="block">{block.image2.title}</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
+                                )}
                               </figure>
                             </div>
 
@@ -497,10 +501,12 @@ class WorkTemplate extends React.Component {
                                     <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
                                   </div>
                                 </div>
+                                { block.image1.title && (
                                 <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Interior</span>
+                                  <span className="block">{block.image1.title}</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
+                                )}
                               </figure>
                             </div>
                           </div>
@@ -509,18 +515,20 @@ class WorkTemplate extends React.Component {
                         block.model.apiKey === 'content_right_align' && 
                           <div className="w-full flex flex-wrap mb-12 md:mb-32 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-4/12 md:pr-16 lg:pr-24 xl:pr-32 hidden md:block -mx-4 md:mx-0">
-                              <figure className="mb-16 md:mb-32 lg:mb-48">
+                              <figure className="mb-16 md:mb-32 lg:mb-48"> 
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="0.75" className="overflow-hidden -m-12">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-12"/>
+                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Interior</span>
-                                  <span className="block ml-auto">(2—5)</span>
-                                </figcaption>
+                                { block.image1.title && (
+                                  <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
+                                    <span className="block">{ block.image1.title }</span>
+                                    <span className="block ml-auto">(2—5)</span>
+                                  </figcaption>
+                                )}
                               </figure>
                             </div>
                             <div className="w-8/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-16">
@@ -530,32 +538,36 @@ class WorkTemplate extends React.Component {
 
                               <figure className="md:pt-32 hidden md:block">
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="-0.6" className="overflow-hidden -m-10">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-12"/>
+                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
+                                { block.image2.title && (
                                 <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Exterior</span>
+                                  <span className="block">{ block.image2.title}</span>
                                   <span className="block ml-auto">(1—5)</span>
                                 </figcaption>
+                                )}
                               </figure>
                             </div>
 
                             <div className="w-full block md:hidden">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="-0.6" className="overflow-hidden -m-10">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover py-8 md:p-12"/>
+                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
+                                { block.image2.title && (
                                 <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Interior</span>
+                                  <span className="block">{block.image2.title}</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
+                                )}
                               </figure>
                             </div>
                           </div>
@@ -584,16 +596,18 @@ class WorkTemplate extends React.Component {
                             <div className="w-full md:w-9/12 mx-auto">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="0.65" className="overflow-hidden -m-10">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover py-10 md:py-5"/>
+                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Interior</span>
-                                  <span className="block ml-auto">(2—5)</span>
-                                </figcaption>
+                                { block.image.title && (
+                                  <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
+                                    <span className="block">{block.image.title}</span>
+                                    <span className="block ml-auto">(2—5)</span>
+                                  </figcaption>
+                                )}
                               </figure>
                             </div>
                           </div>
@@ -604,16 +618,18 @@ class WorkTemplate extends React.Component {
                             <div className="w-10/12 md:w-5/12 mx-auto px-4 md:px-6">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
-                                  <div data-scroll data-scroll-speed="-0.7" className="overflow-hidden -m-10">
+                                  <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover p-12"/>
+                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
+                                { block.image.title && (
                                 <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">Interior</span>
+                                  <span className="block">{block.image.title}</span>
                                   <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
+                                )}
                               </figure>
                             </div>
                           </div>
@@ -754,13 +770,13 @@ export const query = graphql`
       }
       featuredImage {
         fluid(
-          imgixParams: {auto: "format", sharp:0, h: "1000", w: "800", fit: "fillmax", crop: "center" }) {
+          imgixParams: {auto: "format", h: "1700", w: "1325", fit: "fillmax", crop: "center" }) {
           ...GatsbyDatoCmsFluid
         }
       }
       supportingImage {
         fluid(
-          imgixParams: {auto: "format", sharp:0, h: "800", w: "800", fit: "crop", crop: "center"}) {
+          imgixParams: {auto: "format", sharp:0, h: "1000", w: "1000", fit: "crop", crop: "center"}) {
           ...GatsbyDatoCmsFluid
         }
       }
@@ -778,15 +794,17 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "850", w: "1300", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
+            title
           }
           image2 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "1300", w: "850", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1600", w: "1100", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
+            title
           }
           text
         }
@@ -798,12 +816,14 @@ export const query = graphql`
               imgixParams: {auto: "format", sharp:0, h: "1300", w: "850", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
+            title
           }
           image2 {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "850", w: "1300", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
+            title
           }
           text
         }
@@ -817,9 +837,10 @@ export const query = graphql`
           model { apiKey }
           image {
             fluid(
-              imgixParams: {auto: "format", sharp:0, h: "800", w: "1300", fit: "crop", crop: "faces, center"}) {
+              imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
+            title
           }
         }
         ... on DatoCmsImage50 {
@@ -830,6 +851,7 @@ export const query = graphql`
               imgixParams: {auto: "format", sharp:0, h: "1000", w: "750", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
+            title
           }
         }
       }
