@@ -81,7 +81,7 @@ const NotFoundPage = ({ data: { studio }, location }) => {
               </div>
 
               <ul className="flex flex-wrap border-t border-black border-b invert-select">
-                <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2020</li>
+                <li className="lg:text-lg xl:text-2xl pl-0 py-2 md:py-3 px-2 block invert-select">&copy; 2021</li>
 
                 <li className="ml-auto block border-l border-black invert-select">
                   <a className="lg:text-lg xl:text-2xl py-2 md:py-3 px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" href={`mailto:${ studio.studioEmailAddress }`} target="_blank" rel="noopener noreferrer">{ studio.studioEmailAddress }</a>

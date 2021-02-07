@@ -10,13 +10,13 @@ import LocomotiveScroll from "locomotive-scroll"
 import { scroll } from "../theme"
 
 const heroImage = {
-	initial: { scale: 1 },
+	initial: { scale: 1.1 },
 	enter: { 
-    scale: 1.1,
-    transition: { duration: 3.25, ease: [0.25, 1, 0.5, 1] }
+    scale: 1,
+    transition: { duration: 1.5, ease: [0.25, 1, 0.5, 1] }
   },
 	exit: {
-    scale: 1.065,
+    scale: 1.1,
 		transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] }
 	}
 }
@@ -96,7 +96,7 @@ class WorkTemplate extends React.Component {
       startAt: {
         scale: 1,
       },
-      scale: 0.95,
+      scale: 1.05,
       paused: true
     });
 
@@ -289,7 +289,9 @@ class WorkTemplate extends React.Component {
                     <div className="w-auto mb-8 md:mb-0 absolute top-0 md:top-0 left-0 mr-0 hidden md:block ml-1 overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                       <div className="relative overflow-hidden">
                         <motion.div variants={revealArrow}>
-                          <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -ml-3 xl:-ml-5 transform rotate rotate-45 -mt-1" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+
+                          <svg xmlns="http://www.w3.org/2000/svg" className="w-24 md:w-32 2xl:w-40 3xl:w-40 -mb-8 -mr-8" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="currentColor" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                          {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 -ml-3 xl:-ml-5 transform rotate rotate-45 -mt-1" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg> */}
                         </motion.div>
                       </div>
                     </div>
@@ -417,7 +419,7 @@ class WorkTemplate extends React.Component {
                                 <div className="w-full">
                                   <div className="flex flex-wrap items-center border-b border-current w-full pt-4 py-3 md:pt-5 md:py-6 xl:py-8">
                                     <span className="block text-xs mr-3 w-auto text-left mb-2 md:mb-0">0{ i + 1 }</span>
-                                    <span className={`block text-xl md:text-2xl text-left font-display leading-tight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small w-9/12 md:w-auto`}>{ block.heading }</span>
+                                    <span className={`block text-xl md:text-2xl text-left font-display leading-tight mb-0 pb-0 md:-mb-3 strike__inner strike__inner--small flex-1 md:w-auto`}>{ block.heading }</span>
                                   </div>
                                 </div>
                               }
@@ -644,7 +646,7 @@ class WorkTemplate extends React.Component {
               <section className="pb-4 pt-12 md:pb-14 md:pt-20 xl:pb-20 xl:pt-24">
                 <div className="w-full md:w-9/12 mx-auto px-4 md:px-5 mb-0 md:mb-24 lg:mb-32 3xl:mb-40">
                   <div className="max-w-sm pr-12 md:pr-0 md:max-w-lg lg:max-w-2xl p-3 md:p-0 -mx-4 md:mx-0 mb-2 md:mb-8">
-                    <span className="block font-display text-4xl md:text-6xl leading-none pr-1">Need help with a<span className="block">{ this.props.data.datoCmsWork.category[0].title.toLowerCase() } project?</span>Get in touch.</span>
+                    <span className="block font-display text-4xl md:text-6xl leading-slightnegative pr-1">Need help with a<span className="block">{ this.props.data.datoCmsWork.category[0].title.toLowerCase() } project?</span>Get in touch.</span>
                   </div>
 
                   <div className="flex flex-wrap border-t border-b border-black w-auto pr-12 md:pr-0 md:w-full">
@@ -683,13 +685,26 @@ class WorkTemplate extends React.Component {
                                     <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
                                     <span className="block leading-none invert-select">{ node.projectCode }</span>
                                   </span>
-                                  <span className="block text-xl md:text-2xl xl:text-3xl font-display leading-none mt-2 group-hover:line-through invert-select">{ node.title }</span>
+                                  <span className="block text-xl md:text-2xl xl:text-3xl font-display mt-2 group-hover:line-through invert-select leading-none">{ node.title }</span>
                                   <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-2" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                                 </Link>
+                              )}
+
+                              {this.props.data.relatedWork.edges.length == 1 && (
+                                <span className="flex flex-wrap items-center border-b border-black py-3 md:py-4 xl:py-5">
+                                  {/* <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
+                                    <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
+                                    <span className="block leading-none invert-select">{ node.projectCode }</span>
+                                  </span> */}
+                                  <span className="block text-xl md:text-2xl xl:text-3xl font-display mt-2 group-hover:line-through invert-select leading-none">Coming Soon</span>
+                                  <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-2" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
+                                </span>
                               )}
                             </div>
                           )
                         })}
+                        
+                        
                       </div>
                     </div>
                     </div>
@@ -709,7 +724,7 @@ class WorkTemplate extends React.Component {
                   <ul className="flex flex-wrap border-t border-black border-b">
                     <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 md:pr-3 lg:pr-4 xl:pr-5 block xl:border-r border-black hidden md:block invert-select">Architecture + Conservation</li>
                       
-                    <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 lg:px-3 lg:px-4 xl:px-5 xl:pr-6 hidden xl:block invert-select">&copy; 2020</li>
+                    <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 lg:px-3 lg:px-4 xl:px-5 xl:pr-6 hidden xl:block invert-select">&copy; 2021</li>
                     
                     <li className="block md:border-l border-black invert-select">
                       <Link className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 md:px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" to={`/privacy`} target="_blank" rel="noopener noreferrer">Privacy</Link>
@@ -770,12 +785,14 @@ export const query = graphql`
       }
       featuredImage {
         fluid(
+          maxWidth: 1325,
           imgixParams: {auto: "format", h: "1700", w: "1325", fit: "fillmax", crop: "center" }) {
           ...GatsbyDatoCmsFluid
         }
       }
       supportingImage {
         fluid(
+          maxWidth: 1000,
           imgixParams: {auto: "format", sharp:0, h: "1000", w: "1000", fit: "crop", crop: "center"}) {
           ...GatsbyDatoCmsFluid
         }
@@ -794,6 +811,7 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
+              maxWidth: 1600,
               imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
@@ -801,6 +819,7 @@ export const query = graphql`
           }
           image2 {
             fluid(
+              maxWidth: 1100,
               imgixParams: {auto: "format", sharp:0, h: "1600", w: "1100", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
@@ -813,6 +832,7 @@ export const query = graphql`
           model { apiKey }
           image1 {
             fluid(
+              maxWidth: 1300,
               imgixParams: {auto: "format", sharp:0, h: "1300", w: "850", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
@@ -820,6 +840,7 @@ export const query = graphql`
           }
           image2 {
             fluid(
+              maxWidth: 1600,
               imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
@@ -837,6 +858,7 @@ export const query = graphql`
           model { apiKey }
           image {
             fluid(
+              maxWidth: 1600,
               imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
               ...GatsbyDatoCmsFluid
             }
@@ -864,6 +886,16 @@ export const query = graphql`
       studioEmailAddress
       studioTelephone
       heroSupportingText
+    }
+    relatedWorkFallback: allDatoCmsWork(limit: 3) {
+      edges {
+        node {
+          id
+          title
+          slug
+          projectCode
+        }
+      }
     }
     relatedWork: allDatoCmsWork(filter: {category: {elemMatch: {slug: {eq: $cat}}}}) {
       edges {

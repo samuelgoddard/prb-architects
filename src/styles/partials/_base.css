@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	-webkit-overflow-scrolling: touch;
 	
 	@screen lg {
 		overflow: hidden; /* Hide scrollbars */
@@ -72,6 +73,10 @@ button {
 
 .image-reveal-scroll {
 	/* margin: -30px; */
+}
+
+.image-reveal-scroll--new {
+	margin: -30px;
 }
 
 .image-transform-center {
@@ -347,6 +352,10 @@ html.has-scroll-dragging {
 .gallery-index-hidden-image {
 	width: 12vw;
 	max-width: 350px;
+
+	&:hover {
+		@apply hidden !important;
+	}
 }
 .home-slider {
 	.flickity-viewport {
@@ -377,7 +386,10 @@ video {
 		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-transparent z-30 opacity-0;
 	}
 }
-
+.team-member__image-gradient {
+	background: rgb(4,4,4);
+	background: linear-gradient(0deg, rgba(4,4,4,0.8) 0%, rgba(3,1,1,0) 60%);
+}
 .team-member--active {
 	.team-member__image {
 		-webkit-filter: grayscale(100%);

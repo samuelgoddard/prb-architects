@@ -140,7 +140,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
               </div>
             </div>
 
-            <motion.div 
+            {/* <motion.div 
               className="z-10 ml-auto text-right mt-auto w-1/2 md:w-auto p-4 pb-4 md:p-6 md:pt-12 absolute bottom-0 right-0 md:relative"
               initial="initial"
               animate="enter"
@@ -186,7 +186,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
                   })}
                 </div>
               </motion.nav>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </Div100vh>
       </motion.div>
@@ -227,19 +227,25 @@ export const query = graphql`
           }
           featuredImageSmall: teaserImage {
             url
-            fluid(imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
+            fluid(
+              maxWidth: 1600,
+              imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid
             }
           }
           featuredImageBig: teaserImage {
             url
-            fluid(imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
+            fluid(
+              maxWidth: 1600,
+              imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid
             }
           }
           featuredImageMobile: featuredImage {
             url
-            fluid(imgixParams: { auto: "compress", sharp: 10, w: "1100", h: "1600", fit: "fillmax", crop: "center" }) {
+            fluid(
+              maxWidth: 1100,
+              imgixParams: { auto: "compress", sharp: 10, w: "1100", h: "1600", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid
             }
           }

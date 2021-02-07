@@ -100,15 +100,23 @@ h2 {
 }
 
 .wayfinder-item {
-  @apply text-6xl; 
+  @apply text-6xl;
 
   @screen md {
-    font-size: 12vw;
+    font-size: 11.2vw;
     line-height: 7.2vw;
   }
   @screen lg {
-    font-size: 7.5vw;
-    line-height: 4.7vw;
+    font-size: 10vw;
+    line-height: 6.7vw;
+  }
+  @screen xl {
+    font-size: 9.2vw;
+    line-height: 5.5vw;
+  }
+  @screen xl {
+    font-size: 8.5vw;
+    line-height: 5.3vw;
   }
 }
 
@@ -146,11 +154,11 @@ button {
 
 ::selection { 
   background-color: rgba(219, 72, 30, .99);
-  color: rgba(29, 29, 29, .99);
+  color: rgba(0, 0, 0, 1);
  }
 
  .invert-select::selection { 
-  background-color: rgba(29, 29, 29, .99);
+  background-color: rgba(0, 0, 0, 1);
   color: rgba(219, 72, 30, .99);
  }
 

@@ -139,12 +139,12 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                 return (
                   <div className="overflow-hidden" key={i}>
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i} link={`/journal/${node.slug}`}>
-                      <div className={ node.gallery.length > 0 ? `block leading-tight mb-6 w-10/12 md:w-2/3 xl:w-7/12` : `block leading-tight mb-0 w-10/12 md:w-2/3 xl:w-7/12`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
+                      <div className={ node.gallery.length > 0 ? `md:ml-16 block leading-tight mb-6 w-10/12 md:w-2/3 xl:w-5/12 lg:text-lg` : `md:ml-16 block leading-tight mb-0 w-10/12 md:w-2/3 xl:w-5/12 lg:text-lg`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
-                      <div className="flex flex-wrap -mx-3 overflow-hidden">
+                      <div className="flex flex-wrap -mx-3 overflow-hidden md:ml-12">
                         {node.gallery.map(({ fluid }, i) => {
                           return(
-                            <div className="w-9/12 md:w-3/12 px-3 mb-5" key={i}>
+                            <div className="w-9/12 md:w-3/12 px-3 ml-1 mb-5" key={i}>
                               <Img fluid={ fluid } className="w-full object-cover"/>
                             </div>
                           )
@@ -172,20 +172,20 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-64 md:ml-auto transform -rotate-90 md:rotate-90 md:absolute top-0 left-0 md:left-auto md:top-auto md:bottom-0 md:right-0 md:m-6 md:mr-0" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
               </div>
               <div className="w-full md:mb-8 lg:mb-3">
-                <span className="text-3xl md:text-5xl xl:text-6xl block font-display leading-none mb-32 md:mb-0 lg:mb-6 lg:pl-8 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
+                <span className="text-3xl md:text-5xl xl:text-6xl block font-display leading-slightnegative mb-32 md:mb-0 lg:mb-6 lg:pl-8 invert-select">We’re social, so if you’d<br/>like to talk about your<br/>project, get in touch.</span>
               </div>
 
-              <div className="hidden md:flex flex-wrap border-t border-b border-black w-full md:pr-0 md:max-w-xl lg:max-w-xl lg:ml-8 mb-16 md:mb-40 lg:mb-40">
-                <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block py-2 lg:py-3 pr-3 lg:pr-4 leading-tight hover:line-through focus:line-through lg:mb-0 border-r border-black">Email</a>
+              <div className="hidden md:flex flex-wrap border-t border-b border-black w-full md:pr-0 md:max-w-xl lg:max-w-3xl lg:ml-8 mb-16 md:mb-40 lg:mb-40">
+                <a href={`mailto:${ studio.studioEmailAddress }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block py-2 lg:py-3 pr-3 lg:pr-4 leading-tight hover:line-through focus:line-through hover:text-white focus:text-white lg:mb-0 border-r border-black">Email</a>
 
-                <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block pl-2 lg:pl-3 px-3 lg:px-4 py-2 lg:py-3 leading-tight hover:line-through focus:line-through lg:mb-0 border-r border-black">
+                <a href={`tel:${ studio.studioTelephone }`} rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block pl-2 lg:pl-3 px-3 lg:px-4 py-2 lg:py-3 leading-tight hover:line-through focus:line-through hover:text-white focus:text-white lg:mb-0 border-r border-black">
                   <span className="hidden md:block">{ studio.studioTelephone }</span>
                   <span className="block md:hidden">Tel</span>
                 </a>
 
-                <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through py-2 lg:py-3 pl-3 lg:pl-4 lg:pr-16 pr-8">Find us</a>
+                <a href="https://www.google.com/maps/place/Player+Roberts+Bell+Architects/@52.9888236,-0.9303382,17z/data=!3m1!4b1!4m5!3m4!1s0x4879c94b2ea00ee3:0xf9402e81b6228e50!8m2!3d52.9888236!4d-0.9281442" rel="noopener noreferrer" target="_blank" className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through hover:text-white focus:text-white py-2 lg:py-3 pl-3 lg:pl-4 lg:pr-16 pr-8">Find us</a>
 
-                <Link to={`/studio`} className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through pl-3 lg:pl-4 py-2 lg:py-3 ml-auto border-l border-black">Studio</Link>
+                <Link to={`/studio`} className="text-sm sm:text-lg md:text-xl block leading-tight hover:line-through focus:line-through hover:text-white focus:text-white pl-3 lg:pl-4 py-2 lg:py-3 ml-auto border-l border-black">Studio</Link>
               </div>
             </div>
 
@@ -202,7 +202,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
 
               <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 md:pr-3 lg:pr-4 xl:pr-5 block xl:border-r border-black hidden md:block invert-select">Architecture + Conservation</li>
                 
-              <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 lg:px-3 lg:px-4 xl:px-5 xl:pr-6 hidden xl:block invert-select">&copy; 2020</li>
+              <li className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 pr-2 lg:px-3 lg:px-4 xl:px-5 xl:pr-6 hidden xl:block invert-select">&copy; 2021</li>
               
               <li className="block md:border-l border-black invert-select">
                 <Link className="text-sm lg:text-lg xl:text-xl py-2 md:py-3 md:px-2 lg:px-4 xl:px-5 invert-select block hover:text-white focus:text-white hover:line-through focus:line-through" to={`/privacy`} target="_blank" rel="noopener noreferrer">Privacy</Link>

@@ -83,7 +83,7 @@ const Collapsible = ({ children, heading, index, textLarge, link }) => {
       <div className="border-b border-current w-full py-1 md:py-3 xl:py-5 overflow-hidden">
         <div className="relative overflow-hidden py-3">
           <motion.div variants={reveal} className="flex flex-wrap items-start">
-            <span className={`block text-xs mr-3 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}>{ index }</span>
+            <span className={`block text-xs mr-4 w-full md:w-auto text-left mb-2 md:mb-0 md:mt-px xl:mt-1`}>{ index }</span>
             <span className={textLarge ? `block text-xl md:text-2xl xl:text-3xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-3 hover:line-through w-7/12 md:w-7/12 lg:w-8/12` : `block text-xl md:text-2xl text-left font-display leading-extratight mb-0 pb-0 md:-mb-2 w-7/12 md:w-7/12 lg:w-8/12 hover:line-through`}>{ heading }</span>
             <span className="block ml-auto pl-4 transform origin-center rotate-0">
               <svg xmlns="http://www.w3.org/2000/svg" className={state.clicked ? `w-4 md:w-6 transform rotate-90 transition duration-500 ease-in-out` : `transition duration-500 ease-in-out w-4 md:w-6 transform -rotate-90`} viewBox="0 0 27.197 23.217"><g data-name="Group 116" fill="none" stroke="currentColor" strokeWidth="2"><path data-name="Path 1" d="M12.314 22.51l-10.9-10.9 10.9-10.9"/><path data-name="Path 2" d="M1.414 11.609h25.783"/></g></svg>
@@ -95,7 +95,7 @@ const Collapsible = ({ children, heading, index, textLarge, link }) => {
     {children && (
       <div className="Collapse_Content relative" ref={el => (body = el)}>
         { link && (
-          <Link to={link} className="absolute top-0 right-0 z-10 hover:line-through pt-px md:pt-0 mt-3 md:mt-5 mr-0 font-display md:text-lg"><span className="mt-px block mr-px">Go to article</span></Link>
+          <Link to={link} className="absolute top-0 right-0 z-10 hover:line-through pt-px md:pt-0 mt-3 md:mt-5 mr-0 font-display md:text-lg lg:text-2xl"><span className="mt-px block mr-px">Go to article</span></Link>
         )}
         <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24 border-b border-black">{children}</div>
       </div>

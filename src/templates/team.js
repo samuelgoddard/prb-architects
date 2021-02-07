@@ -67,7 +67,7 @@ const PersonTemplate = ({ data: { person }, location }) => {
                   </div>
                   <div className="w-full lg:flex-1 relative z-10">
                     <div className="lg:w-10/12 xl:w-8/12 lg:pl-8">
-                      <div className="leading-tight content" dangerouslySetInnerHTML={{ __html: person.profileText }}></div>
+                      <div className="content lg:text-lg leading-snug max-w-md" dangerouslySetInnerHTML={{ __html: person.profileText }}></div>
                     </div>
                   </div>
 
