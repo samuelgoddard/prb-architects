@@ -335,7 +335,7 @@ class StudioPage extends React.Component {
                     <div className="w-full relative overflow-hidden">
                     <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
-                        <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-top studio-image" />
+                        <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
                       </div>
                     </motion.div>
                     </div>
