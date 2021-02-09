@@ -232,7 +232,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1600,
               imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           featuredImageBig: teaserImage {
@@ -240,7 +240,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1600,
               imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           featuredImageMobile: featuredImage {
@@ -248,7 +248,7 @@ export const query = graphql`
             fluid(
               maxWidth: 400,
               imgixParams: { auto: "compress", sharp: 10, w: "400", h: "800", fit: "fillmax", crop: "center" }) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           title

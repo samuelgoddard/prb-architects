@@ -145,7 +145,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                         {node.gallery.map(({ fluid }, i) => {
                           return(
                             <div className="w-9/12 md:w-3/12 px-3 ml-1 mb-5" key={i}>
-                              <Img fluid={ fluid } className="w-full object-cover"/>
+                              <Img backgroundColor={ '#dc481e'} fluid={ fluid } className="w-full object-cover"/>
                             </div>
                           )
                         })}
@@ -247,7 +247,7 @@ export const query = graphql`
           content
           gallery {
             fluid(imgixParams: {h: "900", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }    
           }
           slug

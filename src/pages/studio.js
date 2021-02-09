@@ -352,7 +352,7 @@ class StudioPage extends React.Component {
                       <div className="w-full relative overflow-hidden mb-5 md:mb-0">
                       <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                         <div className="h-full hero-image-transform">
-                          <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
+                          <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
                         </div>
                       </motion.div>
                       </div>
@@ -380,7 +380,7 @@ class StudioPage extends React.Component {
                       <div className="w-full relative overflow-hidden" data-scroll>
                         <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
                           <div className="image-reveal-scroll">
-                            <Img fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                            <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
                           </div>
                         </div>
                       </div>
@@ -398,7 +398,7 @@ class StudioPage extends React.Component {
                       <div className="w-full relative overflow-hidden" data-scroll>
                         <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
                           <div className="image-reveal-scroll">
-                            <Img fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                            <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
                           </div>
                         </div>
                       </div>
@@ -475,7 +475,7 @@ class StudioPage extends React.Component {
                               <div className="w-full relative overflow-hidden team-member__inner" data-scroll>
                                 <div data-scroll data-scroll-speed="0" className="overflow-hidden">
                                   <div className="image-reveal-scroll relative">
-                                    <Img fluid={ node.image.fluid } className="w-full object-cover relative z-20 team-member__image"/>
+                                    <Img backgroundColor={ '#dc481e'} fluid={ node.image.fluid } className="w-full object-cover relative z-20 team-member__image"/>
                                     <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
 
                                     <div className="absolute bottom-0 left-0 right-0 w-full h-64 z-20 team-member__image-gradient"></div>
@@ -509,7 +509,7 @@ class StudioPage extends React.Component {
                               <div className="w-full relative overflow-hidden team-member__inner" data-scroll>
                                 <div data-scroll data-scroll-speed="0" className="overflow-hidden">
                                   <div className="image-reveal-scroll relative">
-                                    <Img fluid={ node.image.fluid } className="w-full object-cover relative z-20 team-member__image"/>
+                                    <Img backgroundColor={ '#dc481e'} fluid={ node.image.fluid } className="w-full object-cover relative z-20 team-member__image"/>
                                     {/* <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div> */}
 
                                     <div className="absolute bottom-0 left-0 right-0 w-full h-64 z-20 team-member__image-gradient"></div>
@@ -539,7 +539,7 @@ class StudioPage extends React.Component {
               <div className="w-full relative overflow-hidden" data-scroll>
                 <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
                   <div className="image-reveal-scroll">
-                    <Img fluid={ this.props.data.studio.teamImage.fluid } className="w-full max-w-full object-cover"/>
+                    <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.teamImage.fluid } className="w-full max-w-full object-cover"/>
                   </div>
                 </div>
               </div>
@@ -551,7 +551,7 @@ class StudioPage extends React.Component {
               <div className="w-full relative overflow-hidden">
                 <div>
                   <div className="">
-                    <Img fluid={ this.props.data.studio.teamImageMobile.fluid } className="w-full max-w-full object-cover"/>
+                    <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.teamImageMobile.fluid } className="w-full max-w-full object-cover"/>
                   </div>
                 </div>
               </div>
@@ -572,7 +572,7 @@ class StudioPage extends React.Component {
                     <div className="w-full relative overflow-hidden" data-scroll>
                       <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
                         <div className="image-reveal-scroll">
-                          <Img fluid={ this.props.data.studio.sectorsSupportingImage.fluid } className="w-full max-w-full object-cover"/>
+                          <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.sectorsSupportingImage.fluid } className="w-full max-w-full object-cover"/>
                         </div>
                       </div>
                     </div>
@@ -733,7 +733,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1000,
               imgixParams: {w: "1000", h: "1500", fit: "crop", crop: "faces", auto: "format" }) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }
@@ -761,7 +761,7 @@ export const query = graphql`
         fluid(
           maxWidth: 1600,
           imgixParams: {h: "1100", w: "1600", fit: "crop"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       introText
@@ -769,7 +769,7 @@ export const query = graphql`
         fluid(
           maxWidth: 1200,
           imgixParams: {h: "1200", w: "1200", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       expertise {
@@ -796,14 +796,14 @@ export const query = graphql`
         fluid(
           maxWidth: 1600,
           imgixParams: {h: "950", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       teamImageMobile: teamImage {
         fluid(
           maxWidth: 1600,
           imgixParams: {h: "1200", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       teamIntro
@@ -819,7 +819,7 @@ export const query = graphql`
         fluid(
           maxWidth: 900,
           imgixParams: {h: "1200", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
     }

@@ -165,7 +165,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                   {entry.gallery.map(({ fluid }, i) => {
                     return(
                       <motion.div variants={fade} className="w-1/2 md:w-4/12 px-3 mb-5" key={i}>
-                        <Img fluid={ fluid } className="w-full object-cover"/>
+                        <Img backgroundColor={ '#dc481e'} fluid={ fluid } className="w-full object-cover"/>
                       </motion.div>
                     )
                   })}
@@ -204,7 +204,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                   {entry.gallery.map(({ fluid }, i) => {
                     return(
                       <motion.div variants={fade} className={ entry.gallery.length === 2 ? `w-1/2 md:w-1/2 lg:w-1/2 px-3 mb-5` : `w-full px-3 mb-5` } key={i}>
-                        <Img fluid={ fluid } className="w-full object-cover"/>
+                        <Img backgroundColor={ '#dc481e'} fluid={ fluid } className="w-full object-cover"/>
                       </motion.div>
                     )
                   })}
@@ -354,7 +354,7 @@ export const query = graphql`
         fluid(
           maxWidth: 950,
           imgixParams: {auto: "format", sharp:10, h: "950", w: "950", fit: "crop", crop: "faces, center"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       slug
@@ -369,7 +369,7 @@ export const query = graphql`
             fluid(
               maxWidth: 900,
               imgixParams: {h: "900", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }    
           }
           slug

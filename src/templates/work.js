@@ -136,7 +136,12 @@ class WorkTemplate extends React.Component {
     const splitTitle = this.props.data.datoCmsWork.title.match(/\b(\w+)/g);
 
     const metaArray = [];
-    if (this.props.data.datoCmsWork.projectCode) { metaArray.push(`PRB ${this.props.data.datoCmsWork.projectCode}`) }
+    if (this.props.data.datoCmsWork.projectCode) { metaArray.push(`
+    <div class="ml-auto flex flex-wrap items-center mb-0">
+      <span class="text-2xs mt-1 mr-1">PRB</span>
+      <span class="block">${this.props.data.datoCmsWork.projectCode}</span>
+    </div>
+    `) }
     if (this.props.data.datoCmsWork.metaSize) { metaArray.push(this.props.data.datoCmsWork.metaSize) }
     if (this.props.data.datoCmsWork.category[0].title) { metaArray.push(this.props.data.datoCmsWork.category[0].title) }
     if (this.props.data.datoCmsWork.metaCost) { metaArray.push(this.props.data.datoCmsWork.metaCost) }
@@ -216,7 +221,7 @@ class WorkTemplate extends React.Component {
                 <div className="w-full relative overflow-hidden h-screen-inner hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                   <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                     <div className="h-full hero-image-transform">
-                      <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover mb-0 pb-0" />
+                      <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover mb-0 pb-0" />
                     </div>
                   </motion.div>
                 </div>
@@ -268,7 +273,7 @@ class WorkTemplate extends React.Component {
                           <motion.div variants={reveal}>
                             <div className="flex flex-wrap items-center justify-center ">
                               
-                              <span className="block text-lg md:text-2xl lg:text-3xl xl:text-4xl leading text-center">{ this.props.data.datoCmsWork.metaLocation }</span>
+                              <span className="block text-lg md:text-lg lg:text-2xl xl:text-3xl leading text-center">{ this.props.data.datoCmsWork.metaLocation }</span>
                             </div>
                           </motion.div>
                         </div>
@@ -321,7 +326,7 @@ class WorkTemplate extends React.Component {
                           return (
                             <span className={ dynamicClassName } key={i}>
                               <motion.div variants={reveal}>
-                                { block }
+                                <div dangerouslySetInnerHTML={{ __html: block }}></div>
                               </motion.div>
                             </span>
                           )
@@ -332,7 +337,7 @@ class WorkTemplate extends React.Component {
                     <div className="w-full h-full overflow-hidden mb-4 md:mb-0 block md:hidden">
                       <motion.div className="h-full w-full transform image-transform-center">
                         <div className="h-full hero-image-transform">
-                          <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover object-center" />
+                          <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover object-center" />
                         </div>
                       </motion.div>
                     </div>
@@ -365,7 +370,7 @@ class WorkTemplate extends React.Component {
                           return (
                             <span className={ dynamicClassName } key={i}>
                               <motion.div variants={reveal} className="mb-px pb-px">
-                                { block }
+                                <div dangerouslySetInnerHTML={{ __html: block }}></div>
                               </motion.div>
                             </span>
                           )
@@ -396,7 +401,7 @@ class WorkTemplate extends React.Component {
                   <div className="w-full flex flex-wrap items-end pr-4 pl-4 md:p-6">
                     <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 text-white">
                       <div className="max-w-xs flex-wrap hidden md:flex">
-                        <div className="ml-auto flex flex-wrap items-center mb-1">
+                        <div className="ml-auto flex flex-wrap items-center mb-0">
                           <span className="text-2xs mt-1 mr-1">PRB</span>
                           <span className="block">{ this.props.data.datoCmsWork.projectCode }</span>
                         </div>
@@ -404,7 +409,7 @@ class WorkTemplate extends React.Component {
                           <div className="w-full relative overflow-hidden" data-scroll>
                             <div className="overflow-hidden">
                               <div className="image-reveal-scroll">
-                                <Img fluid={ this.props.data.datoCmsWork.supportingImage.fluid } className="w-full max-w-full"/>
+                                <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.supportingImage.fluid } className="w-full max-w-full"/>
                               </div>
                             </div>
                           </div>
@@ -467,14 +472,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image1.title && (
-                                  <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                    <span className="block">{block.image1.title}</span>
-                                    <span className="block ml-auto">(1—5)</span>
+                                  <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                    <span className="block leading-tight">{block.image1.title}</span>
+                                    <span className="block ml-auto">
+                                      <div className="ml-auto flex flex-wrap items-center mb-0">
+                                        <span className="text-2xs mt-1 mr-1">PRB</span>
+                                        <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                      </div>
+                                    </span>
                                   </figcaption>
                                 )}
                               </figure>
@@ -488,14 +498,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image2.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{block.image2.title}</span>
-                                  <span className="block ml-auto">(2—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{block.image2.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-0 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -505,13 +520,18 @@ class WorkTemplate extends React.Component {
                               <figure className="pt-12">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
-                                    <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
+                                    <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
                                   </div>
                                 </div>
                                 { block.image1.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{block.image1.title}</span>
-                                  <span className="block ml-auto">(2—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{block.image1.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-0 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -521,13 +541,18 @@ class WorkTemplate extends React.Component {
                               <figure className="pt-12">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
-                                    <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
+                                    <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
                                   </div>
                                 </div>
                                 { block.image2.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{block.image2.title}</span>
-                                  <span className="block ml-auto">(2—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{block.image2.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-0 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -542,14 +567,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image1.title && (
-                                  <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                    <span className="block">{ block.image1.title }</span>
-                                    <span className="block ml-auto">(2—5)</span>
+                                  <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                    <span className="block leading-tight">{ block.image1.title }</span>
+                                    <span className="block ml-auto">
+                                      <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-1 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                    </span>
                                   </figcaption>
                                 )}
                               </figure>
@@ -565,14 +595,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image2.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{ block.image2.title}</span>
-                                  <span className="block ml-auto">(1—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{ block.image2.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                        <span className="text-2xs mt-1 mr-1">PRB</span>
+                                        <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                      </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -584,14 +619,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image1.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{block.image1.title}</span>
-                                  <span className="block ml-auto">(2—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{block.image1.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-0 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -602,14 +642,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image2.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{block.image2.title}</span>
-                                  <span className="block ml-auto">(2—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{block.image2.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-0 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -642,14 +687,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image.title && (
-                                  <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                    <span className="block">{block.image.title}</span>
-                                    <span className="block ml-auto">(2—5)</span>
+                                  <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                    <span className="block leading-tight">{block.image.title}</span>
+                                    <span className="block ml-auto">
+                                      <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-1 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                    </span>
                                   </figcaption>
                                 )}
                               </figure>
@@ -664,14 +714,19 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
                                 { block.image.title && (
-                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
-                                  <span className="block">{block.image.title}</span>
-                                  <span className="block ml-auto">(2—5)</span>
+                                <figcaption className="flex flex-wrap md:text-xl px-0 md:px-0 pt-1 items-center">
+                                  <span className="block leading-tight">{block.image.title}</span>
+                                  <span className="block ml-auto">
+                                    <div className="ml-auto flex flex-wrap items-center mb-0">
+                                      <span className="text-2xs mt-0 mr-1">PRB</span>
+                                      <span className="block text-sm">{ this.props.data.datoCmsWork.projectCode }</span>
+                                    </div>
+                                  </span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -831,14 +886,14 @@ export const query = graphql`
         fluid(
           maxWidth: 1325,
           imgixParams: {auto: "format", h: "1700", w: "1325", fit: "fillmax", crop: "center" }) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       supportingImage {
         fluid(
           maxWidth: 1000,
           imgixParams: {auto: "format", sharp:0, h: "1000", w: "1000", fit: "crop", crop: "center"}) {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       introServices {
@@ -857,7 +912,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1600,
               imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
             title
           }
@@ -865,7 +920,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1100,
               imgixParams: {auto: "format", sharp:0, h: "1600", w: "1100", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
             title
           }
@@ -878,7 +933,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1300,
               imgixParams: {auto: "format", sharp:0, h: "1300", w: "850", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
             title
           }
@@ -886,7 +941,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1600,
               imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
             title
           }
@@ -904,7 +959,7 @@ export const query = graphql`
             fluid(
               maxWidth: 1600,
               imgixParams: {auto: "format", sharp:0, h: "1100", w: "1600", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
             title
           }
@@ -915,7 +970,7 @@ export const query = graphql`
           image {
             fluid(
               imgixParams: {auto: "format", sharp:0, h: "1000", w: "750", fit: "crop", crop: "faces, center"}) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
             title
           }

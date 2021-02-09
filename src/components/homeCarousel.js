@@ -149,7 +149,7 @@ class HomeCarousel extends Component {
                 <figure className="h-full">
                   <div className="flex flex-wrap relative h-full xl:pb-6">
                     <div className="flex-1 h-full">
-                      {/* <Img fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
+                      {/* <Img backgroundColor={ '#dc481e'} fluid={node.featuredImageBig.fluid} className="w-full max-w-full object-cover mb-1 h-full scroller-image" /> */}
                       <div className="overflow-hidden mb-1 pb-0 h-full relative">
                         {/* { node.teaserVideo ? (
                           <div className="h-full carousel-img w-auto slide__img pb-0 -mb-2">
@@ -161,8 +161,8 @@ class HomeCarousel extends Component {
                           <div className="h-full w-full transform image-transform-center">
                             <div className="relative overflow-hidden h-full">
                               <motion.div variants={slideInInner} className="h-full">
-                                <Img fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
-                                <Img fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
+                                <Img backgroundColor={ '#dc481e'} fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
+                                <Img backgroundColor={ '#dc481e'} fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
                               </motion.div>
                             </div>
                           </div>
