@@ -58,6 +58,15 @@ const arrowReveal = {
   }
 }
 
+const arrowRevealRight = {
+	initial: { y: "-100%", x: "100%" },
+	enter: { 
+    y: "0%",
+    x: "0%",
+    transition: { duration: 1.3, ease: [0.76, 0, 0.24, 1] }
+  }
+}
+
 const revealInOut = {
 	initial: { y: "100%", opacity: 0 },
 	enter: { 
@@ -177,7 +186,7 @@ class StudioPage extends React.Component {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex flex-wrap text-white" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex flex-wrap text-white md:mb-transparent" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full overflow-hidden">
               <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
                 <li className="pb-0 mb-0">
@@ -304,21 +313,28 @@ class StudioPage extends React.Component {
                           }}
                           className="text-screen-display--large block order-2 lg:order-1 w-full lg:w-auto relative overflow-hidden font-display pb-0 mb-0">
                           <span className="block">
-                            <motion.span variants={reveal} className="block">Studio</motion.span>
+                            <motion.span variants={reveal} className="block -mb-3">Studio</motion.span>
                           </span>
                         </motion.h1>
                       </div>
                     </div>
-                    <div className="mt-24 md:mt-auto" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
-                      <div className="order-1 lg:order-2 mb-2 md:mb-0 overflow-hidden">
+                    <div className="mt-12 md:mt-auto" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+                      <div className="order-1 lg:order-2 mb-0 md:mb-0 overflow-hidden">
                         <div className="overflow-hidden relative">
-                          <motion.div variants={arrowReveal} className="w-24 md:w-32 xl:w-40 -mb-3 mt-12">
+                          <motion.div variants={arrowReveal} className="hidden md:block w-24 md:w-32 xl:w-40 -mb-3 mt-12">
                             <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
+                          </motion.div>
+
+                          <motion.div variants={arrowRevealRight} className="block md:hidden w-24 md:w-32 xl:w-40 -ml-6 -mb-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0 transform rotate-90" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                           </motion.div>
                         </div>
                       </div>
-                      <div className="w-full lg:w-2/3 mb-4 md:mb-10 overflow-hidden">
+                      <div className="w-full lg:w-2/3 mb-4 md:mb-10 overflow-hidden hidden md:block">
                         <motion.div variants={reveal} className="md:text-lg xl:text-xl leading-snug block w-10/12 md:w-full md:max-w-xs lg:max-w-2xl" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
+                      </div>
+                      <div className="w-full lg:w-2/3 mb-4 md:mb-10 overflow-hidden block md:hidden">
+                        <motion.div variants={reveal} className="md:text-lg xl:text-xl leading-snug block w-10/12 md:w-full md:max-w-xs lg:max-w-2xl" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroSupportingText }}></motion.div>
                       </div>
                     </div>
                   </div>
@@ -328,17 +344,22 @@ class StudioPage extends React.Component {
                 <div className="flex flex-wrap h-full">
                   <div className="mt-auto w-full" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
                     <div className="overflow-hidden">
-                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 mb-6 leading-snug lg:text-lg">
+                      <motion.div variants={revealDelayed} className="hidden md:block md:ml-auto md:text-right w-64 md:w-full max-w-xs mb-6 leading-snug lg:text-lg">
                         <div dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroSupportingText }}></div>
                       </motion.div>
                     </div>
-                    <div className="w-full relative overflow-hidden">
-                    <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
-                      <div className="h-full hero-image-transform">
-                        <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
+                    <div className="px-3 md:px-0">
+                      <div className="w-full relative overflow-hidden mb-5 md:mb-0">
+                      <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
+                        <div className="h-full hero-image-transform">
+                          <Img fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
+                        </div>
+                      </motion.div>
                       </div>
-                    </motion.div>
                     </div>
+                    <motion.div variants={revealDelayed} className="block md:hidden ml-auto text-right w-11/12 mb-6 leading-snug lg:text-lg px-3">
+                      <div dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -350,9 +371,9 @@ class StudioPage extends React.Component {
           <div className="bg-white p-4 md:p-6 relative z-20">
             <div className=" mx-auto">
               <div data-scroll-timeline="fast-spin" />
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 absolute bottom-0 right-0 mr-4 md:mr-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-24 lg:w-32 xl:w-40 absolute mt-8 md:mt-0 top-0 md:top-auto md:bottom-0 right-0 mr-4 md:mr-6" viewBox="0 0 157.38 157.381"><g data-name="Group 66" fill="none" stroke="#000" strokeWidth="14"><path data-name="Path 1" d="M52.676 20.352l.001 84.352 84.353.001"/><path data-name="Path 2" d="M52.676 104.704L152.43 4.95"/></g></svg>
 
-              <div className="w-full flex flex-wrap md:-mx-4 pt-6 md:pt-10 xl:pt-16">
+              <div className="w-full flex flex-wrap md:-mx-4 pt-40 md:pt-10 xl:pt-16">
                 <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 hidden md:block">
                   <div className="w-full">
                     <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
@@ -367,14 +388,28 @@ class StudioPage extends React.Component {
                   </div>
                 </div>
                 
-                <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-32 md:pb-24 overflow-hidden relative">
+                <div className="w-full md:w-1/2 lg:w-7/12 xl:w-8/12 md:px-4 ml-auto text-black pb-4 md:pb-24 overflow-hidden relative">
                   <span className="inline-block leading-slightnegative w-full md:w-8/12 lg:w-7/12 xl:w-7/12 font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.introText }}></span>
+                </div>
+
+                <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-4 block md:hidden mb-5">
+                  <div className="w-full">
+                    <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+                      <div className="w-full relative overflow-hidden" data-scroll>
+                        <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
+                          <div className="image-reveal-scroll">
+                            <Img fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="md:mx-auto md:w-full pb-20 pt-12 md:pt-16 xl:pt-20 xl:pb-32 bg-white relative z-20 px-4" id="ethos">
+          <div className="md:mx-auto md:w-full pb-10 pt-12 md:pt-16 xl:pt-20 xl:pb-32 bg-white relative z-20 px-4" id="ethos">
             <div className=" mx-auto">
               <div className="overflow-hidden w-full md:w-9/12 mx-auto">
                 <div className="w-full flex flex-wrap">
@@ -418,7 +453,7 @@ class StudioPage extends React.Component {
                             <svg xmlns="http://www.w3.org/2000/svg" className="md:mt-0 w-full" viewBox="0 0 157.381 157.38"><g data-name="Group 66" fill="none" stroke="#FFF" strokeWidth="14"><path data-name="Path 1" d="M20.352 104.704l84.352-.001.001-84.353"/><path data-name="Path 2" d="M104.704 104.704L4.95 4.95"/></g></svg>
                           </motion.div>
 
-                          <div className="mt-auto block md:hidden w-11/12 pt-3 pb-5">
+                          <div className="mt-auto block md:hidden w-full pt-3 pb-4">
                             <span className="inline-block leading-slightnegative font-display text-4xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
                           </div>
 
@@ -429,8 +464,8 @@ class StudioPage extends React.Component {
                       </div>
                     </div>
                   </div>
-
-                  <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full order-1 md:order-2">
+                  
+                  <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full order-1 md:order-2 hidden md:block">
                     <div className="flex flex-wrap justify-end">
                       {this.props.data.team.edges.map(({ node }, i) => {
                         return (
@@ -452,13 +487,44 @@ class StudioPage extends React.Component {
                               </div>
                               <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
                                 <div className="border-b border-white pb-2">
-                                  <span className="text-lg md:text-xl xl:text-2xl block mb-0 pb-0 leading-none text-white">{ node.name }</span>
-                                  <span className="text-xs uppercase text-white">{ node.jobTitle }</span>
+                                  <span className="text-lg md:text-xl xl:text-2xl block pb-px leading-none text-white mb-1">{ node.name }</span>
+                                  <span className="text-xs uppercase text-white block leading-tight mb-1">{ node.jobTitle }</span>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </Link>
+                        )
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full order-1 md:order-2 md:hidden">
+                    <div className="flex flex-wrap justify-end">
+                      {this.props.data.team.edges.map(({ node }, i) => {
+                        return (
+                        <div className="block w-1/2 md:w-1/3 relative" key={i}>
+                          <div className="relative">
+                            <div className="overflow-hidden pb-0 w-full relative team-member group" data-scroll data-scroll-speed="0">
+                              <div className="w-full relative overflow-hidden team-member__inner" data-scroll>
+                                <div data-scroll data-scroll-speed="0" className="overflow-hidden">
+                                  <div className="image-reveal-scroll relative">
+                                    <Img fluid={ node.image.fluid } className="w-full object-cover relative z-20 team-member__image"/>
+                                    {/* <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div> */}
+
+                                    <div className="absolute bottom-0 left-0 right-0 w-full h-64 z-20 team-member__image-gradient"></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
+                                <div className="border-b border-white pb-2">
+                                  <span className="text-lg md:text-xl xl:text-2xl block pb-px leading-none text-white mb-1">{ node.name }</span>
+                                  <span className="text-xs uppercase text-white block leading-tight mb-1">{ node.jobTitle }</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                         )
                       })}
                     </div>
@@ -469,7 +535,7 @@ class StudioPage extends React.Component {
           </div>
           
           <div className="w-full">
-            <div className="overflow-hidden mb-1 pb-0 w-full relative" data-scroll data-scroll-speed="0">
+            <div className="overflow-hidden mb-1 pb-0 w-full relative hidden md:block" data-scroll data-scroll-speed="0">
               <div className="w-full relative overflow-hidden" data-scroll>
                 <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
                   <div className="image-reveal-scroll">
@@ -479,10 +545,22 @@ class StudioPage extends React.Component {
               </div>
             </div>
           </div>
+
+          <div className="w-full md:hidden">
+            <div className="overflow-hidden mb-1 pb-0 w-full relative">
+              <div className="w-full relative overflow-hidden">
+                <div>
+                  <div className="">
+                    <Img fluid={ this.props.data.studio.teamImageMobile.fluid } className="w-full max-w-full object-cover"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
-          <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-8 xl:pt-12 md:-mb-2" id="sectors">
+          <div className="bg-white p-4 md:p-6 relative z-20 pt-2 md:pt-8 xl:pt-12 md:-mb-2" id="sectors">
             <div className="w-full flex flex-wrap mb-16 md:mb-24 lg:mb-32 xl:mb-32 mx-auto ">
-              <div className="w-11/12 md:w-8/12 xl:w-7/12 ml-auto">
+              <div className="w-full md:w-8/12 xl:w-7/12 ml-auto">
                 <div className="inline-block leading-slightnegative w-full font-display text-screen-studio-blurb pt-3 content-indented text-right" dangerouslySetInnerHTML={{ __html: this.props.data.studio.sectorsIntroText }}></div>
               </div>
             </div>
@@ -529,7 +607,7 @@ class StudioPage extends React.Component {
               <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-32 xl:pb-48">
                 <div className="overflow-hidden">
 
-                  <div className="w-10/12 md:w-11/12 flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
+                  <div className="w-full md:w-11/12 flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
                     <div className="w-full">
                       <div className="inline-block leading-slightnegative w-full font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroText }}></div>
                     </div>
@@ -556,7 +634,7 @@ class StudioPage extends React.Component {
             </div>
           </div>
 
-          <section className="bg-prbred pt-8 md:pt-24 lg:pt-32 pb-4 md:pb-6 relative z-20 md:pr-1" id="contact">
+          <section className="bg-prbred pt-8 md:pt-24 lg:pt-32 relative z-20 md:pr-1 pb-32 md:pb-6" id="contact">
             <div className="w-full flex flex-wrap items-end">
               <div className="hidden md:block w-2/12">
                 <Link 
@@ -718,6 +796,13 @@ export const query = graphql`
         fluid(
           maxWidth: 1600,
           imgixParams: {h: "950", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
+          ...GatsbyDatoCmsFluid
+        }
+      }
+      teamImageMobile: teamImage {
+        fluid(
+          maxWidth: 1600,
+          imgixParams: {h: "1200", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid
         }
       }

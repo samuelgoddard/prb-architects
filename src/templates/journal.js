@@ -273,7 +273,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
         exit="exit"
         variants={fade}
       >
-        <section className="bg-prbred pt-8 md:pt-24 lg:pt-32 pb-4 md:pb-6 relative z-20">
+        <section className="bg-prbred pt-8 md:pt-24 lg:pt-32 pb-32 md:pb-6 relative z-20">
           <div className="w-full md:w-10/12 ml-auto mr-4 md:mr-6 px-4 md:px-0 md:pl-12 lg:pl-4">
             <div className="flex flex-wrap items-end relative">
               <div className="w-full md:px-3 overflow-hidden mb-3 md:mb-0">

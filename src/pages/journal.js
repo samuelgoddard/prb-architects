@@ -139,9 +139,9 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                 return (
                   <div className="overflow-hidden" key={i}>
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i} link={`/journal/${node.slug}`}>
-                      <div className={ node.gallery.length > 0 ? `md:ml-16 block leading-tight mb-6 w-10/12 md:w-2/3 xl:w-5/12 lg:text-lg` : `md:ml-16 block leading-tight mb-0 w-10/12 md:w-2/3 xl:w-5/12 lg:text-lg`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
+                      <div className={ node.gallery.length > 0 ? `md:ml-16 block leading-tight mb-6 w-full md:w-2/3 xl:w-5/12 lg:text-lg` : `md:ml-16 block leading-tight mb-8 w-full md:w-2/3 xl:w-5/12 lg:text-lg`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
-                      <div className="flex flex-wrap -mx-3 overflow-hidden md:ml-12">
+                      <div className="flex flex-wrap -mx-3 overflow-hidden md:ml-12 mb-3 md:mb-0">
                         {node.gallery.map(({ fluid }, i) => {
                           return(
                             <div className="w-9/12 md:w-3/12 px-3 ml-1 mb-5" key={i}>
@@ -165,7 +165,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
         exit="exit"
         variants={fade}
       >
-        <section className="bg-prbred pt-8 md:pt-24 lg:pt-32 pb-4 md:pb-6 relative z-20">
+        <section className="bg-prbred pt-8 md:pt-24 lg:pt-32 pb-32 md:pb-6 relative z-20">
           <div className="w-full md:w-10/12 ml-auto mr-4 md:mr-6 px-4 md:px-0 md:pl-12 lg:pl-4">
             <div className="flex flex-wrap items-end relative">
               <div className="w-full md:px-3 overflow-hidden mb-3 md:mb-0">

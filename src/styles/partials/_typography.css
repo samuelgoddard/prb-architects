@@ -20,8 +20,8 @@ h2 {
 }
 
 .text-screen-display {
-  font-size: 16.5vw;
-  line-height: 1;
+  font-size: 18.5vw;
+  line-height: 1.1;
 
   @screen md {
     font-size: 7.5vw;
@@ -35,7 +35,7 @@ h2 {
 
   @screen 3xl {
     font-size: 8.5vw;
-    line-height: 6.3vw;
+    line-height: 6vw;
   }
 }
 
@@ -55,8 +55,8 @@ h2 {
 }
 
 .text-screen-display--large {
-  @apply text-7xl pt-5;
-  line-height: 0.75;
+  @apply text-7xl pt-6;
+  line-height: 0.8;
 
   @screen md {
     font-size: 15vw;

@@ -9,7 +9,7 @@ body {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 	#___gatsby {
 		-webkit-overflow-scrolling: touch;
 		height: 100vh;
@@ -69,7 +69,7 @@ button {
 }
 
 .p-screen-inner {
-	padding-top: calc(100vh - 100px);
+	padding-top: calc(200px);
 }
 
 .h-screen-no-header {
@@ -386,6 +386,7 @@ video {
 }
 
 
+@screen md {
 .team-member__inner {
 	@apply opacity-100 relative;
 
@@ -399,6 +400,7 @@ video {
 	background: rgb(4,4,4);
 	background: linear-gradient(0deg, rgba(4,4,4,0.8) 0%, rgba(3,1,1,0) 60%);
 }
+
 .team-member--active {
 	.team-member__image {
 		-webkit-filter: grayscale(100%);
@@ -430,6 +432,7 @@ video {
 			@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-black z-10 opacity-50;
 		}
 	}
+}
 }
 
 .z-100 {
