@@ -93,11 +93,11 @@ const Collapsible = ({ children, heading, index, textLarge, link }) => {
       </div>
     </button>
     {children && (
-      <div className="Collapse_Content relative" ref={el => (body = el)}>
+      <div className="Collapse_Content relative flex flex-wrap md:block w-full" ref={el => (body = el)}>
         { link && (
-          <Link to={link} className="absolute top-0 right-0 z-10 hover:line-through pt-px md:pt-0 mt-3 md:mt-5 mr-0 font-display md:text-lg lg:text-2xl"><span className="mt-px block mr-px">Go to article</span></Link>
+          <Link to={link} className="relative md:absolute order-2 top-0 right-0 z-10 hover:line-through pt-px md:pt-0 -mt-10 md:mt-5 mr-0 font-display text-lg lg:text-2xl w-full md:w-auto"><span className="mt-px block mr-px">Go to article</span></Link>
         )}
-        <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24 border-b border-black">{children}</div>
+        <div className="pt-3 md:pt-5 pb-8 md:pb-8 pr-12 md:pr-24 border-b border-black w-full order-1 w-full">{children}</div>
       </div>
     )}
     </div>

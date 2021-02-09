@@ -2,9 +2,18 @@ body {
 	margin: 0;
 	padding: 0;
 	-webkit-overflow-scrolling: touch;
+	overflow: hidden;
 	
 	@screen lg {
 		overflow: hidden; /* Hide scrollbars */
+	}
+}
+
+@media (max-width: 768px) {
+	#___gatsby {
+		-webkit-overflow-scrolling: touch;
+		height: 100vh;
+		overflow: auto;
 	}
 }
 

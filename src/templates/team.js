@@ -41,7 +41,7 @@ const PersonTemplate = ({ data: { person }, location }) => {
           <nav className="relative z-10 w-full overflow-hidden">
             <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
               <li className="ml-auto">
-                <Link to="/studio#team" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Close Bio</Link>
+                <Link to="/studio" activeClassName="line-through" className="text-lg md:text-2xl px-px text-white transition ease-in-out duration-500 hover:line-through focus:line-through">Close Bio</Link>
               </li>
             </ul>
           </nav>

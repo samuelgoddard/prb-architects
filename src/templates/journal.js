@@ -224,7 +224,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
                   <div className="mb-8 text-sm">
                     <Moment format="DD.MM.Y">{ entry.date }</Moment>
                   </div>
-                  <div className="content xl:text-xl leading-snug w-10/12 md:w-full md:max-w-md xl:max-w-lg lg:text-lg" dangerouslySetInnerHTML={{ __html: entry.content }}></div>
+                  <div className="content text-lg xl:text-xl leading-snug w-11/12 md:w-full md:max-w-md xl:max-w-lg lg:text-lg" dangerouslySetInnerHTML={{ __html: entry.content }}></div>
                 </motion.div>
               </motion.div>
             </div>

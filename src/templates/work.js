@@ -136,7 +136,7 @@ class WorkTemplate extends React.Component {
     const splitTitle = this.props.data.datoCmsWork.title.match(/\b(\w+)/g);
 
     const metaArray = [];
-    if (this.props.data.datoCmsWork.metaLocation) { metaArray.push(this.props.data.datoCmsWork.metaLocation) }
+    if (this.props.data.datoCmsWork.projectCode) { metaArray.push(`PRB ${this.props.data.datoCmsWork.projectCode}`) }
     if (this.props.data.datoCmsWork.metaSize) { metaArray.push(this.props.data.datoCmsWork.metaSize) }
     if (this.props.data.datoCmsWork.category[0].title) { metaArray.push(this.props.data.datoCmsWork.category[0].title) }
     if (this.props.data.datoCmsWork.metaCost) { metaArray.push(this.props.data.datoCmsWork.metaCost) }
@@ -222,9 +222,9 @@ class WorkTemplate extends React.Component {
                 </div>
 
                   <div className="w-full h-full overflow-hidden md:mb-0 block md:hidden absolute top-0 left-0">
-                    <motion.div variants={heroImage} className="h-full w-full transform relative image-transform-center">
+                    <motion.div className="h-full w-full transform image-transform-center">
                       <div className="h-full hero-image-transform">
-                        <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover" />
+                        <Img fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover object-center" />
                       </div>
                     </motion.div>
                   </div>
@@ -274,14 +274,14 @@ class WorkTemplate extends React.Component {
                         <div className="hidden md:block md:ml-3 mt-3 overflow-hidden" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                           <motion.div variants={reveal}>
                             <div className="flex flex-wrap items-center justify-center ">
-                              <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                              <span className="block text-xl md:text-3xl lg:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                              
+                              <span className="block text-xl md:text-3xl lg:text-4xl leading text-center">{ this.props.data.datoCmsWork.metaLocation }</span>
                             </div>
                           </motion.div>
                         </div>
                         <div className="flex-wrap items-center justify-center flex ml-3 mt-3 md:hidden">
-                          <span className="block text-xs mt-1 mr-1 leading-none">PRB</span>
-                          <span className="block text-xl md:text-3xl lg:text-4xl leading-none">{ this.props.data.datoCmsWork.projectCode }</span>
+                          
+                          <span className="block text-xl md:text-3xl lg:text-4xl leading text-center">{ this.props.data.datoCmsWork.metaLocation }</span>
                         </div>
                       </div>
                     </motion.div>
@@ -457,7 +457,7 @@ class WorkTemplate extends React.Component {
                       {
                         block.model.apiKey === 'content_left_align' && 
                           <div className="w-full flex flex-wrap mb-12 md:mb-32 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
-                            <div className="w-8/12 md:pr-16 lg:pr-24 xl:pr-32 -mx-4 md:mx-0">
+                            <div className="w-10/12 md:w-8/12 md:pr-16 lg:pr-24 xl:pr-32 -mx-4 md:mx-0">
                               <figure className="mb-16 md:mb-32 lg:mb-48 hidden md:block">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
@@ -511,6 +511,22 @@ class WorkTemplate extends React.Component {
                                 )}
                               </figure>
                             </div>
+
+                            <div className="w-full block md:hidden">
+                              <figure className="pt-12">
+                                <div className="overflow-hidden block">
+                                  <div className="overflow-hidden">
+                                    <Img fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
+                                  </div>
+                                </div>
+                                { block.image2.title && (
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
+                                  <span className="block">{block.image2.title}</span>
+                                  <span className="block ml-auto">(2—5)</span>
+                                </figcaption>
+                                )}
+                              </figure>
+                            </div>
                           </div>
                         }
                         {
@@ -533,10 +549,12 @@ class WorkTemplate extends React.Component {
                                 )}
                               </figure>
                             </div>
-                            <div className="w-8/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-16">
-                              <div className="max-w-md ml-auto md:ml-32 lg:ml-40 p-4 pl-0 md:p-0">
-                                <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
-                              </div>
+                            <div className="w-10/12 md:w-8/12 md:pl-16 lg:pl-24 xl:pl-32 md:pt-16">
+                              { block.text && (
+                                <div className="max-w-md ml-auto md:ml-32 lg:ml-40 p-4 pl-0 md:p-0">
+                                  <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
+                                </div>
+                              )}
 
                               <figure className="md:pt-32 hidden md:block">
                                 <div className="overflow-hidden block">
@@ -550,6 +568,25 @@ class WorkTemplate extends React.Component {
                                 <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
                                   <span className="block">{ block.image2.title}</span>
                                   <span className="block ml-auto">(1—5)</span>
+                                </figcaption>
+                                )}
+                              </figure>
+                            </div>
+
+                          
+                            <div className="w-full block md:hidden mb-12">
+                              <figure className="pt-8">
+                                <div className="overflow-hidden block">
+                                  <div className="overflow-hidden">
+                                    <div className="image-reveal-scroll">
+                                      <Img fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                    </div>
+                                  </div>
+                                </div>
+                                { block.image1.title && (
+                                <figcaption className="flex md:text-xl px-0 md:px-0 pt-1">
+                                  <span className="block">{block.image1.title}</span>
+                                  <span className="block ml-auto">(2—5)</span>
                                 </figcaption>
                                 )}
                               </figure>
@@ -576,7 +613,7 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'full_text' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-10/12 md:w-8/12 md:pl-8 lg:pl-10 xl:pl-24 -mx-4 md:mx-0">
                               <div className="md:max-w-md ml-auto md:ml-32 lg:ml-40 p-4 md:p-0">
                                 <div className="lg:text-lg leading-tight content-indented" dangerouslySetInnerHTML={{ __html: block.text }}></div>
@@ -586,7 +623,7 @@ class WorkTemplate extends React.Component {
                         }
                         {/* {
                         block.model.apiKey === 'carousel' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 hidden md:block">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-24 lg:mb-40 hidden md:block">
                             <div className="w-full md:w-10/12 ml-auto">
                               <WorkCarouselDesktop slides={ block.images } realLength={ block.images.length } />
                             </div>
@@ -594,7 +631,7 @@ class WorkTemplate extends React.Component {
                         } */}
                         {
                         block.model.apiKey === 'image100' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto px-4 md:px-6">
                             <div className="w-full md:w-9/12 mx-auto">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
@@ -616,8 +653,8 @@ class WorkTemplate extends React.Component {
                         }
                         {
                         block.model.apiKey === 'image50' &&
-                          <div className="w-full flex flex-wrap mb-24 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto">
-                            <div className="w-10/12 md:w-5/12 mx-auto px-4 md:px-6">
+                          <div className="w-full flex flex-wrap mb-12 md:mb-24 lg:mb-40 2xl:mb-48 bg-white 3xl:w-9/12 3xl:mx-auto">
+                            <div className="w-full md:w-5/12 mx-auto px-4 md:px-6">
                               <figure className="pt-8">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">

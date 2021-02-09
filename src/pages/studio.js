@@ -318,7 +318,7 @@ class StudioPage extends React.Component {
                         </div>
                       </div>
                       <div className="w-full lg:w-2/3 mb-4 md:mb-10 overflow-hidden">
-                        <motion.div variants={reveal} className="md:text-lg xl:text-xl leading-snug block w-8/12 md:w-full md:max-w-xs lg:max-w-2xl" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
+                        <motion.div variants={reveal} className="md:text-lg xl:text-xl leading-snug block w-10/12 md:w-full md:max-w-xs lg:max-w-2xl" dangerouslySetInnerHTML={{ __html: this.props.data.studio.heroText }}></motion.div>
                       </div>
                     </div>
                   </div>
@@ -386,10 +386,10 @@ class StudioPage extends React.Component {
                             <div>
                               <div className="border-b border-black mb-6">
                                 <span className="text-3xl md:text-3xl block w-full mb-0 pb-0 font-display leading-none pt-1">{ block.heading }</span>
-                                <span className="text-xs uppercase block mb-2">{ block.headingMeta }</span>
+                                <span className="text-xs uppercase block mb-2 -mt-1 md:mt-0">{ block.headingMeta }</span>
                               </div>
                               { block.content && (
-                                <div className="w-8/12 md:w-8/12 xl:w-1/2 max-w-2xl 2xl:max-w-xl">
+                                <div className="w-10/12 md:w-8/12 xl:w-1/2 max-w-2xl 2xl:max-w-xl">
                                   <div className="leading-snug lg:text-lg" dangerouslySetInnerHTML={{ __html: block.content }}></div>
                                 </div>
                               )}
@@ -482,7 +482,7 @@ class StudioPage extends React.Component {
           
           <div className="bg-white p-4 md:p-6 relative z-20 pt-8 md:pt-8 xl:pt-12 md:-mb-2" id="sectors">
             <div className="w-full flex flex-wrap mb-16 md:mb-24 lg:mb-32 xl:mb-32 mx-auto ">
-              <div className="w-10/12 md:w-8/12 xl:w-7/12 ml-auto">
+              <div className="w-11/12 md:w-8/12 xl:w-7/12 ml-auto">
                 <div className="inline-block leading-slightnegative w-full font-display text-screen-studio-blurb pt-3 content-indented text-right" dangerouslySetInnerHTML={{ __html: this.props.data.studio.sectorsIntroText }}></div>
               </div>
             </div>
@@ -509,9 +509,9 @@ class StudioPage extends React.Component {
                             <div>
                               <div className="border-b border-black mb-6">
                                 <span className="text-3xl md:text-3xl block w-full mb-0 pb-0 font-display leading-none">{ block.heading }</span>
-                                <span className="text-xs uppercase block mb-2">{ block.headingMeta }</span>
+                                <span className="text-xs uppercase block mb-2 -mt-1 md:mt-0">{ block.headingMeta }</span>
                               </div>
-                              <div className="w-8/12 md:w-10/12 lg:w-8/12 xl:w-7/12 max-w-lg">
+                              <div className="w-10/12 md:w-10/12 lg:w-8/12 xl:w-7/12 max-w-lg">
                                 <div className="leading-snug lg:text-lg" dangerouslySetInnerHTML={{ __html: block.content }}></div>
                               </div>
                             </div>
@@ -529,13 +529,13 @@ class StudioPage extends React.Component {
               <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-32 xl:pb-48">
                 <div className="overflow-hidden">
 
-                  <div className="w-10/12 md:w-11/12 flex flex-wrap mb-8 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
+                  <div className="w-10/12 md:w-11/12 flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
                     <div className="w-full">
                       <div className="inline-block leading-slightnegative w-full font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroText }}></div>
                     </div>
                   </div>
 
-                  <span className="text-sm md:text-base block uppercase mb-8 md:mb-12 md:px-8">Our Services</span>
+                  <span className="text-sm md:text-base block uppercase mb-2 md:mb-12 md:px-8">Our Services</span>
                   <div className="w-full flex flex-wrap">
                     {
                       this.props.data.studio.services.map((block, i) => (
@@ -717,7 +717,7 @@ export const query = graphql`
       teamImage {
         fluid(
           maxWidth: 1600,
-          imgixParams: {h: "750", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
+          imgixParams: {h: "950", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid
         }
       }
