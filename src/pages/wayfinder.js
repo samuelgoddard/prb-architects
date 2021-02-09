@@ -107,9 +107,9 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                                 </span>
                               </motion.div>
                             </div>
-                            <span className="block ml-auto relative overflow-hidden -mt-3 md:-mt-5 3xl:-mt-10">
+                            <span className="block ml-auto relative overflow-hidden -mt-3 md:-mt-5 xl:-mt-10 3xl:-mt-10">
                               <motion.div variants={revealArrowTopRight}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="w-14 md:w-28 3xl:w-46 transform -rotate-45 -mr-1 md:-mr-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-14 md:w-32 xl:w-38 3xl:w-46 transform -rotate-45 -mr-1 md:-mr-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                               </motion.div>  
                             </span>
                           </div>
@@ -129,9 +129,9 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                               </span>
                             </motion.div>
                           </div>
-                          <span className="block ml-auto relative overflow-hidden -mt-3 md:-mt-5 3xl:-mt-8">
+                          <span className="block ml-auto relative overflow-hidden -mt-3 md:-mt-5 xl:-mt-10 3xl:-mt-10">
                             <motion.div variants={revealArrowRight}>
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-24 3xl:w-40" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-12 md:w-28 xl:w-32 3xl:w-40" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                             </motion.div>  
                           </span>
                         </div>
@@ -152,9 +152,9 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                                 </span>
                               </motion.div>
                             </div>
-                            <span className="block ml-auto relative overflow-hidden -mt-3 md:-mt-5 3xl:-mt-10">
+                            <span className="block ml-auto relative overflow-hidden -mt-3 md:-mt-5 xl:-mt-10 3xl:-mt-10">
                               <motion.div variants={revealArrowTopLeft}>
-                              <svg xmlns="http://www.w3.org/2000/svg" className="w-14 md:w-28 3xl:w-46 transform rotate-45 -mr-1 md:-mr-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-14 md:w-32 xl:w-38 3xl:w-46 transform rotate-45 -mr-1 md:-mr-3" viewBox="0 0 41.843 35.711"><g data-name="Group 111" fill="none" stroke="currentColor" strokeWidth="3"><path data-name="Path 1" d="M22.927 1.061l16.795 16.8-16.795 16.79"/><path data-name="Path 2" d="M39.722 17.856H0"/></g></svg>
                               </motion.div>  
                             </span>
                           </div>
