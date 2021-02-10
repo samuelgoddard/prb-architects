@@ -73,7 +73,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-20 hidden md:flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
 
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
@@ -96,7 +96,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           </header>
 
 
-          <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute fixed-when-scroll top-0 left-0 right-0 h-0 md:hidden">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white relative top-0 left-0 right-0 md:hidden">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <li className="block relative overflow-hidden">
@@ -118,7 +118,7 @@ const JournalEntryPage = ({ data: { entries, studio, entry }, location }) => {
           </header>
         </motion.div>
         
-        <div className="bg-white pt-2 w-full h-full">
+        <div className="bg-white pt-2 w-full h-full -mt-14 md:mt-0">
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="p-4 md:p-6 pt-14 md:pt-22 mx-auto">
           
         <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-white w-full hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>

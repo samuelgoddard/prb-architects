@@ -244,11 +244,11 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
-          featuredImageMobile: featuredImage {
+          featuredImageMobile: homeMobileImage {
             url
             fluid(
-              maxWidth: 400,
-              imgixParams: { auto: "compress", sharp: 10, w: "400", h: "800", fit: "fillmax", crop: "center" }) {
+              maxWidth: 720,
+              imgixParams: { auto: "compress", sharp: 10, w: "720", h: "1200", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }

@@ -186,7 +186,7 @@ class StudioPage extends React.Component {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex flex-wrap text-white md:mb-transparent" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 hidden md:flexabsolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex-wrap text-white md:mb-transparent" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full overflow-hidden">
               <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
                 <li className="pb-0 mb-0">
@@ -233,7 +233,7 @@ class StudioPage extends React.Component {
           </header>
 
 
-          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed md:hidden fixed-when-scroll top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 md:hidden relative top-0 left-0 right-0 h-14 md:h-22 z-50 flex flex-wrap text-white bg-transparent">
             <nav className="relative z-10 w-full overflow-hidden">
               <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
                 <li className="pb-0 mb-0">
@@ -294,7 +294,7 @@ class StudioPage extends React.Component {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen"
+            className="bg-offblack p-4 md:p-6 pb-0 md:pb-0 pt-14 md:pt-22 text-white min-h-screen -mt-16 md:mt-0"
             id="studio"
           >
             <div className=" mx-auto">

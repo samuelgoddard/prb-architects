@@ -155,7 +155,7 @@ class WorkTemplate extends React.Component {
           imageOverride={this.props.data.datoCmsWork.metaTags && this.props.data.datoCmsWork.metaTags.image ? this.props.data.datoCmsWork.metaTags.image.url : null }
         />
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 hidden md:flex flex-wrap bg-white absolute top-0 left-0 right-0" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
           <motion.nav
             initial="initial"
             animate="enter"
@@ -181,7 +181,7 @@ class WorkTemplate extends React.Component {
           <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
         </header>
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute fixed-when-scroll top-0 left-0 right-0 h-0 md:hidden">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white md:absolute top-0 left-0 right-0 md:hidden relative">
           <motion.nav
             initial="initial"
             animate="enter"
@@ -215,7 +215,7 @@ class WorkTemplate extends React.Component {
         >
           <div className="bg-white min-h-screen-image md:pt-22 p-screen-inner relative overflow-hidden">
             <div className="px-4 md:px-6">
-              <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-32 md:mt-8">
+              <div className="flex flex-wrap -mx-4 md:-mx-3 -mt-48 md:mt-8">
                 <div className="w-full md:w-1/2 lg:w-5/12 xl:w-4/12 md:px-3">
 
                 <div className="w-full relative overflow-hidden h-screen-inner hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">

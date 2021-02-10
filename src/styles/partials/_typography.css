@@ -35,7 +35,7 @@ h2 {
 
   @screen 3xl {
     font-size: 8.5vw;
-    line-height: 6vw;
+    line-height: 5.4vw;
   }
 }
 
@@ -186,7 +186,27 @@ button {
   }
   /* Headings following paragraphs */
   p + h1, p + h2, p + h3, p + h4 {
-    @apply pt-6 block;
+    @apply pt-10 block;
+  }
+
+  table {
+    @apply mb-6 align-top;
+  }
+
+  ul {
+    @apply list-inside list-disc mb-5;
+  }
+
+  ol {
+    @apply list-inside list-decimal mb-5;
+  }
+
+  tr, td {
+    @apply border-black border p-2 align-top;
+
+    @screen md {
+      @apply p-5;
+    }
   }
 }
 

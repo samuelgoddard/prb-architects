@@ -68,7 +68,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
 
         <motion.div initial="initial" animate="enter" exit="exit" variants={fadeSlow} className="bg-white -4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-30 flex flex-wrap z-10 hidden md:block"></motion.div>
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex flex-wrap">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 hidden md:flex flex-wrap">
           <nav className="relative z-10 w-full">
             <ul className="flex flex-wrap">
               <li className="ml-auto">
@@ -79,7 +79,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
           <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
         </header>
 
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white absolute fixed-when-scroll top-0 left-0 right-0 h-0 md:hidden">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap bg-white relative top-0 left-0 right-0 md:hidden">
           <nav className="relative z-10 w-full">
             <ul className="flex flex-wrap">
               <li className="ml-auto">
@@ -90,7 +90,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
           <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
         </header>
 
-        <div className="w-full h-full bg-white">
+        <div className="w-full h-full bg-white -mt-16 md:mt-0">
         <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-white p-4 md:p-6 pt-14 md:pt-22">
           <motion.div
             initial="initial"

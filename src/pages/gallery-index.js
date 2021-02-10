@@ -84,7 +84,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development }, locatio
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-20 flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 hidden absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-20 md:flex flex-wrap" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <li className="overflow-hidden relative">
@@ -109,7 +109,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development }, locatio
             <div className="mt-auto -mb-px h-px w-full border-b border-black transition ease-in-out duration-500"></div>
           </header>
 
-          <header className="p-4 pb-0 md:p-6 md:pb-0 fixed top-0 left-0 right-0 h-14 md:h-22 z-30 flex flex-wrap fixed-when-scroll md:hidden">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 relative top-0 left-0 right-0 h-14 md:h-22 z-30 flex flex-wrap md:hidden">
             <nav className="relative z-10 w-full">
               <ul className="flex flex-wrap">
                 <li className="overflow-hidden relative">
@@ -135,7 +135,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development }, locatio
           </header>
         </motion.div>
 
-        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-14 md:pt-22">
+        <motion.div initial="initial" animate="enter" exit="exit" variants={fade} className="bg-prbred p-4 md:p-6 min-h-screen pt-14 md:pt-22 -mt-16 md:mt-0 pb-20 md:pb-0">
           <div className="h-14 md:h-22 z-20 fixed top-0 left-0 bg-prbred w-full fixed-when-scroll md:hidden" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
           
           <div className="h-14 md:h-22 z-10 fixed top-0 left-0 bg-prbred w-full hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#___gatsby"></div>
