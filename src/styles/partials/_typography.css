@@ -214,30 +214,32 @@ button {
   writing-mode: vertical-rl;
 }
 
-.strike {
-  position: relative;
-
-  .strike__inner {
+@screen md {
+  .strike {
     position: relative;
-    display: block;
-    
-    @screen md {
-      &:after {
-        content: ' ';
-        position: absolute;
-        top: calc(50% - 15px);
-        left: 0;
-        width: 0;
-        height: 5px;
-        background: currentColor;
+
+    .strike__inner {
+      position: relative;
+      display: block;
+      
+      @screen md {
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: calc(50% - 15px);
+          left: 0;
+          width: 0;
+          height: 5px;
+          background: currentColor;
+        }
       }
     }
-  }
 
-  &:focus, &:hover {
-    .strike__inner {
-      &:after {
-        width: 100%;
+    &:focus, &:hover {
+      .strike__inner {
+        &:after {
+          width: 100%;
+        }
       }
     }
   }
@@ -310,6 +312,13 @@ button {
       }
     }
   }
+}
+@screen md {
+  .index-link {
+    &:hover, &:focus {
+      @apply text-white;
+    }
+  } 
 }
 
 .fake-strike--perma {

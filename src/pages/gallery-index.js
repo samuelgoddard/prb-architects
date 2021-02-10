@@ -175,7 +175,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development }, locatio
                           {/* Query the child to the parent cat... */}
                           { node.category[0].slug === parentCat && (
                             <div className="relative group overflow-hidden border-b border-black">
-                                <Link to={`/work/${node.slug}`} className="block hover:text-white relative invert-select strike py-3 md:py-4">
+                                <Link to={`/work/${node.slug}`} className="block index-link relative invert-select strike py-3 md:py-4">
                                   <div className="relative overflow-hidden">
                                     <div className="flex flex-wrap items-center relative overflow-hidden">
                                       <motion.div variants={revealMeta} className="">
@@ -218,7 +218,7 @@ const GalleryIndexPage = ({ data: { work, workCategories, development }, locatio
                 return (
                   <div key={i}>
                       <div className="relative group overflow-hidden border-b border-black">
-                        <Link to={`/journal/${ node.slug }`} className="block hover:text-white relative invert-select strike py-3 md:py-4">
+                        <Link to={`/journal/${ node.slug }`} className="block index-link relative invert-select strike py-3 md:py-4">
                           <div className="relative overflow-hidden">
                             <div className="flex flex-wrap items-center relative overflow-hidden">
                               <motion.div variants={revealMeta} className="">

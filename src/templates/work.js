@@ -221,7 +221,7 @@ class WorkTemplate extends React.Component {
                 <div className="w-full relative overflow-hidden h-screen-inner hidden md:block" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                   <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                     <div className="h-full hero-image-transform">
-                      <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover mb-0 pb-0" />
+                      <Img alt={this.props.data.datoCmsWork.featuredImage.alt} backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-full object-cover mb-0 pb-0" />
                     </div>
                   </motion.div>
                 </div>
@@ -337,7 +337,7 @@ class WorkTemplate extends React.Component {
                     <div className="w-full h-full overflow-hidden mb-4 md:mb-0 block md:hidden">
                       <motion.div className="h-full w-full transform image-transform-center">
                         <div className="h-full hero-image-transform">
-                          <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover object-center" />
+                          <Img alt={this.props.data.datoCmsWork.featuredImage.alt} backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.featuredImage.fluid } className="w-full h-screen object-cover object-center" />
                         </div>
                       </motion.div>
                     </div>
@@ -409,7 +409,7 @@ class WorkTemplate extends React.Component {
                           <div className="w-full relative overflow-hidden" data-scroll>
                             <div className="overflow-hidden">
                               <div className="image-reveal-scroll">
-                                <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.supportingImage.fluid } className="w-full max-w-full"/>
+                                <Img alt={this.props.data.datoCmsWork.supportingImage.alt} backgroundColor={ '#dc481e'} fluid={ this.props.data.datoCmsWork.supportingImage.fluid } className="w-full max-w-full"/>
                               </div>
                             </div>
                           </div>
@@ -472,7 +472,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={ block.image1.alt ? block.image1.alt : block.image1.title } backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -498,7 +498,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={block.image2.alt ? block.image2.alt : block.image2.title } backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -520,7 +520,7 @@ class WorkTemplate extends React.Component {
                               <figure className="pt-12">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
-                                    <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
+                                    <Img alt={ block.image1.alt ? block.image1.alt : block.image1.title} backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
                                   </div>
                                 </div>
                                 { block.image1.title && (
@@ -541,7 +541,7 @@ class WorkTemplate extends React.Component {
                               <figure className="pt-12">
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
-                                    <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
+                                    <Img alt={ block.image2.alt ? block.image2.alt : block.image2.title} backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover p-0 md:p-12"/>
                                   </div>
                                 </div>
                                 { block.image2.title && (
@@ -567,7 +567,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={block.image1.alt ? block.image1.alt : block.image1.title } backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -595,7 +595,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={ block.image2.alt ? block.image1.alt : block.image1.title} backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -619,7 +619,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={ block.image1.alt ? block.image1.alt : block.image1.title } backgroundColor={ '#dc481e'} fluid={ block.image1.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -642,7 +642,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={ block.image2.alt ? block.image2.alt : block.image2.title } backgroundColor={ '#dc481e'} fluid={ block.image2.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -687,7 +687,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={ block.image.alt ? block.image.alt : block.image.title } backgroundColor={ '#dc481e'} fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -714,7 +714,7 @@ class WorkTemplate extends React.Component {
                                 <div className="overflow-hidden block">
                                   <div className="overflow-hidden">
                                     <div className="image-reveal-scroll">
-                                      <Img backgroundColor={ '#dc481e'} fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
+                                      <Img alt={ block.image.alt ? block.image.alt : block.image.title } backgroundColor={ '#dc481e'} fluid={ block.image.fluid } className="w-full max-w-full object-cover"/>
                                     </div>
                                   </div>
                                 </div>
@@ -888,6 +888,7 @@ export const query = graphql`
           imgixParams: {auto: "format", h: "1700", w: "1325", fit: "fillmax", crop: "center" }) {
           ...GatsbyDatoCmsFluid_noBase64
         }
+        alt
       }
       supportingImage {
         fluid(
@@ -895,6 +896,7 @@ export const query = graphql`
           imgixParams: {auto: "format", sharp:0, h: "1000", w: "1000", fit: "crop", crop: "center"}) {
           ...GatsbyDatoCmsFluid_noBase64
         }
+        alt
       }
       introServices {
         ... on DatoCmsService {
@@ -915,6 +917,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
+            alt
           }
           image2 {
             fluid(
@@ -923,6 +926,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
+            alt
           }
           text
         }
@@ -936,6 +940,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
+            alt
           }
           image2 {
             fluid(
@@ -944,6 +949,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
+            alt
           }
           text
         }
@@ -962,6 +968,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
+            alt
           }
         }
         ... on DatoCmsImage50 {
@@ -973,6 +980,7 @@ export const query = graphql`
               ...GatsbyDatoCmsFluid_noBase64
             }
             title
+            alt
           }
         }
       }

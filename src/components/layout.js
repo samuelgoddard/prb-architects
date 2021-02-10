@@ -11,7 +11,7 @@ function Layout({ children, location, location: { pathname } }) {
         <Link 
           className={ 
             pathname === "/project" || pathname === "/404" || pathname === "/wayfinder" || pathname === "/studio" || pathname === "/journal" || pathname === "/gallery-index" || pathname === "/privacy" || pathname.includes("work") || pathname.includes("/journal/")
-            ? 'fixed bottom-0 left-0 block p-4 md:p-6 md:pb-3 z-30 w-28 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100 -ml-24 md:ml-0'
+            ? 'fixed bottom-0 left-0 block p-4 md:p-6 md:pb-3 w-28 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100 z-0 md:z-30'
             : 'fixed bottom-0 block left-0 p-4 md:p-6 md:pb-3 z-30 w-28 md:w-40 transition duration-500 ease-in-out opacity-100'
           }
           to="/"

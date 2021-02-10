@@ -186,7 +186,7 @@ class StudioPage extends React.Component {
             enter: { transition: { staggerChildren: 0.05 } }
           }}
         >
-          <header className="p-4 pb-0 md:p-6 md:pb-0 hidden md:flexabsolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex-wrap text-white md:mb-transparent" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
+          <header className="p-4 pb-0 md:p-6 md:pb-0 hidden md:flex absolute md:fixed top-0 left-0 right-0 h-14 md:h-22 z-40 flex-wrap text-white md:mb-transparent" data-scroll-sticky data-scroll data-scroll-target="#___gatsby">
             <nav className="relative z-10 w-full overflow-hidden">
               <ul className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
                 <li className="pb-0 mb-0">
@@ -352,7 +352,7 @@ class StudioPage extends React.Component {
                       <div className="w-full relative overflow-hidden mb-5 md:mb-0">
                       <motion.div variants={heroImage} className="h-full w-full transform image-transform-center">
                         <div className="h-full hero-image-transform">
-                          <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
+                          <Img alt={this.props.data.studio.heroImage.alt} backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.heroImage.fluid } className="w-full object-cover object-center studio-image" />
                         </div>
                       </motion.div>
                       </div>
@@ -380,7 +380,7 @@ class StudioPage extends React.Component {
                       <div className="w-full relative overflow-hidden" data-scroll>
                         <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
                           <div className="image-reveal-scroll">
-                            <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                            <Img alt={ this.props.data.studio.introImage.alt } backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
                           </div>
                         </div>
                       </div>
@@ -398,7 +398,7 @@ class StudioPage extends React.Component {
                       <div className="w-full relative overflow-hidden" data-scroll>
                         <div data-scroll data-scroll-speed="0.85" className="overflow-hidden -m-12">
                           <div className="image-reveal-scroll">
-                            <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
+                            <Img alt={this.props.data.studio.introImage.alt} backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.introImage.fluid } className="w-full max-w-full object-cover"/>
                           </div>
                         </div>
                       </div>
@@ -539,7 +539,7 @@ class StudioPage extends React.Component {
               <div className="w-full relative overflow-hidden" data-scroll>
                 <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
                   <div className="image-reveal-scroll">
-                    <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.teamImage.fluid } className="w-full max-w-full object-cover"/>
+                    <Img alt={ this.props.data.studio.teamImage.alt } backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.teamImage.fluid } className="w-full max-w-full object-cover"/>
                   </div>
                 </div>
               </div>
@@ -572,7 +572,7 @@ class StudioPage extends React.Component {
                     <div className="w-full relative overflow-hidden" data-scroll>
                       <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
                         <div className="image-reveal-scroll">
-                          <Img backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.sectorsSupportingImage.fluid } className="w-full max-w-full object-cover"/>
+                          <Img alt={ this.props.data.studio.sectorsSupportingImage.alt } backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.sectorsSupportingImage.fluid } className="w-full max-w-full object-cover"/>
                         </div>
                       </div>
                     </div>
@@ -763,6 +763,7 @@ export const query = graphql`
           imgixParams: {h: "1100", w: "1600", fit: "crop"}) {
           ...GatsbyDatoCmsFluid_noBase64
         }
+        alt
       }
       introText
       introImage {
@@ -771,6 +772,7 @@ export const query = graphql`
           imgixParams: {h: "1200", w: "1200", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid_noBase64
         }
+        alt
       }
       expertise {
         ... on DatoCmsService {
@@ -798,6 +800,7 @@ export const query = graphql`
           imgixParams: {h: "950", w: "1600", fit: "crop", crop: "bottom", q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid_noBase64
         }
+        alt
       }
       teamImageMobile: teamImage {
         fluid(
@@ -821,6 +824,7 @@ export const query = graphql`
           imgixParams: {h: "1200", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
           ...GatsbyDatoCmsFluid_noBase64
         }
+        alt
       }
     }
   }

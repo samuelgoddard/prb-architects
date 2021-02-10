@@ -17,7 +17,7 @@ const slideIn = {
   initial: { x: "20%" },
   enter: { 
     x: "0%",
-    transition: { duration: 1.8, ease: [0.33, 1, 0.68, 1] }
+    transition: { duration: 1.1, ease: [0.33, 1, 0.68, 1] }
   },
   exit: {
     x: "-10%",
@@ -161,8 +161,8 @@ class HomeCarousel extends Component {
                           <div className="h-full w-full transform image-transform-center">
                             <div className="relative overflow-hidden h-full">
                               <motion.div variants={slideInInner} className="h-full">
-                                <Img backgroundColor={ '#dc481e'} fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
-                                <Img backgroundColor={ '#dc481e'} fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
+                                <Img alt={node.featuredImageBig.alt} backgroundColor={ '#dc481e'} fluid={node.featuredImageBig.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 hidden md:block" />
+                                <Img alt={node.featuredImageMobile.alt} backgroundColor={ '#dc481e'} fluid={node.featuredImageMobile.fluid} className="h-full carousel-img w-auto slide__img pb-0 -mb-2 block md:hidden" />
                               </motion.div>
                             </div>
                           </div>

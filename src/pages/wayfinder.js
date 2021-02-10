@@ -96,7 +96,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                 <ul>
                   <li className="overflow-hidden relative border-b-2 border-black">
                     <span className="block">
-                      <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 hover:text-white strike relative overflow-hidden block" to="/" state={{ prevPath: location.pathname }}>
+                      <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 index-link strike relative overflow-hidden block" to="/" state={{ prevPath: location.pathname }}>
                         <div className="pt-5 md:pt-8 xl:pt-10 overflow-hidden relative">
                           <div className="flex flex-wrap items-center">
                             <div className="">
@@ -119,7 +119,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                   </li>
                   <li className="overflow-hidden relative border-b-2 border-black">
                     <span className="block relative overflow-hidden">
-                    <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 hover:text-white strike relative overflow-hidden block" to="/studio">
+                    <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 index-link strike relative overflow-hidden block" to="/studio">
                       <div className="overflow-hidden relative pt-5 md:pt-8 xl:pt-10">
                         <div className="flex flex-wrap items-center">
                           <div className="">
@@ -141,7 +141,7 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                   </li>
                   <li className="overflow-hidden relative">
                     <span className="block relative overflow-hidden">
-                      <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 hover:text-white strike overflow-hidden relative block" to="/journal">
+                      <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 index-link strike overflow-hidden relative block" to="/journal">
                         <div className="overflow-hidden relative pt-5 md:pt-8 xl:pt-10">
                           
                           <div className="flex flex-wrap items-center">

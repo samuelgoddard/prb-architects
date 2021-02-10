@@ -235,6 +235,7 @@ export const query = graphql`
               imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
+            alt
           }
           featuredImageBig: teaserImage {
             url
@@ -243,12 +244,13 @@ export const query = graphql`
               imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
+            alt
           }
           featuredImageMobile: homeMobileImage {
             url
             fluid(
               maxWidth: 720,
-              imgixParams: { auto: "compress", sharp: 10, w: "720", h: "1200", fit: "fillmax", crop: "center" }) {
+              imgixParams: { auto: "compress", sharp: 10, w: "520", h: "1000", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }

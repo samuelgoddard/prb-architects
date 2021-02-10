@@ -142,10 +142,10 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                       <div className={ node.gallery.length > 0 ? `md:ml-16 block leading-tight mb-6 w-full md:w-2/3 xl:w-5/12 lg:text-lg` : `md:ml-16 block leading-tight mb-8 w-full md:w-2/3 xl:w-5/12 lg:text-lg`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
                       <div className="flex flex-wrap -mx-3 overflow-hidden md:ml-12 mb-3 md:mb-0">
-                        {node.gallery.map(({ fluid }, i) => {
+                        {node.gallery.map(({ fluid, alt }, i) => {
                           return(
                             <div className="w-9/12 md:w-3/12 px-3 ml-1 mb-5" key={i}>
-                              <Img backgroundColor={ '#dc481e'} fluid={ fluid } className="w-full object-cover"/>
+                              <Img alt={ alt } backgroundColor={ '#dc481e'} fluid={ fluid } className="w-full object-cover"/>
                             </div>
                           )
                         })}
@@ -249,6 +249,7 @@ export const query = graphql`
             fluid(imgixParams: {h: "900", w: "900", fit: "crop", dpi: 1, q: 100, auto: "format"}) {
               ...GatsbyDatoCmsFluid_noBase64
             }    
+            alt
           }
           slug
         }
