@@ -9,6 +9,7 @@ function Layout({ children, location, location: { pathname } }) {
       <a className="skip-link sr-only" href="#scroll-container">Skip to content</a>
       { !pathname.includes("studio") ? (
         <Link 
+          aria-label="Navigate to home"
           className={ 
             pathname === "/project" || pathname === "/404" || pathname === "/wayfinder" || pathname === "/studio" || pathname === "/journal" || pathname === "/gallery-index" || pathname === "/privacy" || pathname.includes("work") || pathname.includes("/journal/")
             ? 'fixed bottom-0 left-0 block p-4 md:p-6 md:pb-3 w-28 md:w-40 transition duration-500 ease-in-out opacity-0 md:opacity-100 z-0 md:z-30'
@@ -20,6 +21,7 @@ function Layout({ children, location, location: { pathname } }) {
         </Link>
       ) : (
         <Link 
+          aria-label="Navigate to home"
           className={`fixed bottom-0 left-0 block p-4 md:p-6 md:pb-3 z-30 w-28 md:w-40 transition duration-500 ease-in-out opacity-0`
           }
           to="/"

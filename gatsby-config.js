@@ -3,7 +3,7 @@ require("dotenv").config({ path: `.env` })
 module.exports = {
   siteMetadata: {
     title: `PRB Architects`,
-    siteUrl: `https://www.prb-a.com`,
+    siteUrl: `https://prb-a.com`,
     description: `We’re Architects and Building Conservation specialists who are known for delivering projects with an authentic sense of place. We’re an RIBA Chartered Practice based in the Midlands.`,
     author: `@samuelgoddard`,
   },
