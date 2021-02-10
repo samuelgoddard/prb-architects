@@ -386,6 +386,11 @@ video {
 	@apply flex flex-wrap items-center;
 }
 
+.team-member__image-gradient {
+	background: rgb(4,4,4);
+	background: linear-gradient(0deg, rgba(4,4,4,0.8) 0%, rgba(3,1,1,0) 60%);
+}
+
 
 @screen md {
 .team-member__inner {
@@ -396,10 +401,6 @@ video {
 		mix-blend-mode: multiply;
 		@apply absolute top-0 left-0 right-0 bottom-0 w-full h-full bg-transparent z-30 opacity-0;
 	}
-}
-.team-member__image-gradient {
-	background: rgb(4,4,4);
-	background: linear-gradient(0deg, rgba(4,4,4,0.8) 0%, rgba(3,1,1,0) 60%);
 }
 
 .team-member--active {

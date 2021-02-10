@@ -537,7 +537,7 @@ class StudioPage extends React.Component {
           <div className="w-full">
             <div className="overflow-hidden mb-1 pb-0 w-full relative hidden md:block" data-scroll data-scroll-speed="0">
               <div className="w-full relative overflow-hidden" data-scroll>
-                <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-12">
+                <div data-scroll data-scroll-speed="0.6" className="overflow-hidden -m-16">
                   <div className="image-reveal-scroll">
                     <Img alt={ this.props.data.studio.teamImage.alt } backgroundColor={ '#dc481e'} fluid={ this.props.data.studio.teamImage.fluid } className="w-full max-w-full object-cover"/>
                   </div>
