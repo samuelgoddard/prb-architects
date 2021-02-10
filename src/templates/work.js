@@ -779,12 +779,12 @@ class WorkTemplate extends React.Component {
                           return (
                             <div key={i}>
                               { node.slug !== this.props.data.datoCmsWork.slug &&(
-                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-4 xl:py-5 hover:text-white group">
+                                <Link to={`/work/${node.slug}`} className="flex flex-wrap items-center border-b border-black py-3 md:py-4 xl:py-5 hover:text-white group fake-strike--group">
                                   <span className="flex flex-wrap w-20 md:w-24 text-xs md:text-sm leading-none items-center">
                                     <span className="block text-2xs pt-px mr-1 invert-select">PRB</span>
                                     <span className="block leading-none invert-select">{ node.projectCode }</span>
                                   </span>
-                                  <span className="block text-xl md:text-2xl xl:text-3xl font-display mt-2 group-hover:line-through invert-select leading-none">{ node.title }</span>
+                                  <span className="block text-xl md:text-2xl xl:text-3xl font-display mt-2 fake-strike invert-select leading-none">{ node.title }</span>
                                   <span className="block ml-auto"><svg xmlns="http://www.w3.org/2000/svg" className="w-6 md:w-8 -mr-2" viewBox="0 0 17.938 17.937"><g data-name="Group 33" fill="none" stroke="currentColor"><path data-name="Path 1" d="M2.18 5.752h10.006v10.005"/><path data-name="Path 2" d="M12.185 5.752L.354 17.583"/></g></svg></span>
                                 </Link>
                               )}

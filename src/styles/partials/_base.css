@@ -1,19 +1,25 @@
 body {
 	margin: 0;
 	padding: 0;
-	-webkit-overflow-scrolling: touch;
-	overflow: hidden;
+	overflow: scroll;
 	
 	@screen lg {
 		overflow: hidden; /* Hide scrollbars */
 	}
 }
 
+.disable-elastic {
+	-webkit-overflow-scrolling: touch !important;
+	overflow: hidden !important;
+}
+
 @media (max-width: 1024px) {
-	#___gatsby {
-		-webkit-overflow-scrolling: touch;
-		height: 100vh;
-		overflow: auto;
+	.disable-elastic {
+		#___gatsby {
+			-webkit-overflow-scrolling: touch;
+			height: 100vh;
+			overflow: auto;
+		}
 	}
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "./src/components/layout";
 
-const transitionDelay = 0;
+const transitionDelay = 100;
 
 export const onClientEntry = () => {
 }
@@ -16,12 +16,10 @@ export const shouldUpdateScroll = ({
 }) => {
   if (location.action === "PUSH") {
     window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
+    document.getElementById('scroll-container').scrollIntoView();
   } else {
-    const savedPosition = getSavedScrollPosition(location)
-    window.setTimeout( 
-      () => window.scrollTo(...(savedPosition || [0, 0])),
-      transitionDelay
-    )
+    window.setTimeout(() => window.scrollTo(0, 0), transitionDelay)
+    document.getElementById('scroll-container').scrollIntoView();
   }
   return false
 }

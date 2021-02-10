@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 
-const SEO = ({ pathname, titleOverride, descriptionOverride, pathnameOverride, imageOverride, noIndex }) => {
+const SEO = ({ pathname, titleOverride, descriptionOverride, pathnameOverride, imageOverride, noIndex, elasticDisable }) => {
   const {
     site: {
       siteMetadata: { siteUrl },
@@ -46,7 +46,7 @@ const SEO = ({ pathname, titleOverride, descriptionOverride, pathnameOverride, i
     }
   `)
   return (
-    <Helmet defer={false} titleTemplate={`%s${titleSuffix}`}>
+    <Helmet defer={false} titleTemplate={`%s${titleSuffix}`} bodyAttributes={{class: elasticDisable ? 'disable-elastic' : 'elastic' }}>
       <html lang="en" />
       <link rel="canonical" href={`${siteUrl}${pathnameOverride ? pathnameOverride : pathname}`}/>
       <meta

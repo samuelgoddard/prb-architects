@@ -70,6 +70,7 @@ const IndexPage = ({ data: { home, work, workCategories }, location }) => {
           descriptionOverride={home.metaTags && home.metaTags.description ? home.metaTags.description : null }
           pathnameOverride={location.pathname}
           imageOverride={home.metaTags && home.metaTags.image ? home.metaTags.image.url : null }
+          elasticDisable
         />
 
         <Scroll callback={location} />

@@ -249,3 +249,63 @@ button {
     }
   }
 }
+
+.fake-strike {
+  @apply relative;
+  &:after {
+    content: " ";
+    /* transition: width 0.5s ease-in-out; */
+    @apply absolute  bg-current;
+    top: 37%;
+    left: 0;
+    width: 0px;
+    height: 2px;
+  }
+
+  &:hover {
+    &:after {
+      @apply w-full;
+    }
+  }
+}
+
+.fake-strike--group {
+  .fake-strike {
+    @apply relative;
+    &:after {
+      content: " ";
+      /* transition: width 0.5s ease-in-out; */
+      @apply absolute  bg-current;
+      top: 37%;
+      left: 0;
+      width: 0px;
+      height: 2px;
+    }
+  } 
+
+  &:hover {
+    .fake-strike {
+      &:after {
+        @apply w-full;
+      }
+    }
+  }
+}
+
+.fake-strike--perma {
+  @apply relative;
+  &:after {
+    content: " ";
+    /* transition: width 0.5s ease-in-out; */
+    @apply absolute  bg-current;
+    top: 49%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
