@@ -1,4 +1,3 @@
-# http and https need separate rules if you don’t force_ssl!
-https://prb-a.co.uk* https://prb-a.com:splat 301!
-https://www.prb-a.co.uk* https://prb-a.com:splat 301!
-http://prb-architects.netlify.app/* https://prb-a.com:splat 301!
+https://prb-a.co.uk/* https://prb-a.com/:splat 301!
+https://www.prb-a.co.uk/* https://prb-a.com/:splat 301!
+https://prb-architects.netlify.app/* https://prb-a.com/:splat 301!
