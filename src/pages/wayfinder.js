@@ -92,11 +92,11 @@ const WayfinderPage = ({ data: { work, studio }, location }) => {
                 enter: { transition: { staggerChildren: 0.035, delayChildren: 0.025 } }
               }}
             >
-              <nav className="h-full">
+              <nav className="h-full md:-mt-5">
                 <ul>
                   <li className="overflow-hidden relative border-b-2 border-black">
                     <span className="block">
-                      <Link className="text-black wayfinder-item font-display pt-0 md:pt-10 2xl:pt-12 pb-0 md:pb-10 2xl:pb-12 index-link strike relative overflow-hidden block" to="/" state={{ prevPath: location.pathname }}>
+                      <Link className="text-black wayfinder-item font-display pt-0 md:pt-8 2xl:pt-12 pb-0 md:pb-8 2xl:pb-12 index-link strike relative overflow-hidden block" to="/" state={{ prevPath: location.pathname }}>
                         <div className="pt-5 md:pt-8 xl:pt-10 overflow-hidden relative">
                           <div className="flex flex-wrap items-center">
                             <div className="">
