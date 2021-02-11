@@ -240,8 +240,8 @@ export const query = graphql`
           featuredImageBig: teaserImage {
             url
             fluid(
-              maxWidth: 1600,
-              imgixParams: { auto: "compress", sharp: 10, w: "1600", h: "1100", fit: "fillmax", crop: "center" }) {
+              maxWidth: 1300,
+              imgixParams: { auto: "compress", sharp: 10, w: "1300", h: "800", fit: "fillmax", crop: "center" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
             alt

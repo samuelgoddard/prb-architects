@@ -731,8 +731,8 @@ export const query = graphql`
           }
           image {
             fluid(
-              maxWidth: 1000,
-              imgixParams: {w: "1000", h: "1500", fit: "crop", crop: "faces", auto: "format" }) {
+              maxWidth: 650,
+              imgixParams: {w: "550", h: "800", fit: "crop", crop: "faces", auto: "format" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
