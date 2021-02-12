@@ -409,8 +409,11 @@ class StudioPage extends React.Component {
             </div>
           </div>
 
-          <div className="md:mx-auto md:w-full pb-10 pt-12 md:pt-16 xl:pt-20 xl:pb-32 bg-white relative z-20 px-4" id="ethos">
-            <div className=" mx-auto">
+          <div className="md:mx-auto md:w-full pb-10 xl:pb-32 bg-white relative z-20 px-4" id="ethos">
+
+          <div className="text-3xl md:text-3xl block mb-0 font-display leading-none md:max-w-xl lg:max-w-3xl pb-12 md:pb-16 xl:pb-20 w-10/12" dangerouslySetInnerHTML={{ __html: this.props.data.studio.ethosIntroText }}></div>
+
+            <div className="mx-auto">
               <div className="overflow-hidden w-full md:w-9/12 mx-auto">
                 <div className="w-full flex flex-wrap">
                   {
@@ -613,6 +616,11 @@ class StudioPage extends React.Component {
                     </div>
                   </div>
 
+
+                  <div className="w-full flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
+                    <div className="content css-cols text-lg xl:text-xl leading-tight w-full" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroCols }}></div>
+                  </div>
+
                   <span className="text-sm md:text-base block uppercase mb-2 md:mb-12 md:px-8">Our Services</span>
                   <div className="w-full flex flex-wrap">
                     {
@@ -621,7 +629,13 @@ class StudioPage extends React.Component {
                           {
                             block.model.apiKey === 'service_heading' &&
                               <div className={ this.props.data.studio.services.length == (i + 1) ? `flex flex-wrap items-center py-4 md:border-b md:border-black` : `flex flex-wrap items-center py-4 border-b border-black`}>
-                                <span className="block text-xs mr-2">0{i + 1}</span>
+                                <span className="block text-xs mr-2">
+                                { i > 8 ? (
+                                  `${i + 1}`
+                                ) : (
+                                  `0${i + 1}`
+                                )}
+                                </span>
                                 <span className="block">{ block.text }</span>
                               </div>
                           }
@@ -783,6 +797,7 @@ export const query = graphql`
           content
         }
       }
+      ethosIntroText
       sectorsIntroText
       servicesIntroText
       sectors {
@@ -811,6 +826,7 @@ export const query = graphql`
       }
       teamIntro
       teamSupportingText
+      servicesIntroCols
       services {
         ... on DatoCmsServiceHeading {
           id

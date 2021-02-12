@@ -338,3 +338,10 @@ button {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
+
+@screen md {
+  .css-cols {
+    column-count: 2;
+    column-gap: 75px;
+  }
+}
