@@ -342,6 +342,12 @@ button {
 @screen md {
   .css-cols {
     column-count: 2;
-    column-gap: 75px;
+    column-gap: 65px;
+    
+    p {
+      -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
+    }
   }
 }

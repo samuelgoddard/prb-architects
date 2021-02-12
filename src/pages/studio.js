@@ -621,7 +621,7 @@ class StudioPage extends React.Component {
                     <div className="content css-cols leading-snug lg:text-lg w-full" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroCols }}></div>
                   </div>
 
-                  <span className="text-sm md:text-base block uppercase mb-2 md:mb-12 md:px-8">Our Services</span>
+                  {/* <span className="text-sm md:text-base block uppercase mb-2 md:mb-12 md:px-8">Our Services</span> */}
                   <div className="w-full flex flex-wrap">
                     {
                       this.props.data.studio.services.map((block, i) => (
