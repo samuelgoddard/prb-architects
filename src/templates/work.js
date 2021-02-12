@@ -133,7 +133,13 @@ class WorkTemplate extends React.Component {
   }
 
   render () {
-    const splitTitle = this.props.data.datoCmsWork.title.match(/\b(\w+)/g);
+    let splitTitle = null;
+    if (this.props.data.datoCmsWork.title.includes(`'`)) {
+      splitTitle = this.props.data.datoCmsWork.title.match(/\b\w*[-']\w*\b/g)
+    } else (
+      splitTitle = this.props.data.datoCmsWork.title.match(/\b(\w+)/g)
+    )
+    
 
     const metaArray = [];
     if (this.props.data.datoCmsWork.projectCode) { metaArray.push(`
@@ -242,7 +248,7 @@ class WorkTemplate extends React.Component {
                         enter: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } }
                       }}
                     >
-                      <div className="w-10/12 lg:w-9/12 mx-auto mt-24 md:-mt-12 mb-32 md:mb-0">
+                      <div className="w-11/12 lg:w-9/12 mx-auto mt-24 md:-mt-12 mb-32 md:mb-0">
                         <div className="pt-5" data-scroll-sticky data-scroll data-scroll-target="#scroll-container">
                           <h1 className="hidden md:block order-2 lg:order-1 lg:w-auto text-center font-display text-screen-display text-screen-display--animated relative overflow-hidden -mt-10 mb-0 pb-0">
                             {
