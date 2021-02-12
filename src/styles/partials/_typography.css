@@ -354,5 +354,5 @@ button {
 
 .gatsby-image-wrapper img,
 .gatsby-image-wrapper > div {
-  transition: opacity 500ms ease 0s !important;
+  transition: opacity 1000ms ease 0s !important;
 }
