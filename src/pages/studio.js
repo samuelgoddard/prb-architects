@@ -411,7 +411,7 @@ class StudioPage extends React.Component {
 
           <div className="md:mx-auto md:w-full pb-10 xl:pb-32 bg-white relative z-20 px-4" id="ethos">
 
-          <div className="text-3xl md:text-3xl block mb-0 font-display leading-none md:max-w-xl lg:max-w-3xl pb-12 md:pb-16 xl:pb-20 w-10/12" dangerouslySetInnerHTML={{ __html: this.props.data.studio.ethosIntroText }}></div>
+          <div className="text-3xl md:text-3xl block mb-0 font-display leading-none md:max-w-xl lg:max-w-3xl pb-12 md:pb-16 xl:pb-20 w-10/12 md:ml-12 lg:ml-20 xl:ml-24" dangerouslySetInnerHTML={{ __html: this.props.data.studio.ethosIntroText }}></div>
 
             <div className="mx-auto">
               <div className="overflow-hidden w-full md:w-9/12 mx-auto">
@@ -607,18 +607,18 @@ class StudioPage extends React.Component {
 
           <div className="bg-white p-4 md:p-6 relative z-20 pt-12 md:pt-32 xl:pt-48  mx-auto" id="services">
             <div className="w-full flex flex-wrap items-end">
+              <div className="w-full lg:w-10/12 mx-auto md:px-4">
+                <div className="w-full md:w-10/12 flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8 xl:pr-24">
+                  <div className="w-full">
+                    <div className="inline-block leading-slightnegative w-full font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroText }}></div>
+                  </div>
+                </div>
+              </div>
               <div className="w-full lg:w-8/12 mx-auto md:px-4 pb-12 md:pb-32 xl:pb-48">
                 <div className="overflow-hidden">
 
-                  <div className="w-full md:w-11/12 flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
-                    <div className="w-full">
-                      <div className="inline-block leading-slightnegative w-full font-display text-screen-studio-blurb pt-3 content-indented" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroText }}></div>
-                    </div>
-                  </div>
-
-
                   <div className="w-full flex flex-wrap mb-20 md:mb-24 lg:mb-24 xl:mb-24 md:px-8">
-                    <div className="content css-cols text-lg xl:text-xl leading-tight w-full" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroCols }}></div>
+                    <div className="content css-cols leading-snug lg:text-lg w-full" dangerouslySetInnerHTML={{ __html: this.props.data.studio.servicesIntroCols }}></div>
                   </div>
 
                   <span className="text-sm md:text-base block uppercase mb-2 md:mb-12 md:px-8">Our Services</span>
