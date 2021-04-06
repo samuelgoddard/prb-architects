@@ -139,7 +139,7 @@ const JournalPage = ({ data: { entries, studio }, location }) => {
                 return (
                   <div className="overflow-hidden" key={i}>
                     <Collapsible heading={node.title} index={<Moment format="DD.MM.Y">{ node.date }</Moment>} textLarge={true} key={i} link={`/journal/${node.slug}`}>
-                      <div className={ node.gallery.length > 0 ? `md:ml-16 block leading-tight mb-6 w-full md:w-2/3 xl:w-5/12 lg:text-lg` : `md:ml-16 block leading-tight mb-8 w-full md:w-2/3 xl:w-5/12 lg:text-lg`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
+                      <div className={ node.gallery.length > 0 ? `md:ml-16 block leading-tight mb-6 w-full md:w-2/3 xl:w-5/12 lg:text-lg content` : `md:ml-16 block leading-tight mb-8 w-full md:w-2/3 xl:w-5/12 lg:text-lg content`} dangerouslySetInnerHTML={{ __html: node.content }}></div>
 
                       <div className="flex flex-wrap -mx-3 overflow-hidden md:ml-12 mb-3 md:mb-0">
                         {node.gallery.map(({ fluid, alt }, i) => {
