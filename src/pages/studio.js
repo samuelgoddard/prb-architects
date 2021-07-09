@@ -444,11 +444,11 @@ class StudioPage extends React.Component {
             <div className="bg-offblack relative z-20 text-white -mx-4 md:-mx-8">
               <div className=" mx-auto relative">
                 <div className="mt-auto hidden md:block md:absolute bottom-0 left-0 w-8/12 md:w-5/12 pl-4 md:pl-10 pt-8 md:pt-0 md:pb-6">
-                  <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-24 block xl:max-w-2xl" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
+                  <span className="inline-block leading-slightnegative font-display text-3xl md:text-3xl lg:text-4xl xl:text-6xl 2xl:text-6xl pt-3 content-indented block p-4 xl:pr-40 block md:pr-8 xl:max-w-2xl" dangerouslySetInnerHTML={{ __html: this.props.data.studio.teamSupportingText }}></span>
                 </div>
 
                 <div className="w-full flex flex-wrap px-4 md:px-8">
-                  <div className="w-full md:w-1/3 lg:w-3/12 h-auto order-2 md:order-1">
+                  <div className="w-full md:w-5/12 lg:w-3/12 h-auto order-2 md:order-1">
                     <div className="p-4 md:p-6 mb-3 md:mb-0 h-full">
                       <div className="flex flex-wrap h-full">
                         <div className="w-full">
@@ -468,7 +468,7 @@ class StudioPage extends React.Component {
                     </div>
                   </div>
                   
-                  <div className="w-full md:w-2/3 lg:w-8/12 ml-auto h-full order-1 md:order-2 hidden md:block">
+                  <div className="w-full md:w-7/12 lg:w-7/12 ml-auto h-full order-1 md:order-2 hidden md:block">
                     <div className="flex flex-wrap justify-end">
                       {this.props.data.team.edges.map(({ node }, i) => {
                         return (
