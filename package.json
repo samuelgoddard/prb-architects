@@ -23,7 +23,7 @@
     "gatsby-source-datocms": "^2.3.0",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.11.0",
-    "gsap": "^3.3.4",
+    "gsap": "^3.8.0",
     "locomotive-scroll": "^3.5.4",
     "micromodal": "^0.4.6",
     "normalize-wheel": "^1.0.1",
