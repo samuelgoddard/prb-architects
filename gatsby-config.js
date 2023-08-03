@@ -8,6 +8,7 @@ module.exports = {
     author: `@samuelgoddard`,
   },
   plugins: [
+    `gatsby-plugin-no-index`,
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-react-helmet`,
     {
