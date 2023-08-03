@@ -48,12 +48,12 @@ const SEO = ({ pathname, titleOverride, descriptionOverride, pathnameOverride, i
   return (
     <Helmet defer={false} titleTemplate={`%s${titleSuffix}`} bodyAttributes={{class: elasticDisable ? 'disable-elastic' : 'elastic' }}>
       <html lang="en" />
-      <link rel="canonical" href={`${siteUrl}${pathnameOverride ? pathnameOverride : pathname}`}/>
       <meta
         name="viewport"
         content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
       />
       <title>{titleOverride ? titleOverride : title }</title>
+      
       <meta name="description" content={descriptionOverride ? descriptionOverride : description} />
 
       <meta property="og:url" content={siteUrl} />
@@ -67,9 +67,7 @@ const SEO = ({ pathname, titleOverride, descriptionOverride, pathnameOverride, i
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={twitterAccount} />
 
-      { noIndex && (
-        <meta name="robots" content="noindex" />
-      )}
+      <meta name="robots" content="noindex" />
       
     </Helmet>
   )
